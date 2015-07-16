@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{379D69FB-7586-4D1A-B820-EF8A62BC74B9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SPEDU.Business</RootNamespace>
+    <AssemblyName>SPEDU.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Application\AppDefaultSettingRepository.cs" />
+    <Compile Include="Application\AppEmailTemplateCategoryRepository.cs" />
+    <Compile Include="Application\AppEmailTemplateRepository.cs" />
+    <Compile Include="Application\AppInformationRepository.cs" />
+    <Compile Include="Application\AppMenuPermissionRepository.cs" />
+    <Compile Include="Application\AppMenuRepository.cs" />
+    <Compile Include="Application\AppRightPermissionRepository.cs" />
+    <Compile Include="Application\AppRightRepository.cs" />
+    <Compile Include="Application\AppSMSTemplateCategoryRepository.cs" />
+    <Compile Include="Application\AppSMSTemplateRepository.cs" />
+    <Compile Include="Application\AppUserActivityRepository.cs" />
+    <Compile Include="Application\AppUserMetadataRepository.cs" />
+    <Compile Include="Application\AppWidgetCategoryRepository.cs" />
+    <Compile Include="Application\AppWidgetPermissionRepository.cs" />
+    <Compile Include="Application\AppWidgetRepository.cs" />
+    <Compile Include="Application\RoleRepository.cs" />
+    <Compile Include="Application\UserProfileRepository.cs" />
+    <Compile Include="Application\UserRepository.cs" />
+    <Compile Include="Application\UserRoleRepository.cs" />
+    <Compile Include="IGeneric.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Accounts\" />
+    <Folder Include="Employee\" />
+    <Folder Include="Library\" />
+    <Folder Include="Settings\" />
+    <Folder Include="Student\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SPEDU.Data\SPEDU.Data.csproj">
+      <Project>{13daf28c-7ac6-41ac-aa01-eb1b5db1f5e2}</Project>
+      <Name>SPEDU.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SPEDU.DomainViewModel\SPEDU.DomainViewModel.csproj">
+      <Project>{893702fb-c911-44fd-a259-3eb00f366a3d}</Project>
+      <Name>SPEDU.DomainViewModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SPEDU.Domain\SPEDU.Domain.csproj">
+      <Project>{8fc33a59-90e4-4bfa-aa06-d879ab02cb56}</Project>
+      <Name>SPEDU.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

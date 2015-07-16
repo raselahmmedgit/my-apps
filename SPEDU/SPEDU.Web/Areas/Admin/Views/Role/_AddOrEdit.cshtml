@@ -1,0 +1,35 @@
+﻿@model SPEDU.DomainViewModel.Application.RoleViewModel
+@using (Ajax.BeginForm(null, null, null, new { @id = "appCommonWindowForm" }))
+{
+    <div id="addOrEditPage" class="addOrEditPage form-win col-xs-12">
+        <div class="row ">
+            <div id="updateTargetId" class="callout callout-warning" style="display: none">
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-xs-6">
+                @Html.HiddenFor(model => model.RoleId)
+                @Html.HiddenFor(model => model.AreaName)
+                @Html.HiddenFor(model => model.ControllerName)
+                @Html.HiddenFor(model => model.ActionName)
+               <div class="form-group">
+                    @Html.LabelFor(model => model.RoleName)
+                    @Html.TextBoxFor(model => model.RoleName, new { @style = "width: 95% !important" })
+                    @Html.ValidationMessageFor(model => model.RoleName)
+                </div>
+
+            </div>
+        </div>
+        <div class="row form-hr">
+            <div id="buttonZone" class="pull-right buttonZone">
+                <button type="button" class="btn btn-success btn-sm btn-flat" id="btnSubmitRole"
+                    name="btnSubmitRole">
+                    <i class="fa fa-save"></i>&nbsp;&nbsp;Save</button>
+                <button type="button" class="btn btn-warning btn-sm btn-flat" id="btnCancel" name="btnCancel"
+                    onclick="CloseAppCommonWindow()">
+                    <i class="fa fa-times"></i>&nbsp;&nbsp;Cancel</button>
+            </div>
+        </div>
+    </div>
+}
+

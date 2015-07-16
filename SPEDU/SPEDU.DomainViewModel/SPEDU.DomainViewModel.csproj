@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{893702FB-C911-44FD-A259-3EB00F366A3D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SPEDU.DomainViewModel</RootNamespace>
+    <AssemblyName>SPEDU.DomainViewModel</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Application\AppDefaultSettingViewModel.cs" />
+    <Compile Include="Application\AppEmailTemplateCategoryViewModel.cs" />
+    <Compile Include="Application\AppEmailTemplateViewModel.cs" />
+    <Compile Include="Application\AppInformationViewModel.cs" />
+    <Compile Include="Application\AppMenuPermissionViewModel.cs" />
+    <Compile Include="Application\AppMenuViewModel.cs" />
+    <Compile Include="Application\AppRightPermissionViewModel.cs" />
+    <Compile Include="Application\AppRightViewModel.cs" />
+    <Compile Include="Application\AppSMSTemplateCategoryViewModel.cs" />
+    <Compile Include="Application\AppSMSTemplateViewModel.cs" />
+    <Compile Include="Application\AppUserActivityViewModel.cs" />
+    <Compile Include="Application\AppUserMetadataViewModel.cs" />
+    <Compile Include="Application\AppWidgetCategoryViewModel.cs" />
+    <Compile Include="Application\AppWidgetPermissionViewModel.cs" />
+    <Compile Include="Application\AppWidgetViewModel.cs" />
+    <Compile Include="Application\RoleViewModel.cs" />
+    <Compile Include="Application\UserProfileViewModel.cs" />
+    <Compile Include="Application\UserRoleViewModel.cs" />
+    <Compile Include="Application\UserViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Accounts\" />
+    <Folder Include="Employee\" />
+    <Folder Include="Library\" />
+    <Folder Include="Settings\" />
+    <Folder Include="Student\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SPEDU.Domain\SPEDU.Domain.csproj">
+      <Project>{8fc33a59-90e4-4bfa-aa06-d879ab02cb56}</Project>
+      <Name>SPEDU.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
