@@ -1,4 +1,4 @@
-﻿@model SPEDU.Web.ViewModels.ErrorViewModel
+﻿@model SPEDU.Domain.BaseModels.BaseModel
 @using (Ajax.BeginForm(null, null, null, new { @id = "appCommonWindowForm" }))
 {
     <div id="errorPage">
@@ -9,7 +9,7 @@
                 <h3>
                     <i class="fa fa-warning text-yellow"></i>Oops! Something went wrong.</h3>
                 <p>
-                    @Model.ErrorMessage
+                    @Model.Message
                 </p>
             </div>
         </div>

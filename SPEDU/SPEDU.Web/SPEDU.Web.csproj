@@ -195,11 +195,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_GlobalResources\Resource.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resource.resx</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -223,20 +218,16 @@
     <Compile Include="Helpers\ConstantHelper.cs" />
     <Compile Include="Helpers\AppHelper.cs" />
     <Compile Include="Helpers\EnumHelpers.cs" />
-    <Compile Include="Helpers\ExceptionHelper.cs" />
     <Compile Include="Helpers\KendoGridHelper.cs" />
     <Compile Include="Helpers\KendoUiHelper.cs" />
     <Compile Include="Helpers\LinqFilteringHelper.cs" />
     <Compile Include="Helpers\LinqSortingHelper.cs" />
-    <Compile Include="Helpers\LoggerHelper.cs" />
-    <Compile Include="Helpers\ResourceHelper.cs" />
     <Compile Include="Helpers\VCardResultHelper.cs" />
     <Compile Include="ViewModels\AccountViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\EmailNotifyViewModel.cs" />
     <Compile Include="ViewModels\ErrorNotifyViewModel.cs" />
-    <Compile Include="ViewModels\ErrorViewModel.cs" />
     <Compile Include="ViewModels\KendoUiGridParamViewModel.cs" />
     <Compile Include="ViewModels\ThemeMenuViewModel.cs" />
     <Compile Include="ViewModels\VCardViewModel.cs" />
@@ -2240,12 +2231,6 @@
       <Project>{8fc33a59-90e4-4bfa-aa06-d879ab02cb56}</Project>
       <Name>SPEDU.Domain</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="App_GlobalResources\Resource.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
-      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

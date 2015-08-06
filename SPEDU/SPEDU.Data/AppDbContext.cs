@@ -15,21 +15,25 @@ namespace SPEDU.Data
 
         #region Application
 
+        public DbSet<AppApplication> AppApplication { get; set; }
         public DbSet<AppDefaultSetting> AppDefaultSetting { get; set; }
         public DbSet<AppEmailTemplate> AppEmailTemplate { get; set; }
         public DbSet<AppEmailTemplateCategory> AppEmailTemplateCategory { get; set; }
-        public DbSet<AppInformation> AppInformation { get; set; }
+        public DbSet<AppApplicationInfo> AppApplicationInfo { get; set; }
         public DbSet<AppMenu> AppMenu { get; set; }
-        public DbSet<AppMenuPermission> AppMenuPermission { get; set; }
+        public DbSet<AppMenuRolePermission> AppMenuRolePermission { get; set; }
+        public DbSet<AppMenuUserPermission> AppMenuUserPermission { get; set; }
         public DbSet<AppRight> AppRight { get; set; }
-        public DbSet<AppRightPermission> AppRightPermission { get; set; }
+        public DbSet<AppRightRolePermission> AppRightRolePermission { get; set; }
+        public DbSet<AppRightUserPermission> AppRightUserPermission { get; set; }
         public DbSet<AppSMSTemplate> AppSMSTemplate { get; set; }
         public DbSet<AppSMSTemplateCategory> AppSMSTemplateCategory { get; set; }
         public DbSet<AppUserActivity> AppUserActivity { get; set; }
         public DbSet<AppUserMetadata> AppUserMetadata { get; set; }
         public DbSet<AppWidget> AppWidget { get; set; }
         public DbSet<AppWidgetCategory> AppWidgetCategory { get; set; }
-        public DbSet<AppWidgetPermission> AppWidgetPermission { get; set; }
+        public DbSet<AppWidgetRolePermission> AppWidgetRolePermission { get; set; }
+        public DbSet<AppWidgetUserPermission> AppWidgetUserPermission { get; set; }
         public DbSet<Role> Role { get; set; }
         public DbSet<User> User { get; set; }
         public DbSet<UserProfile> UserProfile { get; set; }
@@ -207,67 +211,67 @@ namespace SPEDU.Data
         appRightList.ForEach(item => context.AppRight.Add(item));
         context.SaveChanges();
 
-        // Create Default AppRightPermission.
-        var appRightPermissionList = new List<AppRightPermission>
+        // Create Default AppRightRolePermission.
+        var appRightPermissionList = new List<AppRightRolePermission>
                     {
                         #region SuperAdmin
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.Add), RoleId = Convert.ToInt32(RoleEnum.SuperAdmin)},
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.Edit), RoleId = Convert.ToInt32(RoleEnum.SuperAdmin)},
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.Details), RoleId = Convert.ToInt32(RoleEnum.SuperAdmin)},
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.Delete), RoleId = Convert.ToInt32(RoleEnum.SuperAdmin)},
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.DeleteBulk), RoleId = Convert.ToInt32(RoleEnum.SuperAdmin)},
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.Archive), RoleId = Convert.ToInt32(RoleEnum.Admin)},
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.ArchiveBulk), RoleId = Convert.ToInt32(RoleEnum.Admin)},
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.Remove), RoleId = Convert.ToInt32(RoleEnum.Admin)},
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.RemoveBulk), RoleId = Convert.ToInt32(RoleEnum.Admin)},
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.Assign), RoleId = Convert.ToInt32(RoleEnum.SuperAdmin)},
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.Approve), RoleId = Convert.ToInt32(RoleEnum.SuperAdmin)},
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.SendEmail), RoleId = Convert.ToInt32(RoleEnum.SuperAdmin)},
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.SendEmailBulk), RoleId = Convert.ToInt32(RoleEnum.SuperAdmin)},
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.SendSMS), RoleId = Convert.ToInt32(RoleEnum.SuperAdmin)},
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.SendSMSBulk), RoleId = Convert.ToInt32(RoleEnum.SuperAdmin)},
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.ImportExcel), RoleId = Convert.ToInt32(RoleEnum.SuperAdmin)},
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.ImportCsv), RoleId = Convert.ToInt32(RoleEnum.SuperAdmin)},
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.ExportExcel), RoleId = Convert.ToInt32(RoleEnum.SuperAdmin)},
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.ExportCsv), RoleId = Convert.ToInt32(RoleEnum.SuperAdmin)},
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.ImportVCard), RoleId = Convert.ToInt32(RoleEnum.SuperAdmin)},
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.ExportVCard), RoleId = Convert.ToInt32(RoleEnum.SuperAdmin)},
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.ExportVCardBulk), RoleId = Convert.ToInt32(RoleEnum.SuperAdmin)},
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.Call), RoleId = Convert.ToInt32(RoleEnum.SuperAdmin)},
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.Print), RoleId = Convert.ToInt32(RoleEnum.SuperAdmin)},
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.Download), RoleId = Convert.ToInt32(RoleEnum.SuperAdmin)},
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.Upload), RoleId = Convert.ToInt32(RoleEnum.SuperAdmin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.Add), RoleId = Convert.ToInt32(RoleEnum.SuperAdmin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.Edit), RoleId = Convert.ToInt32(RoleEnum.SuperAdmin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.Details), RoleId = Convert.ToInt32(RoleEnum.SuperAdmin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.Delete), RoleId = Convert.ToInt32(RoleEnum.SuperAdmin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.DeleteBulk), RoleId = Convert.ToInt32(RoleEnum.SuperAdmin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.Archive), RoleId = Convert.ToInt32(RoleEnum.Admin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.ArchiveBulk), RoleId = Convert.ToInt32(RoleEnum.Admin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.Remove), RoleId = Convert.ToInt32(RoleEnum.Admin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.RemoveBulk), RoleId = Convert.ToInt32(RoleEnum.Admin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.Assign), RoleId = Convert.ToInt32(RoleEnum.SuperAdmin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.Approve), RoleId = Convert.ToInt32(RoleEnum.SuperAdmin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.SendEmail), RoleId = Convert.ToInt32(RoleEnum.SuperAdmin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.SendEmailBulk), RoleId = Convert.ToInt32(RoleEnum.SuperAdmin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.SendSMS), RoleId = Convert.ToInt32(RoleEnum.SuperAdmin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.SendSMSBulk), RoleId = Convert.ToInt32(RoleEnum.SuperAdmin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.ImportExcel), RoleId = Convert.ToInt32(RoleEnum.SuperAdmin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.ImportCsv), RoleId = Convert.ToInt32(RoleEnum.SuperAdmin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.ExportExcel), RoleId = Convert.ToInt32(RoleEnum.SuperAdmin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.ExportCsv), RoleId = Convert.ToInt32(RoleEnum.SuperAdmin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.ImportVCard), RoleId = Convert.ToInt32(RoleEnum.SuperAdmin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.ExportVCard), RoleId = Convert.ToInt32(RoleEnum.SuperAdmin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.ExportVCardBulk), RoleId = Convert.ToInt32(RoleEnum.SuperAdmin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.Call), RoleId = Convert.ToInt32(RoleEnum.SuperAdmin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.Print), RoleId = Convert.ToInt32(RoleEnum.SuperAdmin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.Download), RoleId = Convert.ToInt32(RoleEnum.SuperAdmin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.Upload), RoleId = Convert.ToInt32(RoleEnum.SuperAdmin)},
 	                    #endregion
                         
                         #region Admin
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.Add), RoleId = Convert.ToInt32(RoleEnum.Admin)},
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.Edit), RoleId = Convert.ToInt32(RoleEnum.Admin)},
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.Details), RoleId = Convert.ToInt32(RoleEnum.Admin)},
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.Archive), RoleId = Convert.ToInt32(RoleEnum.Admin)},
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.ArchiveBulk), RoleId = Convert.ToInt32(RoleEnum.Admin)},
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.Remove), RoleId = Convert.ToInt32(RoleEnum.Admin)},
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.RemoveBulk), RoleId = Convert.ToInt32(RoleEnum.Admin)},
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.Assign), RoleId = Convert.ToInt32(RoleEnum.Admin)},
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.Approve), RoleId = Convert.ToInt32(RoleEnum.Admin)},
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.SendEmail), RoleId = Convert.ToInt32(RoleEnum.Admin)},
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.SendEmailBulk), RoleId = Convert.ToInt32(RoleEnum.Admin)},
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.SendSMS), RoleId = Convert.ToInt32(RoleEnum.Admin)},
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.SendSMSBulk), RoleId = Convert.ToInt32(RoleEnum.Admin)},
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.ImportExcel), RoleId = Convert.ToInt32(RoleEnum.Admin)},
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.ImportCsv), RoleId = Convert.ToInt32(RoleEnum.Admin)},
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.ExportExcel), RoleId = Convert.ToInt32(RoleEnum.Admin)},
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.ExportCsv), RoleId = Convert.ToInt32(RoleEnum.Admin)},
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.ImportVCard), RoleId = Convert.ToInt32(RoleEnum.Admin)},
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.ExportVCard), RoleId = Convert.ToInt32(RoleEnum.Admin)},
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.ExportVCardBulk), RoleId = Convert.ToInt32(RoleEnum.Admin)},
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.Call), RoleId = Convert.ToInt32(RoleEnum.Admin)},
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.Print), RoleId = Convert.ToInt32(RoleEnum.Admin)},
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.Download), RoleId = Convert.ToInt32(RoleEnum.Admin)},
-                        new AppRightPermission {AppRightId = Convert.ToInt32(RightEnum.Upload), RoleId = Convert.ToInt32(RoleEnum.Admin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.Add), RoleId = Convert.ToInt32(RoleEnum.Admin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.Edit), RoleId = Convert.ToInt32(RoleEnum.Admin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.Details), RoleId = Convert.ToInt32(RoleEnum.Admin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.Archive), RoleId = Convert.ToInt32(RoleEnum.Admin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.ArchiveBulk), RoleId = Convert.ToInt32(RoleEnum.Admin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.Remove), RoleId = Convert.ToInt32(RoleEnum.Admin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.RemoveBulk), RoleId = Convert.ToInt32(RoleEnum.Admin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.Assign), RoleId = Convert.ToInt32(RoleEnum.Admin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.Approve), RoleId = Convert.ToInt32(RoleEnum.Admin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.SendEmail), RoleId = Convert.ToInt32(RoleEnum.Admin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.SendEmailBulk), RoleId = Convert.ToInt32(RoleEnum.Admin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.SendSMS), RoleId = Convert.ToInt32(RoleEnum.Admin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.SendSMSBulk), RoleId = Convert.ToInt32(RoleEnum.Admin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.ImportExcel), RoleId = Convert.ToInt32(RoleEnum.Admin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.ImportCsv), RoleId = Convert.ToInt32(RoleEnum.Admin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.ExportExcel), RoleId = Convert.ToInt32(RoleEnum.Admin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.ExportCsv), RoleId = Convert.ToInt32(RoleEnum.Admin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.ImportVCard), RoleId = Convert.ToInt32(RoleEnum.Admin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.ExportVCard), RoleId = Convert.ToInt32(RoleEnum.Admin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.ExportVCardBulk), RoleId = Convert.ToInt32(RoleEnum.Admin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.Call), RoleId = Convert.ToInt32(RoleEnum.Admin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.Print), RoleId = Convert.ToInt32(RoleEnum.Admin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.Download), RoleId = Convert.ToInt32(RoleEnum.Admin)},
+                        new AppRightRolePermission {AppRightId = Convert.ToInt32(RightEnum.Upload), RoleId = Convert.ToInt32(RoleEnum.Admin)},
                         #endregion
 
                     };
-        appRightPermissionList.ForEach(item => context.AppRightPermission.Add(item));
+        appRightPermissionList.ForEach(item => context.AppRightRolePermission.Add(item));
         context.SaveChanges();
 
         // Create Default AppDefaultSetting.
@@ -283,19 +287,19 @@ namespace SPEDU.Data
         appDefaultSettingList.ForEach(item => context.AppDefaultSetting.Add(item));
         context.SaveChanges();
 
-        // Create Default AppInformation.
-        var appInformationList = new List<AppInformation>
+        // Create Default AppApplicationInfo.
+        var appInformationList = new List<AppApplicationInfo>
                     {
-                        new AppInformation {AppInformationId = Convert.ToInt32(ApplicationInformationEnum.HeaderTitle), Name = "Application Title", Key = ApplicationInformationEnum.HeaderTitle.ToString(), Value = "", Description = "Application Title"},
-                        new AppInformation {AppInformationId = Convert.ToInt32(ApplicationInformationEnum.HeaderText), Name = "Application Header Text", Key = ApplicationInformationEnum.HeaderText.ToString(), Value = "", Description = "Application Header Text"},
-                        new AppInformation {AppInformationId = Convert.ToInt32(ApplicationInformationEnum.HeaderUrl), Name = "Application Header Url", Key = ApplicationInformationEnum.HeaderUrl.ToString(), Value = "", Description = "Application Header Url"},
-                        new AppInformation {AppInformationId = Convert.ToInt32(ApplicationInformationEnum.MetaAuthor), Name = "Head Meta Author", Key = ApplicationInformationEnum.MetaAuthor.ToString(), Value = "", Description = "Head Meta Author"},
-                        new AppInformation {AppInformationId = Convert.ToInt32(ApplicationInformationEnum.MetaKeywords), Name = "Head Meta Keywords", Key = ApplicationInformationEnum.MetaKeywords.ToString(), Value = "", Description = "Head Meta Keywords"},
-                        new AppInformation {AppInformationId = Convert.ToInt32(ApplicationInformationEnum.MetaDescription), Name = "Head Meta Description", Key = ApplicationInformationEnum.MetaDescription.ToString(), Value = "", Description = "Head Meta Description"},
-                        new AppInformation {AppInformationId = Convert.ToInt32(ApplicationInformationEnum.FooterText), Name = "Application Footer Text", Key = ApplicationInformationEnum.FooterText.ToString(), Value = "", Description = "Application Footer Text"},
-                        new AppInformation {AppInformationId = Convert.ToInt32(ApplicationInformationEnum.FooterUrl), Name = "Application Footer Url", Key = ApplicationInformationEnum.FooterUrl.ToString(), Value = "", Description = "Application Footer Url"}
+                        new AppApplicationInfo {AppInformationId = Convert.ToInt32(ApplicationInformationEnum.HeaderTitle), Name = "Application Title", Key = ApplicationInformationEnum.HeaderTitle.ToString(), Value = "", Description = "Application Title"},
+                        new AppApplicationInfo {AppInformationId = Convert.ToInt32(ApplicationInformationEnum.HeaderText), Name = "Application Header Text", Key = ApplicationInformationEnum.HeaderText.ToString(), Value = "", Description = "Application Header Text"},
+                        new AppApplicationInfo {AppInformationId = Convert.ToInt32(ApplicationInformationEnum.HeaderUrl), Name = "Application Header Url", Key = ApplicationInformationEnum.HeaderUrl.ToString(), Value = "", Description = "Application Header Url"},
+                        new AppApplicationInfo {AppInformationId = Convert.ToInt32(ApplicationInformationEnum.MetaAuthor), Name = "Head Meta Author", Key = ApplicationInformationEnum.MetaAuthor.ToString(), Value = "", Description = "Head Meta Author"},
+                        new AppApplicationInfo {AppInformationId = Convert.ToInt32(ApplicationInformationEnum.MetaKeywords), Name = "Head Meta Keywords", Key = ApplicationInformationEnum.MetaKeywords.ToString(), Value = "", Description = "Head Meta Keywords"},
+                        new AppApplicationInfo {AppInformationId = Convert.ToInt32(ApplicationInformationEnum.MetaDescription), Name = "Head Meta Description", Key = ApplicationInformationEnum.MetaDescription.ToString(), Value = "", Description = "Head Meta Description"},
+                        new AppApplicationInfo {AppInformationId = Convert.ToInt32(ApplicationInformationEnum.FooterText), Name = "Application Footer Text", Key = ApplicationInformationEnum.FooterText.ToString(), Value = "", Description = "Application Footer Text"},
+                        new AppApplicationInfo {AppInformationId = Convert.ToInt32(ApplicationInformationEnum.FooterUrl), Name = "Application Footer Url", Key = ApplicationInformationEnum.FooterUrl.ToString(), Value = "", Description = "Application Footer Url"}
                     };
-        appInformationList.ForEach(item => context.AppInformation.Add(item));
+        appInformationList.ForEach(item => context.AppApplicationInfo.Add(item));
         context.SaveChanges();
 
         #endregion

@@ -87,6 +87,10 @@ namespace SPEDU.Domain.BaseModels
         public virtual Boolean HasUpdate { get; set; }
         [NotMapped]
         public virtual Boolean HasDelete { get; set; }
+        [NotMapped]
+        public virtual String MessageType { get; set; }
+        [NotMapped]
+        public virtual String Message { get; set; }
 
         #endregion
 

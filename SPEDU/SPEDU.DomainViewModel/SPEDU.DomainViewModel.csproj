@@ -47,25 +47,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Application\AppApplicationViewModel.cs" />
     <Compile Include="Application\AppDefaultSettingViewModel.cs" />
     <Compile Include="Application\AppEmailTemplateCategoryViewModel.cs" />
     <Compile Include="Application\AppEmailTemplateViewModel.cs" />
-    <Compile Include="Application\AppInformationViewModel.cs" />
-    <Compile Include="Application\AppMenuPermissionViewModel.cs" />
+    <Compile Include="Application\AppApplicationInfoViewModel.cs" />
+    <Compile Include="Application\AppMenuUserPermissionViewModel.cs" />
+    <Compile Include="Application\AppMenuRolePermissionViewModel.cs" />
     <Compile Include="Application\AppMenuViewModel.cs" />
-    <Compile Include="Application\AppRightPermissionViewModel.cs" />
+    <Compile Include="Application\AppRightUserPermissionViewModel.cs" />
+    <Compile Include="Application\AppRightRolePermissionViewModel.cs" />
     <Compile Include="Application\AppRightViewModel.cs" />
     <Compile Include="Application\AppSMSTemplateCategoryViewModel.cs" />
     <Compile Include="Application\AppSMSTemplateViewModel.cs" />
     <Compile Include="Application\AppUserActivityViewModel.cs" />
     <Compile Include="Application\AppUserMetadataViewModel.cs" />
     <Compile Include="Application\AppWidgetCategoryViewModel.cs" />
-    <Compile Include="Application\AppWidgetPermissionViewModel.cs" />
+    <Compile Include="Application\AppWidgetUserPermissionViewModel.cs" />
+    <Compile Include="Application\AppWidgetRolePermissionViewModel.cs" />
     <Compile Include="Application\AppWidgetViewModel.cs" />
     <Compile Include="Application\RoleViewModel.cs" />
     <Compile Include="Application\UserProfileViewModel.cs" />
     <Compile Include="Application\UserRoleViewModel.cs" />
     <Compile Include="Application\UserViewModel.cs" />
+    <Compile Include="Common\ErrorViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

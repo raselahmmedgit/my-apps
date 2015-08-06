@@ -1,4 +1,5 @@
 ﻿using SPEDU.Business.Application;
+using SPEDU.Common.Helper;
 using SPEDU.DomainViewModel.Application;
 using SPEDU.Web.Helpers;
 using SPEDU.Web.ViewModels;
@@ -50,26 +51,26 @@ namespace SPEDU.Web.Areas.Admin.Controllers
 
         public ActionResult Details(int id)
         {
-            ErrorViewModel errorViewModel;
+            var viewModel = new RoleViewModel();
 
             try
             {
                 var role = _iRoleRepository.GetById(id);
                 if (role != null)
                 {
-                    var viewModel = new RoleViewModel() { RoleId = role.RoleId, RoleName = role.RoleName };
+                    viewModel = new RoleViewModel() { RoleId = role.RoleId, RoleName = role.RoleName };
 
                     return PartialView("_Details", viewModel);
                 }
 
-                errorViewModel = ExceptionHelper.ExceptionErrorMessageForNullObject();
+                viewModel.Message = ExceptionHelper.ExceptionErrorMessageForNullObject();
             }
             catch (Exception ex)
             {
-                errorViewModel = ExceptionHelper.ExceptionErrorMessageFormat(ex);
+                viewModel.Message = ExceptionHelper.ExceptionErrorMessageFormat(ex);
             }
 
-            return PartialView("_ErrorPopup", errorViewModel);
+            return PartialView("_ErrorPopup", viewModel);
         }
 
         //
@@ -88,14 +89,14 @@ namespace SPEDU.Web.Areas.Admin.Controllers
 
         public ActionResult Edit(int id)
         {
-            ErrorViewModel errorViewModel;
+            var viewModel = new RoleViewModel();
 
             try
             {
                 var role = _iRoleRepository.GetById(id);
                 if (role != null)
                 {
-                    var viewModel = new RoleViewModel()
+                    viewModel = new RoleViewModel()
                     {
                         RoleId = role.RoleId,
                         RoleName = role.RoleName
@@ -103,14 +104,14 @@ namespace SPEDU.Web.Areas.Admin.Controllers
                     return PartialView("_AddOrEdit", viewModel);
                 }
 
-                errorViewModel = ExceptionHelper.ExceptionErrorMessageForNullObject();
+                viewModel.Message = ExceptionHelper.ExceptionErrorMessageForNullObject();
             }
             catch (Exception ex)
             {
-                errorViewModel = ExceptionHelper.ExceptionErrorMessageFormat(ex);
+                viewModel.Message = ExceptionHelper.ExceptionErrorMessageFormat(ex);
             }
 
-            return PartialView("_ErrorPopup", errorViewModel);
+            return PartialView("_ErrorPopup", viewModel);
         }
 
         //
