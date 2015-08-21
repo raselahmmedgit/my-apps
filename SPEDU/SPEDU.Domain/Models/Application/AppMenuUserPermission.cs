@@ -10,6 +10,12 @@ namespace SPEDU.Domain.Models.Application
         [Key]
         public Int32 AppMenuUserPermissionId { get; set; }
 
+        [Display(Name = "Add")]
+        public Boolean IsAdd { get; set; }
+
+        [Display(Name = "Remove")]
+        public Boolean IsRemove { get; set; }
+
         public Int32 AppMenuId { get; set; }
         [ForeignKey("AppMenuId")]
         public virtual AppMenu AppMenu { get; set; }

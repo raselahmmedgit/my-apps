@@ -18,5 +18,10 @@ namespace SPEDU.Domain.Models.Application
         [Required]
         [MaxLength(400)]
         public String Description { get; set; }
+
+        [Display(Name = "Version")]
+        [Required]
+        [MaxLength(100)]
+        public String Version { get; set; }
     }
 }

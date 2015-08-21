@@ -10,6 +10,12 @@ namespace SPEDU.Domain.Models.Application
         [Key]
         public Int32 AppRightUserPermissionId { get; set; }
 
+        [Display(Name = "Add")]
+        public Boolean IsAdd { get; set; }
+
+        [Display(Name = "Remove")]
+        public Boolean IsRemove { get; set; }
+
         public Int32 AppRightId { get; set; }
         [ForeignKey("AppRightId")]
         public virtual AppRight AppRight { get; set; }

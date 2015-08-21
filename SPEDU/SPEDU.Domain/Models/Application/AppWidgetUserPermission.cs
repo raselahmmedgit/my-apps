@@ -10,6 +10,12 @@ namespace SPEDU.Domain.Models.Application
         [Key]
         public Int32 AppWidgetPermissionId { get; set; }
 
+        [Display(Name = "Add")]
+        public Boolean IsAdd { get; set; }
+
+        [Display(Name = "Remove")]
+        public Boolean IsRemove { get; set; }
+
         public Int32 AppWidgetId { get; set; }
         [ForeignKey("AppWidgetId")]
         public virtual AppWidget AppWidget { get; set; }
