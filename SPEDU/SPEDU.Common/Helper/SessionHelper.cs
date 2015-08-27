@@ -198,18 +198,17 @@ namespace SPEDU.Common.Helper
 
             public static class Content
             {
-                public static object Data
+                public static object AppData
                 {
                     get
                     {
-                        return (object)Get("Data");
+                        return (object)Get("AppData");
                     }
                     set
                     {
-                        Set("Data", value);
+                        Set("AppData", value);
                     }
                 }
-
 
                 public static string SuccessMessage
                 {

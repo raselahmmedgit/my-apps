@@ -84,11 +84,11 @@ namespace SPEDU.Business.Application
                 if (appSMSTemplateViewModel != null)
                 {
                     //add
-                    if (appSMSTemplateViewModel.AppSMSTemplateId == 0 && appSMSTemplateViewModel.ActionName == "Add")
+                    if (appSMSTemplateViewModel.AppSMSTemplateId == default(int))
                     {
                         Create(appSMSTemplateViewModel);
                     }
-                    else if (appSMSTemplateViewModel.ActionName == "Edit") //edit
+                    else //edit
                     {
                         Update(appSMSTemplateViewModel);
                     }

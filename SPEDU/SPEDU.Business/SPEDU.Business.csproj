@@ -58,7 +58,7 @@
     <Compile Include="Application\AppWidgetRolePermissionRepository.cs" />
     <Compile Include="Application\AppWidgetRepository.cs" />
     <Compile Include="Application\RoleRepository.cs" />
-    <Compile Include="Application\UserProfileRepository.cs" />
+    <Compile Include="Application\AppUserProfileRepository.cs" />
     <Compile Include="Application\UserRepository.cs" />
     <Compile Include="Application\UserRoleRepository.cs" />
     <Compile Include="IGeneric.cs" />

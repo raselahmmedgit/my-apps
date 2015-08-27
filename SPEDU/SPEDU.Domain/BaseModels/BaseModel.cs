@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SPEDU.Domain.Helpers;
+using System;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Web;
 
@@ -13,15 +14,23 @@ namespace SPEDU.Domain.BaseModels
             this.DeletedDate = DateTime.Now;
             this.IsDelete = false;
 
-            var httpContext = HttpContext.Current;
-            var httpContextBase = new HttpContextWrapper(httpContext);
-            string areaName = httpContextBase.Request.RequestContext.RouteData.DataTokens.ContainsKey("area") ? httpContextBase.Request.RequestContext.RouteData.DataTokens["area"].ToString() : "";
-            string controllerName = httpContextBase.Request.RequestContext.RouteData.Values["controller"].ToString();
-            string actionName = httpContextBase.Request.RequestContext.RouteData.Values["action"].ToString();
+            //var httpContext = HttpContext.Current;
+            //var httpContextBase = new HttpContextWrapper(httpContext);
+            //string areaName = httpContextBase.Request.RequestContext.RouteData.DataTokens.ContainsKey("area") ? httpContextBase.Request.RequestContext.RouteData.DataTokens["area"].ToString() : "";
+            //string controllerName = httpContextBase.Request.RequestContext.RouteData.Values["controller"].ToString();
+            //string actionName = httpContextBase.Request.RequestContext.RouteData.Values["action"].ToString();
 
-            this.AreaName = areaName;
-            this.ControllerName = controllerName;
-            this.ActionName = actionName;
+            //CurrentUserRequest currentUserRequest = CurrentSessionHelper.CurrentUserRequest;
+            //if (currentUserRequest != null)
+            //{
+            //    string areaName = currentUserRequest.AreaName;
+            //    string controllerName = currentUserRequest.ControllerName;
+            //    string actionName = currentUserRequest.ActionName;
+
+            //    this.AreaName = areaName;
+            //    this.ControllerName = controllerName;
+            //    this.ActionName = actionName;
+            //}
         }
 
         //public int Id { get; set; }
@@ -39,46 +48,46 @@ namespace SPEDU.Domain.BaseModels
 
         #region NotMapped
 
-        public Boolean IsAdd()
-        {
-            bool isAdd;
+        //public Boolean IsAdd()
+        //{
+        //    bool isAdd;
 
-            if (this.ActionName == "Add")
-            {
-                isAdd = true;
-            }
-            else
-            {
-                isAdd = false;
-            }
+        //    if (this.ActionName == "Add")
+        //    {
+        //        isAdd = true;
+        //    }
+        //    else
+        //    {
+        //        isAdd = false;
+        //    }
 
-            return isAdd;
+        //    return isAdd;
 
-        }
+        //}
 
-        public Boolean IsEdit()
-        {
-            bool isEdit;
+        //public Boolean IsEdit()
+        //{
+        //    bool isEdit;
 
-            if (this.ActionName == "Edit")
-            {
-                isEdit = true;
-            }
-            else
-            {
-                isEdit = false;
-            }
+        //    if (this.ActionName == "Edit")
+        //    {
+        //        isEdit = true;
+        //    }
+        //    else
+        //    {
+        //        isEdit = false;
+        //    }
 
-            return isEdit;
+        //    return isEdit;
 
-        }
+        //}
 
-        [NotMapped]
-        public String AreaName { get; set; }
-        [NotMapped]
-        public String ControllerName { get; set; }
-        [NotMapped]
-        public String ActionName { get; set; }
+        //[NotMapped]
+        //public String AreaName { get; set; }
+        //[NotMapped]
+        //public String ControllerName { get; set; }
+        //[NotMapped]
+        //public String ActionName { get; set; }
         [NotMapped]
         public virtual String ActionLink { get; set; }
         [NotMapped]

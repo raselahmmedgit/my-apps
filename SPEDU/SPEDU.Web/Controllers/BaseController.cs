@@ -96,7 +96,7 @@ namespace SPEDU.Web
                     if (_validFileExtension.Contains(extension))
                     {
                         var fileName = Path.GetFileName(files[0].FileName);
-                        var physicalPath = Path.Combine(Server.MapPath(AppConstant.Paths.TemporaryFileUploadPath), fileName);
+                        var physicalPath = Path.Combine(Server.MapPath(SPEDU.Common.Utility.AppConstant.Paths.TemporaryFileUploadPath), fileName);
                         Session.Add(files.AllKeys[0] + "FileName", fileName);
 
                         // The files are not actually saved in this demo
@@ -124,7 +124,7 @@ namespace SPEDU.Web
             foreach (var fullName in fileNames)
             {
                 var fileName = Path.GetFileName(fullName);
-                var physicalPath = Path.Combine(Server.MapPath(AppConstant.Paths.TemporaryFileUploadPath), fileName);
+                var physicalPath = Path.Combine(Server.MapPath(SPEDU.Common.Utility.AppConstant.Paths.TemporaryFileUploadPath), fileName);
 
                 // TODO: Verify user permissions
                 if (System.IO.File.Exists(physicalPath))
@@ -195,6 +195,7 @@ namespace SPEDU.Web
                     //        filterContext.Result = new RedirectResult("~/Home/Index");
                     //    }
                     //}
+
                     if (!CheckIfUserIsAuthenticated(filterContext))
                     {
                         if (filterContext.HttpContext.Request.IsAjaxRequest())

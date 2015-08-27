@@ -99,7 +99,6 @@ D:\RaselAhmmed\MyLab\SPEDU\SPEDU.Web\bin\zh-CN\Kendo.Mvc.resources.dll
 D:\RaselAhmmed\MyLab\SPEDU\SPEDU.Web\obj\Debug\SPEDU.Web.csprojResolveAssemblyReference.cache
 D:\RaselAhmmed\MyLab\SPEDU\SPEDU.Web\obj\Debug\SPEDU.Web.dll
 D:\RaselAhmmed\MyLab\SPEDU\SPEDU.Web\obj\Debug\SPEDU.Web.pdb
-C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Web\bin\AutoMapper.Net4.dll
 C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Web\bin\SPEDU.Web.dll.config
 C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Web\bin\SPEDU.Web.dll
 C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Web\bin\SPEDU.Web.pdb

@@ -61,6 +61,5 @@ C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Domain\bin\Debug\AutoMapper.N
 C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Domain\bin\Debug\EntityFramework.xml
 C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Domain\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Domain\bin\Debug\System.Web.Mvc.xml
-C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Domain\obj\Debug\SPEDU.Domain.csprojResolveAssemblyReference.cache
 C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Domain\obj\Debug\SPEDU.Domain.dll
 C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Domain\obj\Debug\SPEDU.Domain.pdb

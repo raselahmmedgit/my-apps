@@ -52,7 +52,7 @@ namespace SPEDU.Domain.Models.Application
         public Int32 ParentAppMenuId { get; set; }
         [DisplayName("Parent Menu Name")]
         public String ParentMenuName { get; set; }
-        [ForeignKey("ParentMenuId")]
+        [ForeignKey("ParentAppMenuId")]
         public virtual AppMenu ParentAppMenu { get; set; }
 
     }

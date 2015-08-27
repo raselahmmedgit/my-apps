@@ -60,6 +60,9 @@
     <Compile Include="BaseModels\BaseModel.cs" />
     <Compile Include="BaseModels\BaseViewModel.cs" />
     <Compile Include="Extensions\ModelExtension.cs" />
+    <Compile Include="Helpers\CurrentSessionHelper.cs" />
+    <Compile Include="Helpers\CurrentUser.cs" />
+    <Compile Include="Helpers\CurrentUserRequest.cs" />
     <Compile Include="Models\Application\AppApplication.cs" />
     <Compile Include="Models\Application\AppDefaultSetting.cs" />
     <Compile Include="Models\Application\AppEmailTemplate.cs" />
@@ -81,12 +84,11 @@
     <Compile Include="Models\Application\AppWidgetRolePermission.cs" />
     <Compile Include="Models\Application\Role.cs" />
     <Compile Include="Models\Application\User.cs" />
-    <Compile Include="Models\Application\UserProfile.cs" />
+    <Compile Include="Models\Application\AppUserProfile.cs" />
     <Compile Include="Models\Application\UserRole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Helpers\" />
     <Folder Include="Models\Accounts\" />
     <Folder Include="Models\Employee\" />
     <Folder Include="Models\Library\" />

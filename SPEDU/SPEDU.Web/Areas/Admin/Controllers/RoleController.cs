@@ -11,6 +11,7 @@ using System.Web.Mvc;
 
 namespace SPEDU.Web.Areas.Admin.Controllers
 {
+    [UserAuthorize]
     public class RoleController : BaseController
     {
         #region Global Variable Declaration
@@ -125,14 +126,14 @@ namespace SPEDU.Web.Areas.Admin.Controllers
                 if (ModelState.IsValid)
                 {
                     _iRoleRepository.CreateOrUpdate(roleViewModel);
-                    return Content(KendoUiHelper.GetKendoUiWindowAjaxSuccessMethod(Boolean.TrueString, roleViewModel.ActionName, MessageType.success.ToString(), ResourceHelper.Save));
+                    return Content(KendoUiHelper.GetKendoUiWindowAjaxSuccessMethod(Boolean.TrueString, AppConstant.ActionName, MessageType.success.ToString(), ResourceHelper.Save));
                 }
 
-                return Content(KendoUiHelper.GetKendoUiWindowAjaxSuccessMethod(Boolean.FalseString, roleViewModel.ActionName, MessageType.warning.ToString(), ExceptionHelper.ModelStateErrorFormat(ModelState)));
+                return Content(KendoUiHelper.GetKendoUiWindowAjaxSuccessMethod(Boolean.FalseString, AppConstant.ActionName, MessageType.warning.ToString(), ExceptionHelper.ModelStateErrorFormat(ModelState)));
             }
             catch (Exception ex)
             {
-                return Content(KendoUiHelper.GetKendoUiWindowAjaxSuccessMethod(Boolean.FalseString, roleViewModel.ActionName, MessageType.warning.ToString(), ExceptionHelper.ExceptionMessageFormat(ex)));
+                return Content(KendoUiHelper.GetKendoUiWindowAjaxSuccessMethod(Boolean.FalseString, AppConstant.ActionName, MessageType.warning.ToString(), ExceptionHelper.ExceptionMessageFormat(ex)));
             }
         }
 

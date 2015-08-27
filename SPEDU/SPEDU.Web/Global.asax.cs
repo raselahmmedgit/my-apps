@@ -11,6 +11,7 @@ using System.Threading;
 using SPEDU.Common.Helper;
 using SPEDU.Web.Helpers;
 using SPEDU.Web.Attribute;
+using SPEDU.Domain.Helpers;
 
 namespace SPEDU.Web
 {
@@ -27,6 +28,7 @@ namespace SPEDU.Web
             //ModelBinders.Binders.Add(typeof(DateTime?), new CustomDateBinder());
 
             BootStrapper.Run();
+            
         }
         protected void Application_BeginRequest(Object sender, EventArgs e)
         {

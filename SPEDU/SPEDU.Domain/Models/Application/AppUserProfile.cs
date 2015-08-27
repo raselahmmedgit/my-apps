@@ -4,7 +4,7 @@ using SPEDU.Domain.BaseModels;
 
 namespace SPEDU.Domain.Models.Application
 {
-    public class UserProfile : BaseModel
+    public class AppUserProfile : BaseModel
     {
         [Key]
         [Required]

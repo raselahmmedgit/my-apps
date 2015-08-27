@@ -67,7 +67,7 @@
     <Compile Include="Application\AppWidgetRolePermissionViewModel.cs" />
     <Compile Include="Application\AppWidgetViewModel.cs" />
     <Compile Include="Application\RoleViewModel.cs" />
-    <Compile Include="Application\UserProfileViewModel.cs" />
+    <Compile Include="Application\AppUserProfileViewModel.cs" />
     <Compile Include="Application\UserRoleViewModel.cs" />
     <Compile Include="Application\UserViewModel.cs" />
     <Compile Include="Common\ErrorViewModel.cs" />

@@ -34,6 +34,7 @@
       <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Caching" />
@@ -80,6 +81,7 @@
     <Compile Include="Utility\AppCommon.cs" />
     <Compile Include="Utility\AppUtility.cs" />
     <Compile Include="Utility\AppEnum.cs" />
+    <Compile Include="Utility\CustomException.cs" />
     <Compile Include="Utility\HtmlConverter.cs" />
     <Compile Include="Utility\SiteConfigurationReader.cs" />
     <Compile Include="ViewModels\ErrorViewModel.cs" />

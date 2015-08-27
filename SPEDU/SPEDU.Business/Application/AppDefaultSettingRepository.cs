@@ -84,11 +84,11 @@ namespace SPEDU.Business.Application
                 if (appDefaultSettingViewModel != null)
                 {
                     //add
-                    if (appDefaultSettingViewModel.AppDefaultSettingId == 0 && appDefaultSettingViewModel.ActionName == "Add")
+                    if (appDefaultSettingViewModel.AppDefaultSettingId == default(int))
                     {
                         Create(appDefaultSettingViewModel);
                     }
-                    else if (appDefaultSettingViewModel.ActionName == "Edit") //edit
+                    else //edit
                     {
                         Update(appDefaultSettingViewModel);
                     }

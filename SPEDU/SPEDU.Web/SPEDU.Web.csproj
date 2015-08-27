@@ -215,6 +215,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\AppConstant.cs" />
     <Compile Include="Helpers\ConstantHelper.cs" />
     <Compile Include="Helpers\AppHelper.cs" />
     <Compile Include="Helpers\EnumHelpers.cs" />
@@ -222,6 +223,7 @@
     <Compile Include="Helpers\KendoUiHelper.cs" />
     <Compile Include="Helpers\LinqFilteringHelper.cs" />
     <Compile Include="Helpers\LinqSortingHelper.cs" />
+    <Compile Include="Helpers\UserAuthorize.cs" />
     <Compile Include="Helpers\VCardResultHelper.cs" />
     <Compile Include="ViewModels\AccountViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

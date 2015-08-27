@@ -18,7 +18,6 @@ C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Common\bin\Debug\log4net.dll
 C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Common\bin\Debug\System.Web.Mvc.dll
 C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Common\bin\Debug\log4net.xml
 C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Common\bin\Debug\System.Web.Mvc.xml
-C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Common\obj\Debug\SPEDU.Common.csprojResolveAssemblyReference.cache
 C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Common\obj\Debug\SPEDU.Common.MessageResource.resources
 C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Common\obj\Debug\SPEDU.Common.Resources.resources
 C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Common\obj\Debug\SPEDU.Common.csproj.GenerateResource.Cache

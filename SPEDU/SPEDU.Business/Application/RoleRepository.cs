@@ -101,11 +101,11 @@ namespace SPEDU.Business.Application
                 if (roleViewModel != null)
                 {
                     //add
-                    if (roleViewModel.RoleId == 0 && roleViewModel.ActionName == "Add")
+                    if (roleViewModel.RoleId == default(int))
                     {
                         Create(roleViewModel);
                     }
-                    else if (roleViewModel.ActionName == "Edit") //edit
+                    else //edit
                     {
                         Update(roleViewModel);
                     }

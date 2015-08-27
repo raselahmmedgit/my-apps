@@ -6,7 +6,7 @@ using SPEDU.Domain.Models.Application;
 namespace SPEDU.DomainViewModel.Application
 {
     [NotMapped]
-    public class UserProfileViewModel : UserProfile
+    public class AppUserProfileViewModel : AppUserProfile
     {
         
     }

@@ -9,21 +9,21 @@ using SPEDU.DomainViewModel.Application;
 
 namespace SPEDU.Business.Application
 {
-    #region Interface Implement : UserProfile
+    #region Interface Implement : AppUserProfile
 
-    public class UserProfileRepository : IUserProfileRepository
+    public class AppUserProfileRepository : IAppUserProfileRepository
     {
         #region Global Variable Declaration
 
-        //private readonly Repository<UserProfile> _userProfileRepository;
-        private readonly RepositoryBase<UserProfile> _userProfileRepository;
+        //private readonly Repository<AppUserProfile> _userProfileRepository;
+        private readonly RepositoryBase<AppUserProfile> _userProfileRepository;
         private readonly IUnitOfWork _iUnitOfWork;
 
         #endregion
 
         #region Constructor
 
-        public UserProfileRepository(Repository<UserProfile> userProfileRepository, IUnitOfWork iUnitOfWork)
+        public AppUserProfileRepository(Repository<AppUserProfile> userProfileRepository, IUnitOfWork iUnitOfWork)
         {
             this._userProfileRepository = userProfileRepository;
             this._iUnitOfWork = iUnitOfWork;
@@ -33,17 +33,17 @@ namespace SPEDU.Business.Application
 
         #region Get Method
 
-        public IQueryable<UserProfileViewModel> GetAll()
+        public IQueryable<AppUserProfileViewModel> GetAll()
         {
-            var userProfileViewModels = new List<UserProfileViewModel>();
+            var userProfileViewModels = new List<AppUserProfileViewModel>();
             try
             {
 
-                List<UserProfile> userProfiles = _userProfileRepository.GetAll();
+                List<AppUserProfile> appUserProfiles = _userProfileRepository.GetAll();
 
-                foreach (UserProfile userProfile in userProfiles)
+                foreach (AppUserProfile appUserProfile in appUserProfiles)
                 {
-                    var userProfileViewModel = userProfile.ConvertModelToViewModel<UserProfile, UserProfileViewModel>();
+                    var userProfileViewModel = appUserProfile.ConvertModelToViewModel<AppUserProfile, AppUserProfileViewModel>();
                     userProfileViewModels.Add(userProfileViewModel);
                 }
 
@@ -55,14 +55,14 @@ namespace SPEDU.Business.Application
             return userProfileViewModels.AsQueryable();
         }
 
-        public UserProfileViewModel GetById(long id)
+        public AppUserProfileViewModel GetById(long id)
         {
-            var userProfileViewModel = new UserProfileViewModel();
+            var userProfileViewModel = new AppUserProfileViewModel();
 
             try
             {
-                UserProfile userProfile = _userProfileRepository.GetById(id);
-                userProfileViewModel = userProfile.ConvertModelToViewModel<UserProfile, UserProfileViewModel>();
+                AppUserProfile appUserProfile = _userProfileRepository.GetById(id);
+                userProfileViewModel = appUserProfile.ConvertModelToViewModel<AppUserProfile, AppUserProfileViewModel>();
             }
             catch (Exception ex)
             {
@@ -76,7 +76,7 @@ namespace SPEDU.Business.Application
 
         #region Create Method
 
-        public int CreateOrUpdate(UserProfileViewModel userProfileViewModel)
+        public int CreateOrUpdate(AppUserProfileViewModel userProfileViewModel)
         {
             int isSave = 0;
             try
@@ -84,11 +84,11 @@ namespace SPEDU.Business.Application
                 if (userProfileViewModel != null)
                 {
                     //add
-                    if (userProfileViewModel.UserProfileId == 0 && userProfileViewModel.ActionName == "Add")
+                    if (userProfileViewModel.UserProfileId == default(int))
                     {
                         Create(userProfileViewModel);
                     }
-                    else if (userProfileViewModel.ActionName == "Edit") //edit
+                    else //edit
                     {
                         Update(userProfileViewModel);
                     }
@@ -106,15 +106,15 @@ namespace SPEDU.Business.Application
 
             return isSave;
         }
-        public int Create(UserProfileViewModel userProfileViewModel)
+        public int Create(AppUserProfileViewModel userProfileViewModel)
         {
             int isSave = 0;
             try
             {
                 if (userProfileViewModel != null)
                 {
-                    UserProfile userProfile = userProfileViewModel.ConvertViewModelToModel<UserProfileViewModel, UserProfile>();
-                    _userProfileRepository.Insert(userProfile);
+                    AppUserProfile appUserProfile = userProfileViewModel.ConvertViewModelToModel<AppUserProfileViewModel, AppUserProfile>();
+                    _userProfileRepository.Insert(appUserProfile);
                     isSave = Save();
                 }
                 else
@@ -135,15 +135,15 @@ namespace SPEDU.Business.Application
 
         #region Update Method
 
-        public int Update(UserProfileViewModel userProfileViewModel)
+        public int Update(AppUserProfileViewModel userProfileViewModel)
         {
             int isSave = 0;
             try
             {
                 if (userProfileViewModel != null)
                 {
-                    UserProfile userProfile = userProfileViewModel.ConvertViewModelToModel<UserProfileViewModel, UserProfile>();
-                    _userProfileRepository.Update(userProfile);
+                    AppUserProfile appUserProfile = userProfileViewModel.ConvertViewModelToModel<AppUserProfileViewModel, AppUserProfile>();
+                    _userProfileRepository.Update(appUserProfile);
                     isSave = Save();
                 }
                 else
@@ -163,7 +163,7 @@ namespace SPEDU.Business.Application
 
         #region Delete Method
 
-        public int Delete(UserProfileViewModel userProfileViewModel)
+        public int Delete(AppUserProfileViewModel userProfileViewModel)
         {
             int isSave = 0;
             try
@@ -171,8 +171,8 @@ namespace SPEDU.Business.Application
                 if (userProfileViewModel != null)
                 {
                     var viewModel = GetById(userProfileViewModel.UserProfileId);
-                    UserProfile userProfile = viewModel.ConvertViewModelToModel<UserProfileViewModel, UserProfile>();
-                    _userProfileRepository.Delete(userProfile);
+                    AppUserProfile appUserProfile = viewModel.ConvertViewModelToModel<AppUserProfileViewModel, AppUserProfile>();
+                    _userProfileRepository.Delete(appUserProfile);
                     isSave = Save();
                 }
                 else
@@ -195,8 +195,8 @@ namespace SPEDU.Business.Application
                 var userProfileViewModel = GetById(id);
                 if (userProfileViewModel != null)
                 {
-                    UserProfile userProfile = userProfileViewModel.ConvertViewModelToModel<UserProfileViewModel, UserProfile>();
-                    _userProfileRepository.Delete(userProfile);
+                    AppUserProfile appUserProfile = userProfileViewModel.ConvertViewModelToModel<AppUserProfileViewModel, AppUserProfile>();
+                    _userProfileRepository.Delete(appUserProfile);
                     isSave = Save();
                 }
                 else
@@ -211,14 +211,14 @@ namespace SPEDU.Business.Application
             return isSave;
         }
 
-        public int Delete(List<UserProfileViewModel> userProfileViewModels)
+        public int Delete(List<AppUserProfileViewModel> userProfileViewModels)
         {
             int isSave = 0;
             try
             {
                 foreach (var userProfileViewModel in userProfileViewModels)
                 {
-                    UserProfileViewModel viewModel = GetById(userProfileViewModel.UserProfileId);
+                    AppUserProfileViewModel viewModel = GetById(userProfileViewModel.UserProfileId);
                     Delete(viewModel);
                 }
 
@@ -247,11 +247,11 @@ namespace SPEDU.Business.Application
 
     #endregion
 
-    #region Interface : UserProfile
+    #region Interface : AppUserProfile
 
-    public interface IUserProfileRepository : IGeneric<UserProfileViewModel>
+    public interface IAppUserProfileRepository : IGeneric<AppUserProfileViewModel>
     {
-        int Delete(List<UserProfileViewModel> userProfileViewModels);
+        int Delete(List<AppUserProfileViewModel> userProfileViewModels);
     }
 
     #endregion
