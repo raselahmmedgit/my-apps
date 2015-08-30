@@ -55,6 +55,7 @@ D:\RaselAhmmed\MyLab\SPEDU\SPEDU.Web.Tests\bin\Debug\AutoMapper.xml
 D:\RaselAhmmed\MyLab\SPEDU\SPEDU.Web.Tests\obj\Debug\SPEDU.Web.Tests.csprojResolveAssemblyReference.cache
 D:\RaselAhmmed\MyLab\SPEDU\SPEDU.Web.Tests\obj\Debug\SPEDU.Web.Tests.dll
 D:\RaselAhmmed\MyLab\SPEDU\SPEDU.Web.Tests\obj\Debug\SPEDU.Web.Tests.pdb
+C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Web.Tests\bin\Debug\EntityFramework.dll
 C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Web.Tests\bin\Debug\AutoMapper.Net4.dll
 C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Web.Tests\bin\Debug\SPEDU.Web.Tests.dll.config
 C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Web.Tests\bin\Debug\SPEDU.Web.Tests.dll
@@ -79,7 +80,6 @@ C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Web.Tests\bin\Debug\log4net.d
 C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Web.Tests\bin\Debug\SPEDU.Common.dll
 C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Web.Tests\bin\Debug\SPEDU.Domain.dll
 C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Web.Tests\bin\Debug\SPEDU.Data.dll
-C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Web.Tests\bin\Debug\EntityFramework.dll
 C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Web.Tests\bin\Debug\System.Web.Http.WebHost.dll
 C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Web.Tests\bin\Debug\Autofac.dll
 C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Web.Tests\bin\Debug\Autofac.Integration.Mvc.dll

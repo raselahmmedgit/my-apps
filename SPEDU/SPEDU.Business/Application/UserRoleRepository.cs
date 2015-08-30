@@ -84,11 +84,11 @@ namespace SPEDU.Business.Application
                 if (userRoleViewModel != null)
                 {
                     //add
-                    if (userRoleViewModel.UserRoleId == 0 && userRoleViewModel.ActionName == "Add")
+                    if (userRoleViewModel.UserRoleId == default(int))
                     {
                         Create(userRoleViewModel);
                     }
-                    else if (userRoleViewModel.ActionName == "Edit") //edit
+                    else //edit
                     {
                         Update(userRoleViewModel);
                     }

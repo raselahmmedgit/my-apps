@@ -84,11 +84,11 @@ namespace SPEDU.Business.Application
                 if (appMenuUserPermissionViewModel != null)
                 {
                     //add
-                    if (appMenuUserPermissionViewModel.AppMenuUserPermissionId == 0 && appMenuUserPermissionViewModel.ActionName == "Add")
+                    if (appMenuUserPermissionViewModel.AppMenuUserPermissionId == default(int))
                     {
                         Create(appMenuUserPermissionViewModel);
                     }
-                    else if (appMenuUserPermissionViewModel.ActionName == "Edit") //edit
+                    else //edit
                     {
                         Update(appMenuUserPermissionViewModel);
                     }

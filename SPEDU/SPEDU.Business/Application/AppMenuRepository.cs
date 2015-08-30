@@ -6,6 +6,8 @@ using SPEDU.Domain.Models.Application;
 using SPEDU.Data.Infrastructure;
 using SPEDU.Data.Repositories;
 using SPEDU.DomainViewModel.Application;
+using SPEDU.Common.Utility;
+using SPEDU.Common.Manager;
 
 namespace SPEDU.Business.Application
 {
@@ -27,6 +29,46 @@ namespace SPEDU.Business.Application
         {
             this._appMenuRepository = appMenuRepository;
             this._iUnitOfWork = iUnitOfWork;
+        }
+
+        #endregion
+
+        #region Get Method By Cache
+
+        public IQueryable<AppMenuViewModel> GetAllByCache()
+        {
+            var appMenuViewModels = new List<AppMenuViewModel>();
+            try
+            {
+
+                List<AppMenu> appMenuList = new List<AppMenu>();
+
+                string cacheKey = AppConstant.CacheKey.AllAppMenu;
+                if (!CacheManager.ICache.IsSet(cacheKey))
+                {
+                    appMenuList = _appMenuRepository.GetAll();
+                    CacheManager.ICache.Set(cacheKey, appMenuList);
+                }
+                else
+                {
+                    appMenuList = CacheManager.ICache.Get(cacheKey) as List<AppMenu>;
+                }
+
+                if (appMenuList != null)
+                {
+                    foreach (AppMenu appMenu in appMenuList)
+                    {
+                        var appMenuViewModel = appMenu.ConvertModelToViewModel<AppMenu, AppMenuViewModel>();
+                        appMenuViewModels.Add(appMenuViewModel);
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return appMenuViewModels.AsQueryable();
         }
 
         #endregion
@@ -251,6 +293,8 @@ namespace SPEDU.Business.Application
 
     public interface IAppMenuRepository : IGeneric<AppMenuViewModel>
     {
+        IQueryable<AppMenuViewModel> GetAllByCache();
+
         int Delete(List<AppMenuViewModel> appMenuViewModels);
     }
 

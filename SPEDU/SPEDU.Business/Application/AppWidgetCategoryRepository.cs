@@ -84,11 +84,11 @@ namespace SPEDU.Business.Application
                 if (appWidgetCategoryViewModel != null)
                 {
                     //add
-                    if (appWidgetCategoryViewModel.AppWidgetCategoryId == 0 && appWidgetCategoryViewModel.ActionName == "Add")
+                    if (appWidgetCategoryViewModel.AppWidgetCategoryId == default(int))
                     {
                         Create(appWidgetCategoryViewModel);
                     }
-                    else if (appWidgetCategoryViewModel.ActionName == "Edit") //edit
+                    else //edit
                     {
                         Update(appWidgetCategoryViewModel);
                     }

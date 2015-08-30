@@ -8,6 +8,9 @@ using System.Web.Mvc.Html;
 using SPEDU.DomainViewModel.Application;
 using SPEDU.Web.Helpers;
 using SPEDU.Web.ViewModels;
+using SPEDU.Business.Application;
+using System.Text;
+using SPEDU.Common.Utility;
 
 namespace SPEDU.Web
 {
@@ -108,9 +111,34 @@ namespace SPEDU.Web
 
         #endregion
 
-        #region Theme
+        #region Application Info
 
-        public static IHtmlString RenderTitle(this HtmlHelper htmlHelper)
+        public static IHtmlString RenderApplicationTitle(this HtmlHelper htmlHelper)
+        {
+            var iAppApplicationInfoRepository = DependencyResolver.Current.GetService(typeof(IAppApplicationInfoRepository)) as IAppApplicationInfoRepository;
+
+            var strContent = iAppApplicationInfoRepository.GetByIdFromCache(Convert.ToInt64(ApplicationInformationEnum.HeaderTitle)).Value;
+            
+            return MvcHtmlString.Create(strContent);
+        }
+
+        public static IHtmlString RenderApplicationHeader(this HtmlHelper htmlHelper)
+        {
+            var iAppApplicationInfoRepository = DependencyResolver.Current.GetService(typeof(IAppApplicationInfoRepository)) as IAppApplicationInfoRepository;
+
+            var strContent = String.Empty;
+            StringBuilder stringBuilder = new StringBuilder();
+            string headerUrl = iAppApplicationInfoRepository.GetByIdFromCache(Convert.ToInt64(ApplicationInformationEnum.HeaderUrl)).Value;
+            string headerText = iAppApplicationInfoRepository.GetByIdFromCache(Convert.ToInt64(ApplicationInformationEnum.HeaderText)).Value;
+
+            stringBuilder.Append(@"<a href='" + headerUrl + "' class='logo'>");
+            stringBuilder.Append(headerText);
+            stringBuilder.Append(@"</a>");
+
+            return MvcHtmlString.Create(strContent);
+        }
+
+        public static IHtmlString RenderApplicationFooter(this HtmlHelper htmlHelper)
         {
             var title = String.Empty;
 
@@ -125,6 +153,37 @@ namespace SPEDU.Web
 
             return MvcHtmlString.Create(title);
         }
+
+        public static IHtmlString RenderApplicationMetaAuthor(this HtmlHelper htmlHelper)
+        {
+            var iAppApplicationInfoRepository = DependencyResolver.Current.GetService(typeof(IAppApplicationInfoRepository)) as IAppApplicationInfoRepository;
+
+            var strContent = iAppApplicationInfoRepository.GetByIdFromCache(Convert.ToInt64(ApplicationInformationEnum.MetaAuthor)).Value;
+
+            return MvcHtmlString.Create(strContent);
+        }
+
+        public static IHtmlString RenderApplicationMetaKeywords(this HtmlHelper htmlHelper)
+        {
+            var iAppApplicationInfoRepository = DependencyResolver.Current.GetService(typeof(IAppApplicationInfoRepository)) as IAppApplicationInfoRepository;
+
+            var strContent = iAppApplicationInfoRepository.GetByIdFromCache(Convert.ToInt64(ApplicationInformationEnum.MetaKeywords)).Value;
+
+            return MvcHtmlString.Create(strContent);
+        }
+
+        public static IHtmlString RenderApplicationMetaDescription(this HtmlHelper htmlHelper)
+        {
+            var iAppApplicationInfoRepository = DependencyResolver.Current.GetService(typeof(IAppApplicationInfoRepository)) as IAppApplicationInfoRepository;
+
+            var strContent = iAppApplicationInfoRepository.GetByIdFromCache(Convert.ToInt64(ApplicationInformationEnum.MetaDescription)).Value;
+
+            return MvcHtmlString.Create(strContent);
+        }
+
+        #endregion
+
+        #region Theme
 
         public static IHtmlString RenderTheme(this HtmlHelper htmlHelper)
         {
@@ -193,29 +252,6 @@ namespace SPEDU.Web
             }
 
             return MvcHtmlString.Create(layoutPath);
-        }
-
-        public static IHtmlString RenderHeader(this HtmlHelper htmlHelper)
-        {
-            string headerPath = String.Empty;
-            string headerCookies = String.Empty;
-
-            //string cssPath = @"switcher.css";
-            //string cssPath = @"switcher";
-
-            HttpContext httpContext = System.Web.HttpContext.Current;
-
-            if (httpContext.Request.Cookies["CookieHeader"] != null)
-            {
-                headerCookies += httpContext.Request.Cookies["CookieHeader"].Value.ToString();
-            }
-
-            if (!String.IsNullOrEmpty(headerCookies))
-            {
-                headerPath += headerCookies;
-            }
-
-            return MvcHtmlString.Create(headerPath);
         }
 
         public static IHtmlString RenderBackGround(this HtmlHelper htmlHelper)

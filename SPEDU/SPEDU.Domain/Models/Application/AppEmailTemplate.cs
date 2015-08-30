@@ -15,6 +15,7 @@ namespace SPEDU.Domain.Models.Application
         public Int32 AppEmailTemplateId { get; set; }
         
         [Display(Name = "Name")]
+        [Required(ErrorMessage = "Name is required")]
         [StringLength(256)]
         public String Name { get; set; }
 

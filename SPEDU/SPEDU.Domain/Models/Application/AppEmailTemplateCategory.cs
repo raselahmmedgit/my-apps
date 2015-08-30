@@ -12,7 +12,7 @@ namespace SPEDU.Domain.Models.Application
         public Int32 AppEmailTemplateCategoryId { get; set; }
 
         [Display(Name = "Name")]
-        [Required]
+        [Required(ErrorMessage = "Name is required")]
         [MaxLength(128)]
         public String Name { get; set; }
     }

@@ -72,6 +72,10 @@
     <Folder Include="Student\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SPEDU.Common\SPEDU.Common.csproj">
+      <Project>{8b9f70e4-2ee9-49b2-90d3-3cd915288ef3}</Project>
+      <Name>SPEDU.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SPEDU.Data\SPEDU.Data.csproj">
       <Project>{13daf28c-7ac6-41ac-aa01-eb1b5db1f5e2}</Project>
       <Name>SPEDU.Data</Name>

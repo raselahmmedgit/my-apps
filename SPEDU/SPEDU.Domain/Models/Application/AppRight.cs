@@ -16,7 +16,6 @@ namespace SPEDU.Domain.Models.Application
         public String Name { get; set; }
 
         [DisplayName("Description: ")]
-        [Required(ErrorMessage = "Description is required")]
         [MaxLength(256)]
         public String Description { get; set; }
 

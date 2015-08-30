@@ -16,10 +16,19 @@ namespace SPEDU.Web
     {
         public static void Run()
         {
-            //log4net.Config.XmlConfigurator.Configure(new FileInfo(System.Web.HttpContext.Current.Server.MapPath("~/Web.config")));
+            try
+            {
+                //log4net.Config.XmlConfigurator.Configure(new FileInfo(System.Web.HttpContext.Current.Server.MapPath("~/Web.config")));
 
-            InitializeAndSeedDb();
-            SetIocContainer();
+                InitializeAndSeedDb();
+
+                SetIocContainer();
+
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
 
         private static void InitializeAndSeedDb()

@@ -84,11 +84,11 @@ namespace SPEDU.Business.Application
                 if (appUserMetadataViewModel != null)
                 {
                     //add
-                    if (appUserMetadataViewModel.AppUserMetadataId == 0 && appUserMetadataViewModel.ActionName == "Add")
+                    if (appUserMetadataViewModel.AppUserMetadataId == default(int))
                     {
                         Create(appUserMetadataViewModel);
                     }
-                    else if (appUserMetadataViewModel.ActionName == "Edit") //edit
+                    else //edit
                     {
                         Update(appUserMetadataViewModel);
                     }
