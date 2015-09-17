@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SPEDU.Domain.Models.Application
 {
+    [Table("UserRole", Schema = "App")]
     public class UserRole : BaseNotMapModel
     {
         [Key]

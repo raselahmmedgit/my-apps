@@ -1,9 +1,11 @@
-﻿using SPEDU.Domain.BaseModels;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using SPEDU.Domain.BaseModels;
 using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace SPEDU.Domain.Models.Application
 {
+    [Table("User", Schema = "App")]
     public class User : BaseModel
     {
         [Key]
