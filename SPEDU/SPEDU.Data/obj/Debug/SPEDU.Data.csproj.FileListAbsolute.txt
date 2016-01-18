@@ -54,10 +54,11 @@ D:\RaselAhmmed\MyLab\SPEDU\SPEDU.Data\bin\Debug\System.Web.Mvc.xml
 D:\RaselAhmmed\MyLab\SPEDU\SPEDU.Data\obj\Debug\SPEDU.Data.csprojResolveAssemblyReference.cache
 D:\RaselAhmmed\MyLab\SPEDU\SPEDU.Data\obj\Debug\SPEDU.Data.dll
 D:\RaselAhmmed\MyLab\SPEDU\SPEDU.Data\obj\Debug\SPEDU.Data.pdb
-C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Data\bin\Debug\EntityFramework.dll
+C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Data\bin\Debug\AutoMapper.Net4.dll
 C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Data\bin\Debug\SPEDU.Data.dll.config
 C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Data\bin\Debug\SPEDU.Data.dll
 C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Data\bin\Debug\SPEDU.Data.pdb
+C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Data\bin\Debug\EntityFramework.dll
 C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Data\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Data\bin\Debug\SPEDU.Common.dll
 C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Data\bin\Debug\SPEDU.Domain.dll
