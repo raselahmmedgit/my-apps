@@ -22,10 +22,10 @@ namespace SPEDU.Common.Utility
        public static class CacheKey
        {
            public const string DefaultCacheLifeTimeInMinute = "DefaultCacheLifeTimeInMinute";
-           public const string AllAppMenu = "AllAppMenu";
+           public const string AllMenu = "AllMenu";
            public const string AllGender = "AllGender";
            public const string AllUserRole = "AllUserRole";
-           public const string AllAppApplicationInfo = "AllAppApplicationInfo";
+           public const string AllApplicationInfo = "AllApplicationInfo";
        }
     }
 }

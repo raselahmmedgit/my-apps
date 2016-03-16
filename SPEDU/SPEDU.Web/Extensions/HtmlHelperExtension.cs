@@ -115,21 +115,21 @@ namespace SPEDU.Web
 
         public static IHtmlString RenderApplicationTitle(this HtmlHelper htmlHelper)
         {
-            var iAppApplicationInfoRepository = DependencyResolver.Current.GetService(typeof(IAppApplicationInfoRepository)) as IAppApplicationInfoRepository;
+            var iApplicationInfoRepository = DependencyResolver.Current.GetService(typeof(IApplicationInfoRepository)) as IApplicationInfoRepository;
 
-            var strContent = iAppApplicationInfoRepository.GetByIdFromCache(Convert.ToInt64(ApplicationInformationEnum.HeaderTitle)).Value;
+            var strContent = iApplicationInfoRepository.GetByIdFromCache(Convert.ToInt64(ApplicationInformationEnum.HeaderTitle)).Value;
             
             return MvcHtmlString.Create(strContent);
         }
 
         public static IHtmlString RenderApplicationHeader(this HtmlHelper htmlHelper)
         {
-            var iAppApplicationInfoRepository = DependencyResolver.Current.GetService(typeof(IAppApplicationInfoRepository)) as IAppApplicationInfoRepository;
+            var iApplicationInfoRepository = DependencyResolver.Current.GetService(typeof(IApplicationInfoRepository)) as IApplicationInfoRepository;
 
             var strContent = String.Empty;
             StringBuilder stringBuilder = new StringBuilder();
-            string headerUrl = iAppApplicationInfoRepository.GetByIdFromCache(Convert.ToInt64(ApplicationInformationEnum.HeaderUrl)).Value;
-            string headerText = iAppApplicationInfoRepository.GetByIdFromCache(Convert.ToInt64(ApplicationInformationEnum.HeaderText)).Value;
+            string headerUrl = iApplicationInfoRepository.GetByIdFromCache(Convert.ToInt64(ApplicationInformationEnum.HeaderUrl)).Value;
+            string headerText = iApplicationInfoRepository.GetByIdFromCache(Convert.ToInt64(ApplicationInformationEnum.HeaderText)).Value;
 
             stringBuilder.Append(@"<a href='" + headerUrl + "' class='logo'>");
             stringBuilder.Append(headerText);
@@ -156,27 +156,27 @@ namespace SPEDU.Web
 
         public static IHtmlString RenderApplicationMetaAuthor(this HtmlHelper htmlHelper)
         {
-            var iAppApplicationInfoRepository = DependencyResolver.Current.GetService(typeof(IAppApplicationInfoRepository)) as IAppApplicationInfoRepository;
+            var iApplicationInfoRepository = DependencyResolver.Current.GetService(typeof(IApplicationInfoRepository)) as IApplicationInfoRepository;
 
-            var strContent = iAppApplicationInfoRepository.GetByIdFromCache(Convert.ToInt64(ApplicationInformationEnum.MetaAuthor)).Value;
+            var strContent = iApplicationInfoRepository.GetByIdFromCache(Convert.ToInt64(ApplicationInformationEnum.MetaAuthor)).Value;
 
             return MvcHtmlString.Create(strContent);
         }
 
         public static IHtmlString RenderApplicationMetaKeywords(this HtmlHelper htmlHelper)
         {
-            var iAppApplicationInfoRepository = DependencyResolver.Current.GetService(typeof(IAppApplicationInfoRepository)) as IAppApplicationInfoRepository;
+            var iApplicationInfoRepository = DependencyResolver.Current.GetService(typeof(IApplicationInfoRepository)) as IApplicationInfoRepository;
 
-            var strContent = iAppApplicationInfoRepository.GetByIdFromCache(Convert.ToInt64(ApplicationInformationEnum.MetaKeywords)).Value;
+            var strContent = iApplicationInfoRepository.GetByIdFromCache(Convert.ToInt64(ApplicationInformationEnum.MetaKeywords)).Value;
 
             return MvcHtmlString.Create(strContent);
         }
 
         public static IHtmlString RenderApplicationMetaDescription(this HtmlHelper htmlHelper)
         {
-            var iAppApplicationInfoRepository = DependencyResolver.Current.GetService(typeof(IAppApplicationInfoRepository)) as IAppApplicationInfoRepository;
+            var iApplicationInfoRepository = DependencyResolver.Current.GetService(typeof(IApplicationInfoRepository)) as IApplicationInfoRepository;
 
-            var strContent = iAppApplicationInfoRepository.GetByIdFromCache(Convert.ToInt64(ApplicationInformationEnum.MetaDescription)).Value;
+            var strContent = iApplicationInfoRepository.GetByIdFromCache(Convert.ToInt64(ApplicationInformationEnum.MetaDescription)).Value;
 
             return MvcHtmlString.Create(strContent);
         }
