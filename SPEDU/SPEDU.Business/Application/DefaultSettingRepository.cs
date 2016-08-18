@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using SPEDU.Common.Helper;
 using SPEDU.Domain.Extensions;
 using SPEDU.Domain.Models.Application;
 using SPEDU.Data.Infrastructure;
@@ -95,7 +96,7 @@ namespace SPEDU.Business.Application
                 }
                 else
                 {
-                    throw new ArgumentNullException("DefaultSettingViewModel", "Request data is null.");
+                    throw new ArgumentNullException("DefaultSettingViewModel", MessageResourceHelper.NullError);
                 }
 
             }
@@ -119,7 +120,7 @@ namespace SPEDU.Business.Application
                 }
                 else
                 {
-                    throw new ArgumentNullException("DefaultSettingViewModel", "Request data is null.");
+                    throw new ArgumentNullException("DefaultSettingViewModel", MessageResourceHelper.NullError);
                 }
 
             }
@@ -150,7 +151,7 @@ namespace SPEDU.Business.Application
                 }
                 else
                 {
-                    throw new ArgumentNullException("DefaultSettingViewModel", "Request data is null.");
+                    throw new ArgumentNullException("DefaultSettingViewModel", MessageResourceHelper.NullError);
                 }
 
             }
@@ -181,7 +182,7 @@ namespace SPEDU.Business.Application
                 }
                 else
                 {
-                    throw new ArgumentNullException("DefaultSettingViewModel", "Request data is null.");
+                    throw new ArgumentNullException("DefaultSettingViewModel", MessageResourceHelper.NullError);
                 }
             }
             catch (Exception ex)
@@ -205,7 +206,7 @@ namespace SPEDU.Business.Application
                 }
                 else
                 {
-                    throw new ArgumentNullException("DefaultSettingViewModel", "Request data is null.");
+                    throw new ArgumentNullException("DefaultSettingViewModel", MessageResourceHelper.NullError);
                 }
             }
             catch (Exception ex)

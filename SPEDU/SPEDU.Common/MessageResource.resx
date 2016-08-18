@@ -157,11 +157,19 @@
   <data name="Save" xml:space="preserve">
     <value>Saved Successfully.</value>
   </data>
+  <data name="UnAuthenticated" xml:space="preserve">
+    <value>You are not authenticated user.</value>
+    <comment>You are not authenticated user.</comment>
+  </data>
+  <data name="UnhandelledError" xml:space="preserve">
+    <value>We are facing some problem while processing the current request. Please try again later.</value>
+    <comment>We are facing some problem while processing the current request. Please try again later.</comment>
+  </data>
   <data name="Update" xml:space="preserve">
     <value>Updated Successfully.</value>
   </data>
   <data name="UpdateExceptionError" xml:space="preserve">
-    <value>Datebase is currently updating problem:</value>
-    <comment>Datebase is currently updating problem:</comment>
+    <value>Datebase is currently updating problem.</value>
+    <comment>Datebase is currently updating problem.</comment>
   </data>
 </root>

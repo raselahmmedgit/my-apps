@@ -14,20 +14,20 @@ namespace SPEDU.Common.Helper
             {
                 Exception inner = ex.InnerException;
                 if (inner is System.Data.Common.DbException)
-                    message = ResourceHelper.GetValue("DbExceptionError") + inner.Message;
+                    message = MessageResourceHelper.GetValue("DbExceptionError") + inner.Message;
                 //else if (inner is System.Data.Entity.Core.UpdateException)
-                //    message = ResourceHelper.GetValue("UpdateExceptionError") + inner.Message;
+                //    message = MessageResourceHelper.GetValue("UpdateExceptionError") + inner.Message;
                 //else if (inner is System.Data.Entity.Core.EntityException)
-                //    message = ResourceHelper.GetValue("EntityExceptionError") + inner.Message;
+                //    message = MessageResourceHelper.GetValue("EntityExceptionError") + inner.Message;
                 else if (inner is NullReferenceException)
-                    message = ResourceHelper.GetValue("NullReferenceExceptionError") + inner.Message;
+                    message = MessageResourceHelper.GetValue("NullReferenceExceptionError") + inner.Message;
                 else if (inner is ArgumentException)
                 {
                     string paramName = ((ArgumentException)inner).ParamName;
                     message = string.Concat("The ", paramName, " value is illegal.");
                 }
                 else if (inner is ApplicationException)
-                    message = ResourceHelper.GetValue("ApplicationExceptionError") + inner.Message;
+                    message = MessageResourceHelper.GetValue("ApplicationExceptionError") + inner.Message;
                 else
                     message = inner.Message;
 
@@ -49,20 +49,20 @@ namespace SPEDU.Common.Helper
             {
                 Exception inner = ex.InnerException;
                 if (inner is System.Data.Common.DbException)
-                    message = ResourceHelper.GetValue("DbExceptionError") + inner.Message;
+                    message = MessageResourceHelper.GetValue("DbExceptionError") + inner.Message;
                 //else if (inner is System.Data.Entity.Core.UpdateException)
-                //    message = ResourceHelper.GetValue("UpdateExceptionError") + inner.Message;
+                //    message = MessageResourceHelper.GetValue("UpdateExceptionError") + inner.Message;
                 //else if (inner is System.Data.Entity.Core.EntityException)
-                //    message = ResourceHelper.GetValue("EntityExceptionError") + inner.Message;
+                //    message = MessageResourceHelper.GetValue("EntityExceptionError") + inner.Message;
                 else if (inner is NullReferenceException)
-                    message = ResourceHelper.GetValue("NullReferenceExceptionError") + inner.Message;
+                    message = MessageResourceHelper.GetValue("NullReferenceExceptionError") + inner.Message;
                 else if (inner is ArgumentException)
                 {
                     string paramName = ((ArgumentException)inner).ParamName;
                     message = string.Concat("The ", paramName, " value is illegal.");
                 }
                 else if (inner is ApplicationException)
-                    message = ResourceHelper.GetValue("ApplicationExceptionError") + inner.Message;
+                    message = MessageResourceHelper.GetValue("ApplicationExceptionError") + inner.Message;
                 else
                     message = inner.Message;
 
@@ -78,7 +78,7 @@ namespace SPEDU.Common.Helper
 
         public static string ExceptionMessageForNullObject()
         {
-            string message = ResourceHelper.GetValue("NullError");
+            string message = MessageResourceHelper.GetValue("NullError");
 
             return message;
         }
@@ -91,20 +91,20 @@ namespace SPEDU.Common.Helper
             {
                 Exception inner = ex.InnerException;
                 if (inner is System.Data.Common.DbException)
-                    message = ResourceHelper.GetValue("DbExceptionError") + inner.Message;
+                    message = MessageResourceHelper.GetValue("DbExceptionError") + inner.Message;
                 //else if (inner is System.Data.Entity.Core.UpdateException)
-                //    message = ResourceHelper.GetValue("UpdateExceptionError") + inner.Message;
+                //    message = MessageResourceHelper.GetValue("UpdateExceptionError") + inner.Message;
                 //else if (inner is System.Data.Entity.Core.EntityException)
-                //    message = ResourceHelper.GetValue("EntityExceptionError") + inner.Message;
+                //    message = MessageResourceHelper.GetValue("EntityExceptionError") + inner.Message;
                 else if (inner is NullReferenceException)
-                    message = ResourceHelper.GetValue("NullReferenceExceptionError") + inner.Message;
+                    message = MessageResourceHelper.GetValue("NullReferenceExceptionError") + inner.Message;
                 else if (inner is ArgumentException)
                 {
                     string paramName = ((ArgumentException)inner).ParamName;
                     message = string.Concat("The ", paramName, " value is illegal.");
                 }
                 else if (inner is ApplicationException)
-                    message = ResourceHelper.GetValue("ApplicationExceptionError") + inner.Message;
+                    message = MessageResourceHelper.GetValue("ApplicationExceptionError") + inner.Message;
                 else
                     message = inner.Message;
 
@@ -115,14 +115,14 @@ namespace SPEDU.Common.Helper
 
         public static string ExceptionErrorMessageForNullObject()
         {
-            string message = ResourceHelper.GetValue("NullError");
+            string message = MessageResourceHelper.GetValue("NullError");
 
             return message;
         }
 
         public static string ExceptionErrorMessageForCommon()
         {
-            string message = ResourceHelper.GetValue("CommonError");
+            string message = MessageResourceHelper.GetValue("CommonError");
 
             return message;
         }

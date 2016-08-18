@@ -6,13 +6,6 @@ namespace SPEDU.Common.Helper
 {
     public static class ResourceHelper
     {
-        public static string Save = GetValue("Save");
-        public static string Update = GetValue("Update");
-        public static string Delete = GetValue("Delete");
-        public static string Add = GetValue("Add");
-        public static string Edit = GetValue("Edit");
-        public static string Remove = GetValue("Remove");
-
         #region Get Resource Value
 
         private static ResourceManager _appResourceManager = null;

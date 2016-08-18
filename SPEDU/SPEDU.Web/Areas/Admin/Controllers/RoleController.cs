@@ -11,7 +11,7 @@ using System.Web.Mvc;
 
 namespace SPEDU.Web.Areas.Admin.Controllers
 {
-    [UserAuthorize]
+    //[UserAuthorize]
     public class RoleController : BaseController
     {
         #region Global Variable Declaration
@@ -126,7 +126,7 @@ namespace SPEDU.Web.Areas.Admin.Controllers
                 if (ModelState.IsValid)
                 {
                     _iRoleRepository.CreateOrUpdate(roleViewModel);
-                    return Content(KendoUiHelper.GetKendoUiWindowAjaxSuccessMethod(Boolean.TrueString, AppConstant.ActionName, MessageType.success.ToString(), ResourceHelper.Save));
+                    return Content(KendoUiHelper.GetKendoUiWindowAjaxSuccessMethod(Boolean.TrueString, AppConstant.ActionName, MessageType.success.ToString(), MessageResourceHelper.Save));
                 }
 
                 return Content(KendoUiHelper.GetKendoUiWindowAjaxSuccessMethod(Boolean.FalseString, AppConstant.ActionName, MessageType.warning.ToString(), ExceptionHelper.ModelStateErrorFormat(ModelState)));
@@ -146,7 +146,7 @@ namespace SPEDU.Web.Areas.Admin.Controllers
             {
                 _iRoleRepository.Delete(id);
 
-                return Json(new { status = Boolean.FalseString, messageType = MessageType.success.ToString(), messageText = ResourceHelper.Delete }, JsonRequestBehavior.AllowGet);
+                return Json(new { status = Boolean.FalseString, messageType = MessageType.success.ToString(), messageText = MessageResourceHelper.Delete }, JsonRequestBehavior.AllowGet);
             }
             catch (Exception ex)
             {

@@ -127,7 +127,7 @@ namespace SPEDU.Web
             var iApplicationInfoRepository = DependencyResolver.Current.GetService(typeof(IApplicationInfoRepository)) as IApplicationInfoRepository;
 
             var strContent = String.Empty;
-            StringBuilder stringBuilder = new StringBuilder();
+            var stringBuilder = new StringBuilder();
             string headerUrl = iApplicationInfoRepository.GetByIdFromCache(Convert.ToInt64(ApplicationInformationEnum.HeaderUrl)).Value;
             string headerText = iApplicationInfoRepository.GetByIdFromCache(Convert.ToInt64(ApplicationInformationEnum.HeaderText)).Value;
 
@@ -599,7 +599,7 @@ namespace SPEDU.Web
             strContent += "<ul class='dropdown-menu'>";
 
             //User Info
-            strContent += "<li class='user-header bg-light-blue'>";
+            strContent += "<li class='user-header'>";
             strContent += "<img src='" + userViewModel.UserPhotoPath + "' class='img-circle' alt='User Image' />";
 
             strContent += "<p>";
@@ -656,6 +656,28 @@ namespace SPEDU.Web
             strContent += "<a href='" + userProfileLink + "'><i class='fa fa-circle text-success'></i>Online</a>";
             strContent += "</div>";
 
+
+            return MvcHtmlString.Create(strContent);
+        }
+
+        #endregion
+
+        #region Footer
+
+        public static IHtmlString RenderFooter(this HtmlHelper htmlHelper)
+        {
+            var strContent = String.Empty;
+
+            var iApplicationInfoRepository = DependencyResolver.Current.GetService(typeof(IApplicationInfoRepository)) as IApplicationInfoRepository;
+            var footerText = iApplicationInfoRepository.GetByIdFromCache(Convert.ToInt64(ApplicationInformationEnum.FooterText)).Value;
+            var footerUrl = iApplicationInfoRepository.GetByIdFromCache(Convert.ToInt64(ApplicationInformationEnum.FooterUrl)).Value;
+            var footerCurrentYear = DateTime.Now.Year.ToString();
+
+            strContent += "<strong>";
+            strContent += "Copyright &copy; " + footerCurrentYear;
+            strContent += "<a href='" + footerUrl + "'>" + footerText + "</a>";
+            strContent += "</strong>";
+            strContent += " All rights reserved.";
 
             return MvcHtmlString.Create(strContent);
         }

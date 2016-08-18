@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using SPEDU.Common.Helper;
 using SPEDU.Domain.Extensions;
 using SPEDU.Domain.Models.Application;
 using SPEDU.Data.Infrastructure;
@@ -72,6 +73,23 @@ namespace SPEDU.Business.Application
             return userViewModel;
         }
 
+        public UserViewModel GetByEmail(string email)
+        {
+            var userViewModel = new UserViewModel();
+
+            try
+            {
+                User user = _userRepository.GetAll().SingleOrDefault(item => item.Email == email);
+                userViewModel = user.ConvertModelToViewModel<User, UserViewModel>();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return userViewModel;
+        }
+
         #endregion
 
         #region Create Method
@@ -95,7 +113,7 @@ namespace SPEDU.Business.Application
                 }
                 else
                 {
-                    throw new ArgumentNullException("UserViewModel", "Request data is null.");
+                    throw new ArgumentNullException("UserViewModel", MessageResourceHelper.NullError);
                 }
 
             }
@@ -119,7 +137,7 @@ namespace SPEDU.Business.Application
                 }
                 else
                 {
-                    throw new ArgumentNullException("UserViewModel", "Request data is null.");
+                    throw new ArgumentNullException("UserViewModel", MessageResourceHelper.NullError);
                 }
 
             }
@@ -148,7 +166,7 @@ namespace SPEDU.Business.Application
                 }
                 else
                 {
-                    throw new ArgumentNullException("UserViewModel", "Request data is null.");
+                    throw new ArgumentNullException("UserViewModel", MessageResourceHelper.NullError);
                 }
 
             }
@@ -177,7 +195,7 @@ namespace SPEDU.Business.Application
                 }
                 else
                 {
-                    throw new ArgumentNullException("UserViewModel", "Request data is null.");
+                    throw new ArgumentNullException("UserViewModel", MessageResourceHelper.NullError);
                 }
             }
             catch (Exception ex)
@@ -201,7 +219,7 @@ namespace SPEDU.Business.Application
                 }
                 else
                 {
-                    throw new ArgumentNullException("UserViewModel", "Request data is null.");
+                    throw new ArgumentNullException("UserViewModel", MessageResourceHelper.NullError);
                 }
             }
             catch (Exception ex)
@@ -251,6 +269,8 @@ namespace SPEDU.Business.Application
 
     public interface IUserRepository : IGeneric<UserViewModel>
     {
+        UserViewModel GetByEmail(string email);
+
         int Delete(List<UserViewModel> userViewModels);
     }
 

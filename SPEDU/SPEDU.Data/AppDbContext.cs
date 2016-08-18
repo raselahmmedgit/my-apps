@@ -71,8 +71,8 @@ namespace SPEDU.Data
 
     // Change the base class as follows if you want to drop and create the database during development:
     //public class DbInitializer : DropCreateDatabaseAlways<AppDbContext>
-    //public class DbInitializer : CreateDatabaseIfNotExists<AppDbContext>
-    public class DbInitializer : DropCreateDatabaseIfModelChanges<AppDbContext>
+    public class DbInitializer : CreateDatabaseIfNotExists<AppDbContext>
+    //public class DbInitializer : DropCreateDatabaseIfModelChanges<AppDbContext>
     {
         protected override void Seed(AppDbContext context)
         {

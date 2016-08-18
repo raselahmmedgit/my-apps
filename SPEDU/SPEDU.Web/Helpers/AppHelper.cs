@@ -4,6 +4,8 @@ using System.Linq;
 using System.Reflection;
 using System.Web;
 using System.Web.Mvc;
+using SPEDU.Common.Helper;
+using SPEDU.DomainViewModel.Application;
 
 namespace SPEDU.Web.Helpers
 {
@@ -132,6 +134,93 @@ namespace SPEDU.Web.Helpers
             else
             {
                 return m.Name;
+            }
+
+        }
+
+        public static UserViewModel CurrentUser
+        {
+            get
+            {
+                return (UserViewModel)SessionHelper.CurrentSession.Get("CurrentUser");
+            }
+            set
+            {
+                SessionHelper.CurrentSession.Set("CurrentUser", value);
+            }
+        }
+
+        public static class Content
+        {
+            public static object AppData
+            {
+                get
+                {
+                    return (object)SessionHelper.CurrentSession.Get("AppData");
+                }
+                set
+                {
+                    SessionHelper.CurrentSession.Set("AppData", value);
+                }
+            }
+
+            public static string SuccessMessage
+            {
+                get
+                {
+                    return SessionHelper.CurrentSession.GetString("SuccessMessage");
+                }
+                set
+                {
+                    SessionHelper.CurrentSession.Set("SuccessMessage", value);
+                }
+            }
+
+            public static string ErrorMessage
+            {
+                get
+                {
+                    return SessionHelper.CurrentSession.GetString("ErrorMessage");
+                }
+                set
+                {
+                    SessionHelper.CurrentSession.Set("ErrorMessage", value);
+                }
+            }
+
+            public static bool IsMenuLoaded
+            {
+                get
+                {
+                    return Convert.ToBoolean(SessionHelper.CurrentSession.Get("IsMenuLoaded"));
+                }
+                set
+                {
+                    SessionHelper.CurrentSession.Set("IsMenuLoaded", value);
+                }
+            }
+
+            public static bool IsProfileComplitionAlertClosed
+            {
+                get
+                {
+                    return Convert.ToBoolean(SessionHelper.CurrentSession.Get("IsProfileComplitionAlertClosed"));
+                }
+                set
+                {
+                    SessionHelper.CurrentSession.Set("IsProfileComplitionAlertClosed", value);
+                }
+            }
+            public static bool IsPreferencePercentageClosed
+            {
+                get
+                {
+                    return Convert.ToBoolean(SessionHelper.CurrentSession.Get("IsPreferencePercentageClosed"));
+                }
+                set
+                {
+                    SessionHelper.CurrentSession.Set("IsPreferencePercentageClosed", value);
+                }
             }
 
         }

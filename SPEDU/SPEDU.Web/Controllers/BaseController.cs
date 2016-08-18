@@ -10,7 +10,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 
-namespace SPEDU.Web
+namespace SPEDU
 {
     [Authorize]
     public class BaseController : Controller
@@ -207,7 +207,7 @@ namespace SPEDU.Web
                                 {
                                     // put whatever data you want which will be sent
                                     // to the client
-                                    message = "Sorry, you are not logged user."
+                                    message = MessageResourceHelper.UnAuthenticated
                                 },
                                 JsonRequestBehavior = JsonRequestBehavior.AllowGet
                             };
@@ -227,11 +227,28 @@ namespace SPEDU.Web
 
                         if (!CheckIfUserAccessRight(currentActionName, currentControllerName, currentAreaName))
                         {
-                            if (filterContext.HttpContext.Request.Url != null)
+                            if (filterContext.HttpContext.Request.IsAjaxRequest())
                             {
-                                string redirectUrl = string.Format("?returnUrl={0}", filterContext.HttpContext.Request.Url.PathAndQuery);
+                                filterContext.HttpContext.Response.StatusCode = 403;
+                                filterContext.Result = new JsonResult
+                                {
+                                    Data = new
+                                    {
+                                        // put whatever data you want which will be sent
+                                        // to the client
+                                        message = MessageResourceHelper.UnAuthenticated
+                                    },
+                                    JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                                };
+                            }
+                            else
+                            {
+                                if (filterContext.HttpContext.Request.Url != null)
+                                {
+                                    string redirectUrl = string.Format("?returnUrl={0}", filterContext.HttpContext.Request.Url.PathAndQuery);
 
-                                filterContext.HttpContext.Response.Redirect(FormsAuthentication.LoginUrl + redirectUrl, true);
+                                    filterContext.HttpContext.Response.Redirect(FormsAuthentication.LoginUrl + redirectUrl, true);
+                                }
                             }
                         }
                         else
@@ -274,6 +291,7 @@ namespace SPEDU.Web
         {
             base.OnActionExecuted(filterContext);
         }
+
         protected override IAsyncResult BeginExecuteCore(AsyncCallback callback, object state)
         {
             string cultureName = null;

@@ -1,10 +1,13 @@
-﻿using System;
+﻿using SPEDU.Business.Application;
+using SPEDU.Common.Helper;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Security.Claims;
 using System.Web;
 using System.Web.Mvc;
+using SPEDU.DomainViewModel.Application;
 
 namespace SPEDU.Web.Helpers
 {
@@ -12,7 +15,6 @@ namespace SPEDU.Web.Helpers
     {
         protected override bool AuthorizeCore(System.Web.HttpContextBase httpContext)
         {
-            //User loggedInUser = WebHelper.CurrentSession.Content.LoggedInUser;
             return base.AuthorizeCore(httpContext);
         }
 
@@ -20,44 +22,50 @@ namespace SPEDU.Web.Helpers
         {
             if (HttpContext.Current.User != null)
             {
-                //if (HttpContext.Current.User.Identity.IsAuthenticated)
-                //{
-                //    User loggedInUser = WebHelper.CurrentSession.Content.LoggedInUser;
-                //    if (loggedInUser == null)
-                //    {
-                //        IUserRepository userRepository = DependencyResolver.Current.GetService(typeof(IUserRepository)) as IUserRepository;
+                if (HttpContext.Current.User.Identity.IsAuthenticated)
+                {
+                    UserViewModel currentUser = AppHelper.CurrentUser;
+                    if (currentUser == null)
+                    {
+                        IUserRepository iUserRepository = DependencyResolver.Current.GetService(typeof(IUserRepository)) as IUserRepository;
 
-                //        loggedInUser = userRepository.Find(GetClaimInformation("email"));
-                //        WebHelper.CurrentSession.Content.LoggedInUser = loggedInUser;
-                //    }
-                //    if (loggedInUser != null)
-                //    {
-                //        bool isDevelopmentMode = Convert.ToBoolean(ConfigurationManager.AppSettings["DevelopmentMode"]);
-                //        if (!isDevelopmentMode)
-                //        {
-                //            var routeData = ((MvcHandler)filterContext.HttpContext.Handler).RequestContext.RouteData;
-                //            object currentAreaName = string.Empty;
-                //            routeData.Values.TryGetValue("area", out currentAreaName);
-                //            object currentControllerName = string.Empty;
-                //            routeData.Values.TryGetValue("controller", out currentControllerName);
-                //            object currentActionName = string.Empty;
-                //            routeData.Values.TryGetValue("action", out currentActionName);
-                //            if (!filterContext.HttpContext.Request.IsAjaxRequest())
-                //            {
-                //                IUserPermissionRepository userPermissionRepsitory = DependencyResolver.Current.GetService(typeof(IUserPermissionRepository)) as IUserPermissionRepository;
-                //                bool hasPermission = userPermissionRepsitory.HasPermission(loggedInUser.UserID, currentAreaName.ToString(true), currentControllerName.ToString(true), currentActionName.ToString(true));
-                //                if (!hasPermission)
-                //                {
-                //                    filterContext.Result = CreateResult(filterContext);
-                //                }
-                //            }
-                //        }
-                //    }
-                //    else
-                //    {
-                //        filterContext.Result = new RedirectResult("/login");
-                //    }
-                //}
+                        currentUser = iUserRepository.GetByEmail(GetClaimInformation("identity/claims/emailaddress"));
+                        AppHelper.CurrentUser = currentUser;
+                    }
+                    if (currentUser != null)
+                    {
+                        var routeData = ((MvcHandler)filterContext.HttpContext.Handler).RequestContext.RouteData;
+                        object currentAreaName = string.Empty;
+                        routeData.Values.TryGetValue("area", out currentAreaName);
+                        object currentControllerName = string.Empty;
+                        routeData.Values.TryGetValue("controller", out currentControllerName);
+                        object currentActionName = string.Empty;
+                        routeData.Values.TryGetValue("action", out currentActionName);
+
+                        if (filterContext.HttpContext.Request.IsAjaxRequest())
+                        {
+                            filterContext.HttpContext.Response.StatusCode = 403;
+                            filterContext.Result = new JsonResult
+                            {
+                                Data = new
+                                {
+                                    // put whatever data you want which will be sent
+                                    // to the client
+                                    message = MessageResourceHelper.UnAuthenticated
+                                },
+                                JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                            };
+                        }
+                        else
+                        {
+                            filterContext.Result = CreateResult(filterContext);
+                        }
+                    }
+                    else
+                    {
+                        filterContext.Result = new RedirectResult("/Login");
+                    }
+                }
                 base.OnAuthorization(filterContext);
             }
         }

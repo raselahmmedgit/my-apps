@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="Helper\ExceptionHelper.cs" />
     <Compile Include="Helper\LoggerHelper.cs" />
+    <Compile Include="Helper\MessageResourceHelper.cs" />
     <Compile Include="Helper\ResourceHelper.cs" />
     <Compile Include="Manager\CacheManager.cs" />
     <Compile Include="Manager\CallManager.cs" />

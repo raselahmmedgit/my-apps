@@ -10,6 +10,7 @@ namespace SPEDU.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            AutomaticMigrationDataLossAllowed = false;
             ContextKey = "SPEDU.Data.AppDbContext";
         }
 
