@@ -18,7 +18,6 @@ D:\RaselAhmmed\MyLab\SPEDU\SPEDU.Business\bin\Debug\System.Web.Mvc.xml
 D:\RaselAhmmed\MyLab\SPEDU\SPEDU.Business\obj\Debug\SPEDU.Business.csprojResolveAssemblyReference.cache
 D:\RaselAhmmed\MyLab\SPEDU\SPEDU.Business\obj\Debug\SPEDU.Business.dll
 D:\RaselAhmmed\MyLab\SPEDU\SPEDU.Business\obj\Debug\SPEDU.Business.pdb
-C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Business\bin\Debug\AutoMapper.Net4.dll
 C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Business\bin\Debug\SPEDU.Business.dll
 C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Business\bin\Debug\SPEDU.Business.pdb
 C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Business\bin\Debug\SPEDU.Common.dll

@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Application\DocumentInfoViewModel.cs" />
     <Compile Include="Application\DefaultSettingViewModel.cs" />
     <Compile Include="Application\EmailTemplateCategoryViewModel.cs" />
     <Compile Include="Application\EmailTemplateViewModel.cs" />

@@ -4,13 +4,13 @@ using System.Web.Mvc;
 
 namespace SPEDU.Web.Helpers
 {
-    public class VCardResultHelper : ActionResult
+    public class VCardResult : ActionResult
     {
         private VCardViewModel _card;
 
-        protected VCardResultHelper() { }
+        protected VCardResult() { }
 
-        public VCardResultHelper(VCardViewModel card)
+        public VCardResult(VCardViewModel card)
         {
             _card = card;
         }

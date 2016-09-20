@@ -19,6 +19,17 @@ namespace SPEDU.Common.Utility
            public const string PhoneNumber = @"((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}";
        }
 
+       public static class ValidFileExtension
+       {
+           public static string[] fileExtension = new string[] { ".png", ".jpg", ".jpeg", ".gif", ".txt", ".doc", ".docx", ".pdf", ".xls", ".xlsx", ".csv", ".wmv", ".ppt", ".pptx", ".rar", ".zip" };
+       }
+
+       public static class ImagePath
+       {
+           public const string ImageFolderPath = "~/Download/Image/";
+           public const string TemporaryImageFolderPath = "~/Download/Temporary/";
+       }
+
        public static class CacheKey
        {
            public const string DefaultCacheLifeTimeInMinute = "DefaultCacheLifeTimeInMinute";

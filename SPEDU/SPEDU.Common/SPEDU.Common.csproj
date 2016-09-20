@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Helper\ExceptionHelper.cs" />
     <Compile Include="Helper\LoggerHelper.cs" />
     <Compile Include="Helper\MessageResourceHelper.cs" />

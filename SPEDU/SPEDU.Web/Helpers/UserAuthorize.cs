@@ -13,11 +13,6 @@ namespace SPEDU.Web.Helpers
 {
     public class UserAuthorize : AuthorizeAttribute
     {
-        protected override bool AuthorizeCore(System.Web.HttpContextBase httpContext)
-        {
-            return base.AuthorizeCore(httpContext);
-        }
-
         public override void OnAuthorization(AuthorizationContext filterContext)
         {
             if (HttpContext.Current.User != null)
@@ -28,18 +23,17 @@ namespace SPEDU.Web.Helpers
                     if (currentUser == null)
                     {
                         IUserRepository iUserRepository = DependencyResolver.Current.GetService(typeof(IUserRepository)) as IUserRepository;
-
                         currentUser = iUserRepository.GetByEmail(GetClaimInformation("identity/claims/emailaddress"));
                         AppHelper.CurrentUser = currentUser;
                     }
                     if (currentUser != null)
                     {
                         var routeData = ((MvcHandler)filterContext.HttpContext.Handler).RequestContext.RouteData;
-                        object currentAreaName = string.Empty;
+                        object currentAreaName;
                         routeData.Values.TryGetValue("area", out currentAreaName);
-                        object currentControllerName = string.Empty;
+                        object currentControllerName;
                         routeData.Values.TryGetValue("controller", out currentControllerName);
-                        object currentActionName = string.Empty;
+                        object currentActionName;
                         routeData.Values.TryGetValue("action", out currentActionName);
 
                         if (filterContext.HttpContext.Request.IsAjaxRequest())

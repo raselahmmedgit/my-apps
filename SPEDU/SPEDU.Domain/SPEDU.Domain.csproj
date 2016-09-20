@@ -64,6 +64,7 @@
     <Compile Include="Helpers\CurrentUser.cs" />
     <Compile Include="Helpers\CurrentUserRequest.cs" />
     <Compile Include="Models\Application\DefaultSetting.cs" />
+    <Compile Include="Models\Application\DocumentInfo.cs" />
     <Compile Include="Models\Application\EmailTemplate.cs" />
     <Compile Include="Models\Application\EmailTemplateCategory.cs" />
     <Compile Include="Models\Application\ApplicationInfo.cs" />

@@ -216,15 +216,18 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\AppConstant.cs" />
+    <Compile Include="Helpers\ClearCache.cs" />
     <Compile Include="Helpers\ConstantHelper.cs" />
     <Compile Include="Helpers\AppHelper.cs" />
-    <Compile Include="Helpers\EnumHelpers.cs" />
+    <Compile Include="Helpers\EnumHelper.cs" />
+    <Compile Include="Helpers\ImageHelper.cs" />
+    <Compile Include="Helpers\ImageResult.cs" />
     <Compile Include="Helpers\KendoGridHelper.cs" />
     <Compile Include="Helpers\KendoUiHelper.cs" />
     <Compile Include="Helpers\LinqFilteringHelper.cs" />
     <Compile Include="Helpers\LinqSortingHelper.cs" />
     <Compile Include="Helpers\UserAuthorize.cs" />
-    <Compile Include="Helpers\VCardResultHelper.cs" />
+    <Compile Include="Helpers\VCardResult.cs" />
     <Compile Include="ViewModels\AccountViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -1436,6 +1439,7 @@
     <Content Include="Theme\img\bootstrap-colorpicker\saturation.png" />
     <Content Include="Theme\img\icons.png" />
     <Content Include="Theme\img\loading.gif" />
+    <Content Include="Theme\img\no-image.png" />
     <Content Include="Theme\img\sprite-skin-flat.png" />
     <Content Include="Theme\img\sprite-skin-nice.png" />
     <Content Include="Theme\img\user.jpg" />
@@ -2266,12 +2270,16 @@
     <Content Include="Theme\plugins\input-mask\phone-codes\phone-be.json" />
     <Content Include="Theme\plugins\input-mask\phone-codes\phone-codes.json" />
     <Content Include="Views\Shared\AccessDenied.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\Register.cshtml" />
+    <Content Include="Views\Home\Logout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="Models\" />
+    <Folder Include="Utility\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -2317,7 +2325,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50346</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:50346/</IISUrl>
+          <IISUrl>http://localhost:50505/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -11,7 +11,7 @@ using System.Web.Mvc;
 
 namespace SPEDU.Web.Areas.Admin.Controllers
 {
-    //[UserAuthorize]
+    [UserAuthorize]
     public class RoleController : BaseController
     {
         #region Global Variable Declaration

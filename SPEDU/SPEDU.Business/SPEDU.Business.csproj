@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Application\DocumentInfoRepository.cs" />
     <Compile Include="Application\DefaultSettingRepository.cs" />
     <Compile Include="Application\EmailTemplateCategoryRepository.cs" />
     <Compile Include="Application\EmailTemplateRepository.cs" />

@@ -15,6 +15,7 @@ namespace SPEDU.Data
 
         #region Application
 
+        public DbSet<DocumentInfo> DocumentInfo { get; set; }
         public DbSet<DefaultSetting> DefaultSetting { get; set; }
         public DbSet<EmailTemplate> EmailTemplate { get; set; }
         public DbSet<EmailTemplateCategory> EmailTemplateCategory { get; set; }

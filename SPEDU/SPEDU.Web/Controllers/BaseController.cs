@@ -1,5 +1,8 @@
-﻿using SPEDU.Common.Helper;
+﻿using SPEDU.Business.Application;
+using SPEDU.Common.Extensions;
+using SPEDU.Common.Helper;
 using SPEDU.Common.Utility;
+using SPEDU.Domain.Models.Application;
 using SPEDU.Web.Helpers;
 using System;
 using System.Globalization;
@@ -12,7 +15,9 @@ using System.Web.Security;
 
 namespace SPEDU
 {
-    [Authorize]
+    //[Authorize]
+    //[UserAuthorize]
+    [ClearCache]
     public class BaseController : Controller
     {
         #region Global Variable Declaration
@@ -137,6 +142,111 @@ namespace SPEDU
             // Return an empty string to signify success
             return Content("");
         }
+
+        #region Show Image
+
+        [AcceptVerbs(HttpVerbs.Get)]
+        public ActionResult ShowImage(int id, string documentName)
+        {
+            const string fileBasePath = SPEDU.Common.Utility.AppConstant.ImagePath.ImageFolderPath;
+            string filePath = string.Empty;
+            if (documentName.IsNotNullOrEmpty() && id > 0)
+            {
+                string physicalPath = System.Web.HttpContext.Current.Server.MapPath(fileBasePath) + documentName;
+                if (System.IO.File.Exists(physicalPath))
+                {
+                    filePath = Url.Content(fileBasePath + documentName);
+                }
+                else
+                {
+                    var iDocumentInfoRepository = DependencyResolver.Current.GetService(typeof(IDocumentInfoRepository)) as IDocumentInfoRepository;
+                    var documentInfo = iDocumentInfoRepository.GetById(id);
+                    if (documentInfo != null && documentInfo.DocumentName.IsNotNullOrEmpty())
+                    {
+                        documentName = documentInfo.DocumentName;
+                        if (!System.IO.File.Exists(physicalPath))
+                        {
+                            CreateDirectory(fileBasePath);
+                            if (!System.IO.File.Exists(physicalPath))
+                            {
+                                ImageHelper.WriteFile(physicalPath, documentInfo.DocumentByte);
+                            }
+
+                        }
+                        filePath = Url.Content(fileBasePath + documentName);
+                    }
+
+                }
+            }
+
+            if (filePath.IsNullOrEmpty() || !filePath.IsImage())
+            {
+                filePath = Url.Content("~/Theme/img/no-image.png");
+                documentName = "no-photo.jpg";
+            }
+            var result = new ImageResult(filePath, ImageHelper.GetMIMEType(documentName));
+            return result;
+        }
+
+        public string GetImagePath(int id, string documentName)
+        {
+            string filePath = string.Empty;
+            const string fileBasePath = SPEDU.Common.Utility.AppConstant.ImagePath.ImageFolderPath;
+            if (documentName.IsNotNullOrEmpty() && id > 0)
+            {
+                string physicalPath = System.Web.HttpContext.Current.Server.MapPath(fileBasePath) + documentName;
+                if (System.IO.File.Exists(physicalPath))
+                {
+                    filePath = Url.Content(fileBasePath + documentName);
+                }
+                else
+                {
+                    //var iDocumentInfoRepository = DependencyResolver.Current.GetService(typeof(IDocumentInfoRepository)) as IDocumentInfoRepository;
+                    //var documentInfo = iDocumentInfoRepository.GetById(id);
+                    //if (documentInfo != null && documentInfo.DocumentName.IsNotNullOrEmpty())
+                    //{
+                    //    documentName = documentInfo.DocumentName;
+                    //    if (!System.IO.File.Exists(physicalPath))
+                    //    {
+                    //        CreateDirectory(fileBasePath);
+                    //        if (!System.IO.File.Exists(physicalPath))
+                    //        {
+                    //            ImageHelper.WriteFile(physicalPath, documentInfo.DocumentByte);
+                    //        }
+
+                    //    }
+                    //    filePath = Url.Content(fileBasePath + documentName);
+                    //}
+
+                }
+
+            }
+            if (filePath.IsNullOrEmpty() || !filePath.IsImage())
+            {
+                filePath = Url.Content("~/Theme/img/no-image.png");
+            }
+            string result = filePath;
+            return result;
+        }
+
+        private string CreateDirectory(string directoryName)
+        {
+            try
+            {
+                directoryName = System.Web.HttpContext.Current.Server.MapPath(directoryName);
+                if (!Directory.Exists(directoryName))
+                {
+                    Directory.CreateDirectory(directoryName);
+                }
+                return directoryName;
+            }
+            catch
+            {
+                return string.Empty;
+            }
+        }
+
+        #endregion
 
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {

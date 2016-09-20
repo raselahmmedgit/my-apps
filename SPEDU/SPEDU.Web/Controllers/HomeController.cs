@@ -4,12 +4,47 @@ namespace SPEDU.Web.Controllers
 {
     public class HomeController : Controller
     {
+        #region Global Variable Declaration
+
+
+        #endregion
+
+        #region Constructor
+
+        public HomeController()
+        {
+        }
+
+        #endregion
+
+        #region Action
+
         public ActionResult Index()
         {
             return View();
         }
-        
+
         public ActionResult Error()
+        {
+            return View();
+        }
+
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        public ActionResult Register()
+        {
+            return View();
+        }
+
+        public ActionResult Logout()
+        {
+            return View();
+        }
+
+        public ActionResult Unauthorized()
         {
             return View();
         }
@@ -71,48 +106,10 @@ namespace SPEDU.Web.Controllers
         //    return Content("");
         //}
 
-        //[AcceptVerbs(HttpVerbs.Get)]
-        //public ActionResult ShowContactPhoto(int? id, int? contactId, string PhotoFileName = null)
-        //{
-        //    if (contactId.HasValue && contactId.Value > 0)
-        //    {
-        //        id = contactId;
-        //    }
-        //    string fileBasePath = Constants.Paths.DownloadFilePath + "Contact/" + id.ToString() + "/";
-        //    string filePath = string.Empty;
-        //    if (PhotoFileName.IsNotNullOrEmpty())
-        //    {
-        //        string physicalPath = MiscUtility.CreateDirectory(fileBasePath) + PhotoFileName;
-        //        if (System.IO.File.Exists(physicalPath))
-        //        {
-        //            filePath = fileBasePath + PhotoFileName;
-        //        }
-        //    }
-        //    if (filePath.IsNullOrEmpty() && id.HasValue)
-        //    {
-        //        if (contactRepository == null)
-        //        {
-        //            contactRepository = DependencyResolver.Current.GetService(typeof(IContactRepository)) as IContactRepository;
-        //        }
-        //        Contact contact = contactRepository.Find(id.Value);
-        //        if (contact != null && contact.PhotoFileName.IsNotNullOrEmpty())
-        //        {
-        //            PhotoFileName = contact.PhotoFileName;
-        //            string physicalPath = MiscUtility.CreateDirectory(fileBasePath) + PhotoFileName;
-        //            if (!System.IO.File.Exists(physicalPath))
-        //            {
-        //                Utility.WriteFile(physicalPath, contact.Photo);
-        //            }
-        //            filePath = fileBasePath + PhotoFileName;
-        //        }
-        //    }
-        //    if (filePath.IsNullOrEmpty() || !filePath.IsImage())
-        //    {
-        //        filePath = Url.Content("~/assets/global/img/no-photo.png");
-        //        PhotoFileName = "no-photo.png";
-        //    }
-        //    ImageResult result = new ImageResult(filePath, Utility.GetMIMEType(PhotoFileName));
-        //    return result;
-        //}
+        #endregion
+
+        #region Method
+
+        #endregion
     }
 }
