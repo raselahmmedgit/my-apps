@@ -113,3 +113,11 @@ C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Web.Tests\bin\Debug\AutoMappe
 C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Web.Tests\obj\Debug\SPEDU.Web.Tests.csprojResolveAssemblyReference.cache
 C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Web.Tests\obj\Debug\SPEDU.Web.Tests.dll
 C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Web.Tests\obj\Debug\SPEDU.Web.Tests.pdb
+C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Web.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Web.Tests\bin\Debug\Microsoft.Owin.Security.dll
+C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Web.Tests\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Web.Tests\bin\Debug\Microsoft.Owin.Security.OAuth.dll
+C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Web.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.xml
+C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Web.Tests\bin\Debug\Microsoft.Owin.Security.xml
+C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Web.Tests\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Web.Tests\bin\Debug\Microsoft.Owin.Security.OAuth.xml

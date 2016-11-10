@@ -75,3 +75,4 @@ C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Data\bin\Debug\AutoMapper.xml
 C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Data\obj\Debug\SPEDU.Data.csprojResolveAssemblyReference.cache
 C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Data\obj\Debug\SPEDU.Data.dll
 C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Data\obj\Debug\SPEDU.Data.pdb
+C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Data\bin\Debug\AutoMapper.Net4.dll

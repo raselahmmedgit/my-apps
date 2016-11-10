@@ -40,3 +40,4 @@ C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Business\bin\Debug\AutoMapper
 C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Business\obj\Debug\SPEDU.Business.csprojResolveAssemblyReference.cache
 C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Business\obj\Debug\SPEDU.Business.dll
 C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Business\obj\Debug\SPEDU.Business.pdb
+C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Business\bin\Debug\AutoMapper.Net4.dll

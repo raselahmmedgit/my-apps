@@ -200,3 +200,4 @@ C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Web\bin\zh-CN\Kendo.Mvc.resou
 C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Web\obj\Debug\SPEDU.Web.csprojResolveAssemblyReference.cache
 C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Web\obj\Debug\SPEDU.Web.dll
 C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Web\obj\Debug\SPEDU.Web.pdb
+C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Web\bin\AutoMapper.Net4.dll
