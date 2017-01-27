@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AF60F4FF-094C-4DE2-A0E7-A3EF63449837}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>rabapp.Repository.Quiz</RootNamespace>
+    <AssemblyName>rabapp.Repository.Quiz</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper">
+      <HintPath>..\packages\Dapper.1.50.2\lib\net45\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DocumentManagement\DocumentInformationRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuestionManagement\QuestionAnswerOptionRepository.cs" />
+    <Compile Include="QuestionManagement\QuestionCategoryRepository.cs" />
+    <Compile Include="QuestionManagement\QuestionRepository.cs" />
+    <Compile Include="TestManagement\TestCategoryRepository.cs" />
+    <Compile Include="TestManagement\TestRepository.cs" />
+    <Compile Include="TestManagement\TestQuestionRepository.cs" />
+    <Compile Include="TestManagement\TestTakenDetailsRepository.cs" />
+    <Compile Include="TestManagement\TestTakenRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="SecurityManagement\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\rabapp.Model.Common\rabapp.Model.Common.csproj">
+      <Project>{5da94723-b2e9-476b-bf1b-91b3d18ec101}</Project>
+      <Name>rabapp.Model.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\rabapp.Model.Quiz\rabapp.Model.Quiz.csproj">
+      <Project>{353f8f7a-9d37-4f56-9b0d-94a7a1273976}</Project>
+      <Name>rabapp.Model.Quiz</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\rabapp.Repository.Common\rabapp.Repository.Common.csproj">
+      <Project>{5064d4b8-439c-4cc8-8815-52ec974cdc82}</Project>
+      <Name>rabapp.Repository.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

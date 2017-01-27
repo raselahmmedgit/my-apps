@@ -1,0 +1,9 @@
+D:\RaselAhmmed\MyLab\rabapp\rabapp.Model.Quiz\obj\Debug\rabapp.Model.Quiz.csprojResolveAssemblyReference.cache
+D:\RaselAhmmed\MyLab\rabapp\rabapp.Model.Quiz\bin\Debug\rabapp.Model.Quiz.dll
+D:\RaselAhmmed\MyLab\rabapp\rabapp.Model.Quiz\bin\Debug\rabapp.Model.Quiz.pdb
+D:\RaselAhmmed\MyLab\rabapp\rabapp.Model.Quiz\obj\Debug\rabapp.Model.Quiz.dll
+D:\RaselAhmmed\MyLab\rabapp\rabapp.Model.Quiz\obj\Debug\rabapp.Model.Quiz.pdb
+D:\RaselAhmmed\MyLab\rabapp\rabapp.Model.Quiz\bin\Debug\rabapp.Model.Common.dll
+D:\RaselAhmmed\MyLab\rabapp\rabapp.Model.Quiz\bin\Debug\AutoMapper.dll
+D:\RaselAhmmed\MyLab\rabapp\rabapp.Model.Quiz\bin\Debug\rabapp.Model.Common.pdb
+D:\RaselAhmmed\MyLab\rabapp\rabapp.Model.Quiz\bin\Debug\AutoMapper.xml
