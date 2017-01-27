@@ -11,12 +11,12 @@ using rabapp.Repository.Common;
 
 namespace rabapp.Repository.Quiz.TestManagement
 {
-    public class TestTakenViewModelRepository : BaseRepository<TestTakenViewModel>, ITestTakenViewModelRepository
+    public class TestTakenRepository : BaseRepository<TestTakenViewModel>, ITestTakenRepository
     {
         private readonly ITestTakenDetailsRepository _iTestTakenDetailsRepository;
         private readonly ITestRepository _iTestRepository;
         private readonly AppDbContext _appDbContext;
-        public TestTakenViewModelRepository(
+        public TestTakenRepository(
              ITestTakenDetailsRepository iTestTakenDetailsRepository
             , ITestRepository iTestRepository
             , AppDbContext dbContext
@@ -55,7 +55,7 @@ namespace rabapp.Repository.Quiz.TestManagement
 
     }
 
-    public interface ITestTakenViewModelRepository : IBaseRepository<TestTakenViewModel>
+    public interface ITestTakenRepository : IBaseRepository<TestTakenViewModel>
     {
         TestTakenViewModel GetById(int testTakenId, bool isWithTestTakenDetails = false, bool navigationproperty = false);
     }

@@ -3,3 +3,13 @@ D:\RaselAhmmed\MyLab\rabapp\rabapp.Utility.DbMigration\bin\Debug\rabapp.Utility.
 D:\RaselAhmmed\MyLab\rabapp\rabapp.Utility.DbMigration\obj\Debug\rabapp.Utility.DbMigration.dll
 D:\RaselAhmmed\MyLab\rabapp\rabapp.Utility.DbMigration\obj\Debug\rabapp.Utility.DbMigration.pdb
 D:\RaselAhmmed\MyLab\rabapp\rabapp.Utility.DbMigration\obj\Debug\rabapp.Utility.DbMigration.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\GitHub\my-apps\rabapp\rabapp.Utility.DbMigration\bin\Debug\rabapp.Utility.DbMigration.dll
+C:\Users\user\Documents\GitHub\my-apps\rabapp\rabapp.Utility.DbMigration\bin\Debug\rabapp.Utility.DbMigration.pdb
+C:\Users\user\Documents\GitHub\my-apps\rabapp\rabapp.Utility.DbMigration\obj\Debug\rabapp.Utility.DbMigration.dll
+C:\Users\user\Documents\GitHub\my-apps\rabapp\rabapp.Utility.DbMigration\obj\Debug\rabapp.Utility.DbMigration.pdb
+C:\Users\user\Documents\GitHub\my-apps\rabapp\rabapp.Utility.DbMigration\bin\Debug\rabapp.Utility.DbMigration.dll.config
+C:\Users\user\Documents\GitHub\my-apps\rabapp\rabapp.Utility.DbMigration\bin\Debug\EntityFramework.dll
+C:\Users\user\Documents\GitHub\my-apps\rabapp\rabapp.Utility.DbMigration\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\user\Documents\GitHub\my-apps\rabapp\rabapp.Utility.DbMigration\bin\Debug\EntityFramework.xml
+C:\Users\user\Documents\GitHub\my-apps\rabapp\rabapp.Utility.DbMigration\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\user\Documents\GitHub\my-apps\rabapp\rabapp.Utility.DbMigration\obj\Debug\rabapp.Utility.DbMigration.csprojResolveAssemblyReference.cache

@@ -54,15 +54,19 @@
     <Compile Include="QuestionManagement\QuestionAnswerOptionRepository.cs" />
     <Compile Include="QuestionManagement\QuestionCategoryRepository.cs" />
     <Compile Include="QuestionManagement\QuestionRepository.cs" />
+    <Compile Include="SecurityManagement\CompanyBranchRepository.cs" />
+    <Compile Include="SecurityManagement\CompanyRepository.cs" />
+    <Compile Include="SecurityManagement\RoleRepository.cs" />
+    <Compile Include="SecurityManagement\UserRepository.cs" />
+    <Compile Include="TestManagement\FavoriteTestRepository.cs" />
     <Compile Include="TestManagement\TestCategoryRepository.cs" />
     <Compile Include="TestManagement\TestRepository.cs" />
     <Compile Include="TestManagement\TestQuestionRepository.cs" />
     <Compile Include="TestManagement\TestTakenDetailsRepository.cs" />
     <Compile Include="TestManagement\TestTakenRepository.cs" />
+    <Compile Include="TestManagement\TestWiseQuestionRepository.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="SecurityManagement\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\rabapp.Model.Common\rabapp.Model.Common.csproj">
       <Project>{5da94723-b2e9-476b-bf1b-91b3d18ec101}</Project>

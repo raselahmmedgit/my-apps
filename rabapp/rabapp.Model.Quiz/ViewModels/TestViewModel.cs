@@ -17,8 +17,10 @@ namespace rabapp.Model.Quiz.ViewModels
 
         public string TestIconPath { get; set; }
 
-        public virtual List<TestQuestion> TestQuestions { get; set; }
-        
-        public virtual List<Question> Questions { get; set; }
+        public virtual IEnumerable<TestQuestionViewModel> TestQuestionViewModelList { get; set; }
+
+        public virtual IEnumerable<QuestionViewModel> QuestionViewModelList { get; set; }
+
+        public virtual IEnumerable<TestWiseQuestionViewModel> TestWiseQuestionViewModelList { get; set; }
     }
 }

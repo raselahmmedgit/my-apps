@@ -15,6 +15,7 @@ namespace rabapp.Service.Common.Helper
     {
         private HttpRequest _request;
         private HttpResponse _response;
+        private readonly string _cryptographyKey = SiteConfigurationReader.GetAppSettingsString(Constants.CommonConstants.CryptographyKey);
 
         public CookieHelper(HttpRequest request,
         HttpResponse response)
@@ -45,14 +46,14 @@ namespace rabapp.Service.Common.Helper
         string value,
         DateTime expire)
         {
-            SetValue(CryptographyHelper.Encrypt(BuildFullKey(key)), CryptographyHelper.Encrypt(value), expire);
+            SetValue(CryptographyHelper.Encrypt(BuildFullKey(key), _cryptographyKey), CryptographyHelper.Encrypt(value, _cryptographyKey), expire);
         }
 
         [DebuggerStepThrough()]
         public void Set(string key,
         string value)
         {
-            SetValue(CryptographyHelper.Encrypt(BuildFullKey(key)), CryptographyHelper.Encrypt(value));
+            SetValue(CryptographyHelper.Encrypt(BuildFullKey(key), _cryptographyKey), CryptographyHelper.Encrypt(value, _cryptographyKey));
         }
 
         [DebuggerStepThrough()]
@@ -93,7 +94,7 @@ namespace rabapp.Service.Common.Helper
                 userAuthCookie.Path = FormsAuthentication.FormsCookiePath;
                 if (_request.Url.Host.ToLower() != "localhost")
                 {
-                    userAuthCookie.Domain = ".RB.com";
+                    userAuthCookie.Domain = SiteConfigurationReader.GetAppSettingsString(Constants.CommonConstants.UserAuthCookieDomain);
                 }
                 _response.Cookies.Add(userAuthCookie);
             }
@@ -104,7 +105,7 @@ namespace rabapp.Service.Common.Helper
             if (_response != null)
             {
                 string data = userName + "," + password;
-                data = CryptographyHelper.Encrypt(data);
+                data = CryptographyHelper.Encrypt(data, _cryptographyKey);
                 HttpCookie userAuthCookie = new HttpCookie(Constants.CommonConstants.RememberMeCookieName, data);
                 userAuthCookie.Expires = DateTime.UtcNow.AddYears(1);
                 HttpContext.Current.Response.Cookies.Add(userAuthCookie);
@@ -139,8 +140,8 @@ namespace rabapp.Service.Common.Helper
                     string userData = userDataCookie.Value;
                     if (!String.IsNullOrEmpty(userData))
                     {
-                        userData = CryptographyHelper.Decrypt(userData);
-                        string[] values = userData.ToStringArray(',');
+                        userData = CryptographyHelper.Decrypt(userData, _cryptographyKey);
+                        string[] values = userData.Split(',').ToArray();
                         if (values != null && values.Length >= 2)
                         {
                             userName = values[0];
@@ -166,7 +167,7 @@ namespace rabapp.Service.Common.Helper
                             FormsAuthenticationTicket userAuthTicket = formIdentity.Ticket;
                             if (!String.IsNullOrEmpty(userAuthTicket.UserData))
                             {
-                                return CryptographyHelper.Decrypt(userAuthTicket.UserData);
+                                return CryptographyHelper.Decrypt(userAuthTicket.UserData, _cryptographyKey);
                             }
                         }
                     }
@@ -182,7 +183,7 @@ namespace rabapp.Service.Common.Helper
 
             if (value != null)
             {
-                return CryptographyHelper.Decrypt(value);
+                return CryptographyHelper.Decrypt(value, _cryptographyKey);
             }
 
             return null;
@@ -191,14 +192,14 @@ namespace rabapp.Service.Common.Helper
         [DebuggerStepThrough()]
         private string GetValue(string key)
         {
-            HttpCookie cookie = GetCookie(CryptographyHelper.Encrypt(BuildFullKey(key)));
+            HttpCookie cookie = GetCookie(CryptographyHelper.Encrypt(BuildFullKey(key), _cryptographyKey));
 
             if (cookie == null)
             {
                 return null;
             }
 
-            if (cookie.Value.IsNullOrEmpty())
+            if (String.IsNullOrEmpty(cookie.Value))
             {
                 return null;
             }
@@ -239,7 +240,7 @@ namespace rabapp.Service.Common.Helper
                     HttpCookie userAuthCookie = new HttpCookie(cookie, "");
                     if (_request.Url.Host.ToLower() != "localhost")
                     {
-                        userAuthCookie.Domain = ".RB.com";
+                        userAuthCookie.Domain = SiteConfigurationReader.GetAppSettingsString(Constants.CommonConstants.UserAuthCookieDomain);
                     }
                     userAuthCookie.Expires = DateTime.UtcNow.AddDays(-2d);
                     _response.Cookies.Add(userAuthCookie);
@@ -256,7 +257,7 @@ namespace rabapp.Service.Common.Helper
             newCookieHelper.GetUserDataFromRememberMeCookie(ref userName, ref password);
             UserViewModel newUserViewModel = new UserViewModel();
             newUserViewModel.Email = userName;
-            newUserViewModel.Password = password;
+            //newUserViewModel.Password = password;
             return newUserViewModel;
         }
     }

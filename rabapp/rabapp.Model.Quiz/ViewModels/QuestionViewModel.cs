@@ -31,7 +31,7 @@ namespace rabapp.Model.Quiz.ViewModels
 
         public string AnswerOptionList { get; set; }
 
-        public List<QuestionAnswerOptionViewModel> QuestionAnswerOptionViewModelList { get; set; }
+        public IEnumerable<QuestionAnswerOptionViewModel> QuestionAnswerOptionViewModelList { get; set; }
 
         public int? TestId { get; set; }
     }

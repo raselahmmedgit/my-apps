@@ -17,7 +17,9 @@ namespace rabapp.Model.Common
         }
         public static class CommonConstants
         {
-            public const string RememberMeCookieName = ".RBCOOKIE";
+            public const string CryptographyKey = "cryptographykey";
+            public const string UserAuthCookieDomain = "rabappdomain";
+            public const string RememberMeCookieName = ".RABAPPCOOKIE";
             public const string DefaultControllerName = "Home";
             public const string DefaultActionName = "Index";
             public const int DefaultPageSize = 20;
@@ -30,6 +32,7 @@ namespace rabapp.Model.Common
 
         public static class ImagePath
         {
+            public const string ImageFolderPath = "~/Download/Image/";
             public const string TemporaryImageFolderPath = "~/Download/Temporary/";
             public const string TestIconFolderPath = "~/Download/TestIcon/";
             public const string QuestionImageFolderPath = "~/Download/QuestionImage/";

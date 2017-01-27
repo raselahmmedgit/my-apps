@@ -11,5 +11,6 @@ namespace rabapp.Model.Quiz.ViewModels
     [NotMapped]
     public class UserViewModel : User
     {
+        public IEnumerable<RoleViewModel> RoleViewModelList { get; set; }
     }
 }

@@ -52,6 +52,7 @@
     <Compile Include="SecurityManagement\Role.cs" />
     <Compile Include="SecurityManagement\User.cs" />
     <Compile Include="SecurityManagement\UserRole.cs" />
+    <Compile Include="TestManagement\FavoriteTest.cs" />
     <Compile Include="TestManagement\Test.cs" />
     <Compile Include="TestManagement\TestCategory.cs" />
     <Compile Include="TestManagement\TestQuestion.cs" />
@@ -60,6 +61,8 @@
     <Compile Include="TestManagement\TestWiseQuestion.cs" />
     <Compile Include="ViewModels\CompanyBranchViewModel.cs" />
     <Compile Include="ViewModels\CompanyViewModel.cs" />
+    <Compile Include="ViewModels\FavoriteTestViewModel.cs" />
+    <Compile Include="ViewModels\ImageCropViewModel.cs" />
     <Compile Include="ViewModels\QuestionCategoryViewModel.cs" />
     <Compile Include="ViewModels\QuestionAnswerOptionViewModel.cs" />
     <Compile Include="ViewModels\QuestionViewModel.cs" />

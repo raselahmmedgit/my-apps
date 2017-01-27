@@ -5,3 +5,10 @@ D:\RaselAhmmed\MyLab\rabapp\rabapp.Model.Common\obj\Debug\rabapp.Model.Common.pd
 D:\RaselAhmmed\MyLab\rabapp\rabapp.Model.Common\bin\Debug\AutoMapper.dll
 D:\RaselAhmmed\MyLab\rabapp\rabapp.Model.Common\bin\Debug\AutoMapper.xml
 D:\RaselAhmmed\MyLab\rabapp\rabapp.Model.Common\obj\Debug\rabapp.Model.Common.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\GitHub\my-apps\rabapp\rabapp.Model.Common\bin\Debug\rabapp.Model.Common.dll
+C:\Users\user\Documents\GitHub\my-apps\rabapp\rabapp.Model.Common\bin\Debug\rabapp.Model.Common.pdb
+C:\Users\user\Documents\GitHub\my-apps\rabapp\rabapp.Model.Common\bin\Debug\AutoMapper.dll
+C:\Users\user\Documents\GitHub\my-apps\rabapp\rabapp.Model.Common\bin\Debug\AutoMapper.xml
+C:\Users\user\Documents\GitHub\my-apps\rabapp\rabapp.Model.Common\obj\Debug\rabapp.Model.Common.dll
+C:\Users\user\Documents\GitHub\my-apps\rabapp\rabapp.Model.Common\obj\Debug\rabapp.Model.Common.pdb
+C:\Users\user\Documents\GitHub\my-apps\rabapp\rabapp.Model.Common\obj\Debug\rabapp.Model.Common.csprojResolveAssemblyReference.cache

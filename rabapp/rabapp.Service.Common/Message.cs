@@ -23,6 +23,7 @@ namespace rabapp.Service.Common
         }
         public MessageType MessageType { get; set; }
         public string CurrentMessage { get; set; }
+        public int State { get; set; }
 
     }
 

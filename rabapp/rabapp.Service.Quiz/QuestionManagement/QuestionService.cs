@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,7 @@ using rabapp.Repository.Common;
 using rabapp.Repository.Quiz.DocumentManagement;
 using rabapp.Repository.Quiz.QuestionManagement;
 using rabapp.Service.Common;
+using rabapp.Service.Common.Helper;
 
 namespace rabapp.Service.Quiz.QuestionManagement
 {
@@ -41,9 +43,10 @@ namespace rabapp.Service.Quiz.QuestionManagement
                 _appDbContext.SqlConnection.Open();
 
                 int currentLoggedInUserId = WebHelper.CurrentSession.Content.LoggedInUser.UserId;
-                int currentLoggedInUserType = WebHelper.CurrentSession.Content.LoggedInUser.UserType;
 
-                if (currentLoggedInUserType == (int)Constants.UserType.Administrator)
+                bool currentLoggedInUserIsAdministrator = false;
+
+                if (currentLoggedInUserIsAdministrator)
                 {
                     return _iQuestionRepository.Search(0, keyword, currentPage, take);
                 }
@@ -99,7 +102,7 @@ namespace rabapp.Service.Quiz.QuestionManagement
             }
         }
 
-        public Message InsertOrUpdateWithoutIdentity(QuestionViewModel question, HttpPostedFileBase httpPostedFileBase)
+        public Message InsertOrUpdateWithoutIdentity(QuestionViewModel questionViewModel, HttpPostedFileBase httpPostedFileBase)
         {
             Message message;
             try
@@ -109,20 +112,20 @@ namespace rabapp.Service.Quiz.QuestionManagement
 
                     _appDbContext.SqlConnection.Open();
 
-                    var isExistQuestion = _iQuestionRepository.Get(question);
+                    var isExistQuestion = _iQuestionRepository.Get(questionViewModel);
                     var affectedRow = 0;
                     var guid = Guid.NewGuid();
 
                     if (isExistQuestion == null)
                     {
-                        affectedRow = _iQuestionRepository.InsertWithoutIdentity(question);
+                        affectedRow = _iQuestionRepository.InsertWithoutIdentity(questionViewModel);
 
                         #region Question Answer Option - Insert
 
-                        foreach (var answerOption in question.QuestionAnswerOptionList)
+                        foreach (var questionAnswerOptionViewModel in questionViewModel.QuestionAnswerOptionViewModelList)
                         {
-                            answerOption.QuestionId = question.QuestionId;
-                            _iQuestionAnswerOptionRepository.InsertWithoutIdentity(answerOption);
+                            questionAnswerOptionViewModel.QuestionId = questionViewModel.QuestionId;
+                            _iQuestionAnswerOptionRepository.InsertWithoutIdentity(questionAnswerOptionViewModel);
                         }
 
                         #endregion
@@ -133,14 +136,14 @@ namespace rabapp.Service.Quiz.QuestionManagement
                     }
                     else
                     {
-                        affectedRow = _iQuestionRepository.Update(question);
+                        affectedRow = _iQuestionRepository.Update(questionViewModel);
 
                         #region Question Answer Option - Update
 
-                        foreach (var answerOption in question.QuestionAnswerOptionList)
+                        foreach (var questionAnswerOptionViewModel in questionViewModel.QuestionAnswerOptionViewModelList)
                         {
-                            answerOption.QuestionId = question.QuestionId;
-                            _iQuestionAnswerOptionRepository.Update(answerOption);
+                            questionAnswerOptionViewModel.QuestionId = questionViewModel.QuestionId;
+                            _iQuestionAnswerOptionRepository.Update(questionAnswerOptionViewModel);
                         }
 
                         #endregion
@@ -156,12 +159,12 @@ namespace rabapp.Service.Quiz.QuestionManagement
                     {
                         var file = httpPostedFileBase;
                         var target = new MemoryStream();
-                        var documentInformatio = new DocumentInformation();
+                        var documentInformationViewModel = new DocumentInformationViewModel();
 
                         file.InputStream.CopyTo(target);
 
                         byte[] byteData = target.ToArray();
-                        ImageUtility imageUtility = new ImageUtility();
+                        var imageUtility = new ImageUtility();
 
                         if (isExistQuestion == null)
                         {
@@ -170,16 +173,16 @@ namespace rabapp.Service.Quiz.QuestionManagement
                             var size = imageUtility.GetPreferredImageSize(Constants.ImageDimensions.Common);
                             byte[] byteAfterResize = imageUtility.EnforceResize(size.Width, size.Height, byteData, guid + Path.GetExtension(httpPostedFileBase.FileName));
 
-                            documentInformatio.DocumentName = guid + Path.GetExtension(httpPostedFileBase.FileName);
-                            documentInformatio.DocumentByte = byteAfterResize;
-                            documentInformatio.DocumentSize = byteAfterResize.Length;
-                            _iDocumentInformationRepository.InsertWithoutIdentity(documentInformatio);
+                            documentInformationViewModel.DocumentName = guid + Path.GetExtension(httpPostedFileBase.FileName);
+                            documentInformationViewModel.DocumentByte = byteAfterResize;
+                            documentInformationViewModel.DocumentSize = byteAfterResize.Length;
+                            _iDocumentInformationRepository.InsertWithoutIdentity(documentInformationViewModel);
 
                             #region Question - GlobalId Update
 
-                            question.QuestionImageName = (httpPostedFileBase != null ? guid + Path.GetExtension(httpPostedFileBase.FileName) : null);
-                            question.GlobalId = documentInformatio.GlobalId > 0 ? documentInformatio.GlobalId : 0;
-                            affectedRow = _iQuestionRepository.Update(question);
+                            questionViewModel.QuestionImageName = (httpPostedFileBase != null ? guid + Path.GetExtension(httpPostedFileBase.FileName) : null);
+                            questionViewModel.GlobalId = documentInformationViewModel.GlobalId > 0 ? documentInformationViewModel.GlobalId : 0;
+                            affectedRow = _iQuestionRepository.Update(questionViewModel);
 
                             #endregion
 
@@ -189,7 +192,7 @@ namespace rabapp.Service.Quiz.QuestionManagement
                         {
                             #region Update Document Information
 
-                            var isExistDocumentInformatio = _iDocumentInformationRepository.Get(new DocumentInformation { GlobalId = isExistQuestion.GlobalId });
+                            var isExistDocumentInformatio = _iDocumentInformationRepository.Get(new DocumentInformationViewModel { GlobalId = isExistQuestion.GlobalId });
 
                             if (isExistDocumentInformatio != null)
                             {
@@ -243,9 +246,8 @@ namespace rabapp.Service.Quiz.QuestionManagement
     {
         IEnumerable<QuestionViewModel> Search(string keyword, int currentPage = 0, int take = 50);
         IEnumerable<QuestionViewModel> SearchByTestId(int testId, string keyword, int currentPage = 0, int take = 50, bool mappedQuestionOnly = false, bool withAnswerOption = false, bool withCorrectAnswerOption = false);
-
-        Message InsertOrUpdateWithoutIdentity(QuestionViewModel question, HttpPostedFileBase httpPostedFileBase);
-
+        Message InsertOrUpdateWithoutIdentity(QuestionViewModel questionViewModel, HttpPostedFileBase httpPostedFileBase);
         QuestionViewModel GetById(int questionId);
+
     }
 }
