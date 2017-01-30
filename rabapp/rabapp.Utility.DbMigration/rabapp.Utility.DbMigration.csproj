@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{8AC99DBF-D9C6-41D9-A2B3-5B4D0E8B1EE2}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>rabapp.Utility.DbMigration</RootNamespace>
     <AssemblyName>rabapp.Utility.DbMigration</AssemblyName>
@@ -29,6 +29,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
@@ -38,7 +41,11 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuizDbContext.cs" />
@@ -53,6 +61,20 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\rabapp.Model.Common\rabapp.Model.Common.csproj">
+      <Project>{5da94723-b2e9-476b-bf1b-91b3d18ec101}</Project>
+      <Name>rabapp.Model.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\rabapp.Model.Quiz\rabapp.Model.Quiz.csproj">
+      <Project>{353f8f7a-9d37-4f56-9b0d-94a7a1273976}</Project>
+      <Name>rabapp.Model.Quiz</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\rabapp.Service.Common\rabapp.Service.Common.csproj">
+      <Project>{484ebf1a-bcc8-4791-9cd3-52e7171cf8b9}</Project>
+      <Name>rabapp.Service.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

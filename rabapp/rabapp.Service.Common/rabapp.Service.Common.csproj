@@ -59,11 +59,13 @@
     <Compile Include="Helper\ClearCache.cs" />
     <Compile Include="Helper\CookieHelper.cs" />
     <Compile Include="Helper\CryptographyHelper.cs" />
+    <Compile Include="Helper\EnumHelper.cs" />
     <Compile Include="Helper\HtmlHelperExtension.cs" />
     <Compile Include="Helper\ImageUtility.cs" />
     <Compile Include="Helper\MiscUtility.cs" />
     <Compile Include="Helper\SiteConfigurationReader.cs" />
     <Compile Include="Helper\UserAuthorize.cs" />
+    <Compile Include="Helper\UserPasswordHelper.cs" />
     <Compile Include="Helper\WebHelper.cs" />
     <Compile Include="Message.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

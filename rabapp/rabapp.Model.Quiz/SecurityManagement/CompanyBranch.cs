@@ -35,7 +35,7 @@ namespace rabapp.Model.Quiz.SecurityManagement
         public string PhoneNo { get; set; }
 
         public Int32 CompanyId { get; set; }
-        [ForeignKey("Company")]
+        [ForeignKey("CompanyId")]
         public virtual Company Company { get; set; }
 
     }

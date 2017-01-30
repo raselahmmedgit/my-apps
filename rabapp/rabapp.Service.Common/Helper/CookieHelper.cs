@@ -257,7 +257,7 @@ namespace rabapp.Service.Common.Helper
             newCookieHelper.GetUserDataFromRememberMeCookie(ref userName, ref password);
             UserViewModel newUserViewModel = new UserViewModel();
             newUserViewModel.Email = userName;
-            //newUserViewModel.Password = password;
+            newUserViewModel.Password = password;
             return newUserViewModel;
         }
     }

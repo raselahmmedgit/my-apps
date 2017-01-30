@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,8 +13,11 @@ namespace rabapp.Utility.DbMigration
         {
             try
             {
+                Console.WriteLine("Start...");
 
-                
+                InitializeAndSeedDb();
+
+                Console.WriteLine("Done.");
             }
             catch (Exception ex)
             {
@@ -21,6 +25,25 @@ namespace rabapp.Utility.DbMigration
             }
 
             Console.ReadKey();
+        }
+
+        private static void InitializeAndSeedDb()
+        {
+            try
+            {
+                // Initializes and seeds the database.
+                Database.SetInitializer(new DbInitializer());
+
+                using (var context = new QuizDbContext())
+                {
+                    context.Database.Initialize(force: true);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+
         }
     }
 }

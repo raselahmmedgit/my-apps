@@ -23,11 +23,22 @@ namespace rabapp.Model.Quiz.SecurityManagement
 
         [Required]
         [MaxLength(64)]
-        public Byte[] Password { get; set; }
+        //public Byte[] Password { get; set; }
+        public String Password { get; set; }
+        
+        //[Required]
+        //[MaxLength(64)]
+        //public byte[] PasswordHash { get; set; }
 
-        [Required(ErrorMessage = "Email is required.")]
+        //[Required]
+        //[MaxLength(128)]
+        //public byte[] PasswordSalt { get; set; }
+
+        [DataType(DataType.EmailAddress)]
+        [Required(ErrorMessage = "Email is required")]
+        [RegularExpression(@"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$", ErrorMessage = "Invalid email address.")]
         [MaxLength(200)]
-        public String Email { get; set; }
+        public string Email { get; set; }
 
         [MaxLength(200)]
         public String Comment { get; set; }
@@ -38,7 +49,7 @@ namespace rabapp.Model.Quiz.SecurityManagement
 
         public DateTime? LastActivityDate { get; set; }
 
-        public DateTime LastPasswordChangeDate { get; set; }
+        public DateTime? LastPasswordChangeDate { get; set; }
 
         //public Boolean IsLoggedIn { get; set; }
 
