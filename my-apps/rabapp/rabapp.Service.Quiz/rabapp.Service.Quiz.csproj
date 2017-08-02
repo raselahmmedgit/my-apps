@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{46C159DA-45F8-44B5-928A-3298FB7D6726}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>rabapp.Service.Quiz</RootNamespace>
+    <AssemblyName>rabapp.Service.Quiz</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DocumentManagement\DocumentInformationService.cs" />
+    <Compile Include="NinjectDI\NinjectDependencyResolver.cs" />
+    <Compile Include="NinjectDI\ResolveDependency.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuestionManagement\QuestionCategoryService.cs" />
+    <Compile Include="QuestionManagement\QuestionService.cs" />
+    <Compile Include="SecurityManagement\CompanyBranchService.cs" />
+    <Compile Include="SecurityManagement\CompanyService.cs" />
+    <Compile Include="SecurityManagement\RoleService.cs" />
+    <Compile Include="SecurityManagement\UserService.cs" />
+    <Compile Include="TestManagement\FavoriteTestService.cs" />
+    <Compile Include="TestManagement\TestCategoryService.cs" />
+    <Compile Include="TestManagement\TestService.cs" />
+    <Compile Include="TestManagement\TestTakenService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <Fakes Include="Fakes\System.Web.Mvc.fakes" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\rabapp.Model.Common\rabapp.Model.Common.csproj">
+      <Project>{5DA94723-B2E9-476B-BF1B-91B3D18EC101}</Project>
+      <Name>rabapp.Model.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\rabapp.Model.Quiz\rabapp.Model.Quiz.csproj">
+      <Project>{353f8f7a-9d37-4f56-9b0d-94a7a1273976}</Project>
+      <Name>rabapp.Model.Quiz</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\rabapp.Repository.Common\rabapp.Repository.Common.csproj">
+      <Project>{5064d4b8-439c-4cc8-8815-52ec974cdc82}</Project>
+      <Name>rabapp.Repository.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\rabapp.Repository.Quiz\rabapp.Repository.Quiz.csproj">
+      <Project>{af60f4ff-094c-4de2-a0e7-a3ef63449837}</Project>
+      <Name>rabapp.Repository.Quiz</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\rabapp.Service.Common\rabapp.Service.Common.csproj">
+      <Project>{484ebf1a-bcc8-4791-9cd3-52e7171cf8b9}</Project>
+      <Name>rabapp.Service.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\rabapp.ViewModel.Common\rabapp.ViewModel.Common.csproj">
+      <Project>{1d6db3cf-1097-4f68-8707-14a294118438}</Project>
+      <Name>rabapp.ViewModel.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\rabapp.ViewModel.Quiz\rabapp.ViewModel.Quiz.csproj">
+      <Project>{63e0280c-93c2-46c6-a242-15a1be1e3bca}</Project>
+      <Name>rabapp.ViewModel.Quiz</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
