@@ -80,6 +80,14 @@
       <Project>{5064d4b8-439c-4cc8-8815-52ec974cdc82}</Project>
       <Name>rabapp.Repository.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\rabapp.ViewModel.Common\rabapp.ViewModel.Common.csproj">
+      <Project>{1d6db3cf-1097-4f68-8707-14a294118438}</Project>
+      <Name>rabapp.ViewModel.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\rabapp.ViewModel.Quiz\rabapp.ViewModel.Quiz.csproj">
+      <Project>{63e0280c-93c2-46c6-a242-15a1be1e3bca}</Project>
+      <Name>rabapp.ViewModel.Quiz</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
