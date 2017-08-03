@@ -7,7 +7,7 @@ using System.Drawing.Imaging;
 using System.Drawing.Drawing2D;
 using System.Web.Mvc;
 using rabapp.Model.Common;
-using rabapp.Model.Quiz.ViewModels;
+using rabapp.ViewModel.Quiz.ViewModels;
 
 namespace rabapp.Service.Common.Helper
 {

@@ -122,7 +122,7 @@ namespace rabapp.Service.Quiz.QuestionManagement
 
                         #region Question Answer Option - Insert
 
-                        foreach (var questionAnswerOptionViewModel in questionViewModel.QuestionAnswerOptionViewModelList)
+                        foreach (var questionAnswerOptionViewModel in questionViewModel.QuestionAnswerOptionViewModels)
                         {
                             questionAnswerOptionViewModel.QuestionId = questionViewModel.QuestionId;
                             _iQuestionAnswerOptionRepository.InsertWithoutIdentity(questionAnswerOptionViewModel);
@@ -140,7 +140,7 @@ namespace rabapp.Service.Quiz.QuestionManagement
 
                         #region Question Answer Option - Update
 
-                        foreach (var questionAnswerOptionViewModel in questionViewModel.QuestionAnswerOptionViewModelList)
+                        foreach (var questionAnswerOptionViewModel in questionViewModel.QuestionAnswerOptionViewModels)
                         {
                             questionAnswerOptionViewModel.QuestionId = questionViewModel.QuestionId;
                             _iQuestionAnswerOptionRepository.Update(questionAnswerOptionViewModel);

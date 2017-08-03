@@ -9,6 +9,7 @@ using rabapp.Repository.Quiz.QuestionManagement;
 using rabapp.Repository.Quiz.SecurityManagement;
 using rabapp.Repository.Quiz.TestManagement;
 using rabapp.Service.Common;
+using rabapp.ViewModel.Quiz.TestManagement;
 using rabapp.ViewModel.Quiz.ViewModels;
 
 namespace rabapp.Service.Quiz.TestManagement
@@ -58,13 +59,13 @@ namespace rabapp.Service.Quiz.TestManagement
 
                     var testInformation = _iTestRepository.Get(new TestViewModel { TestId = testTakenViewModel.TestId });
                     var correctAnswer = 0;
-                    foreach (var details in testTakenViewModel.TestTakenDetailsViewModelList)
+                    foreach (var details in testTakenViewModel.TestTakenDetailsViewModels)
                     {
-                        details.TakenId = isExist.TestTakenId;
+                        details.TestTakenId = isExist.TestTakenId;
                         details.TestId = isExist.TestId;
 
                         var correctQuestionAnswerOptionId = String.Join(",", _iQuestionAnswerOptionRepository.GetByQuestionId(details.QuestionId, true).Where(c => c.IsCorrectAnswer).Select(a => a.QuestionAnswerOptionId));
-                        var givenQuestionAnswerOptionId = String.Join(",", testTakenViewModel.TestTakenDetailsViewModelList.Where(c => c.QuestionId == details.QuestionId).Select(a => a.QuestionAnswerOptionId));
+                        var givenQuestionAnswerOptionId = String.Join(",", testTakenViewModel.TestTakenDetailsViewModels.Where(c => c.QuestionId == details.QuestionId).Select(a => a.QuestionAnswerOptionId));
 
                         if (correctQuestionAnswerOptionId == givenQuestionAnswerOptionId)
                         {

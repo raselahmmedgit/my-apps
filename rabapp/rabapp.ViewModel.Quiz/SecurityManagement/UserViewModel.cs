@@ -1,4 +1,5 @@
-﻿using System;
+﻿using rabapp.ViewModel.Quiz.SecurityManagement;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -14,16 +15,16 @@ namespace rabapp.ViewModel.Quiz.ViewModels
         [Key]
         [Required]
         [Display(AutoGenerateField = false)]
-        public Int32 UserId { get; set; }
+        public int UserId { get; set; }
 
         [Required(ErrorMessage = "User Name is required.")]
         [MaxLength(100)]
-        public String UserName { get; set; }
+        public string UserName { get; set; }
 
         [Required]
         [MaxLength(64)]
         //public Byte[] Password { get; set; }
-        public String Password { get; set; }
+        public string Password { get; set; }
 
         //[Required]
         //[MaxLength(64)]
@@ -40,9 +41,9 @@ namespace rabapp.ViewModel.Quiz.ViewModels
         public string Email { get; set; }
 
         [MaxLength(200)]
-        public String Comment { get; set; }
+        public string Comment { get; set; }
 
-        public Boolean IsApproved { get; set; }
+        public bool IsApproved { get; set; }
 
         public DateTime? LastLoginDate { get; set; }
 
@@ -50,10 +51,10 @@ namespace rabapp.ViewModel.Quiz.ViewModels
 
         public DateTime? LastPasswordChangeDate { get; set; }
 
-        //public Boolean IsLoggedIn { get; set; }
+        //public bool IsLoggedIn { get; set; }
 
         //public virtual ICollection<Role> Roles { get; set; }
 
-        public IEnumerable<RoleViewModel> RoleViewModelList { get; set; }
+        public IEnumerable<RoleViewModel> RoleViewModels { get; set; }
     }
 }

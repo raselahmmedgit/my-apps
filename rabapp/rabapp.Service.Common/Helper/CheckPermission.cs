@@ -1,5 +1,5 @@
 ﻿using rabapp.Model.Common;
-using rabapp.Model.Quiz.ViewModels;
+using rabapp.ViewModel.Quiz.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;

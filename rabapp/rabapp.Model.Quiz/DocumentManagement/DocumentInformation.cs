@@ -15,15 +15,15 @@ namespace rabapp.Model.Quiz.DocumentManagement
         [Key]
         [Required]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public Int32 GlobalId { get; set; }
+        public int GlobalId { get; set; }
 
         [Required(ErrorMessage = "Name is required.")]
         [StringLength(250)]
-        public String DocumentName { get; set; }
+        public string DocumentName { get; set; }
 
-        public Byte[] DocumentByte { get; set; }
+        public byte[] DocumentByte { get; set; }
 
-        public Int32? DocumentSize { get; set; }
+        public int? DocumentSize { get; set; }
 
     }
 }

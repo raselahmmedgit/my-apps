@@ -35,8 +35,5 @@ namespace rabapp.Model.Quiz.TestManagement
         [StringLength(250)]
         public string IpAddress { get; set; }
 
-        
-        
-
     }
 }

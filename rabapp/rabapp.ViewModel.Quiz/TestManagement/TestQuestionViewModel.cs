@@ -14,15 +14,15 @@ namespace rabapp.ViewModel.Quiz.ViewModels
         [Key]
         [Required]
         [Display(AutoGenerateField = false)]
-        public Int32 TestQuestionId { get; set; }
+        public int TestQuestionId { get; set; }
 
-        public Int32 TestId { get; set; }
+        public int TestId { get; set; }
 
         [StringLength(150)]
         public string TestName { get; set; }
 
-        public Int32 QuestionId { get; set; }
+        public int QuestionId { get; set; }
 
-        public String QuestionText { get; set; }
+        public string QuestionText { get; set; }
     }
 }

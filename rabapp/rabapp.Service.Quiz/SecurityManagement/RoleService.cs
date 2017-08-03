@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using rabapp.Repository.Common;
 using rabapp.Repository.Quiz.SecurityManagement;
 using rabapp.Service.Common;
-using rabapp.ViewModel.Quiz.ViewModels;
+using rabapp.ViewModel.Quiz.SecurityManagement;
 
 namespace rabapp.Service.Quiz.SecurityManagement
 {

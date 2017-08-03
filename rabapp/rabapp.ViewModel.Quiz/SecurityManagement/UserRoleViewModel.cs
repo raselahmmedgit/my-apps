@@ -14,12 +14,12 @@ namespace rabapp.ViewModel.Quiz.ViewModels
         [Key]
         [Required]
         [Display(AutoGenerateField = false)]
-        public Int32 UserRoleId { get; set; }
+        public int UserRoleId { get; set; }
 
-        public Int32 UserId { get; set; }
-        public String UserName { get; set; }
+        public int UserId { get; set; }
+        public string UserName { get; set; }
 
-        public Int32 RoleId { get; set; }
-        public String RoleName { get; set; }
+        public int RoleId { get; set; }
+        public string RoleName { get; set; }
     }
 }

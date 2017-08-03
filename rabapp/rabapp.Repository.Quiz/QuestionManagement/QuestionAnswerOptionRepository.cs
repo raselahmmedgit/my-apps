@@ -7,6 +7,7 @@ using Dapper;
 using rabapp.Model.Quiz.QuestionManagement;
 using rabapp.Repository.Common;
 using rabapp.ViewModel.Quiz.ViewModels;
+using rabapp.ViewModel.Quiz.QuestionManagement;
 
 namespace rabapp.Repository.Quiz.QuestionManagement
 {

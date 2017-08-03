@@ -8,6 +8,7 @@ using rabapp.Model.Quiz.QuestionManagement;
 using rabapp.Model.Quiz.TestManagement;
 using rabapp.Repository.Common;
 using rabapp.ViewModel.Quiz.ViewModels;
+using rabapp.ViewModel.Quiz.TestManagement;
 
 namespace rabapp.Repository.Quiz.TestManagement
 {
@@ -38,7 +39,7 @@ namespace rabapp.Repository.Quiz.TestManagement
             {
                 if (data != null)
                 {
-                    data.TestTakenDetailsViewModelList = _iTestTakenDetailsRepository.GetByTestTakenId(testTakenId);
+                    data.TestTakenDetailsViewModels = _iTestTakenDetailsRepository.GetByTestTakenId(testTakenId);
                 }
             }
             if (navigationproperty)

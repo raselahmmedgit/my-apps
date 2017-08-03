@@ -1,4 +1,5 @@
-﻿using System;
+﻿using rabapp.Service.Quiz.SecurityManagement;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -15,7 +16,10 @@ namespace rabapp.Utility.DbMigration
             {
                 Console.WriteLine("Start...");
 
-                InitializeAndSeedDb();
+                QuizDbTest quizDbTest = new QuizDbTest();
+                quizDbTest.Data();
+
+                //InitializeAndSeedDb();
 
                 Console.WriteLine("Done.");
             }

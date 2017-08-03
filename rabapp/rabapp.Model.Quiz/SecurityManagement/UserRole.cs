@@ -15,13 +15,13 @@ namespace rabapp.Model.Quiz.SecurityManagement
         [Key]
         [Required]
         [Display(AutoGenerateField = false)]
-        public Int32 UserRoleId { get; set; }
+        public int UserRoleId { get; set; }
 
-        public Int32 UserId { get; set; }
+        public int UserId { get; set; }
         [ForeignKey("UserId")]
         public virtual User User { get; set; }
 
-        public Int32 RoleId { get; set; }
+        public int RoleId { get; set; }
         [ForeignKey("RoleId")]
         public virtual Role Role { get; set; }
     }

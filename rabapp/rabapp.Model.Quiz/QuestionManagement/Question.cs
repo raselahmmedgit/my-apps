@@ -15,32 +15,32 @@ namespace rabapp.Model.Quiz.QuestionManagement
         [Key]
         [Required]
         [Display(AutoGenerateField = false)]
-        public Int32 QuestionId { get; set; }
+        public int QuestionId { get; set; }
 
-        public Int32 GlobalId { get; set; }
+        public int GlobalId { get; set; }
 
-        public Int32 QuestionCategoryId { get; set; }
+        public int QuestionCategoryId { get; set; }
         [ForeignKey("QuestionCategoryId")]
         public virtual QuestionCategory QuestionCategory { get; set; }
 
         [Required(ErrorMessage = "Question is required.")]
-        public String QuestionText { get; set; }
+        public string QuestionText { get; set; }
 
         [StringLength(500)]
-        public String QuestionImageName { get; set; }
+        public string QuestionImageName { get; set; }
 
         [StringLength(500)]
-        public String Tags { get; set; }
+        public string Tags { get; set; }
 
-        public Int32 NoOfAnswerOption { get; set; }
+        public int NoOfAnswerOption { get; set; }
 
-        public Decimal Marks { get; set; }
+        public decimal Marks { get; set; }
 
-        public Boolean IsMultipleAnswer { get; set; }
+        public bool IsMultipleAnswer { get; set; }
 
-        public Int32 DifficultyLevel { get; set; }
+        public int DifficultyLevel { get; set; }
 
-        public String AnswerExplanation { get; set; }
+        public string AnswerExplanation { get; set; }
 
     }
 }

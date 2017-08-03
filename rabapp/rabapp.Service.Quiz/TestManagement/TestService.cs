@@ -14,6 +14,7 @@ using System.Text;
 using System.Threading.Tasks;
 using rabapp.Service.Common.Helper;
 using rabapp.ViewModel.Quiz.ViewModels;
+using rabapp.ViewModel.Quiz.TestManagement;
 
 namespace rabapp.Service.Quiz.TestManagement
 {
@@ -45,7 +46,7 @@ namespace rabapp.Service.Quiz.TestManagement
                 using (var scope = new TransactionScope())
                 {
                     _appDbContext.SqlConnection.Open();
-                    if (testViewModel.NoOfQuestion != testViewModel.TestWiseQuestionViewModelList.Count())
+                    if (testViewModel.NoOfQuestion != testViewModel.TestWiseQuestionViewModels.Count())
                     {
                         return SetMessage.SetErrorMessage("No of question not match! Please select (" + testViewModel.NoOfQuestion + ")question from question list");
                     }
@@ -60,7 +61,7 @@ namespace rabapp.Service.Quiz.TestManagement
                     {
                         testViewModel.IsActive = true;
                         affectedRow = _iTestRepository.InsertWithoutIdentity(testViewModel);
-                        foreach (var testWiseQuestions in testViewModel.TestWiseQuestionViewModelList)
+                        foreach (var testWiseQuestions in testViewModel.TestWiseQuestionViewModels)
                         {
                             testWiseQuestions.TestId = testViewModel.TestId;
                             _iTestWiseQuestionRepository.InsertWithoutIdentity(testWiseQuestions);
@@ -76,7 +77,7 @@ namespace rabapp.Service.Quiz.TestManagement
 
                         _iTestWiseQuestionRepository.DeleteByTestId(testViewModel.TestId);
 
-                        foreach (var testWiseQuestions in testViewModel.TestWiseQuestionViewModelList)
+                        foreach (var testWiseQuestions in testViewModel.TestWiseQuestionViewModels)
                         {
                             testWiseQuestions.TestId = testViewModel.TestId;
                             _iTestWiseQuestionRepository.InsertWithoutIdentity(testWiseQuestions);
@@ -305,7 +306,7 @@ namespace rabapp.Service.Quiz.TestManagement
                     var testWiseQuestion = _iTestWiseQuestionRepository.GetAllByTestId(testViewModel.TestId);
                     if (testWiseQuestion != null)
                     {
-                        testViewModel.TestWiseQuestionViewModelList = testWiseQuestion;
+                        testViewModel.TestWiseQuestionViewModels = testWiseQuestion;
                     }
                 }
                 return testViewModel;

@@ -24,6 +24,6 @@ namespace rabapp.ViewModel.Quiz.ViewModels
         public int UserId { get; set; }
 
         [StringLength(100)]
-        public String UserName { get; set; }
+        public string UserName { get; set; }
     }
 }

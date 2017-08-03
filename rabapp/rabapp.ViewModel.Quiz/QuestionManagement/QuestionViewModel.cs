@@ -1,4 +1,5 @@
-﻿using System;
+﻿using rabapp.ViewModel.Quiz.QuestionManagement;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -56,7 +57,7 @@ namespace rabapp.ViewModel.Quiz.ViewModels
 
         public string AnswerOptionList { get; set; }
 
-        public IEnumerable<QuestionAnswerOptionViewModel> QuestionAnswerOptionViewModelList { get; set; }
+        public IEnumerable<QuestionAnswerOptionViewModel> QuestionAnswerOptionViewModels { get; set; }
 
         public int? TestId { get; set; }
     }

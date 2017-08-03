@@ -16,13 +16,13 @@ namespace rabapp.Model.Quiz.TestManagement
         [Key]
         [Required]
         [Display(AutoGenerateField = false)]
-        public Int32 TestQuestionId { get; set; }
+        public int TestQuestionId { get; set; }
 
-        public Int32 TestId { get; set; }
+        public int TestId { get; set; }
         [ForeignKey("TestId")]
         public virtual Test Test { get; set; }
 
-        public Int32 QuestionId { get; set; }
+        public int QuestionId { get; set; }
         [ForeignKey("QuestionId")]
         public virtual Question Question { get; set; }
 

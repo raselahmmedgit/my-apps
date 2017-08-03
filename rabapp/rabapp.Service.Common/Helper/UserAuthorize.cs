@@ -2,9 +2,8 @@
 using System.Security.Claims;
 using System.Web;
 using System.Web.Mvc;
-using rabapp.Model.Quiz.ViewModels;
 using rabapp.Repository.Quiz.SecurityManagement;
-
+using rabapp.ViewModel.Quiz.ViewModels;
 
 namespace rabapp.Service.Common.Helper
 {

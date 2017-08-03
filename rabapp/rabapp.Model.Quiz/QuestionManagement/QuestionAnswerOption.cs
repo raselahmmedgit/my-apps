@@ -15,19 +15,19 @@ namespace rabapp.Model.Quiz.QuestionManagement
         [Key]
         [Required]
         [Display(AutoGenerateField = false)]
-        public Int32 QuestionAnswerOptionId { get; set; }
+        public int QuestionAnswerOptionId { get; set; }
 
-        public Int32 GlobalId { get; set; }
+        public int GlobalId { get; set; }
 
-        public Int32 QuestionId { get; set; }
+        public int QuestionId { get; set; }
         [ForeignKey("QuestionId")]
         public virtual Question Question { get; set; }
 
         [Required(ErrorMessage = "Answer Option is required.")]
-        public String QuestionAnswerOptionText { get; set; }
+        public string QuestionAnswerOptionText { get; set; }
 
         [StringLength(500)]
-        public String QuestionAnswerOptionImageName { get; set; }
+        public string QuestionAnswerOptionImageName { get; set; }
 
         public bool IsCorrectAnswer { get; set; }
 

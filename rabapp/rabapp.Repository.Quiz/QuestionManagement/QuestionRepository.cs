@@ -7,6 +7,7 @@ using Dapper;
 using rabapp.Model.Quiz.QuestionManagement;
 using rabapp.Repository.Common;
 using rabapp.ViewModel.Quiz.ViewModels;
+using rabapp.ViewModel.Quiz.QuestionManagement;
 
 namespace rabapp.Repository.Quiz.QuestionManagement
 {
@@ -68,7 +69,7 @@ namespace rabapp.Repository.Quiz.QuestionManagement
                     for (int i = 0; i < questionViewModelList.Count(); i++)
                     {
                         var questionAnswerOptionViewModelList = _iQuestionAnswerOptionRepository.GetByQuestionId(questionViewModelList.ElementAt(i).QuestionId, withCorrectAnswerOption).ToList();
-                        questionViewModelList.ElementAt(i).QuestionAnswerOptionViewModelList = questionAnswerOptionViewModelList;
+                        questionViewModelList.ElementAt(i).QuestionAnswerOptionViewModels = questionAnswerOptionViewModelList;
                     }
                 }
             }
@@ -90,7 +91,7 @@ namespace rabapp.Repository.Quiz.QuestionManagement
             {
                 var questionAnswerOptionViewModelList = queryMultiple.Read<QuestionAnswerOptionViewModel>();
 
-                questionViewModel.QuestionAnswerOptionViewModelList = questionAnswerOptionViewModelList;
+                questionViewModel.QuestionAnswerOptionViewModels = questionAnswerOptionViewModelList;
 
                 return questionViewModel;
             }

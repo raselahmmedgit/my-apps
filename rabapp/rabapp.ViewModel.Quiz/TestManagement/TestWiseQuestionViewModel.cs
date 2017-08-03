@@ -13,12 +13,12 @@ namespace rabapp.ViewModel.Quiz.ViewModels
     {
         [Required]
         [Display(AutoGenerateField = false)]
-        public Int32 TestWiseQuestionId { get; set; }
+        public int TestWiseQuestionId { get; set; }
 
-        public Int32 TestId { get; set; }
-        public String TestName { get; set; }
+        public int TestId { get; set; }
+        public string TestName { get; set; }
 
-        public Int32 QuestionId { get; set; }
-        public String QuestionText { get; set; }
+        public int QuestionId { get; set; }
+        public string QuestionText { get; set; }
     }
 }

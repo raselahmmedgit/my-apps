@@ -17,11 +17,11 @@ namespace rabapp.Model.Quiz.SecurityManagement
         [Key]
         [Required]
         [Display(AutoGenerateField = false)]
-        public Int32 RoleId { get; set; }
+        public int RoleId { get; set; }
 
         [Required(ErrorMessage = "Name is required.")]
         [MaxLength(100)]
-        public String RoleName { get; set; }
+        public string RoleName { get; set; }
 
         //public virtual ICollection<User> Users { get; set; }
     }

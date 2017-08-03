@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Security;
 using rabapp.Model.Common;
-using rabapp.Model.Quiz.ViewModels;
+using rabapp.ViewModel.Quiz.ViewModels;
 
 namespace rabapp.Service.Common.Helper
 {
