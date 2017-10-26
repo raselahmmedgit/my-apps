@@ -2,3 +2,4 @@ C:\Users\placovu_usr_04\Documents\GitHub\my-apps\rabapp\rabapp.ViewModel.Common\
 C:\Users\placovu_usr_04\Documents\GitHub\my-apps\rabapp\rabapp.ViewModel.Common\bin\Debug\rabapp.ViewModel.Common.pdb
 C:\Users\placovu_usr_04\Documents\GitHub\my-apps\rabapp\rabapp.ViewModel.Common\obj\Debug\rabapp.ViewModel.Common.dll
 C:\Users\placovu_usr_04\Documents\GitHub\my-apps\rabapp\rabapp.ViewModel.Common\obj\Debug\rabapp.ViewModel.Common.pdb
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\rabapp\rabapp.ViewModel.Common\obj\Debug\rabapp.ViewModel.Common.csprojResolveAssemblyReference.cache
