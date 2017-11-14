@@ -16,8 +16,16 @@ namespace rabapp.Utility.DbMigration
             {
                 Console.WriteLine("Start...");
 
-                QuizDbTest quizDbTest = new QuizDbTest();
-                quizDbTest.Data();
+                QuizDbContext quizDbContext = new QuizDbContext();
+
+                if (!quizDbContext.Database.Exists())
+                {
+                    Console.WriteLine("Database is exists.");
+                }
+                else
+                {
+                    Console.WriteLine("Database is not exists.");
+                }
 
                 //InitializeAndSeedDb();
 
