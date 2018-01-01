@@ -20,3 +20,15 @@ C:\WorkArea\RnD\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Repository.iTest
 C:\WorkArea\RnD\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Repository.iTestApp\obj\Debug\SoftwareGrid.Repository.iTestApp.csprojResolveAssemblyReference.cache
 C:\WorkArea\RnD\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Repository.iTestApp\obj\Debug\SoftwareGrid.Repository.iTestApp.dll
 C:\WorkArea\RnD\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Repository.iTestApp\obj\Debug\SoftwareGrid.Repository.iTestApp.pdb
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Repository.iTestApp\bin\Debug\SoftwareGrid.Repository.iTestApp.dll.config
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Repository.iTestApp\bin\Debug\SoftwareGrid.Repository.iTestApp.dll
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Repository.iTestApp\bin\Debug\SoftwareGrid.Repository.iTestApp.pdb
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Repository.iTestApp\bin\Debug\Dapper.dll
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Repository.iTestApp\bin\Debug\SoftwareGrid.Model.iTestApp.dll
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Repository.iTestApp\bin\Debug\System.Web.Mvc.dll
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Repository.iTestApp\bin\Debug\SoftwareGrid.Model.iTestApp.pdb
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Repository.iTestApp\bin\Debug\Dapper.xml
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Repository.iTestApp\bin\Debug\System.Web.Mvc.xml
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Repository.iTestApp\obj\Debug\SoftwareGrid.Repository.iTestApp.csprojResolveAssemblyReference.cache
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Repository.iTestApp\obj\Debug\SoftwareGrid.Repository.iTestApp.dll
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Repository.iTestApp\obj\Debug\SoftwareGrid.Repository.iTestApp.pdb
