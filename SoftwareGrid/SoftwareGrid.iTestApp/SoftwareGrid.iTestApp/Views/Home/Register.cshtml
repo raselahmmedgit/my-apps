@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+    var message = Convert.ToString(ViewBag.Message);
+}
+@if (!string.IsNullOrEmpty(message))
+{
+    <div class="alert-danger">
+        @message
+    </div>
+}
+<form action="javascript:;" id="frmUserRegister" name="frmUserRegister">
+
+    <h3>Signup with iTest</h3>
+   
+    <div class="form-group">
+        <input type="text" id="FirstName" name="FirstName" class="form-control" placeholder="First Name">
+    </div>
+    <div class="form-group">
+        <input type="text" id="LastName" name="LastName" class="form-control" placeholder="Last Name">
+    </div>
+    <div class="form-group">
+        <input type="text" id="Email" name="Email" class="form-control" placeholder="Email">
+    </div>
+    <div class="form-group">
+        <input type="text" id="MobileNo" name="MobileNo" class="form-control" placeholder="Mobile">
+    </div>
+    <div class="form-group">
+        <input type="password" id="Password" name="Password" class="form-control" placeholder="Password">
+    </div>
+    <div class="form-group">
+        <input type="password" id="ConfirmPassword" name="ConfirmPassword" class="form-control" placeholder="Confirm Password">
+    </div>
+    <div class="text-left">
+        <p>By clicking register you are agree to our <a href="">Terms &amp; Condition</a> and <a href="">Privacy Policy</a></p>
+    </div>
+    <div class="form-group text-center">
+        <button type="submit" class="btn btn-success btn-register" id="btnRegister" name="btnRegister"> REGISTER </button>
+    </div>
+    <p class="text-center">Remember password? <a href="/Home/Login">Login</a> </p>
+</form>
+
+<script src="~/assets/admin/pages/otherscripts/Register.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        Register.init();
+    });
+
+</script>
+
+
+

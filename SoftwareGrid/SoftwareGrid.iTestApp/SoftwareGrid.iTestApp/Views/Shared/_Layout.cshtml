@@ -1,0 +1,112 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@Html.RenderPageTitle()@ViewBag.Title</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="description" content="@Html.RenderMetaDescription()" />
+    <meta name="keywords" content="@Html.RenderMetaKeywords()" />
+    <meta name="author" content="" />
+    <meta name="MobileOptimized" content="320" />
+
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:300,400,500,700" rel="stylesheet">
+    <link href="~/assets/admin/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/admin/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/admin/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/admin/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/admin/global/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/admin/global/plugins/select2/css/select2-bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/admin/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/admin/global/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/admin/global/plugins/toastr/toastr.css" rel="stylesheet" />
+    <link href="~/assets/frontend/css/animate.css" rel="stylesheet" type="text/css">
+    <link href="~/assets/frontend/css/bootFolio.css" rel="stylesheet" type="text/css">
+    <link href="~/assets/frontend/css/style.css" rel="stylesheet" type="text/css">
+    <script src="~/assets/admin/global/plugins/jquery.min.js" type="text/javascript"></script>
+    <link rel="shortcut icon" href="~/assets/images/itest-fav_icon-32x32.png" />
+
+</head>
+
+
+<!-- BEGIN BODY -->
+<body>
+
+    @Html.Partial("_header")
+
+    @RenderBody()
+
+    @Html.Partial("_footer")
+
+    <script src="~/assets/admin/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="~/assets/admin/global/plugins/js.cookie.min.js" type="text/javascript"></script>
+    <script src="~/assets/admin/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+    <script src="~/assets/admin/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+    <script src="~/assets/admin/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+
+    <script src="~/assets/admin/global/plugins/jquery-validation/js/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="~/assets/admin/global/plugins/jquery-validation/js/additional-methods.min.js" type="text/javascript"></script>
+    <script src="~/assets/admin/global/plugins/select2/js/select2.full.min.js" type="text/javascript"></script>
+    <script src="~/assets/admin/global/plugins/bootstrap-tagsinput/bootstrap-tagsinput.min.js" type="text/javascript"></script>
+    <script src="~/assets/admin/global/scripts/ui-pagination.js"></script>
+    
+    <script src="~/assets/admin/global/plugins/jquery.scrollUp.js"></script>
+    <script src="~/assets/admin/global/plugins/vash/vash-0.7.12.js"></script>
+    <script src="~/assets/admin/global/plugins/vash/vash.helper.js"></script>
+    <script src="~/assets/admin/global/plugins/toastr/toastr.min.js"></script>
+    <script src="~/assets/admin/global/plugins/bootbox/bootbox.min.js"></script>
+    <script src="~/assets/admin/global/scripts/RB.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        // Scrool Smoths
+        $(function () {
+
+            $(window).on('load', function () {
+                var $preloader = $('#page-preloader'),
+                    $spinner = $preloader.find('.spinner');
+                $spinner.fadeOut();
+                $preloader.delay(1000).fadeOut(800);
+            });
+
+            //$(document).on("click", '.navbar a[href*=#]:not([href=#])', function () {
+            //    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+            //        var target = $(this.hash);
+            //        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            //        if (target.length) {
+            //            $('html,body').animate({
+            //                scrollTop: target.offset().top - 70
+            //            }, 1000);
+            //            return false;
+            //        }
+            //    }
+            //    return false;
+            //});
+
+            $(function () {
+                $.scrollUp({
+                    animation: 'slide', // Fade, slide, none
+                    scrollText: 'Go TOP'
+                });
+            });
+
+            $(document).on("click", '.ticker', function () {
+                $(this).toggleClass('active');
+            });
+
+        });
+    </script>
+
+    <noscript>
+        <iframe src="http://www.googletagmanager.com/ns.html?id=GTM-NGFVTN"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    
+    <script type="text/javascript">
+        $(document).ready(function() {
+            RB.setLocalTimeZone();
+        });
+    </script>
+</body>
+</html>

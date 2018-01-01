@@ -1,0 +1,115 @@
+﻿@model SoftwareGrid.Model.iTestApp.TestManagement.Test
+@{
+    ViewBag.Title = "Test Taken";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+<link href="~/assets/frontend/css/simple-line-icons.css" rel="stylesheet" />
+<link href="~/assets/frontend/plugins/icheck/icheck/skins/all.css" rel="stylesheet" />
+<link href="~/assets/frontend/plugins/countdown/countdown_style.css" rel="stylesheet" />
+<div class="container">
+    <div class="data-content">
+        <div class="col-md-12">
+            <div class="portlet-box">
+                <div class="portlet-body mh-400">
+                    <div class="quiz-test">
+                        <h3 class="test-title">@Model.TestName</h3>
+                         <div class="text-right settime collapse" id="TestTimer">Time Remaining: <span id="timer">00</span></div> 
+                        <div class="row">
+                            <div class="col-md-12">
+                                <span class="questions">Total Questions: <b>@Model.NoOfQuestion</b></span>
+                                <span class="duration">Total Duration: <b>@Model.Duration minutes</b></span>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4"></div>
+                                    <div class="col-md-4"></div>
+
+                                    <div class="col-md-4 pull-right">
+                                        <button type="button" class="btn btn-sm btn-success btn-primary pull-right" id="BtnStartTest">Start Test</button>
+                                        <button type="button" class="btn btn-sm btn-primary pull-right collapse" id="BtnFinishTest">Submit Result</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="hidden" value="@Model.TestId" id="TestId" />
+                    <input type="hidden" value="@Model.NoOfQuestion" id="NoOfQuestion" />
+                    <input type="hidden" value="@Model.Duration" id="Duration" />
+                    <input type="hidden" value="" id="TakenId" />
+                    <input type="hidden" value="" id="AccessCode" />
+                    <div class="row" id="TestQuestion">
+                        <div class="col-md-12">
+                            <div id="div-test-taken">
+                                <div class="question-virtual">
+                                    <p class="flat-text full-width"></p>
+                                    <p class="flat-text small"></p>
+                                    <p class="flat-text small"></p>
+                                    <p class="flat-text small"></p>
+                                    <p class="flat-text small"></p>
+                                </div>
+                                <div class="question-virtual">
+                                    <p class="flat-text full-width"></p>
+                                    <p class="flat-text small"></p>
+                                    <p class="flat-text small"></p>
+                                    <p class="flat-text small"></p>
+                                    <p class="flat-text small"></p>
+                                </div>
+                            </div>
+                            <div class="paging-content"></div>
+                        </div>
+                       
+                    </div>
+                  
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/vash" id="tmpTestTaken">
+    @@model.data.forEach(function(v){
+    <div class="row">
+        <div class="col-md-12">
+            <div class="question-item">
+                <div class="question-type">
+                    <h4>Question Category : @@v.QuestionCategoryName</h4>
+                </div>
+                
+                <div style="white-space: pre-line;" class="question-block is-multiple">
+                    <span>Question :</span>
+                    @@v.QuestionText
+                    @@if(v.IsMultipleAnswer == true){
+                    <span>(Answer Multiple)</span>
+                    }
+                </div>
+                @@if(v.QuestionImageName != null && v.QuestionImageName != ""){
+                <div class="question-thumb">
+                    <img src="/Download/Image/@@v.QuestionImageName">
+                </div>
+                }
+                <div class="answer-block">
+                    <div class="form-group">
+                        <div class="icheck-list">
+                            @@html.ShowAnswerOption(v.QuestionAnswerOptionList,v.IsMultipleAnswer)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    })
+</script>
+
+
+<script src="~/assets/frontend/plugins/icheck/icheck/icheck.min.js"></script>
+<script src="~/assets/frontend/js/TestTaken.js"></script>
+<script src="~/assets/frontend/plugins/countdown/jquery.countdown.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        TestTaken.init();
+    });
+</script>

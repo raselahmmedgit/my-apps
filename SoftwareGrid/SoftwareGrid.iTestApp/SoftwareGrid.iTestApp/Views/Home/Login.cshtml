@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+    var message = Convert.ToString(ViewBag.Message);
+}
+    <form class="login-form" action="@Url.Action("Login","Home")" method="post">
+    <h3>Sign In</h3>
+    @*<div class="alert alert-danger display-hide">
+        <button class="close" data-close="alert"></button>
+        <span> Enter any username and password. </span>
+    </div>*@
+    @if (!string.IsNullOrEmpty(message))
+    {
+        <div class="alert-danger">
+            @message
+        </div>
+    }
+
+
+    <div class="form-group">
+        <label class="control-label visible-ie8 visible-ie9">Username</label>
+        <div class="input-icon">
+            <i class="fa fa-user"></i>
+            <input class="form-control" type="text" autocomplete="off" placeholder="Username" name="Email" maxlength="60" required="required" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label visible-ie8 visible-ie9">Password</label>
+        <div class="input-icon">
+            <i class="fa fa-lock"></i>
+            <input class="form-control" type="password" autocomplete="off" placeholder="Password" name="Password" maxlength="30" required="required" />
+        </div>
+    </div>
+    <div class="form-group forgot">
+        <label class="rememberme mt-checkbox mt-checkbox-outline">
+            <input type="checkbox" name="RememberMe" value="1" /> Remember me
+        </label>
+        <a href="javascript:;">Forgot Password</a>
+    </div>
+    <div class="form-group text-center">
+        <button type="submit" class="btn btn-success btn-login"> LOGIN </button>
+    </div>
+    <p class="text-center">Don't have an account yet? <a href="/Home/Register">Create Account</a> </p>
+
+    @*<div class="login-options">
+        <h4>Or login with</h4>
+        <ul class="social-icons">
+            <li>
+                <a class="facebook" data-original-title="facebook" href="javascript:;"> </a>
+            </li>
+            <li>
+                <a class="twitter" data-original-title="Twitter" href="javascript:;"> </a>
+            </li>
+            <li>
+                <a class="googleplus" data-original-title="Goole Plus" href="javascript:;"> </a>
+            </li>
+            <li>
+                <a class="linkedin" data-original-title="Linkedin" href="javascript:;"> </a>
+            </li>
+        </ul>
+    </div>*@
+</form>
+

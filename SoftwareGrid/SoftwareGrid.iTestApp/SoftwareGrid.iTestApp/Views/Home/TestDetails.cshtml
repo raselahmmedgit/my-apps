@@ -1,0 +1,75 @@
+﻿@model SoftwareGrid.Model.iTestApp.TestManagement.Test
+@{
+    ViewBag.Title = "Test Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <div class="data-content">
+        @Html.HiddenFor(model => model.TestId)
+        @Html.HiddenFor(model => model.TestCategoryId)
+        @Html.HiddenFor(model => model.TestIconName)
+        @Html.HiddenFor(model => model.CreatedByUserId)
+        @Html.HiddenFor(model => model.CreatedDate)
+        <div class="col-md-12">
+            <div class="portlet-box">
+                <div class="portlet-body">
+                    <div class="row">
+                        <div class="details-head">
+                            <div class="col-md-2">
+                                <div class="test-thumb">
+                                    <span><img src="@Model.TestIconPath"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-10">
+                                <h3 class="test-title">@Model.TestName</h3>
+                                <div class="">
+                                    <span class="questions">Questions : <b>@Model.NoOfQuestion</b></span>
+                                    <span class="duration">Duration : <b>@Model.Duration Minutes</b></span>
+                                    <a href="@Url.Action("TestTaken","Home",new{testId= @Model.TestId})" class="btn btn-sm btn-success take-test">Take This Test</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="col-md-12">
+                            <p class="text-gray justify">@Html.Raw(@Model.About)</p>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="col-md-12">
+                            <div class="passage-header">
+                                <h3>Test Topics</h3>
+                            </div>
+                            @Html.Raw(@Model.TestTopic)
+                            <div class="passage-header">
+                                <h3>This pre employment test is useful for hiring </h3>
+                            </div>
+                            <ul class="list-unstyled text-gray">
+                                
+                                @if(Model.Tags != null){
+                                    List<string> tagsList = Model.Tags.Split(',').ToList();
+                                    foreach (var tags in tagsList)
+                                    {
+                                        <li><i class="fa fa-long-arrow-right"></i> @tags</li>
+                                    }
+                                }
+
+                            </ul>
+                            <div class="passage-header">
+                                <h3>Test Details</h3>
+                            </div>
+                            @Html.Raw(@Model.TestDetails)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @*<div class="col-md-3 collapse">
+            <div class="portlet-box">
+                <div class="portlet-body">
+                    <div class="ad">
+                        <h3>Test Authors</h3>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+    </div>
+</div>

@@ -1,0 +1,201 @@
+﻿@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<header>
+    <div class="container">
+        <div class="intro-text">
+            Choose From 100+ Skill Tests or Ask for a Custom Test
+        </div>
+    </div>
+</header>
+
+<div class="section purple">
+    <div class="container get-in-section">
+        <div class="row">
+            <div class="col-md-3">
+                <input type="text" class="form-control" value="First Name" placeholder="First Name">
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control" value="Last Name" placeholder="Last Name">
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control" value="Mobile" placeholder="Mobile">
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control" value="Email" placeholder="Email">
+            </div>
+        </div>
+        <div class="get-in-touch">
+            <button type="submit" class="btn-touch">Get In Touch</button>
+        </div>
+    </div>
+</div>
+
+<div class="section off-white no-bot-padd" id="block1">
+    <div class="service-container">
+        <div class="section-overlay service">
+            <div class="section-header">
+                <h3 class="white">Reduce Time, Efforts & Hassle in Your Pre-Employment Skills Assessment </h3>
+                <span class="header-line">
+                    <span><span class="circle"></span></span>
+                </span>
+            </div>
+            <div class="service-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="service-block green">
+                                <div class="icon-block">
+                                    <span class="s-round green">
+                                        <span class="s-icon">
+
+                                        </span>
+                                    </span>
+                                </div>
+                                <h3>Ready Tests</h3>
+                                <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="service-block blue">
+                                <div class="icon-block">
+                                    <span class="s-round blue">
+                                        <span class="s-icon"></span>
+                                    </span>
+                                </div>
+                                <h3>Custom Tests</h3>
+                                <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="service-block orange">
+                                <div class="icon-block">
+                                    <span class="s-round orange">
+                                        <span class="s-icon"></span>
+                                    </span>
+                                </div>
+                                <h3>Powerful Reporting</h3>
+                                <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="service-block violet">
+                                <div class="icon-block">
+                                    <span class="s-round violet">
+                                        <span class="s-icon"></span>
+                                    </span>
+                                </div>
+                                <h3>Integrations</h3>
+                                <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section off-white" id="block2">
+    <div class="section-header">
+        <h3>Few of Our Awesome Ready Skill Tests</h3>
+        <span class="header-line gray">
+            <span><span class="circle"></span></span>
+        </span>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="skill-block">
+                <div id="div-test" class="skills-items"></div>
+                <script type="text/vash" id="tmpTest">
+                    @@model.data.forEach(function(v){
+
+                    <a href="/Home/TestDetails?id=@@v.TestId" target="_black" class="col-md-2 skill-thumb">
+                        <img src="@@v.TestIconPath">
+                        <span class="wrap-text" title="@@v.TestName">@@v.TestName</span>
+                    </a>
+
+                    })
+                </script>
+
+                <div class="text-center">
+                    <a href="@Url.Action("TestLibrary", "Home")" class="btn-more"><i class="icon-plus"></i> View More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section off-white no-bot-padd" id="block3">
+    <div class="price-container">
+        <div class="price-overlay">
+            <div class="section-header">
+                <h3 class="white">Pricing and Plans</h3>
+                <h4 class="white">Get a Complete Messaging Solution for Your Business</h4>
+                <span class="header-line">
+                    <span><span class="circle"></span></span>
+                </span>
+            </div>
+            <div class="price-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="priceplan-section">
+                            <div class="basic-plan">
+                                <div class="plan-header blue">
+                                    <h3>Basic</h3>
+                                    <span>User Research for Individuals <br /> $100 Per Month</span>
+                                </div>
+                                <div class="plan-body blue">
+                                    <ul>
+                                        <li>Valid for 6 Months<br /><span>No recurring payment</span></li>
+                                        <li>100 Test Attempts</li>
+                                        <li>Productivity Features</li>
+                                        <li>Email Support</li>
+                                    </ul>
+                                    <a href="" class="btn-blue">Select</a>
+                                </div>
+                            </div>
+                            <div class="pro-plan">
+                                <div class="plan-header orange">
+                                    <h3>Pro Plans</h3>
+                                    <span>User Research for Individuals <br /> $1000 Per Month</span>
+                                </div>
+                                <div class="plan-body orange">
+                                    <ul>
+                                        <li>Valid for 6 Months<br /><span>No recurring payment</span></li>
+                                        <li>300 Test Attempts</li>
+                                        <li>Productivity Features</li>
+                                        <li>Image Proctoring</li>
+                                        <li>Email, Phone Support</li>
+                                        <li>Website Integration</li>
+                                    </ul>
+                                    <a href="" class="btn-orange">Select</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    
+    function loadData() {
+        RB.sendAjaxRequest('/Home/IndexAjax', null, true, function (result) {
+            if (result) {
+                var compiled = vash.compile($('#tmpTest').text());
+                var resultText = compiled({ data: result });
+                document.getElementById("div-test").innerHTML = resultText;
+            }
+        }, true, true, null);
+    };
+
+    $(document).ready(function () {
+        loadData();
+    });
+
+</script>

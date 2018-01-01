@@ -1,0 +1,2 @@
+D:\Work\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Service.iTestApp\obj\Debug\SoftwareGrid.Service.iTestApp.csprojResolveAssemblyReference.cache
+C:\WorkArea\RnD\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Service.iTestApp\obj\Debug\SoftwareGrid.Service.iTestApp.csprojResolveAssemblyReference.cache

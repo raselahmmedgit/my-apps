@@ -1,0 +1,11 @@
+D:\Work\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Model.iTestApp\bin\Debug\SoftwareGrid.Model.iTestApp.dll
+D:\Work\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Model.iTestApp\bin\Debug\SoftwareGrid.Model.iTestApp.pdb
+D:\Work\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Model.iTestApp\obj\Debug\SoftwareGrid.Model.iTestApp.csprojResolveAssemblyReference.cache
+D:\Work\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Model.iTestApp\obj\Debug\SoftwareGrid.Model.iTestApp.dll
+D:\Work\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Model.iTestApp\obj\Debug\SoftwareGrid.Model.iTestApp.pdb
+C:\WorkArea\RnD\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Model.iTestApp\bin\Debug\SoftwareGrid.Model.iTestApp.dll
+C:\WorkArea\RnD\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Model.iTestApp\bin\Debug\SoftwareGrid.Model.iTestApp.pdb
+C:\WorkArea\RnD\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Model.iTestApp\bin\Debug\System.Web.Mvc.dll
+C:\WorkArea\RnD\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Model.iTestApp\bin\Debug\System.Web.Mvc.xml
+C:\WorkArea\RnD\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Model.iTestApp\obj\Debug\SoftwareGrid.Model.iTestApp.dll
+C:\WorkArea\RnD\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Model.iTestApp\obj\Debug\SoftwareGrid.Model.iTestApp.pdb

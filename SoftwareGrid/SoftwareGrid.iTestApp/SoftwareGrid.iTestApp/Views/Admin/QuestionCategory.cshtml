@@ -1,0 +1,109 @@
+﻿@{
+    ViewBag.Title = "Question Category Setup";
+    Layout = "~/Views/Shared/admin/_LayoutAdmin.cshtml";
+}
+
+<div class="col-md-6">
+    <div class="portlet portlet-sortable box green ">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-edit"></i> Question Category Setup
+            </div>
+            <div class="tools">
+                <a href="#" class="collapse"> </a>
+            </div>
+        </div>
+        <div class="portlet-body form">
+            <form class="form-horizontal" role="form" id="frmQuestionCategory">
+
+                <div class="form-body">
+
+                    <div class="form-group collapse">
+                        <label class="col-md-3 control-label">Question Category Id</label>
+                        <div class="col-md-9">
+                            <input type="text" id="QuestionCategoryId" name="QuestionCategoryId" class="form-control" placeholder="Question Category Id">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Question Category Name</label>
+                        <div class="col-md-9">
+                            <input type="text" id="QuestionCategoryName" name="QuestionCategoryName" class="form-control" placeholder="Question Category Name" autocomplete="off" maxlength="150">
+                        </div>
+                    </div>
+
+                    <div class="form-group collapse">
+                        <label class="col-md-3 control-label">Question Category Icon</label>
+                        <div class="col-md-9">
+                            <input type="text" id="QuestionCategoryIcon" name="QuestionCategoryIcon" class="form-control" placeholder="Question Category Icon" autocomplete="off">
+                        </div>
+                    </div>
+
+                    <div class="form-group ">
+                        <div class="col-md-offset-3 col-md-4">
+                            <button type="submit" id="BtnSave" class="btn green"> <i class="fa fa-save"> </i>&nbsp;Save</button>
+                            <button type="button" id="BtnCancel" class="btn default"> &nbsp;Cancel</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-12">
+    <div class="portlet portlet-sortable box green ">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-list"></i> Question Category List
+            </div>
+            <div class="tools">
+                <a href="#" class="collapse"> </a>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div class="table-responsive" id="div-question-category"></div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/vash" id="tmpQuestionCategory">
+    <table class="table table-striped table-bordered table-hover" id="tblQuestionCategory">
+        <thead>
+            <tr>
+                <td>Category ID</td>
+                <td>Category Name</td>
+                <td>Action</td>
+            </tr>
+        </thead>
+        <tbody>
+            @@model.data.forEach(function(v){
+            <tr>
+                <td>@@v.QuestionCategoryId</td>
+                <td>@@v.QuestionCategoryName</td>
+                <td>
+                    <a class="btn green btn-xs edit" data-id="@@v.QuestionCategoryId">
+                        <i class="fa fa-edit"></i>
+                        Edit
+                    </a>
+                    <a class="btn red btn-xs delete" data-id="@@v.QuestionCategoryId">
+                        <i class="fa fa-trash-o"></i>
+                        Delete
+                    </a>
+                </td>
+            </tr>
+            })
+        </tbody>
+    </table>
+</script>
+
+
+<script src="~/assets/admin/pages/otherscripts/QuestionCategorySetup.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        QuestionCategorySetup.init();
+    });
+</script>

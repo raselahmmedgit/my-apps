@@ -1,0 +1,307 @@
+﻿@{
+    ViewBag.Title = "Question Setup";
+    Layout = "~/Views/Shared/admin/_LayoutAdmin.cshtml";
+}
+
+<style type="text/css">
+    .bootstrap-tagsinput {
+        display: block;
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="portlet portlet-sortable box green" id="divQuestionForm">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-edit"></i> Question Setup
+                </div>
+                <div class="tools">
+                    <a href="#" class="collapse"> </a>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <form action="javascript:;" id="frmQuestion">
+
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <input type="hidden" id="QuestionId" name="QuestionId">
+
+                            <input type="hidden" id="GlobalId" name="GlobalId">
+
+                            <div class="form-group">
+                                <label for="QuestionCategoryId" class="control-label">Question Category</label>
+                                <select id="QuestionCategoryId" name="QuestionCategoryId" class="form-control select2-allow-clear"></select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="QuestionText" class="control-label">Question</label>
+                                <textarea id="QuestionText" name="QuestionText" class="form-control" placeholder="Question" style="min-height: 100px;"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="QuestionImagePath" class="control-label">Question Image</label>
+                                <input type="file" id="QuestionImagePath" name="QuestionImagePath" accept="image/*" class="form-control" placeholder="Question Image" autocomplete="off" />
+                                <input type="hidden" id="QuestionImageName" name="QuestionImageName">
+                            </div>
+
+                            <div class="form-group">
+                                <img id="QuestionImage" alt="" style="display: none; height: 100px; width: 100px;" src="#"/>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="NoOfAnswerOption" class="control-label">No Of Answer Option</label>
+                                        <input type="number" class="form-control" id="NoOfAnswerOption" name="NoOfAnswerOption" placeholder="No Of Answer Option" min="1" autocomplete="off" />
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="Marks" class="control-label">Marks</label>
+                                        <input type="number" class="form-control" id="Marks" name="Marks" placeholder="Marks" min="1" autocomplete="off" />
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    
+                                    <div class="form-group">
+                                        <label for="DifficultyLevel" class="control-label">Difficulty Level</label>
+                                        <select id="DifficultyLevel" name="DifficultyLevel" class="form-control select2-allow-clear"></select>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="Tags" class="control-label">Tags</label>
+                                <input type="text" id="Tags" name="Tags" class="form-control" placeholder="eg: C#, SQL, Java, Html" />
+                                <span class="help-block-input-note">Note : Please press enter to separate tags.</span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" id="IsMultipleAnswer" name="IsMultipleAnswer" /> Is Multiple Answer?
+                                </label>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="AnswerExplanation" class="control-label">Answer Explanation</label>
+                                <textarea id="AnswerExplanation" name="AnswerExplanation" class="form-control" placeholder="Answer Explanation" style="min-height: 100px;"></textarea>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <input type="hidden" id="AnswerOptionId" name="AnswerOptionId">
+
+                            <div class="form-group">
+                                <label for="AnswerOptionText" class="control-label">Answer Option</label>
+                                <textarea id="AnswerOptionText" name="AnswerOptionText" class="form-control" placeholder="Answer Option" style="min-height: 100px;"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="AnswerOptionImagePath" class="control-label">Answer Option Image</label>
+                                <input type="file" id="AnswerOptionImagePath" name="AnswerOptionImagePath" accept="image/*" class="form-control" placeholder="Question Image" autocomplete="off" />
+                                <input type="hidden" id="AnswerOptionImageName" name="AnswerOptionImageName">
+                            </div>
+
+                            <div class="form-group">
+                                <img id="AnswerOptionImage" alt="" style="display: none; height: 100px; width: 100px;" src="#"/>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" id="IsCorrectAnswer" name="IsCorrectAnswer" /> Is Correct Answer?
+                                </label>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-offset-10 col-md-2 ">
+                                    <button type="button" id="BtnAnswerOptionSave" class="btn green"><i class="fa fa-plus"></i> Add</button>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="AnswerOptionList" class="control-label">Answer Option List</label>
+                                <input type="hidden" id="AnswerOptionList" name="AnswerOptionList" value="1">
+                                <div class="table-responsive" id="div-questionansweroption"></div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="clearfix"></div>
+                    <button type="button" id="BtnSave" class="btn btn-primary"><i class="fa fa-save"></i> Save</button>
+                    <button type="button" class="btn btn-info" id="BtnClear"><i class="fa fa-refresh"></i> Clear</button>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="portlet portlet-sortable box green ">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-list"></i> Question List (<span id="TotalCount"></span>)
+                </div>
+                <div class="tools">
+                    <a href="" class="collapse"> </a>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="form-inline margin-bottom-10">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <select id="ShowPerPageItem" class="form-control">
+                                    <option value="10">10</option>
+                                    <option value="20">20</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                    <option value="200">200</option>
+                                </select>
+                                <span>records per page</span>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-6" style="float: right">
+                            <div class="form-group" style="float: right">
+
+                                <div class="input-group">
+                                    <input type="text" id="Keyword" name="Keyword" class="form-control" placeholder="Keyword" />
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-success" id="BtnQuestionSearch" name="BtnQuestionSearch" type="button"> Search</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive" id="div-question"></div>
+                <div class="paging-content"></div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+
+
+
+
+<script type="text/vash" id="tmpQuestion">
+    <table class="table table-striped table-bordered table-hover" id="tblQuestion">
+        <thead>
+            <tr>
+                <td>Question Category</td>
+                <td>Question</td>
+                <td>Tags</td>
+                <td>Answer Option</td>
+                <td>Multiple Answer</td>
+                <td>Marks</td>
+                <td>Action</td>
+            </tr>
+        </thead>
+        <tbody>
+            @@model.data.forEach(function(v){
+            <tr>
+                <td>@@v.QuestionCategoryName</td>
+                <td>
+                    <div style="white-space: pre;float:left;"> @@v.QuestionText</div>
+                </td>
+                <td>
+                    @@html.ShowTag(v.Tags)
+                </td>
+                <td>@@v.NoOfAnswerOption</td>
+                <td>
+                    @@if(v.IsMultipleAnswer ==0){
+                    <span class="badge badge-danger">No</span>
+                    }else{
+                    <span class="badge badge-success">Yes</span>
+                    }
+                </td>
+                <td>@@v.Marks</td>
+                <td>
+                    <a class="btn green btn-xs edit" data-id="@@v.QuestionId">
+                        <i class="fa fa-edit"></i>
+                        Edit
+                    </a>
+                    <a class="btn red btn-xs delete" data-id="@@v.QuestionId">
+                        <i class="fa fa-trash-o"></i>
+                        Delete
+                    </a>
+                </td>
+            </tr>
+            })
+        </tbody>
+    </table>
+</script>
+
+<script type="text/vash" id="tmpQuestionAnswerOption">
+    <table class="table table-striped table-bordered table-hover" id="tblQuestionAnswerOption">
+        <thead>
+            <tr>
+                <td>Answer Option</td>
+                <td>Answer Option Image</td>
+                <td>Is Correct Answer</td>
+                <td>Action</td>
+            </tr>
+        </thead>
+        <tbody>
+            @@model.data.forEach(function(v){
+            <tr>
+                <td>@@v.AnswerOptionText</td>
+                <td><img src="@@v.AnswerOptionImage" alt="" style="height: 50px; width: 50px;" /></td>
+                <td>
+                    @@if(v.IsCorrectAnswer ==0){
+                    <span class="badge badge-danger">No</span>
+                    }else{
+                    <span class="badge badge-success">Yes</span>
+                    }
+                </td>
+                <td>
+                    <a class="btn green btn-xs" onclick="editAnswerOption(this)" data-answeroptionid="@@v.AnswerOptionId">
+                        <i class="fa fa-edit"></i>
+                        Edit
+                    </a>
+                    <a class="btn red btn-xs" onclick="deleteAnswerOption(this)" data-answeroptionid="@@v.AnswerOptionId">
+                        <i class="fa fa-trash-o"></i>
+                        Delete
+                    </a>
+                </td>
+            </tr>
+            })
+        </tbody>
+    </table>
+</script>
+
+<script src="~/assets/admin/pages/otherscripts/QuestionSetup.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        QuestionSetup.init();
+    });
+</script>
+
+
+<style>
+    pre {
+font-size: inherit;
+color: inherit;
+border: initial;
+padding: initial;
+font-family: inherit;
+}
+</style>
