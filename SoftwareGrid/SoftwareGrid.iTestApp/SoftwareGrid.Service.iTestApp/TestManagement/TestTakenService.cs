@@ -84,12 +84,12 @@ namespace SoftwareGrid.Service.iTestApp.TestManagement
 
                     var user = _iUserRepository.Get(new User { UserId = isExist.UserId });
 
-                    if (user != null && user.RaasForceUserId != null && user.RaasForceUserId > 0)
-                    {
-                        var restClient = new RestClient(ConfigurationManager.AppSettings["ApiUrl"]);
-                        var request = new RestRequest("api/iTestApp/InsertOrUpdateTestResult?param1=" + user.RaasForceUserId + "&param2=" + testTaken.TestId + "&param3=" + testTaken.TakenId + "&param4=" + score.ToString("#"), Method.GET) { RequestFormat = DataFormat.Json };
-                        var result = restClient.Execute<HttpResponseMessage>(request);
-                    }
+                    //if (user != null && user.RaasForceUserId != null && user.RaasForceUserId > 0)
+                    //{
+                    //    var restClient = new RestClient(ConfigurationManager.AppSettings["ApiUrl"]);
+                    //    var request = new RestRequest("api/iTestApp/InsertOrUpdateTestResult?param1=" + user.RaasForceUserId + "&param2=" + testTaken.TestId + "&param3=" + testTaken.TakenId + "&param4=" + score.ToString("#"), Method.GET) { RequestFormat = DataFormat.Json };
+                    //    var result = restClient.Execute<HttpResponseMessage>(request);
+                    //}
 
                     message = affectedRow > 0
                         ? SetMessage.SetSuccessMessage("Information has been saved successfully.")

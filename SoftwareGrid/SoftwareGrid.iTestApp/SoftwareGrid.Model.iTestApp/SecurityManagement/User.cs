@@ -5,45 +5,76 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace SoftwareGrid.Model.iTestApp.SecurityManagement
 {
     [Table("User", Schema = "dbo")]
-    public class User
+    public class User : BaseModel
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int UserId { get; set; }
-        public int GlobalId { get; set; }
         [Required]
-        [StringLength(50)]
+        [Display(AutoGenerateField = false)]
+        public int UserId { get; set; }
+
+        [Required(ErrorMessage = "User Name is required.")]
+        [MaxLength(100)]
+        public string UserName { get; set; }
+
+        [Required(ErrorMessage = "First Name is required.")]
+        [MaxLength(100)]
         public string FirstName { get; set; }
 
-        [Required]
-        [StringLength(50)]
+        [Required(ErrorMessage = "Last Name is required.")]
+        [MaxLength(100)]
         public string LastName { get; set; }
 
         [Required]
-        [StringLength(128)]
+        [MaxLength(64)]
+        //public Byte[] Password { get; set; }
+        public string Password { get; set; }
+
+        //[Required]
+        //[MaxLength(64)]
+        //public byte[] PasswordHash { get; set; }
+
+        //[Required]
+        //[MaxLength(128)]
+        //public byte[] PasswordSalt { get; set; }
+
+        [DataType(DataType.EmailAddress)]
+        [Required(ErrorMessage = "Email is required")]
+        [RegularExpression(@"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$", ErrorMessage = "Invalid email address.")]
+        [MaxLength(200)]
         public string Email { get; set; }
 
-        [Required]
-        [StringLength(256)]
-        public string Password { get; set; }
+        [MaxLength(200)]
+        public string Comment { get; set; }
+
+        public bool IsApproved { get; set; }
+
+        public DateTime? LastLoginDate { get; set; }
+
+        public DateTime? LastActivityDate { get; set; }
+
+        public DateTime? LastPasswordChangeDate { get; set; }
+
+        //public bool IsLoggedIn { get; set; }
+
+        //public virtual ICollection<Role> Roles { get; set; }
+
+        public int GlobalId { get; set; }
 
         [StringLength(15)]
         public string MobileNo { get; set; }
 
         [StringLength(250)]
         public string PhotoFileName { get; set; }
-        public int UserType { get; set; }
-        public bool IsActive { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public int? CreatedByUserId { get; set; }
-        public int? RaasForceUserId { get; set; }
 
+        public int UserType { get; set; }
+
+        public bool IsActive { get; set; }
+        
         #region Not Mapped
         [NotMapped]
         public bool RememberMe { get; set; }
-         [NotMapped]
+        [NotMapped]
         public string CurrentPassword { get; set; }
-
         #endregion
 
     }

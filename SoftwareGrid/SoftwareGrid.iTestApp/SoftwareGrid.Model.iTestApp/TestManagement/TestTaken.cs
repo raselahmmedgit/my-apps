@@ -20,7 +20,7 @@ namespace SoftwareGrid.Model.iTestApp.TestManagement
         public decimal? Score { get; set; }
         [StringLength(250)]
         public string IpAddress { get; set; }
-        public virtual IEnumerable<TestTakenDetails> TestTakenDetails { get; set; }
+        public virtual IEnumerable<TestTakenDetail> TestTakenDetails { get; set; }
         public virtual Test Test { get; set; }
 
     }

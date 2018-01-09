@@ -5,6 +5,8 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.Drawing.Drawing2D;
 using System.Web.Mvc;
+using ImageProcessor;
+using ImageProcessor.Imaging.Formats;
 
 namespace SoftwareGrid.Service.iTestApp.Helper
 {

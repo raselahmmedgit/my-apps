@@ -7,7 +7,7 @@ using SoftwareGrid.Repository.iTestApp.Base;
 
 namespace SoftwareGrid.Repository.iTestApp.TestManagement
 {
-    public class TestTakenDetailsRepository:BaseRepository<TestTakenDetails>,ITestTakenDetailsRepository
+    public class TestTakenDetailsRepository:BaseRepository<TestTakenDetail>,ITestTakenDetailsRepository
     {
         private readonly DbContext _dbContext;
         public TestTakenDetailsRepository(DbContext dbContext) : base(dbContext)
@@ -15,15 +15,15 @@ namespace SoftwareGrid.Repository.iTestApp.TestManagement
             _dbContext = dbContext;
         }
 
-        public IEnumerable<TestTakenDetails> GetByTakenId(int takenId)
+        public IEnumerable<TestTakenDetail> GetByTakenId(int takenId)
         {
             const string query = @"SELECT *FROM TestTakenDetails WHERE TakenId = @TakenId";
-            return _dbContext.SqlConnection.Query<TestTakenDetails>(query, new { TakenId = takenId }).ToList();
+            return _dbContext.SqlConnection.Query<TestTakenDetail>(query, new { TakenId = takenId }).ToList();
         }
     }
 
-    public interface ITestTakenDetailsRepository:IBaseRepository<TestTakenDetails>
+    public interface ITestTakenDetailsRepository:IBaseRepository<TestTakenDetail>
     {
-        IEnumerable<TestTakenDetails> GetByTakenId(int takenId);
+        IEnumerable<TestTakenDetail> GetByTakenId(int takenId);
     }
 }

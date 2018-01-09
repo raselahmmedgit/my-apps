@@ -183,6 +183,6 @@ C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTest
 C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Api.Email\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Api.Email\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Api.Email\bin\System.Web.Http.Owin.xml
-C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Api.Email\obj\Debug\SoftwareGrid.Api.Email.csprojResolveAssemblyReference.cache
 C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Api.Email\obj\Debug\SoftwareGrid.Api.Email.dll
 C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Api.Email\obj\Debug\SoftwareGrid.Api.Email.pdb
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Api.Email\obj\Debug\SoftwareGrid.Api.Email.csprojResolveAssemblyReference.cache

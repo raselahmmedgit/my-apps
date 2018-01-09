@@ -291,7 +291,7 @@ namespace SoftwareGrid.iTestApp.Controllers
         [HttpPost]
         public ActionResult FinishTest(TestTaken testTaken, string answerOption)
         {
-            var details = JsonConvert.DeserializeObject<List<TestTakenDetails>>(answerOption);
+            var details = JsonConvert.DeserializeObject<List<TestTakenDetail>>(answerOption);
             testTaken.TestTakenDetails = details;
             var message = _iTestTakenService.FinishTest(testTaken);
             return Json(message, JsonRequestBehavior.AllowGet);
@@ -405,10 +405,10 @@ namespace SoftwareGrid.iTestApp.Controllers
                 user.LastName = param2;
                 user.Email = emailAddress;
                 user.Password = password;
-                if (!string.IsNullOrEmpty(param5))
-                {
-                    user.RaasForceUserId = Convert.ToInt32(param5);
-                }
+                //if (!string.IsNullOrEmpty(param5))
+                //{
+                //    user.RaasForceUserId = Convert.ToInt32(param5);
+                //}
                 
                 var message = _iUserService.Register(user, null);
                 if (message.MessageType == MessageType.Success)
@@ -433,8 +433,5 @@ namespace SoftwareGrid.iTestApp.Controllers
         }
 
         #endregion
-
-
-
     }
 }

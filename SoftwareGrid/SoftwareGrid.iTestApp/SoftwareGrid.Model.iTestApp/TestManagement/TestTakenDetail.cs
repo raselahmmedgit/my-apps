@@ -3,8 +3,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SoftwareGrid.Model.iTestApp.TestManagement
 {
-    [Table("TestTakenDetails", Schema = "dbo")]
-    public class TestTakenDetails
+    [Table("TestTakenDetail", Schema = "dbo")]
+    public class TestTakenDetail
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]

@@ -133,7 +133,7 @@ namespace SoftwareGrid.Service.iTestApp.UserManagement
 
                         if (loggedInUserId > 0)
                         {
-                            user.CreatedByUserId = loggedInUserId;
+                            user.CreatedBy = loggedInUserId;
                             user.UserType = user.UserType;
                         }
                         else
