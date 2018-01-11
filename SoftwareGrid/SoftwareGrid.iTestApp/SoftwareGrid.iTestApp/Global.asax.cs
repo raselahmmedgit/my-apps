@@ -17,7 +17,7 @@ namespace SoftwareGrid.iTestApp
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            DbConfig.ConnectionString = ConfigurationManager.AppSettings["ConnectionString"];
+            DbConfig.ConnectionString = ConfigurationManager.ConnectionStrings["DbContext"].ConnectionString;
 
             new ResolveDependency().Resolve();
         }

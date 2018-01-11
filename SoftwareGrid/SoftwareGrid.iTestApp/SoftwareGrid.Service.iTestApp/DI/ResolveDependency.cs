@@ -27,9 +27,17 @@ namespace SoftwareGrid.Service.iTestApp.DI
             kernel.Bind(typeof(IUserRepository)).To(typeof(UserRepository)).WithConstructorArgument(paramName, dbContext);
             kernel.Bind(typeof(IUserService)).To(typeof(UserService)).WithConstructorArgument(paramName, dbContext);
 
-            kernel.Bind(typeof(IUserLoginInformationRepoitory)).To(typeof(UserLoginInformationRepoitory)).WithConstructorArgument(paramName, dbContext);
-            kernel.Bind(typeof(IUserLoginInformationService)).To(typeof(UserLoginInformationService)).WithConstructorArgument(paramName, dbContext);
+            kernel.Bind(typeof(ICompanyRepoitory)).To(typeof(CompanyRepoitory)).WithConstructorArgument(paramName, dbContext);
+            kernel.Bind(typeof(ICompanyService)).To(typeof(CompanyService)).WithConstructorArgument(paramName, dbContext);
 
+            kernel.Bind(typeof(ICompanyBranchRepoitory)).To(typeof(CompanyBranchRepoitory)).WithConstructorArgument(paramName, dbContext);
+            kernel.Bind(typeof(ICompanyBranchService)).To(typeof(CompanyBranchService)).WithConstructorArgument(paramName, dbContext);
+
+            kernel.Bind(typeof(IRoleRepoitory)).To(typeof(RoleRepoitory)).WithConstructorArgument(paramName, dbContext);
+            kernel.Bind(typeof(IRoleService)).To(typeof(RoleService)).WithConstructorArgument(paramName, dbContext);
+
+            kernel.Bind(typeof(IUserRoleRepoitory)).To(typeof(UserRoleRepoitory)).WithConstructorArgument(paramName, dbContext);
+            kernel.Bind(typeof(IUserRoleService)).To(typeof(UserRoleService)).WithConstructorArgument(paramName, dbContext);
 
             #endregion
 

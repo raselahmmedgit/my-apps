@@ -64,6 +64,10 @@
     <Compile Include="TestManagement\TestTakenDetailsRepository.cs" />
     <Compile Include="TestManagement\TestTakenRepository.cs" />
     <Compile Include="TestManagement\TestWiseQuestionRepository.cs" />
+    <Compile Include="UserManagement\CompanyRepoitory.cs" />
+    <Compile Include="UserManagement\CompanyBranchRepoitory.cs" />
+    <Compile Include="UserManagement\RoleRepoitory.cs" />
+    <Compile Include="UserManagement\UserRoleRepoitory.cs" />
     <Compile Include="UserManagement\UserLoginInformationRepoitory.cs" />
     <Compile Include="UserManagement\UserRepository.cs" />
     <Compile Include="Utility\UtilityRepository.cs" />

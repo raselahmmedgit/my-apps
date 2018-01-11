@@ -85,6 +85,10 @@
     <Compile Include="TestManagement\TestCategoryService.cs" />
     <Compile Include="TestManagement\TestService.cs" />
     <Compile Include="TestManagement\TestTakenService.cs" />
+    <Compile Include="UserManagement\CompanyBranchService.cs" />
+    <Compile Include="UserManagement\UserRoleService.cs" />
+    <Compile Include="UserManagement\CompanyService.cs" />
+    <Compile Include="UserManagement\RoleService.cs" />
     <Compile Include="UserManagement\UserLoginInformationService.cs" />
     <Compile Include="UserManagement\UserService.cs" />
     <Compile Include="Utility\UserAuthentication.cs" />
