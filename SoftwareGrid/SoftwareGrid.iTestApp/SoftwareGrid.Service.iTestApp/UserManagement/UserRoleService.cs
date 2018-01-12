@@ -1,5 +1,5 @@
 ﻿using System;
-using SoftwareGrid.Model.iTestApp.SecurityManagement;
+using SoftwareGrid.Model.iTestApp.UserManagement;
 using SoftwareGrid.Model.iTestApp.Utility;
 using SoftwareGrid.Repository.iTestApp.Base;
 using SoftwareGrid.Repository.iTestApp.UserManagement;

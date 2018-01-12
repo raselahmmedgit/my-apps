@@ -23,7 +23,10 @@ namespace SoftwareGrid.Service.iTestApp.DI
             var kernel = new StandardKernel();
             var dbContext = new DbContext();
 
-            #region Security
+            kernel.Bind(typeof(IBaseService<>)).To(typeof(BaseService<>)).WithConstructorArgument(paramName, dbContext);
+            kernel.Bind(typeof(IBaseRepository<>)).To(typeof(BaseRepository<>)).WithConstructorArgument(paramName, dbContext);
+
+            #region User Management
             kernel.Bind(typeof(IUserRepository)).To(typeof(UserRepository)).WithConstructorArgument(paramName, dbContext);
             kernel.Bind(typeof(IUserService)).To(typeof(UserService)).WithConstructorArgument(paramName, dbContext);
 
@@ -41,9 +44,8 @@ namespace SoftwareGrid.Service.iTestApp.DI
 
             #endregion
 
-            #region ITestApp
-
-            kernel.Bind(typeof(IBaseService<>)).To(typeof(BaseService<>)).WithConstructorArgument(paramName, dbContext);
+            #region Test Management
+            
             kernel.Bind<IQuestionCategoryService>().To<QuestionCategoryService>().WithConstructorArgument(paramName, dbContext);
             kernel.Bind<IQuestionService>().To<QuestionService>().WithConstructorArgument(paramName, dbContext);
             kernel.Bind<ITestCategoryService>().To<TestCategoryService>().WithConstructorArgument(paramName, dbContext);
@@ -52,8 +54,7 @@ namespace SoftwareGrid.Service.iTestApp.DI
             kernel.Bind<IDocumentInformationService>().To<DocumentInformationService>().WithConstructorArgument(paramName, dbContext);
             kernel.Bind<ITestTakenService>().To<TestTakenService>().WithConstructorArgument(paramName, dbContext);
             kernel.Bind<IUtilityService>().To<UtilityService>().WithConstructorArgument(paramName, dbContext);
-
-            kernel.Bind(typeof(IBaseRepository<>)).To(typeof(BaseRepository<>)).WithConstructorArgument(paramName, dbContext);
+            
             kernel.Bind<IQuestionCategoryRepository>().To<QuestionCategoryRepository>().WithConstructorArgument(paramName, dbContext);
             kernel.Bind<IQuestionRepository>().To<QuestionRepository>().WithConstructorArgument(paramName, dbContext);
             kernel.Bind<IQuestionAnswerOptionRepository>().To<QuestionAnswerOptionRepository>().WithConstructorArgument(paramName, dbContext);
@@ -66,7 +67,6 @@ namespace SoftwareGrid.Service.iTestApp.DI
             kernel.Bind<ITestTakenDetailsRepository>().To<TestTakenDetailsRepository>().WithConstructorArgument(paramName, dbContext);
             kernel.Bind<IUtilityRepository>().To<UtilityRepository>().WithConstructorArgument(paramName, dbContext);
             kernel.Bind<IFavoriteTestRepository>().To<FavoriteTestRepository>().WithConstructorArgument(paramName, dbContext);
-
 
             #endregion
 

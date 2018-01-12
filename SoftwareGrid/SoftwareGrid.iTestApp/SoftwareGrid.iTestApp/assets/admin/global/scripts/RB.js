@@ -1792,7 +1792,7 @@ function OnResumeFileSelect(e) {
             var data = { TestId: id };
             RB.sendAjaxRequest(url, data, true, function (res) {
                 if (res.MessageType == "6") {
-                    window.location = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/Home/Login?ReturnUrl=' + encodeURIComponent(location.pathname);
+                    window.location = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/Login?ReturnUrl=' + encodeURIComponent(location.pathname);
                 }
                 else {
                     if (res.State == "1") {

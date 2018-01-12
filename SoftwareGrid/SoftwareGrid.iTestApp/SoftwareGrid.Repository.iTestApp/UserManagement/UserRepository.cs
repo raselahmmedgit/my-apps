@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 using Dapper;
-using SoftwareGrid.Model.iTestApp.SecurityManagement;
+using SoftwareGrid.Model.iTestApp.UserManagement;
 using SoftwareGrid.Repository.iTestApp.Base;
 using System.Collections.Generic;
 using System;
@@ -32,7 +32,6 @@ namespace SoftwareGrid.Repository.iTestApp.UserManagement
             return _dbContext.SqlConnection.Query<User>(query, new { Keyword = keyword, Skip = skip, Take = take }).ToList();
         }
 
-
         public dynamic DynamicSearch(string keyword, int currentPage = 0, int take = 50)
         {
             int skip = Convert.ToInt32(currentPage * take);
@@ -53,7 +52,6 @@ namespace SoftwareGrid.Repository.iTestApp.UserManagement
 
            return new ExecuteQuery(_dbContext).Execute(query, paramName, paramValue);
         }
-
 
         public User GetUser(string userName)
         {

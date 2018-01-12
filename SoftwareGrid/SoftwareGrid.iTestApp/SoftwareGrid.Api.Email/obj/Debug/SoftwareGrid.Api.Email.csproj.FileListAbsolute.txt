@@ -185,4 +185,3 @@ C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTest
 C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Api.Email\bin\System.Web.Http.Owin.xml
 C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Api.Email\obj\Debug\SoftwareGrid.Api.Email.dll
 C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Api.Email\obj\Debug\SoftwareGrid.Api.Email.pdb
-C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Api.Email\obj\Debug\SoftwareGrid.Api.Email.csprojResolveAssemblyReference.cache

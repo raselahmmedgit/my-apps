@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace SoftwareGrid.Model.iTestApp.SecurityManagement
+namespace SoftwareGrid.Model.iTestApp.UserManagement
 {
     [Table("User", Schema = "dbo")]
     public class User : BaseModel

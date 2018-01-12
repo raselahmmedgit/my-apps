@@ -336,12 +336,12 @@ namespace SoftwareGrid.Service.iTestApp.Helper
             return ImageFormat.Jpeg;
         }
 
-        public Size GetPreferredImageSize(SoftwareGrid.Model.iTestApp.Utility.Constants.ImageDimensions dimension)
+        public Size GetPreferredImageSize(ImageDimensions dimension)
         {
             var size = new Size();
             switch (dimension)
             {
-                case SoftwareGrid.Model.iTestApp.Utility.Constants.ImageDimensions.Common:
+                case ImageDimensions.Common:
                     size = new Size(210, 210);
                     break;
                 default:
@@ -351,7 +351,7 @@ namespace SoftwareGrid.Service.iTestApp.Helper
             return size;
         }
 
-        public bool ImageSaveToPath(string fullRelativePath, byte[] photobytes, string fileName, Constants.ImageDimensions dimensions)
+        public bool ImageSaveToPath(string fullRelativePath, byte[] photobytes, string fileName, ImageDimensions dimensions)
         {
             bool success = false;
             try

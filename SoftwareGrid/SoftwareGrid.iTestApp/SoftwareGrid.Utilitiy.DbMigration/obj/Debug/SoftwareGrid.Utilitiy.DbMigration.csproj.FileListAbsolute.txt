@@ -17,6 +17,8 @@ C:\WorkArea\RnD\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Utilitiy.DbMigra
 C:\WorkArea\RnD\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Utilitiy.DbMigration\bin\Debug\EntityFramework.SqlServer.xml
 C:\WorkArea\RnD\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Utilitiy.DbMigration\obj\Debug\SoftwareGrid.Utilitiy.DbMigration.dll
 C:\WorkArea\RnD\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Utilitiy.DbMigration\obj\Debug\SoftwareGrid.Utilitiy.DbMigration.pdb
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Utilitiy.DbMigration\bin\Debug\SoftwareGrid.Utilitiy.DbMigration.exe.config
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Utilitiy.DbMigration\bin\Debug\SoftwareGrid.Utilitiy.DbMigration.exe
 C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Utilitiy.DbMigration\bin\Debug\SoftwareGrid.Utilitiy.DbMigration.pdb
 C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Utilitiy.DbMigration\bin\Debug\EntityFramework.dll
 C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Utilitiy.DbMigration\bin\Debug\EntityFramework.SqlServer.dll
@@ -27,7 +29,5 @@ C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTest
 C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Utilitiy.DbMigration\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Utilitiy.DbMigration\bin\Debug\System.Web.Mvc.xml
 C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Utilitiy.DbMigration\obj\Debug\SoftwareGrid.Utilitiy.DbMigration.csprojResolveAssemblyReference.cache
-C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Utilitiy.DbMigration\obj\Debug\SoftwareGrid.Utilitiy.DbMigration.pdb
-C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Utilitiy.DbMigration\bin\Debug\SoftwareGrid.Utilitiy.DbMigration.exe.config
-C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Utilitiy.DbMigration\bin\Debug\SoftwareGrid.Utilitiy.DbMigration.exe
 C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Utilitiy.DbMigration\obj\Debug\SoftwareGrid.Utilitiy.DbMigration.exe
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Utilitiy.DbMigration\obj\Debug\SoftwareGrid.Utilitiy.DbMigration.pdb

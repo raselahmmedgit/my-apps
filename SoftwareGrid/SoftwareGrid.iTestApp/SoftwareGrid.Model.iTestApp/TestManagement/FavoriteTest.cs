@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using SoftwareGrid.Model.iTestApp.SecurityManagement;
+using SoftwareGrid.Model.iTestApp.UserManagement;
 
 namespace SoftwareGrid.Model.iTestApp.TestManagement
 {

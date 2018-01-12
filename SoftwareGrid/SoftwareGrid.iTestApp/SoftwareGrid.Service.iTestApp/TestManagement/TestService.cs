@@ -96,7 +96,7 @@ namespace SoftwareGrid.Service.iTestApp.TestManagement
 
                     if (httpPostedFileBase != null)
                     {
-                        var size = imageUtility.GetPreferredImageSize(Constants.ImageDimensions.Common);
+                        var size = imageUtility.GetPreferredImageSize(ImageDimensions.Common);
                         byte[] byteAfterResize = imageUtility.EnforceResize(size.Width, size.Height, byteData, guid + Path.GetExtension(httpPostedFileBase.FileName));
 
                         documentInformatio.DocumentName = guid + Path.GetExtension(httpPostedFileBase.FileName);
@@ -119,7 +119,7 @@ namespace SoftwareGrid.Service.iTestApp.TestManagement
 
                     if (httpPostedFileBase != null)
                     {
-                        bool isUpload = imageUtility.ImageSaveToPath(folderPath, byteData, guid + Path.GetExtension(httpPostedFileBase.FileName), Constants.ImageDimensions.Common);
+                        bool isUpload = imageUtility.ImageSaveToPath(folderPath, byteData, guid + Path.GetExtension(httpPostedFileBase.FileName), ImageDimensions.Common);
                     }
 
                     #endregion
@@ -150,7 +150,7 @@ namespace SoftwareGrid.Service.iTestApp.TestManagement
                 int currentLoggedInUserId = WebHelper.CurrentSession.Content.LoggedInUser.UserId;
                 int currentLoggedInUserType = WebHelper.CurrentSession.Content.LoggedInUser.UserType;
 
-                if (currentLoggedInUserType == (int)Constants.UserType.Administrator)
+                if (currentLoggedInUserType == (int)AppUsers.Admin)
                 {
                     return _iTestRepository.Search(0, keyword, currentPage, take);
                 }

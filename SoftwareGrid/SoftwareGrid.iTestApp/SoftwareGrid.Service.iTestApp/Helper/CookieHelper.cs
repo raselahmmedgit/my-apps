@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Security;
-using SoftwareGrid.Model.iTestApp.SecurityManagement;
+using SoftwareGrid.Model.iTestApp.UserManagement;
 using SoftwareGrid.Model.iTestApp.Utility;
 
 namespace SoftwareGrid.Service.iTestApp.Helper

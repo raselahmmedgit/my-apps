@@ -18,7 +18,6 @@ namespace SoftwareGrid.iTestApp.Controllers
     [ClearCache]
     public class BaseController : Controller
     {
-     
         #region Drop Down List
 
         public JsonResult LoadTestCategoryAjax()
@@ -39,8 +38,8 @@ namespace SoftwareGrid.iTestApp.Controllers
 
         public JsonResult LoadDifficultyLevelAjax()
         {
-            var result = Enum.GetValues(typeof(Constants.DifficultyLevels))
-                         .Cast<Constants.DifficultyLevels>()
+            var result = Enum.GetValues(typeof(DifficultyLevels))
+                         .Cast<DifficultyLevels>()
                          .Select(e => new { Value = (int)e, Description = e.ToString() })
                          .ToList();
             var selectedResult = result.Select(item => new SelectListItem() { Text = item.Description, Value = item.Value.ToString() }).ToList();
@@ -48,13 +47,16 @@ namespace SoftwareGrid.iTestApp.Controllers
 
         }
 
-        [HttpPost]
-        public ActionResult GetAllUserTypeAjax()
+        public JsonResult LoadUserAjax()
         {
-            var result = Enum.GetValues(typeof(Constants.UserType))
-                         .Cast<Constants.UserType>()
-                         .Select(e => new { Value = (int)e, Description = e.ToString() })
-                         .ToList();
+            var result = Enum.GetValues(typeof(AppUsers)).Cast<AppUsers>().Select(e => new { Value = (int)e, Description = e.ToString() }).ToList();
+            return Json(result, JsonRequestBehavior.AllowGet);
+
+        }
+
+        public JsonResult LoadUserWithoutUserAjax()
+        {
+            var result = Enum.GetValues(typeof(AppUsers)).Cast<AppUsers>().Select(e => new { Value = (int)e, Description = e.ToString() }).ToList();
             var selectedResult = result.Select(item => new SelectListItem() { Text = item.Description, Value = item.Value.ToString() }).Where(ut => ut.Value != "2").ToList();
             return Json(selectedResult, JsonRequestBehavior.AllowGet);
         }
@@ -110,8 +112,7 @@ namespace SoftwareGrid.iTestApp.Controllers
             var result = new ImageResult(filePath, IOFileHelper.GetMIMEType(documentName));
             return result;
         }
-
-
+        
         public string GetImagePath(int globalId, string documentName)
         {
             string filePath = string.Empty;
@@ -171,6 +172,5 @@ namespace SoftwareGrid.iTestApp.Controllers
         }
 
         #endregion
-
     }
 }

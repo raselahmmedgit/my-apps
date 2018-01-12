@@ -108,7 +108,7 @@
                 },
                 submitHandler: function (form) {
                     if ($('#btnRegister').length > 0) {
-                        var url = "/Home/Register";
+                        var url = "/Register";
                         $.post(url, $(form).serializeArray(),
                             function (res) {
                                 if (res.MessageType == "2") {

@@ -1,5 +1,5 @@
-﻿var InternalUserRegister = function () {
-    var frmId = "frmInternalUserRegister";
+﻿var UserRegister = function () {
+    var frmId = "frmUserRegister";
     
     var validateForm = function () {
         if ($().validate) {
@@ -109,7 +109,7 @@
                 },
                 submitHandler: function (form) {
                     if ($('#btnCreateUser').length > 0) {
-                        var url = "/Admin/CreateUser";
+                        var url = "/Admin/CreateUserRegister";
                         var formData = new FormData();
                         var totalFiles = document.getElementById("PhotoFileName").files.length;
                         var browsedFile = document.getElementById("PhotoFileName").files[0];
@@ -163,7 +163,7 @@
     };
 
     var initializeForm = function () {
-        RB.loadDropdown('UserType', '/Home/GetAllUserTypeAjax', {}, false);
+        RB.loadDropdown('UserType', '/Home/LoadUserWithoutUserAjax', {}, false);
     };
 
     var clearData = function () {

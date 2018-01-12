@@ -7,7 +7,7 @@ using System.Linq.Expressions;
 using System.Reflection;
 using Dapper;
 using SoftwareGrid.Model.iTestApp.QuestionManagement;
-using SoftwareGrid.Model.iTestApp.SecurityManagement;
+using SoftwareGrid.Model.iTestApp.UserManagement;
 
 namespace SoftwareGrid.Repository.iTestApp.Base
 {

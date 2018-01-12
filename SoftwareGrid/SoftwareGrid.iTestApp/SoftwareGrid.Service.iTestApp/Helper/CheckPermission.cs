@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using SoftwareGrid.Model.iTestApp.SecurityManagement;
+using SoftwareGrid.Model.iTestApp.UserManagement;
 using SoftwareGrid.Model.iTestApp.Utility;
 
 namespace SoftwareGrid.Service.iTestApp.Helper
@@ -16,7 +16,7 @@ namespace SoftwareGrid.Service.iTestApp.Helper
         {
 
             User loggedInUser = WebHelper.CurrentSession.Content.LoggedInUser;
-            if (loggedInUser != null && loggedInUser.UserType == (int)Constants.UserType.PublicUser)
+            if (loggedInUser != null && loggedInUser.UserType == (int)AppUsers.User)
             {
                 filterContext.Result = new RedirectResult("/Unauthorized");
             }

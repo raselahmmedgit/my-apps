@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SoftwareGrid.Model.iTestApp.SecurityManagement
+namespace SoftwareGrid.Model.iTestApp.UserManagement
 {
     [Table("CompanyBranch", Schema = "dbo")]
     public class CompanyBranch : BaseModel

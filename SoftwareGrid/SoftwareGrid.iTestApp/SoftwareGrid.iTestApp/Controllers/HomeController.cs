@@ -10,7 +10,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 using Newtonsoft.Json;
 using SoftwareGrid.Model.iTestApp.QuestionManagement;
-using SoftwareGrid.Model.iTestApp.SecurityManagement;
+using SoftwareGrid.Model.iTestApp.UserManagement;
 using SoftwareGrid.Model.iTestApp.TestManagement;
 using SoftwareGrid.Model.iTestApp.Utility;
 using SoftwareGrid.Service.iTestApp.Helper;
@@ -58,6 +58,7 @@ namespace SoftwareGrid.iTestApp.Controllers
         #region General Action
 
         #region Index
+
         public ActionResult Index()
         {
             return View();
@@ -77,6 +78,9 @@ namespace SoftwareGrid.iTestApp.Controllers
         #endregion
 
         #region Login
+
+        //[HttpGet]
+        //[Route("Login")]
         public ActionResult Login()
         {
             if (User.Identity.IsAuthenticated)
@@ -128,6 +132,7 @@ namespace SoftwareGrid.iTestApp.Controllers
 
 
         }
+
         private IAuthenticationManager AuthenticationManager
         {
             get
@@ -135,6 +140,7 @@ namespace SoftwareGrid.iTestApp.Controllers
                 return HttpContext.GetOwinContext().Authentication;
             }
         }
+
         private async Task SignInAsync(User user, bool isPersistent)
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ExternalCookie);
@@ -155,11 +161,12 @@ namespace SoftwareGrid.iTestApp.Controllers
             });
         }
 
-
         #endregion
 
         #region Logout
 
+        //[HttpGet]
+        //[Route("Logout")]
         public ActionResult Logout()
         {
             var session = WebHelper.CurrentSession.Content.LoggedInUser;
@@ -184,6 +191,9 @@ namespace SoftwareGrid.iTestApp.Controllers
         #endregion
 
         #region Register
+
+        //[HttpGet]
+        //[Route("Register")]
         public ActionResult Register()
         {
             return View();
@@ -222,6 +232,7 @@ namespace SoftwareGrid.iTestApp.Controllers
         #endregion
 
         #region Test library
+
         public ActionResult TestCategoryAjax()
         {
             var testCategoryList = _iTestCategoryService.GetAll();
@@ -255,8 +266,7 @@ namespace SoftwareGrid.iTestApp.Controllers
             test.TestIconPath = GetImagePath(test.GlobalId, test.TestIconName);
             return View(test);
         }
-
-
+        
         #endregion
 
         #region Test Taken
@@ -285,8 +295,7 @@ namespace SoftwareGrid.iTestApp.Controllers
             var data = _iTestTakenService.InsertOrUpdateWithoutIdentity(testTaken);
             return Json(testTaken, JsonRequestBehavior.AllowGet);
         }
-
-
+        
         [UserAuthorize]
         [HttpPost]
         public ActionResult FinishTest(TestTaken testTaken, string answerOption)
@@ -307,14 +316,13 @@ namespace SoftwareGrid.iTestApp.Controllers
         #endregion
 
         #region My Taken Test
-
+        
         [UserAuthorize]
         public ActionResult MyTakenTest()
         {
             return View();
         }
-
-
+        
         [UserAuthorize]
         public ActionResult MyTakenTestAjax(int iDisplayStart = 0, int iDisplayLength = 15)
         {
@@ -326,14 +334,11 @@ namespace SoftwareGrid.iTestApp.Controllers
             }
             return Json(testList, JsonRequestBehavior.AllowGet);
         }
-
-
-
+        
         #endregion
 
         #region Favorite Test
-
-        
+                
         [HttpPost]
         public ActionResult AddFavoriteTest(FavoriteTest favoriteTest)
         {
@@ -363,8 +368,7 @@ namespace SoftwareGrid.iTestApp.Controllers
         {
             return View();
         }
-
-
+        
         [UserAuthorize]
         public ActionResult MyFavoriteTestAjax(int iDisplayStart = 0, int iDisplayLength = 15)
         {
@@ -376,22 +380,11 @@ namespace SoftwareGrid.iTestApp.Controllers
             }
             return Json(testList, JsonRequestBehavior.AllowGet);
         }
-
-
+        
         #endregion
 
         #region External Access
-        /// <summary>
-        /// Raasforce user will be access this method.  
-        /// </summary>
-        /// <param name="param1">First Name</param>
-        /// <param name="param2">Last Name</param>
-        /// <param name="param3">Email Address</param>
-        /// <param name="param4">Password</param>
-        /// <param name="param5">User Id</param>
-        /// <param name="param6">Request Type: 1=TestDetails, 2=Test Result</param>
-        /// <param name="param7">Requested Id</param>
-        /// <returns></returns>
+        
         public async Task<ActionResult> ExternalAccess(string param1, string param2, string param3, string param4, string param5, string param6, string param7)
         {
             param3 = param3.Replace(" ", "+");

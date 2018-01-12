@@ -1,5 +1,5 @@
 ﻿using System;
-using SoftwareGrid.Model.iTestApp.SecurityManagement;
+using SoftwareGrid.Model.iTestApp.UserManagement;
 using SoftwareGrid.Repository.iTestApp.Base;
 using SoftwareGrid.Repository.iTestApp.DocumentManagement;
 using SoftwareGrid.Repository.iTestApp.UserManagement;
@@ -138,7 +138,7 @@ namespace SoftwareGrid.Service.iTestApp.UserManagement
                         }
                         else
                         {
-                            user.UserType = Convert.ToInt32(Constants.UserType.PublicUser);
+                            user.UserType = Convert.ToInt32(AppUsers.User);
                         }
 
 
@@ -172,7 +172,7 @@ namespace SoftwareGrid.Service.iTestApp.UserManagement
 
                     if (httpPostedFileBase != null)
                     {
-                        var size = imageUtility.GetPreferredImageSize(Constants.ImageDimensions.Common);
+                        var size = imageUtility.GetPreferredImageSize(ImageDimensions.Common);
                         byte[] byteAfterResize = imageUtility.EnforceResize(size.Width, size.Height, byteData, guid + Path.GetExtension(httpPostedFileBase.FileName));
 
                         documentInformatio.DocumentName = guid + Path.GetExtension(httpPostedFileBase.FileName);
@@ -195,7 +195,7 @@ namespace SoftwareGrid.Service.iTestApp.UserManagement
 
                     if (httpPostedFileBase != null)
                     {
-                        bool isUpload = imageUtility.ImageSaveToPath(folderPath, byteData, guid + Path.GetExtension(httpPostedFileBase.FileName), Constants.ImageDimensions.Common);
+                        bool isUpload = imageUtility.ImageSaveToPath(folderPath, byteData, guid + Path.GetExtension(httpPostedFileBase.FileName), ImageDimensions.Common);
                     }
 
                     #endregion
@@ -261,7 +261,7 @@ namespace SoftwareGrid.Service.iTestApp.UserManagement
 
                     if (httpPostedFileBase != null)
                     {
-                        var size = imageUtility.GetPreferredImageSize(Constants.ImageDimensions.Common);
+                        var size = imageUtility.GetPreferredImageSize(ImageDimensions.Common);
                         byte[] byteAfterResize = imageUtility.EnforceResize(size.Width, size.Height, byteData, guid + Path.GetExtension(httpPostedFileBase.FileName));
 
                         documentInformatio.DocumentName = guid + Path.GetExtension(httpPostedFileBase.FileName);
@@ -288,7 +288,7 @@ namespace SoftwareGrid.Service.iTestApp.UserManagement
 
                         string folderPath = HttpContext.Current.Server.MapPath(Constants.ImagePath.ImageFolderPath);
 
-                        bool isUpload = imageUtility.ImageSaveToPath(folderPath, byteData, guid + Path.GetExtension(httpPostedFileBase.FileName), Constants.ImageDimensions.Common);
+                        bool isUpload = imageUtility.ImageSaveToPath(folderPath, byteData, guid + Path.GetExtension(httpPostedFileBase.FileName), ImageDimensions.Common);
 
                     }
                     #endregion

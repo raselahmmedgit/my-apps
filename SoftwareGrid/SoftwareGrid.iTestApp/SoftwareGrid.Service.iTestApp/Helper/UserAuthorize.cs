@@ -2,7 +2,7 @@
 using System.Security.Claims;
 using System.Web;
 using System.Web.Mvc;
-using SoftwareGrid.Model.iTestApp.SecurityManagement;
+using SoftwareGrid.Model.iTestApp.UserManagement;
 using SoftwareGrid.Service.iTestApp.UserManagement;
 
 namespace SoftwareGrid.Service.iTestApp.Helper

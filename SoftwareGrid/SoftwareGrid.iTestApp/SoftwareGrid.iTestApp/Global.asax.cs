@@ -24,21 +24,17 @@ namespace SoftwareGrid.iTestApp
 
         protected void Application_Error(object sender, EventArgs e)
         {
-         
             Exception exc = Server.GetLastError();
           
             if (exc != null && exc.GetType() == typeof(HttpException))
             {
-               
                 if (exc.Message.Contains("NoCatch") || exc.Message.Contains("maxUrlLength"))
                     return;
             }
             else
             {
-               
                 return;
             }
-
           
             Server.ClearError();
         }

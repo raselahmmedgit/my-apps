@@ -35,23 +35,6 @@ namespace SoftwareGrid.Model.iTestApp.Utility
             public const string TestIconFolderPath = "~/Download/TestIcon/";
             public const string QuestionImageFolderPath = "~/Download/QuestionImage/";
         }
-        public enum ImageDimensions
-        {
-            Common = 1
-        }
 
-        public enum DifficultyLevels : int
-        {
-            Easy = 1,
-            Medium = 2,
-            Difficult = 3
-        }
-
-        public enum UserType : int
-        {
-            Administrator = 1,
-            PublicUser = 2,
-            Author = 3
-        }
     }
 }

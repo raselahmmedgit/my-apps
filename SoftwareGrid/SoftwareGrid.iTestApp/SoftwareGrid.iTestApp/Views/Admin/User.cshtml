@@ -1,0 +1,127 @@
+﻿@{
+    ViewBag.Title = "User Setup";
+    Layout = "~/Views/Shared/admin/_LayoutAdmin.cshtml";
+}
+
+<div class="col-md-6">
+    <div class="portlet portlet-sortable box green ">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-edit"></i> User Setup
+            </div>
+            <div class="tools">
+                <a href="#" class="collapse"> </a>
+            </div>
+        </div>
+        <div class="portlet-body form">
+            <form class="form-horizontal" role="form" id="frmUser">
+
+                <div class="form-body">
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="UserType">User Type</label>
+                                <select class="form-control select2-allow-clear" id="UserType" name="UserType">
+                                    <option></option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="FirstName">First Name</label>
+                                <input type="text" id="FirstName" name="FirstName" class="form-control" placeholder="First Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="LastName">Last Name</label>
+                                <input type="text" id="LastName" name="LastName" class="form-control" placeholder="Last Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="Email">Email</label>
+                                <input type="text" id="Email" name="Email" class="form-control" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <label for="MobileNo">Mobile</label>
+                                <input type="text" id="MobileNo" name="MobileNo" class="form-control" placeholder="Mobile">
+                            </div>
+                            <div class="form-group">
+                                <label for="Password">Password</label>
+                                <input type="password" id="Password" name="Password" class="form-control" placeholder="Password">
+                            </div>
+                            <div class="form-group">
+                                <label for="ConfirmPassword">Confirm Password</label>
+                                <input type="password" id="ConfirmPassword" name="ConfirmPassword" class="form-control" placeholder="Confirm Password">
+                            </div>
+
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-success" id="btnCreateUser" name="btnCreateUser"> Create User </button>
+                                <button type="button" class="btn btn-success" id="btnClear" name="btnClear"> Cancel </button>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="PhotoFileName">Upload User Photo</label>
+                                <input type="file" id="PhotoFileName" name="PhotoFileName" class="form-control" placeholder="User Photo" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-12">
+    <div class="portlet portlet-sortable box green ">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-list"></i> User List
+            </div>
+            <div class="tools">
+                <a href="#" class="collapse"> </a>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div class="table-responsive" id="div-question-category"></div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/vash" id="tmpUser">
+    <table class="table table-striped table-bordered table-hover" id="tblUser">
+        <thead>
+            <tr>
+                <td>User ID</td>
+                <td>User Name</td>
+                <td>Action</td>
+            </tr>
+        </thead>
+        <tbody>
+            @@model.data.forEach(function(v){
+            <tr>
+                <td>@@v.UserId</td>
+                <td>@@v.UserName</td>
+                <td>
+                    <a class="btn green btn-xs edit" data-id="@@v.UserId">
+                        <i class="fa fa-edit"></i>
+                        Edit
+                    </a>
+                    <a class="btn red btn-xs delete" data-id="@@v.UserId">
+                        <i class="fa fa-trash-o"></i>
+                        Delete
+                    </a>
+                </td>
+            </tr>
+            })
+        </tbody>
+    </table>
+</script>
+
+
+<script src="~/assets/admin/pages/otherscripts/UserSetup.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        UserSetup.init();
+    });
+</script>

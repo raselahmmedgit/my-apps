@@ -43,7 +43,7 @@ namespace SoftwareGrid.Service.iTestApp.QuestionManagement
                 int currentLoggedInUserId = WebHelper.CurrentSession.Content.LoggedInUser.UserId;
                 int currentLoggedInUserType = WebHelper.CurrentSession.Content.LoggedInUser.UserType;
 
-                if (currentLoggedInUserType == (int)Constants.UserType.Administrator)
+                if (currentLoggedInUserType == (int)AppUsers.Admin)
                 {
                     return _iQuestionRepository.Search(0, keyword, currentPage, take);
                 }
@@ -167,7 +167,7 @@ namespace SoftwareGrid.Service.iTestApp.QuestionManagement
                         {
                             #region Insert Document Information
 
-                            var size = imageUtility.GetPreferredImageSize(Constants.ImageDimensions.Common);
+                            var size = imageUtility.GetPreferredImageSize(ImageDimensions.Common);
                             byte[] byteAfterResize = imageUtility.EnforceResize(size.Width, size.Height, byteData, guid + Path.GetExtension(httpPostedFileBase.FileName));
 
                             documentInformatio.DocumentName = guid + Path.GetExtension(httpPostedFileBase.FileName);
@@ -193,7 +193,7 @@ namespace SoftwareGrid.Service.iTestApp.QuestionManagement
 
                             if (isExistDocumentInformatio != null)
                             {
-                                var size = imageUtility.GetPreferredImageSize(Constants.ImageDimensions.Common);
+                                var size = imageUtility.GetPreferredImageSize(ImageDimensions.Common);
                                 byte[] byteAfterResize = imageUtility.EnforceResize(size.Width, size.Height, byteData, guid + Path.GetExtension(httpPostedFileBase.FileName));
 
                                 isExistDocumentInformatio.DocumentName = guid + Path.GetExtension(httpPostedFileBase.FileName);
@@ -212,7 +212,7 @@ namespace SoftwareGrid.Service.iTestApp.QuestionManagement
 
                         if (httpPostedFileBase != null)
                         {
-                            bool isUpload = imageUtility.ImageSaveToPath(folderPath, byteData, guid + Path.GetExtension(httpPostedFileBase.FileName), Constants.ImageDimensions.Common);
+                            bool isUpload = imageUtility.ImageSaveToPath(folderPath, byteData, guid + Path.GetExtension(httpPostedFileBase.FileName), ImageDimensions.Common);
                         }
 
                         #endregion

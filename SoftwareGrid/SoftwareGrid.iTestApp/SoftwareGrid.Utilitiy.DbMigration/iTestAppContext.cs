@@ -1,6 +1,6 @@
 ﻿using SoftwareGrid.Model.iTestApp.DocumentManagement;
 using SoftwareGrid.Model.iTestApp.QuestionManagement;
-using SoftwareGrid.Model.iTestApp.SecurityManagement;
+using SoftwareGrid.Model.iTestApp.UserManagement;
 using SoftwareGrid.Model.iTestApp.TestManagement;
 using SoftwareGrid.Model.iTestApp.Utility;
 using System;
@@ -36,7 +36,7 @@ namespace SoftwareGrid.Utilitiy.DbMigration
 
         #endregion
 
-        #region SecurityManagement
+        #region UserManagement
 
         public DbSet<Company> Company { get; set; }
         public DbSet<CompanyBranch> CompanyBranch { get; set; }
@@ -95,8 +95,8 @@ namespace SoftwareGrid.Utilitiy.DbMigration
 
             // Create some users.
             CreateUserWithRole("Admin", "@123456", "admin@gmail.com", Convert.ToInt32(AppRoles.Admin), context);
-            CreateUserWithRole("Employee", "@123456", "employee@gmail.com", Convert.ToInt32(AppRoles.Employee), context);
             CreateUserWithRole("User", "@123456", "user@gmail.com", Convert.ToInt32(AppRoles.User), context);
+            CreateUserWithRole("Author", "@123456", "author@gmail.com", Convert.ToInt32(AppRoles.Author), context);
             CreateUserWithRole("Rasel", "@123456", "raselahmmed@gmail.com", Convert.ToInt32(AppRoles.User), context);
 
         }

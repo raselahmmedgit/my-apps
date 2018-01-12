@@ -1,5 +1,5 @@
 ﻿using Dapper;
-using SoftwareGrid.Model.iTestApp.SecurityManagement;
+using SoftwareGrid.Model.iTestApp.UserManagement;
 using SoftwareGrid.Repository.iTestApp.Base;
 
 namespace SoftwareGrid.Repository.iTestApp.UserManagement

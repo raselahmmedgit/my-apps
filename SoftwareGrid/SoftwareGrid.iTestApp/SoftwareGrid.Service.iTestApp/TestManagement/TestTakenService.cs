@@ -4,7 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Transactions;
 using RestSharp;
-using SoftwareGrid.Model.iTestApp.SecurityManagement;
+using SoftwareGrid.Model.iTestApp.UserManagement;
 using SoftwareGrid.Model.iTestApp.TestManagement;
 using SoftwareGrid.Model.iTestApp.Utility;
 using SoftwareGrid.Repository.iTestApp.Base;
