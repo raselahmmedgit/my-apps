@@ -10,8 +10,8 @@ namespace SoftwareGrid.Repository.iTestApp.TestManagement
 {
     public class TestRepository: BaseRepository<Test>, ITestRepository
     {
-        private readonly DbContext _dbContext;
-        public TestRepository(DbContext dbContext)
+        private readonly AppDbContext _dbContext;
+        public TestRepository(AppDbContext dbContext)
             : base(dbContext)
         {
             _dbContext = dbContext;

@@ -8,9 +8,9 @@ namespace SoftwareGrid.Service.iTestApp.Utility
     public class UtilityService : IUtilityService
     {
         private readonly UtilityRepository _iUtilityRepository;
-        private readonly DbContext _dbContext;
+        private readonly AppDbContext _dbContext;
 
-        public UtilityService(UtilityRepository iUtilityRepository, DbContext dbContext)
+        public UtilityService(UtilityRepository iUtilityRepository, AppDbContext dbContext)
         {
             _iUtilityRepository = iUtilityRepository;
             _dbContext = dbContext;

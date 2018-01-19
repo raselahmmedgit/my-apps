@@ -14,7 +14,7 @@ namespace SoftwareGrid.Utilitiy.DbMigration
     public class iTestAppContext : DbContext
     {
         public iTestAppContext()
-            : base(ConfigurationManager.ConnectionStrings["DbContext"].ConnectionString)
+            : base(ConfigurationManager.ConnectionStrings["AppDbContext"].ConnectionString)
         {
         }
         

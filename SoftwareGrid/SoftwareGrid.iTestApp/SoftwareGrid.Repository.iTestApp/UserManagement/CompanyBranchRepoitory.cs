@@ -4,10 +4,10 @@ using SoftwareGrid.Repository.iTestApp.Base;
 
 namespace SoftwareGrid.Repository.iTestApp.UserManagement
 {
-    public class CompanyBranchRepoitory : BaseRepository<CompanyBranch>, ICompanyBranchRepoitory
+    public class CompanyBranchRepository : BaseRepository<CompanyBranch>, ICompanyBranchRepository
     {
-         private readonly DbContext _dbContext;
-         public CompanyBranchRepoitory(DbContext dbContext)
+         private readonly AppDbContext _dbContext;
+         public CompanyBranchRepository(AppDbContext dbContext)
             : base(dbContext)
         {
             _dbContext = dbContext;
@@ -17,7 +17,7 @@ namespace SoftwareGrid.Repository.iTestApp.UserManagement
     }
 
 
-    public interface ICompanyBranchRepoitory : IBaseRepository<CompanyBranch>
+    public interface ICompanyBranchRepository : IBaseRepository<CompanyBranch>
     {
     }
 

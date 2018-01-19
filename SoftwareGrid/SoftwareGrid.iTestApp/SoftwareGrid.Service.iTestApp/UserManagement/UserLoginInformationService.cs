@@ -9,13 +9,13 @@ namespace SoftwareGrid.Service.iTestApp.UserManagement
 {
     public class UserLoginInformationService : BaseService<UserLoginInformation>, IUserLoginInformationService
     {
-        private readonly IUserLoginInformationRepoitory _iUserLoginInformationRepoitory;
-        private readonly DbContext _dbContext;
+        private readonly IUserLoginInformationRepository _iUserLoginInformationRepository;
+        private readonly AppDbContext _dbContext;
 
-        public UserLoginInformationService(IBaseRepository<UserLoginInformation> iBaseRepository, IUserLoginInformationRepoitory iUserLoginInformationRepoitory, DbContext dbContext)
+        public UserLoginInformationService(IBaseRepository<UserLoginInformation> iBaseRepository, IUserLoginInformationRepository iUserLoginInformationRepository, AppDbContext dbContext)
             : base(iBaseRepository, dbContext)
         {
-            _iUserLoginInformationRepoitory = iUserLoginInformationRepoitory;
+            _iUserLoginInformationRepository = iUserLoginInformationRepository;
             _dbContext = dbContext;
         }
 
@@ -25,7 +25,7 @@ namespace SoftwareGrid.Service.iTestApp.UserManagement
             try
             {
                 _dbContext.SqlConnection.Open();
-               var affectedRow= _iUserLoginInformationRepoitory.UpdateUserLogoutTime(userId);
+               var affectedRow= _iUserLoginInformationRepository.UpdateUserLogoutTime(userId);
                 message = affectedRow > 0
                        ? SetMessage.SetSuccessMessage("Information has been saved successfully.")
                        : SetMessage.SetInformationMessage("No data has been saved.");

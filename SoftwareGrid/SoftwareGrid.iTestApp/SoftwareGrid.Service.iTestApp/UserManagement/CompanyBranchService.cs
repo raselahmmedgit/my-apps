@@ -9,13 +9,13 @@ namespace SoftwareGrid.Service.iTestApp.UserManagement
 {
     public class CompanyBranchService : BaseService<CompanyBranch>, ICompanyBranchService
     {
-        private readonly ICompanyBranchRepoitory _iCompanyBranchRepoitory;
-        private readonly DbContext _dbContext;
+        private readonly ICompanyBranchRepository _iCompanyBranchRepository;
+        private readonly AppDbContext _dbContext;
 
-        public CompanyBranchService(IBaseRepository<CompanyBranch> iBaseRepository, ICompanyBranchRepoitory iCompanyBranchRepoitory, DbContext dbContext)
+        public CompanyBranchService(IBaseRepository<CompanyBranch> iBaseRepository, ICompanyBranchRepository iCompanyBranchRepository, AppDbContext dbContext)
             : base(iBaseRepository, dbContext)
         {
-            _iCompanyBranchRepoitory = iCompanyBranchRepoitory;
+            _iCompanyBranchRepository = iCompanyBranchRepository;
             _dbContext = dbContext;
         }
 

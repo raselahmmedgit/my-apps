@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SoftwareGrid.Model.iTestApp.Utility
 {
-    public class DbConfig
+    public class AppDbConfig
     {
         public static string ConnectionString { get; set; }
     }

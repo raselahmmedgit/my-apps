@@ -18,7 +18,7 @@ namespace SoftwareGrid.Service.iTestApp.QuestionManagement
     {
         private readonly IQuestionRepository _iQuestionRepository;
         private readonly IQuestionAnswerOptionRepository _iQuestionAnswerOptionRepository;
-        private readonly DbContext _dbContext;
+        private readonly AppDbContext _dbContext;
         private readonly IDocumentInformationRepository _iDocumentInformationRepository;
 
         public QuestionService(
@@ -26,7 +26,7 @@ namespace SoftwareGrid.Service.iTestApp.QuestionManagement
             , IQuestionRepository iQuestionRepository
             , IQuestionAnswerOptionRepository iQuestionAnswerOptionRepository
             , IDocumentInformationRepository iDocumentInformationRepository
-            , DbContext dbContext)
+            , AppDbContext dbContext)
             : base(iBaseRepository, dbContext)
         {
             _iQuestionRepository = iQuestionRepository;

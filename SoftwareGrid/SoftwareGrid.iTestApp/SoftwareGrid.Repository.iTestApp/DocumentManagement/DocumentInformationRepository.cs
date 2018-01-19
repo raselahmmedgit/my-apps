@@ -5,8 +5,8 @@ namespace SoftwareGrid.Repository.iTestApp.DocumentManagement
 {
     public class DocumentInformationRepository : BaseRepository<DocumentInformation>, IDocumentInformationRepository
     {
-        private readonly DbContext _dbContext;
-        public DocumentInformationRepository(DbContext dbContext)
+        private readonly AppDbContext _dbContext;
+        public DocumentInformationRepository(AppDbContext dbContext)
             : base(dbContext)
         {
             _dbContext = dbContext;

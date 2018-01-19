@@ -8,7 +8,7 @@ using System.Text.RegularExpressions;
 
 namespace SoftwareGrid.Repository.iTestApp.Base
 {
-    public class QB<TSource>
+    public class QueryBuilder<TSource>
     {
         #region Private Class
         private enum QType

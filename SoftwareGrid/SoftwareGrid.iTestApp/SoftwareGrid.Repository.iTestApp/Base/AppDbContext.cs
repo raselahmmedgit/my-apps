@@ -3,12 +3,12 @@ using SoftwareGrid.Model.iTestApp.Utility;
 
 namespace SoftwareGrid.Repository.iTestApp.Base
 {
-    public class DbContext
+    public class AppDbContext
     {
         public SqlConnection SqlConnection;
-        public DbContext()
+        public AppDbContext()
         {
-            SqlConnection = new SqlConnection(DbConfig.ConnectionString);
+            SqlConnection = new SqlConnection(AppDbConfig.ConnectionString);
         }
     }
 }

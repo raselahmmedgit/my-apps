@@ -21,7 +21,7 @@ namespace SoftwareGrid.Api.Web.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("AppDbContext", throwIfV1Schema: false)
         {
         }
         

@@ -22,7 +22,7 @@ namespace SoftwareGrid.Service.iTestApp.TestManagement
         private readonly ITestRepository _iTestRepository;
         private readonly IQuestionAnswerOptionRepository _iQuestionAnswerOptionRepository;
         private readonly IUserRepository _iUserRepository;
-        private readonly DbContext _dbContext;
+        private readonly AppDbContext _dbContext;
         public TestTakenService(
               IBaseRepository<TestTaken> iBaseRepository
             , ITestTakenRepository iTestTakenRepository
@@ -30,7 +30,7 @@ namespace SoftwareGrid.Service.iTestApp.TestManagement
             , IQuestionAnswerOptionRepository iQuestionAnswerOptionRepository
             , ITestRepository iTestRepository
             ,IUserRepository iUserRepository
-            , DbContext dbContext)
+            , AppDbContext dbContext)
             : base(iBaseRepository, dbContext)
         {
             _iTestTakenRepository = iTestTakenRepository;

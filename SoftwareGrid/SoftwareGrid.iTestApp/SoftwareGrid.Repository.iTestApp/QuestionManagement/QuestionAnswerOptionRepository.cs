@@ -9,8 +9,8 @@ namespace SoftwareGrid.Repository.iTestApp.QuestionManagement
 {
     public class QuestionAnswerOptionRepository : BaseRepository<QuestionAnswerOption>, IQuestionAnswerOptionRepository
     {
-        private readonly DbContext _dbContext;
-        public QuestionAnswerOptionRepository(DbContext dbContext)
+        private readonly AppDbContext _dbContext;
+        public QuestionAnswerOptionRepository(AppDbContext dbContext)
             : base(dbContext)
         {
             _dbContext = dbContext;

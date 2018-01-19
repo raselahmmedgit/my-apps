@@ -8,9 +8,9 @@ namespace SoftwareGrid.Service.iTestApp.DocumentManagement
     public class DocumentInformationService : BaseService<DocumentInformation>, IDocumentInformationService
     {
         private readonly IDocumentInformationRepository _iDocumentInformationRepository;
-        private readonly DbContext _dbContext;
+        private readonly AppDbContext _dbContext;
 
-        public DocumentInformationService(IBaseRepository<DocumentInformation> iBaseRepository, IDocumentInformationRepository iDocumentInformationRepository, DbContext dbContext)
+        public DocumentInformationService(IBaseRepository<DocumentInformation> iBaseRepository, IDocumentInformationRepository iDocumentInformationRepository, AppDbContext dbContext)
             : base(iBaseRepository, dbContext)
         {
             _iDocumentInformationRepository = iDocumentInformationRepository;

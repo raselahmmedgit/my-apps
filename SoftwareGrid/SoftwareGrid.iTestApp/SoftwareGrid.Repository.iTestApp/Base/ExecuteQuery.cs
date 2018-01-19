@@ -9,11 +9,11 @@ namespace SoftwareGrid.Repository.iTestApp.Base
     public class ExecuteQuery
     {
         #region Private Variable
-        private readonly DbContext _dbContext;
+        private readonly AppDbContext _dbContext;
         #endregion
 
         #region Constructor
-        public ExecuteQuery(DbContext dbContext)
+        public ExecuteQuery(AppDbContext dbContext)
         {
             _dbContext = dbContext;
         }

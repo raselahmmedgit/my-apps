@@ -47,15 +47,15 @@
 
                                     @{
                                         var userType = string.Empty;
-                                        if (Model.UserType == (int)Constants.UserType.PublicUser)
+                                        if (Model.UserType == (int)AppUsers.User)
                                         {
                                             userType = "Public User";
                                         }
-                                        if (Model.UserType == (int)Constants.UserType.Author)
+                                        if (Model.UserType == (int)AppUsers.Author)
                                         {
                                             userType = "Author";
                                         }
-                                        if (Model.UserType == (int)Constants.UserType.Administrator)
+                                        if (Model.UserType == (int)AppUsers.Admin)
                                         {
                                             userType = "Administrator";
                                         }

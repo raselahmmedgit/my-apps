@@ -9,8 +9,8 @@ namespace SoftwareGrid.Repository.iTestApp.UserManagement
 {
     public class UserRepository : BaseRepository<User>, IUserRepository
     {
-        private readonly DbContext _dbContext;
-        public UserRepository(DbContext dbContext)
+        private readonly AppDbContext _dbContext;
+        public UserRepository(AppDbContext dbContext)
             : base(dbContext)
         {
             _dbContext = dbContext;

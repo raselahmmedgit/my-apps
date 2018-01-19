@@ -18,13 +18,13 @@ namespace SoftwareGrid.Service.iTestApp.TestManagement
     public class TestService : BaseService<Test>, ITestService
     {
         private readonly ITestRepository _iTestRepository;
-        private readonly DbContext _dbContext;
+        private readonly AppDbContext _dbContext;
         private readonly IDocumentInformationRepository _iDocumentInformationRepository;
         private readonly ITestWiseQuestionRepository _iTestWiseQuestionRepository;
 
         public TestService(IBaseRepository<Test> iBaseRepository,
             ITestRepository iTestRepository,
-            DbContext dbContext,
+            AppDbContext dbContext,
             IDocumentInformationRepository iDocumentInformationRepository,
             ITestWiseQuestionRepository iTestWiseQuestionRepository)
             : base(iBaseRepository, dbContext)

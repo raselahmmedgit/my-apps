@@ -11,9 +11,9 @@ namespace SoftwareGrid.Service.iTestApp.TestManagement
     public class FavoriteTestService: BaseService<FavoriteTest>, IFavoriteTestService
     {
         private readonly IFavoriteTestRepository _iFavoriteTestRepository;
-        private readonly DbContext _dbContext;
+        private readonly AppDbContext _dbContext;
 
-        public FavoriteTestService(IBaseRepository<FavoriteTest> iBaseRepository, IFavoriteTestRepository iFavoriteTestRepository, DbContext dbContext)
+        public FavoriteTestService(IBaseRepository<FavoriteTest> iBaseRepository, IFavoriteTestRepository iFavoriteTestRepository, AppDbContext dbContext)
             : base(iBaseRepository, dbContext)
         {
             _iFavoriteTestRepository = iFavoriteTestRepository;

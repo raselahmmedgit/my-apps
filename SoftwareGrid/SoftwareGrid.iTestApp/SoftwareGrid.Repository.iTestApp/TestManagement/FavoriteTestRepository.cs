@@ -7,9 +7,9 @@ namespace SoftwareGrid.Repository.iTestApp.TestManagement
 {
     public class FavoriteTestRepository: BaseRepository<FavoriteTest>, IFavoriteTestRepository
     {
-        private readonly DbContext _dbContext;
+        private readonly AppDbContext _dbContext;
         
-        public FavoriteTestRepository(DbContext dbContext)
+        public FavoriteTestRepository(AppDbContext dbContext)
             : base(dbContext)
         {
             _dbContext = dbContext;

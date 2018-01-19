@@ -9,13 +9,13 @@ namespace SoftwareGrid.Service.iTestApp.UserManagement
 {
     public class CompanyService : BaseService<Company>, ICompanyService
     {
-        private readonly ICompanyRepoitory _iCompanyRepoitory;
-        private readonly DbContext _dbContext;
+        private readonly ICompanyRepository _iCompanyRepository;
+        private readonly AppDbContext _dbContext;
 
-        public CompanyService(IBaseRepository<Company> iBaseRepository, ICompanyRepoitory iCompanyRepoitory, DbContext dbContext)
+        public CompanyService(IBaseRepository<Company> iBaseRepository, ICompanyRepository iCompanyRepository, AppDbContext dbContext)
             : base(iBaseRepository, dbContext)
         {
-            _iCompanyRepoitory = iCompanyRepoitory;
+            _iCompanyRepository = iCompanyRepository;
             _dbContext = dbContext;
         }
 

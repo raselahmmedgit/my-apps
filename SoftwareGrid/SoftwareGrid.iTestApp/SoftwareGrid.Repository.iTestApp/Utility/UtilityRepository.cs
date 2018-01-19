@@ -8,8 +8,8 @@ namespace SoftwareGrid.Repository.iTestApp.Utility
 {
     public class UtilityRepository : IUtilityRepository
     {
-        private readonly DbContext _dbContext;
-        public UtilityRepository(DbContext dbContext)
+        private readonly AppDbContext _dbContext;
+        public UtilityRepository(AppDbContext dbContext)
         {
             _dbContext = dbContext;
         }

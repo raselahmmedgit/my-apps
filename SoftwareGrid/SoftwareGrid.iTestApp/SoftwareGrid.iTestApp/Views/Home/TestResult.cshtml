@@ -10,14 +10,14 @@
     {
         if (user.UserId != Model.UserId)
         {
-            if (user.UserType != (int) Constants.UserType.Administrator)
+            if (user.UserType != (int)AppUsers.Admin)
             {
                 isAuthorize = false;
             }
-           
+
         }
     }
-   
+
 }
 @if (Model != null && isAuthorize)
 {

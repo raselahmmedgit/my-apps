@@ -49,9 +49,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\BaseRepository.cs" />
-    <Compile Include="Base\DbContext.cs" />
+    <Compile Include="Base\AppDbContext.cs" />
     <Compile Include="Base\ExecuteQuery.cs" />
-    <Compile Include="Base\QB.cs" />
+    <Compile Include="Base\QueryBuilder.cs" />
     <Compile Include="Base\TConverter.cs" />
     <Compile Include="DocumentManagement\DocumentInformationRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

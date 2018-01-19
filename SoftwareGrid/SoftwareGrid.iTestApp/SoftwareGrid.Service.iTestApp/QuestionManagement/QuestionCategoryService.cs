@@ -8,9 +8,9 @@ namespace SoftwareGrid.Service.iTestApp.QuestionManagement
     public class QuestionCategoryService : BaseService<QuestionCategory>, IQuestionCategoryService
     {
         private readonly IQuestionCategoryRepository _iQuestionCategoryRepository;
-        private readonly DbContext _dbContext;
+        private readonly AppDbContext _dbContext;
 
-        public QuestionCategoryService(IBaseRepository<QuestionCategory> iBaseRepository, IQuestionCategoryRepository iQuestionCategoryRepository, DbContext dbContext)
+        public QuestionCategoryService(IBaseRepository<QuestionCategory> iBaseRepository, IQuestionCategoryRepository iQuestionCategoryRepository, AppDbContext dbContext)
             : base(iBaseRepository, dbContext)
         {
             _iQuestionCategoryRepository = iQuestionCategoryRepository;

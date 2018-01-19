@@ -10,11 +10,11 @@ namespace SoftwareGrid.Repository.iTestApp.TestManagement
     {
         private readonly ITestTakenDetailsRepository _iTestTakenDetailsRepository;
         private readonly ITestRepository _iTestRepository;
-        private readonly DbContext _dbContext;
+        private readonly AppDbContext _dbContext;
         public TestTakenRepository(
              ITestTakenDetailsRepository iTestTakenDetailsRepository
             ,ITestRepository iTestRepository
-            ,DbContext dbContext
+            ,AppDbContext dbContext
             ) : base(dbContext)
         {
             _iTestTakenDetailsRepository = iTestTakenDetailsRepository;

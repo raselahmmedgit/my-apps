@@ -14,11 +14,11 @@ namespace SoftwareGrid.Repository.iTestApp.Base
     public class BaseRepository<T> : IBaseRepository<T> where T : class
     {
         #region Private Variable
-        private readonly DbContext _dbContext;
+        private readonly AppDbContext _dbContext;
         #endregion
 
         #region Constructor
-        public BaseRepository(DbContext dbContext)
+        public BaseRepository(AppDbContext dbContext)
         {
             _dbContext = dbContext;
         }
@@ -29,51 +29,51 @@ namespace SoftwareGrid.Repository.iTestApp.Base
         public virtual int Insert(T entity)
         {
             SetOtherKeyValue(entity);
-            var query = QB<T>.Insert();
+            var query = QueryBuilder<T>.Insert();
             return _dbContext.SqlConnection.Query<int>(query, entity).FirstOrDefault();
         }
         public virtual int InsertWithoutIdentity(T entity)
         {
             SetPrimaryKeyValue(entity);
             SetOtherKeyValue(entity);
-            var query = QB<T>.InsertWithoutIdentityColumn();
+            var query = QueryBuilder<T>.InsertWithoutIdentityColumn();
             return _dbContext.SqlConnection.Query<int>(query, entity).FirstOrDefault();
         }
         public virtual int Update(T entity)
         {
             SetOtherKeyValue(entity);
-            var query = QB<T>.Update();
+            var query = QueryBuilder<T>.Update();
             return _dbContext.SqlConnection.Query<int>(query, entity).FirstOrDefault();
         }
         public virtual int Delete(T entity)
         {
-            var query = QB<T>.Delete();
+            var query = QueryBuilder<T>.Delete();
             return _dbContext.SqlConnection.Query<int>(query, entity).FirstOrDefault();
         }
         public virtual T Get(T entity)
         {
-            var query = QB<T>.SelectByPrimaryKey();
+            var query = QueryBuilder<T>.SelectByPrimaryKey();
             return _dbContext.SqlConnection.Query<T>(query, entity).FirstOrDefault();
         }
         public virtual IEnumerable<T> GetAll()
         {
-            var query = QB<T>.Select();
+            var query = QueryBuilder<T>.Select();
             return _dbContext.SqlConnection.Query<T>(query).ToList();
         }
         public virtual IEnumerable<T> AllIncluding(params Expression<Func<T, object>>[] includeProperties)
         {
-            var query = QB<T>.Select();
+            var query = QueryBuilder<T>.Select();
             return _dbContext.SqlConnection.Query<T>(query, includeProperties).ToList();
         }
         public virtual int GetNewId()
         {
-            var query = QB<T>.GetNewId();
+            var query = QueryBuilder<T>.GetNewId();
             return _dbContext.SqlConnection.Query<int>(query).FirstOrDefault();
         }
         internal T SetPrimaryKeyValue(T entity)
         {
-            var primaryKey = QB<T>.GetPrimaryKeyColumns()[0];
-            var newIdQuery = QB<T>.GetNewId();
+            var primaryKey = QueryBuilder<T>.GetPrimaryKeyColumns()[0];
+            var newIdQuery = QueryBuilder<T>.GetNewId();
             var newId = _dbContext.SqlConnection.Query<int>(newIdQuery, entity).Single();
             PropertyInfo propertyInfo = entity.GetType().GetProperty(Convert.ToString(primaryKey));
             propertyInfo.SetValue(entity, Convert.ChangeType(newId, propertyInfo.PropertyType), null);
@@ -109,7 +109,7 @@ namespace SoftwareGrid.Repository.iTestApp.Base
 
         public virtual T GetWithNavigationProperty(T entity)
         {
-            var query = QB<T>.SelectByPrimaryKey();
+            var query = QueryBuilder<T>.SelectByPrimaryKey();
             var foreignKeyList = new List<string>();
             var data = _dbContext.SqlConnection.Query<T>(query, entity).FirstOrDefault();
             if (data != null)
@@ -166,7 +166,7 @@ namespace SoftwareGrid.Repository.iTestApp.Base
                                 else
                                 {
                                     innerQuery = "SELECT * FROM " + attribute.Schema + ".[" + attribute.Name +
-                                                 "] " + QB<T>.GetWhereClause();
+                                                 "] " + QueryBuilder<T>.GetWhereClause();
                                 }
 
                                 var innerValue = _dbContext.SqlConnection.Query<dynamic>(innerQuery, data).FirstOrDefault();

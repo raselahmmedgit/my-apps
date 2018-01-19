@@ -9,8 +9,8 @@ namespace SoftwareGrid.Repository.iTestApp.TestManagement
 {
     public class TestTakenDetailsRepository:BaseRepository<TestTakenDetail>,ITestTakenDetailsRepository
     {
-        private readonly DbContext _dbContext;
-        public TestTakenDetailsRepository(DbContext dbContext) : base(dbContext)
+        private readonly AppDbContext _dbContext;
+        public TestTakenDetailsRepository(AppDbContext dbContext) : base(dbContext)
         {
             _dbContext = dbContext;
         }

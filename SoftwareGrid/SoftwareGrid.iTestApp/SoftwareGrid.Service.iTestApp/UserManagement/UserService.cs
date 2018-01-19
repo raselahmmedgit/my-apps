@@ -17,12 +17,12 @@ namespace SoftwareGrid.Service.iTestApp.UserManagement
     public class UserService : BaseService<User>, IUserService
     {
         private readonly IUserRepository _iUserRepository;
-        private readonly DbContext _dbContext;
+        private readonly AppDbContext _dbContext;
         private readonly IDocumentInformationRepository _iDocumentInformationRepository;
 
         public UserService(IBaseRepository<User> iBaseRepository
             , IUserRepository iUserRepository
-            , DbContext dbContext
+            , AppDbContext dbContext
             , IDocumentInformationRepository iDocumentInformationRepository)
             : base(iBaseRepository, dbContext)
         {

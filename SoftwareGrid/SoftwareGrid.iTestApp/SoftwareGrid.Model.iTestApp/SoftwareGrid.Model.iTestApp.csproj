@@ -72,7 +72,7 @@
     <Compile Include="TestManagement\TestTakenDetail.cs" />
     <Compile Include="TestManagement\TestWiseQuestion.cs" />
     <Compile Include="Utility\Constants.cs" />
-    <Compile Include="Utility\DbConfig.cs" />
+    <Compile Include="Utility\AppDbConfig.cs" />
     <Compile Include="Utility\EnumHelper.cs" />
     <Compile Include="ViewModels\DashboardSummaryViewModel.cs" />
     <Compile Include="ViewModels\ImageCropViewModel.cs" />

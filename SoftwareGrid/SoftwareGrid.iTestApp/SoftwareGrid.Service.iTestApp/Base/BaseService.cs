@@ -14,12 +14,12 @@ namespace SoftwareGrid.Service.iTestApp.Base
         #region Private Variable
 
         private readonly IBaseRepository<T> _iBaseRepository;
-        private readonly DbContext _dbContext;
+        private readonly AppDbContext _dbContext;
 
         #endregion
 
         #region Constructor
-        public BaseService(IBaseRepository<T> iBaseRepository, DbContext dbContext)
+        public BaseService(IBaseRepository<T> iBaseRepository, AppDbContext dbContext)
         {
             _iBaseRepository = iBaseRepository;
             _dbContext = dbContext;

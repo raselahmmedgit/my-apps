@@ -4,10 +4,10 @@ using SoftwareGrid.Repository.iTestApp.Base;
 
 namespace SoftwareGrid.Repository.iTestApp.UserManagement
 {
-    public class UserLoginInformationRepoitory : BaseRepository<UserLoginInformation>, IUserLoginInformationRepoitory
+    public class UserLoginInformationRepository : BaseRepository<UserLoginInformation>, IUserLoginInformationRepository
     {
-         private readonly DbContext _dbContext;
-         public UserLoginInformationRepoitory(DbContext dbContext)
+         private readonly AppDbContext _dbContext;
+         public UserLoginInformationRepository(AppDbContext dbContext)
             : base(dbContext)
         {
             _dbContext = dbContext;
@@ -24,7 +24,7 @@ namespace SoftwareGrid.Repository.iTestApp.UserManagement
     }
 
 
-    public interface IUserLoginInformationRepoitory : IBaseRepository<UserLoginInformation>
+    public interface IUserLoginInformationRepository : IBaseRepository<UserLoginInformation>
     {
         int UpdateUserLogoutTime(int userId);
     }

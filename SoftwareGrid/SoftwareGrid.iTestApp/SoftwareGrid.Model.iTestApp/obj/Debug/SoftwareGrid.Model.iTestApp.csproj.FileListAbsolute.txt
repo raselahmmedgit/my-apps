@@ -15,3 +15,4 @@ C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTest
 C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Model.iTestApp\bin\Debug\System.Web.Mvc.xml
 C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Model.iTestApp\obj\Debug\SoftwareGrid.Model.iTestApp.dll
 C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Model.iTestApp\obj\Debug\SoftwareGrid.Model.iTestApp.pdb
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.Model.iTestApp\obj\Debug\SoftwareGrid.Model.iTestApp.csprojResolveAssemblyReference.cache

@@ -9,13 +9,13 @@ namespace SoftwareGrid.Service.iTestApp.UserManagement
 {
     public class RoleService : BaseService<Role>, IRoleService
     {
-        private readonly IRoleRepoitory _iRoleRepoitory;
-        private readonly DbContext _dbContext;
+        private readonly IRoleRepository _iRoleRepository;
+        private readonly AppDbContext _dbContext;
 
-        public RoleService(IBaseRepository<Role> iBaseRepository, IRoleRepoitory iRoleRepoitory, DbContext dbContext)
+        public RoleService(IBaseRepository<Role> iBaseRepository, IRoleRepository iRoleRepository, AppDbContext dbContext)
             : base(iBaseRepository, dbContext)
         {
-            _iRoleRepoitory = iRoleRepoitory;
+            _iRoleRepository = iRoleRepository;
             _dbContext = dbContext;
         }
 

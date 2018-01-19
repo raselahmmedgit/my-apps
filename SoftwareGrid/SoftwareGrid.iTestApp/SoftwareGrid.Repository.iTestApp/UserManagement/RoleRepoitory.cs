@@ -4,10 +4,10 @@ using SoftwareGrid.Repository.iTestApp.Base;
 
 namespace SoftwareGrid.Repository.iTestApp.UserManagement
 {
-    public class RoleRepoitory : BaseRepository<Role>, IRoleRepoitory
+    public class RoleRepository : BaseRepository<Role>, IRoleRepository
     {
-         private readonly DbContext _dbContext;
-         public RoleRepoitory(DbContext dbContext)
+         private readonly AppDbContext _dbContext;
+         public RoleRepository(AppDbContext dbContext)
             : base(dbContext)
         {
             _dbContext = dbContext;
@@ -17,7 +17,7 @@ namespace SoftwareGrid.Repository.iTestApp.UserManagement
     }
 
 
-    public interface IRoleRepoitory : IBaseRepository<Role>
+    public interface IRoleRepository : IBaseRepository<Role>
     {
     }
 

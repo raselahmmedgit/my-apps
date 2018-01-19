@@ -8,8 +8,8 @@ namespace SoftwareGrid.Repository.iTestApp.TestManagement
 {
     public class TestWiseQuestionRepository : BaseRepository<TestWiseQuestion>, ITestWiseQuestionRepository
     {
-        private readonly DbContext _dbContext;
-        public TestWiseQuestionRepository(DbContext dbContext)
+        private readonly AppDbContext _dbContext;
+        public TestWiseQuestionRepository(AppDbContext dbContext)
             : base(dbContext)
         {
             _dbContext = dbContext;

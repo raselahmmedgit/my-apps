@@ -18,13 +18,21 @@ namespace SoftwareGrid.iTestApp.Controllers
     [ClearCache]
     public class BaseController : Controller
     {
+        #region Private Variable
+
+        #endregion
+
+        #region Constructor
+        #endregion
+
+        #region General Action
         #region Drop Down List
 
         public JsonResult LoadTestCategoryAjax()
         {
             var service = DependencyResolver.Current.GetService(typeof(ITestCategoryService)) as ITestCategoryService;
             IEnumerable testCategory = service.GetAll();
-            var testCategoryList = (from TestCategory item in testCategory select new SelectListItem {Text = item.TestCategoryName, Value = item.TestCategoryId.ToString()}).ToList();
+            var testCategoryList = (from TestCategory item in testCategory select new SelectListItem { Text = item.TestCategoryName, Value = item.TestCategoryId.ToString() }).ToList();
             return Json(testCategoryList, JsonRequestBehavior.AllowGet);
         }
 
@@ -112,7 +120,7 @@ namespace SoftwareGrid.iTestApp.Controllers
             var result = new ImageResult(filePath, IOFileHelper.GetMIMEType(documentName));
             return result;
         }
-        
+
         public string GetImagePath(int globalId, string documentName)
         {
             string filePath = string.Empty;
@@ -138,7 +146,7 @@ namespace SoftwareGrid.iTestApp.Controllers
                             {
                                 IOFileHelper.WriteFile(physicalPath, documentInformation.DocumentByte);
                             }
-                            
+
                         }
                         filePath = Url.Content(fileBasePath + documentName);
                     }
@@ -172,5 +180,7 @@ namespace SoftwareGrid.iTestApp.Controllers
         }
 
         #endregion
+        #endregion
+
     }
 }
