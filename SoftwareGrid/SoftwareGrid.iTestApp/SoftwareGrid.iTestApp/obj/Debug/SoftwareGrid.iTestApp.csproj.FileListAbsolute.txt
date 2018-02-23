@@ -1,10 +1,10 @@
 D:\Work\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.iTestApp\obj\Debug\SoftwareGrid.iTestApp.csprojResolveAssemblyReference.cache
 C:\WorkArea\RnD\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.iTestApp\obj\Debug\SoftwareGrid.iTestApp.csprojResolveAssemblyReference.cache
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.iTestApp\bin\EntityFramework.dll
 C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.iTestApp\bin\SoftwareGrid.iTestApp.dll.config
 C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.iTestApp\bin\SoftwareGrid.iTestApp.dll
 C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.iTestApp\bin\SoftwareGrid.iTestApp.pdb
 C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.iTestApp\bin\Antlr3.Runtime.dll
-C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.iTestApp\bin\EntityFramework.dll
 C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.iTestApp\bin\EntityFramework.SqlServer.dll
 C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.iTestApp\bin\Microsoft.AspNet.Identity.Core.dll
 C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.iTestApp\bin\Microsoft.AspNet.Identity.EntityFramework.dll
@@ -37,8 +37,8 @@ C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTest
 C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.iTestApp\bin\Dapper.dll
 C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.iTestApp\bin\SoftwareGrid.Model.iTestApp.pdb
 C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.iTestApp\bin\SoftwareGrid.Service.iTestApp.pdb
-C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.iTestApp\bin\System.Web.Helpers.xml
 C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.iTestApp\bin\System.Web.Mvc.xml
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.iTestApp\bin\System.Web.Helpers.xml
 C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.iTestApp\bin\System.Web.Optimization.xml
 C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.iTestApp\bin\System.Web.Razor.xml
 C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SoftwareGrid\SoftwareGrid.iTestApp\SoftwareGrid.iTestApp\bin\System.Web.WebPages.xml
