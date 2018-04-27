@@ -27,7 +27,7 @@ namespace SPEDU.Common.Helper
 
         public static void WarnLog(Exception ex)
         {
-            _logger.Warn("Info Log: ", ex);
+            _logger.Warn("Warn Log: ", ex);
         }
 
         public static void CustomErrorLog(Exception exception)
