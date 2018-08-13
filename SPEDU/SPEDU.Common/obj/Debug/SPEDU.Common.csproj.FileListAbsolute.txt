@@ -24,3 +24,15 @@ C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Common\obj\Debug\SPEDU.Common
 C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Common\obj\Debug\SPEDU.Common.csproj.GenerateResource.Cache
 C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Common\obj\Debug\SPEDU.Common.dll
 C:\Users\user\Documents\GitHub\my-apps\SPEDU\SPEDU.Common\obj\Debug\SPEDU.Common.pdb
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SPEDU\SPEDU.Common\bin\Debug\SPEDU.Common.dll
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SPEDU\SPEDU.Common\bin\Debug\SPEDU.Common.pdb
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SPEDU\SPEDU.Common\bin\Debug\log4net.dll
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SPEDU\SPEDU.Common\bin\Debug\System.Web.Mvc.dll
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SPEDU\SPEDU.Common\bin\Debug\log4net.xml
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SPEDU\SPEDU.Common\bin\Debug\System.Web.Mvc.xml
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SPEDU\SPEDU.Common\obj\Debug\SPEDU.Common.csprojResolveAssemblyReference.cache
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SPEDU\SPEDU.Common\obj\Debug\SPEDU.Common.MessageResource.resources
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SPEDU\SPEDU.Common\obj\Debug\SPEDU.Common.Resources.resources
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SPEDU\SPEDU.Common\obj\Debug\SPEDU.Common.csproj.GenerateResource.Cache
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SPEDU\SPEDU.Common\obj\Debug\SPEDU.Common.dll
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\SPEDU\SPEDU.Common\obj\Debug\SPEDU.Common.pdb
