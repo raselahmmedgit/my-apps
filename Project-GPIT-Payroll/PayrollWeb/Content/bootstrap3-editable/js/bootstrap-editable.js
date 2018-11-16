@@ -6166,7 +6166,7 @@ Editableform based on Twitter Bootstrap 3
 		}
 	);
 	$(function(){
-	    //$('[data-provide="datepicker-inline"]').datepicker({ dateFormat: 'dd/MM/yyyy' });
+	    //$('[data-provide="datepicker-inline"]').datepicker({ dateFormat: 'yy-mm-dd' });
         //vit: changed to support noConflict()
         datepicker.call($('[data-provide="datepicker-inline"]'));
 	});

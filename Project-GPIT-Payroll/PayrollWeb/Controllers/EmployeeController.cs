@@ -12,6 +12,10 @@ using PagedList;
 using PayrollWeb.Utility;
 using PayrollWeb.ViewModels;
 using PayrollWeb.CustomSecurity;
+using PayrollWeb.ViewModels.Utility;
+using System.IO;
+using NPOI.HSSF.UserModel;
+using NPOI.SS.UserModel;
 
 namespace PayrollWeb.Controllers
 {
@@ -114,6 +118,7 @@ namespace PayrollWeb.Controllers
             ViewBag.Companies = lstCompany;
 
             _Emp.joining_date = DateTime.Now;
+            _Emp.dob = DateTime.Now;
             return View(_Emp);
         }
 
@@ -1485,5 +1490,125 @@ namespace PayrollWeb.Controllers
         {
             return View();
         }
+
+        #region MyRegion
+
+        [HttpGet]
+        public ActionResult EmpImport()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        //public ActionResult ImportFromXls(HttpPostedFileBase ImportExcel)
+        public ActionResult ImportFromXls(ImportFileViewModel model)
+        {
+            try
+            {
+                if (model.ImportFile != null)
+                {
+                    var file = model.ImportFile;
+
+                    if (file != null && file.ContentLength > 0)
+                    {
+                        var fileBytes = new byte[file.ContentLength];
+                        file.InputStream.Read(fileBytes, 0, file.ContentLength);
+                        //do stuff with the bytes
+                        string fileName = file.FileName;
+                        string filePath = Path.Combine(Request.PhysicalApplicationPath, "Files\\", fileName);
+
+                        System.IO.File.WriteAllBytes(filePath, fileBytes);
+
+                        //File Uploaded
+                        HSSFWorkbook hssfWorkbook;
+
+                        string filefullpath = filePath;
+
+                        //StreamReader streamReader = new StreamReader(model.ImportFile.InputStream);
+
+                        using (FileStream fileStream = new FileStream(filefullpath, FileMode.Open, FileAccess.Read))
+                        {
+                            hssfWorkbook = new HSSFWorkbook(fileStream);
+                            //hssfWorkbook = new HSSFWorkbook();
+                        }
+
+                        var employeeXlsViewModelList = new List<EmployeeXlsViewModel>();
+
+                        //the columns
+                        var properties = new string[] {
+                            "emp_no",
+                            "name",
+                            "phone",
+                            "email"
+                        };
+
+                        ISheet sheet = hssfWorkbook.GetSheet("Employees");
+                        for (int row = 1; row <= sheet.LastRowNum; row++)
+                        {
+                            if (sheet.GetRow(row) != null) //null is when the row only contains empty cells 
+                            {
+
+                                string emp_no = sheet.GetRow(row).GetCell(GetColumnIndex(properties, "emp_no")).StringCellValue;
+                                string name = sheet.GetRow(row).GetCell(GetColumnIndex(properties, "name")).StringCellValue;
+                                string phone = sheet.GetRow(row).GetCell(GetColumnIndex(properties, "phone")).StringCellValue;
+                                string email = sheet.GetRow(row).GetCell(GetColumnIndex(properties, "email")).StringCellValue;
+
+                                var employeeXlsViewModel = new EmployeeXlsViewModel { emp_no = emp_no, name = name, phone = phone, email = email };
+
+                                employeeXlsViewModelList.Add(employeeXlsViewModel);
+
+                            }
+                        }
+
+                        if (System.IO.File.Exists(filefullpath))
+                        {
+                            System.IO.File.Delete(filefullpath);
+                        }
+
+                        return RedirectToAction("Index", "Employee");
+                        //return Content(Boolean.TrueString);
+                        //return Json(new { msg = "Employee data uploaded successfully.", status = MessageType.success.ToString() }, JsonRequestBehavior.AllowGet);
+                    }
+                    else
+                    {
+                        //return Content("Sorry! Could not found this file.");
+                        return RedirectToAction("Index", "Employee");
+                    }
+
+                }
+                else
+                {
+                    //Upload file Null Message
+                    return RedirectToAction("Index", "Employee");
+                    //return Content("Upload file could not found.");
+                    //return Json(new { msg = "Upload file could not found.", status = MessageType.success.ToString() }, JsonRequestBehavior.AllowGet);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Employee");
+                //return Content("Oop! Error.");
+                //return Json(new { msg = ExceptionHelper.ExceptionMessageFormat(ex, log: false), status = MessageType.error.ToString() }, JsonRequestBehavior.AllowGet);
+            }
+
+        }
+
+        protected virtual int GetColumnIndex(string[] properties, string columnName)
+        {
+            if (properties == null)
+                throw new ArgumentNullException("properties");
+
+            if (columnName == null)
+                throw new ArgumentNullException("columnName");
+
+            for (int i = 0; i < properties.Length; i++)
+                if (properties[i].Equals(columnName, StringComparison.InvariantCultureIgnoreCase))
+                    //return i + 1; //excel indexes start from 1
+                    return i; //excel indexes start from 0
+            return 0;
+        }
+
+        #endregion
     }
 }

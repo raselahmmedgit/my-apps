@@ -207,7 +207,7 @@
                 }
             });
             
-            $('#SalaryProcessDate,#SalaryPaymentDate').datepicker({ dateFormat: 'dd/MM/yyyy' });
+            $('#SalaryProcessDate,#SalaryPaymentDate').datepicker({ dateFormat: 'yy-mm-dd' });
             $('#Year').change(function () { chMonthYear(); });
             $('#Month').change(function () { chMonthYear(); });
             $('#btnProcess').on('click', function (e) {
@@ -249,8 +249,8 @@
                    var nowTemp = new Date(Date.parse(rdt.nd));
                    var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
 
-                   $('#SalaryProcessDate').datepicker({ dateFormat: 'dd/MM/yyyy' });
-                   $('#SalaryPaymentDate').datepicker({ dateFormat: 'dd/MM/yyyy' });
+                   $('#SalaryProcessDate').datepicker({ dateFormat: 'yy-mm-dd' });
+                   $('#SalaryPaymentDate').datepicker({ dateFormat: 'yy-mm-dd' });
 
                    $('#SalaryProcessDate').datepicker('setValue',now);
                    $('#SalaryPaymentDate').datepicker('setValue', now);

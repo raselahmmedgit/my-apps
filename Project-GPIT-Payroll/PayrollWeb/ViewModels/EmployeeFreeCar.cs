@@ -24,11 +24,11 @@ namespace PayrollWeb.ViewModels
         public string is_projected { get; set; }
         
         [DisplayName("Start Date")]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public System.DateTime start_date { get; set; }
 
         [DisplayName("End Date")]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> end_date { get; set; }
         
         public Employee prl_employee { get; set; }

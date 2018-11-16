@@ -155,7 +155,7 @@ Edit Employee Details
 @section PageSpecificJs
 {
     <script type="text/javascript">
-        $('#posting_date,#contract_start_date,#contract_end_date').datepicker({ dateFormat: 'dd/MM/yyyy' });
+        $('#posting_date,#contract_start_date,#contract_end_date').datepicker({ dateFormat: 'yy-mm-dd' });
 
         if ($('#emp_status').val() == 'Regular') {
             $('#contract_start_date').prop('disabled', true);

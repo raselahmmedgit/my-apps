@@ -45,8 +45,7 @@
                 @Html.LabelFor(model => model.joining_date)
             </td>
             <td>
-                @*@Html.EditorFor(model => model.joining_date)*@
-                @Html.TextBoxFor(m => m.joining_date, "{0:yyyy-MM-dd}", new { @type = "date" })
+                @Html.EditorFor(model => model.joining_date)
                 <br />
                 @Html.ValidationMessageFor(model => model.joining_date)
             </td>
@@ -177,7 +176,8 @@
 @section PageSpecificJs
 {
     <script type="text/javascript">
-        $('#joining_date,#dob').datepicker({ dateFormat: 'yy-mm-dd' });
+        $('#joining_date').datepicker({ dateFormat: 'yy-mm-dd' });
+        $('#dob').datepicker({ dateFormat: 'yy-mm-dd' });
         //$("#joining_date,#dob").datepicker("option", "dateFormat", "yy-mm-dd");
     </script>
 }

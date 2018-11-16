@@ -15,3 +15,15 @@ D:\Project-GPIT-Payroll\Project-GPIT-Payroll\com.gpit.Model\obj\Debug\com.gpit.M
 D:\Project-GPIT-Payroll\Project-GPIT-Payroll\com.gpit.Model\obj\Debug\com.gpit.Model.csproj.CopyComplete
 D:\Project-GPIT-Payroll\Project-GPIT-Payroll\com.gpit.Model\obj\Debug\com.gpit.Model.dll
 D:\Project-GPIT-Payroll\Project-GPIT-Payroll\com.gpit.Model\obj\Debug\com.gpit.Model.pdb
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\Project-GPIT-Payroll\com.gpit.Model\bin\Debug\com.gpit.Model.dll
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\Project-GPIT-Payroll\com.gpit.Model\bin\Debug\com.gpit.Model.pdb
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\Project-GPIT-Payroll\com.gpit.Model\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\Project-GPIT-Payroll\com.gpit.Model\bin\Debug\Microsoft.ReportViewer.WebForms.dll
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\Project-GPIT-Payroll\com.gpit.Model\bin\Debug\NPOI.dll
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\Project-GPIT-Payroll\com.gpit.Model\bin\Debug\NPOI.OOXML.dll
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\Project-GPIT-Payroll\com.gpit.Model\bin\Debug\NPOI.OpenXml4Net.dll
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\Project-GPIT-Payroll\com.gpit.Model\bin\Debug\NPOI.OpenXmlFormats.dll
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\Project-GPIT-Payroll\com.gpit.Model\obj\Debug\com.gpit.Model.csproj.CoreCompileInputs.cache
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\Project-GPIT-Payroll\com.gpit.Model\obj\Debug\com.gpit.Model.csproj.CopyComplete
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\Project-GPIT-Payroll\com.gpit.Model\obj\Debug\com.gpit.Model.dll
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\Project-GPIT-Payroll\com.gpit.Model\obj\Debug\com.gpit.Model.pdb

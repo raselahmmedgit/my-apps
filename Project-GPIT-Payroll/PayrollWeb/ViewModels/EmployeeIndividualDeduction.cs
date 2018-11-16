@@ -32,13 +32,13 @@ namespace PayrollWeb.ViewModels
 
         [DisplayName("Effective From")]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Required(ErrorMessage = "Date cannot be empty.")]
         public Nullable<System.DateTime> effective_from { get; set; }
 
         [DisplayName("Effective To")]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> effective_to { get; set; } //
 
         public virtual DeductionName prl_deduction_name { get; set; }

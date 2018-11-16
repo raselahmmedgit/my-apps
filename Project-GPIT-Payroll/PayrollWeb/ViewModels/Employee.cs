@@ -62,7 +62,7 @@ namespace PayrollWeb.ViewModels
 
         [Required(ErrorMessage = "Date of birth can not be empty.")]
         [DisplayName("Date of Birth")]
-        //[DataType(DataType.Date)]
+        [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public System.DateTime dob { get; set; }
 

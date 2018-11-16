@@ -49,7 +49,7 @@ namespace PayrollWeb
             bundles.Add(new StyleBundle("~/payroll_themecss")
                     .Include("~/themes/css/base.css",
                     "~/themes/css/font-awesome.css",
-                    "~/Content/base-custom.css"));
+                    "~/themes/css/base-custom.css"));
 
             //BundleTable.EnableOptimizations = true;
         }
