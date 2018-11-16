@@ -1,0 +1,5 @@
+D:\Home\Official\Project-GPIT-Payroll\Project-GPIT-Payroll\com.gpit.Model\bin\Release\com.gpit.Model.dll
+D:\Home\Official\Project-GPIT-Payroll\Project-GPIT-Payroll\com.gpit.Model\bin\Release\com.gpit.Model.pdb
+D:\Home\Official\Project-GPIT-Payroll\Project-GPIT-Payroll\com.gpit.Model\obj\Release\com.gpit.Model.dll
+D:\Home\Official\Project-GPIT-Payroll\Project-GPIT-Payroll\com.gpit.Model\obj\Release\com.gpit.Model.pdb
+D:\Home\Official\Project-GPIT-Payroll\Project-GPIT-Payroll\com.gpit.Model\obj\Release\com.gpit.Model.csprojResolveAssemblyReference.cache

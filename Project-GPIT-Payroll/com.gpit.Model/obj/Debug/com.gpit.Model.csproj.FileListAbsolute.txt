@@ -1,0 +1,17 @@
+C:\Office_work\Office_Work\Project-GPIT-Payroll\com.gpit.Model\bin\Debug\com.gpit.Model.dll
+C:\Office_work\Office_Work\Project-GPIT-Payroll\com.gpit.Model\bin\Debug\com.gpit.Model.pdb
+C:\Office_work\Office_Work\Project-GPIT-Payroll\com.gpit.Model\obj\Debug\com.gpit.Model.dll
+C:\Office_work\Office_Work\Project-GPIT-Payroll\com.gpit.Model\obj\Debug\com.gpit.Model.pdb
+D:\Home\Official\Project-GPIT-Payroll\Project-GPIT-Payroll\com.gpit.Model\bin\Debug\com.gpit.Model.dll
+D:\Home\Official\Project-GPIT-Payroll\Project-GPIT-Payroll\com.gpit.Model\bin\Debug\com.gpit.Model.pdb
+D:\Home\Official\Project-GPIT-Payroll\Project-GPIT-Payroll\com.gpit.Model\obj\Debug\com.gpit.Model.csprojResolveAssemblyReference.cache
+D:\Home\Official\Project-GPIT-Payroll\Project-GPIT-Payroll\com.gpit.Model\obj\Debug\com.gpit.Model.dll
+D:\Home\Official\Project-GPIT-Payroll\Project-GPIT-Payroll\com.gpit.Model\obj\Debug\com.gpit.Model.pdb
+D:\Project-GPIT-Payroll\Project-GPIT-Payroll\com.gpit.Model\bin\Debug\com.gpit.Model.dll
+D:\Project-GPIT-Payroll\Project-GPIT-Payroll\com.gpit.Model\bin\Debug\com.gpit.Model.pdb
+D:\Project-GPIT-Payroll\Project-GPIT-Payroll\com.gpit.Model\bin\Debug\Microsoft.ReportViewer.WebForms.dll
+D:\Project-GPIT-Payroll\Project-GPIT-Payroll\com.gpit.Model\obj\Debug\com.gpit.Model.csprojAssemblyReference.cache
+D:\Project-GPIT-Payroll\Project-GPIT-Payroll\com.gpit.Model\obj\Debug\com.gpit.Model.csproj.CoreCompileInputs.cache
+D:\Project-GPIT-Payroll\Project-GPIT-Payroll\com.gpit.Model\obj\Debug\com.gpit.Model.csproj.CopyComplete
+D:\Project-GPIT-Payroll\Project-GPIT-Payroll\com.gpit.Model\obj\Debug\com.gpit.Model.dll
+D:\Project-GPIT-Payroll\Project-GPIT-Payroll\com.gpit.Model\obj\Debug\com.gpit.Model.pdb

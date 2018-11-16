@@ -1,0 +1,12 @@
+D:\Home\Official\Project-GPIT-Payroll\Project-GPIT-Payroll\com.gpit.DataContext\bin\Release\com.gpit.DataContext.dll.config
+D:\Home\Official\Project-GPIT-Payroll\Project-GPIT-Payroll\com.gpit.DataContext\bin\Release\com.gpit.DataContext.dll
+D:\Home\Official\Project-GPIT-Payroll\Project-GPIT-Payroll\com.gpit.DataContext\bin\Release\com.gpit.DataContext.pdb
+D:\Home\Official\Project-GPIT-Payroll\Project-GPIT-Payroll\com.gpit.DataContext\bin\Release\com.gpit.Model.dll
+D:\Home\Official\Project-GPIT-Payroll\Project-GPIT-Payroll\com.gpit.DataContext\bin\Release\EntityFramework.dll
+D:\Home\Official\Project-GPIT-Payroll\Project-GPIT-Payroll\com.gpit.DataContext\bin\Release\MySql.Data.dll
+D:\Home\Official\Project-GPIT-Payroll\Project-GPIT-Payroll\com.gpit.DataContext\bin\Release\MySql.Data.Entity.dll
+D:\Home\Official\Project-GPIT-Payroll\Project-GPIT-Payroll\com.gpit.DataContext\bin\Release\com.gpit.Model.pdb
+D:\Home\Official\Project-GPIT-Payroll\Project-GPIT-Payroll\com.gpit.DataContext\bin\Release\EntityFramework.xml
+D:\Home\Official\Project-GPIT-Payroll\Project-GPIT-Payroll\com.gpit.DataContext\obj\Release\com.gpit.DataContext.csprojResolveAssemblyReference.cache
+D:\Home\Official\Project-GPIT-Payroll\Project-GPIT-Payroll\com.gpit.DataContext\obj\Release\com.gpit.DataContext.dll
+D:\Home\Official\Project-GPIT-Payroll\Project-GPIT-Payroll\com.gpit.DataContext\obj\Release\com.gpit.DataContext.pdb
