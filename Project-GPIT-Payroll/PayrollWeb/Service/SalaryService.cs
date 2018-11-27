@@ -65,10 +65,10 @@ namespace PayrollWeb.Service
                 {
                     return result;
                 }
-                var emps = GetEligibleEmployeeForSalaryProcess(processDate.Date);
-                emps = emps.Where(x => selectedEmployees.Contains(x.emp_id)).ToList();
-                salAlw = new SalaryAllowanceProcess(processDate.Date,proStartDate,proEndDate, emps);
-                salDed = new SalaryDeductionProcess(processDate.Date,proStartDate,proEndDate, emps);
+                var empDs = GetEligibleEmployeeForSalaryProcess(processDate.Date);
+                empDs = empDs.Where(x => selectedEmployees.Contains(x.emp_id)).ToList();
+                salAlw = new SalaryAllowanceProcess(processDate.Date,proStartDate,proEndDate, empDs);
+                salDed = new SalaryDeductionProcess(processDate.Date,proStartDate,proEndDate, empDs);
                 sp.company_id = 1;
                 sp.division_id = 0;
                 sp.department_id = 0;
@@ -337,7 +337,12 @@ namespace PayrollWeb.Service
 
                 int taxResult = 0;
                 IncomeTaxService ins = new IncomeTaxService(dataContext);
-                var _res = ins.process_incomeTax(extEmpDetails.Select(x=>x.prl_employee).ToList(), sp.batch_no, paymentDate, sp.process_date.Value, FindFiscalYear(processDate), "");
+
+                var extEmpDetailList = dataContext.prl_employee_details.Include("prl_employee").AsEnumerable().Where(x => selectedEmployees.Contains(x.emp_id)).GroupBy(x => x.emp_id, (key, xs) => xs.OrderByDescending(x => x.id).First()).ToList();
+                var empList = extEmpDetailList.Select(x => x.prl_employee).ToList();
+                int fiscalYear = FindFiscalYear(processDate);
+
+                var _res = ins.process_incomeTax(empList, sp.batch_no, paymentDate, sp.process_date.Value, fiscalYear, "");
 
             }
             catch (Exception ex)
@@ -516,7 +521,8 @@ namespace PayrollWeb.Service
                             var taxSlab = cntx.prl_employee_tax_slab.Where(s => s.tax_process_id == taxProcess.id).ToList();
                             if (taxSlab != null)
                             {
-                                DeleteEmployeeTaxSlab(salProcess.id, mySqlCommand);
+                                //DeleteEmployeeTaxSlab(salProcess.id, mySqlCommand);
+                                DeleteEmployeeTaxSlab(taxProcess.id, mySqlCommand);
                             }
                             DeleteEmployeeTaxProcess(salProcess.id, mySqlCommand);
                         }
@@ -603,15 +609,17 @@ namespace PayrollWeb.Service
             return taxDel;
         }
 
-        public int DeleteEmployeeTaxSlab(int salary_process_id, MySqlCommand command)
+        public int DeleteEmployeeTaxSlab(int tax_process_id, MySqlCommand command)
         {
             int taxSlab = 0;
             try
             {
-                const string commandText = @"DELETE FROM prl_employee_tax_slab WHERE salary_process_id = ?salary_process_id";
+                //const string commandText = @"DELETE FROM prl_employee_tax_slab WHERE salary_process_id = ?salary_process_id";
+                const string commandText = @"DELETE FROM prl_employee_tax_slab WHERE tax_process_id = ?tax_process_id";
                 command.Parameters.Clear();
                 command.CommandText = commandText;
-                command.Parameters.AddWithValue("?salary_process_id", salary_process_id);
+                //command.Parameters.AddWithValue("?salary_process_id", salary_process_id);
+                command.Parameters.AddWithValue("?tax_process_id", tax_process_id);
                 taxSlab = command.ExecuteNonQuery();
             }
             catch (Exception ex)

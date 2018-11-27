@@ -13,10 +13,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/30/2014 08:52:30</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>11/04/2018 23:37:33</publishTime>
+      <publishTime>11/20/2018 18:36:38</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>11/04/2018 23:37:33</publishTime>
+      <publishTime>11/20/2018 18:36:38</publishTime>
     </File>
     <File Include="bin/AutoMapper.dll">
       <publishTime>11/30/2014 08:52:52</publishTime>
@@ -25,10 +25,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/30/2014 08:52:52</publishTime>
     </File>
     <File Include="bin/com.gpit.DataContext.dll">
-      <publishTime>11/03/2018 01:03:43</publishTime>
+      <publishTime>11/19/2018 08:18:36</publishTime>
     </File>
     <File Include="bin/com.gpit.Model.dll">
-      <publishTime>11/03/2018 01:03:41</publishTime>
+      <publishTime>11/19/2018 08:18:35</publishTime>
     </File>
     <File Include="bin/de/Microsoft.Data.Edm.resources.dll">
       <publishTime>11/30/2014 08:52:06</publishTime>
@@ -62,6 +62,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="bin/fr/System.Spatial.resources.dll">
       <publishTime>11/30/2014 08:52:34</publishTime>
+    </File>
+    <File Include="bin/ICSharpCode.SharpZipLib.dll">
+      <publishTime>11/16/2018 19:12:34</publishTime>
     </File>
     <File Include="bin/it/Microsoft.Data.Edm.resources.dll">
       <publishTime>11/30/2014 08:52:08</publishTime>
@@ -129,6 +132,18 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/Ninject.Web.Mvc.dll">
       <publishTime>11/30/2014 08:52:40</publishTime>
     </File>
+    <File Include="bin/NPOI.dll">
+      <publishTime>11/16/2018 19:12:28</publishTime>
+    </File>
+    <File Include="bin/NPOI.OOXML.dll">
+      <publishTime>11/16/2018 19:12:28</publishTime>
+    </File>
+    <File Include="bin/NPOI.OpenXml4Net.dll">
+      <publishTime>11/16/2018 19:12:28</publishTime>
+    </File>
+    <File Include="bin/NPOI.OpenXmlFormats.dll">
+      <publishTime>11/16/2018 19:12:28</publishTime>
+    </File>
     <File Include="bin/PagedList.dll">
       <publishTime>11/30/2014 08:52:38</publishTime>
     </File>
@@ -136,7 +151,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/30/2014 08:52:40</publishTime>
     </File>
     <File Include="bin/PayrollWeb.dll">
-      <publishTime>11/04/2018 23:37:13</publishTime>
+      <publishTime>11/19/2018 08:18:38</publishTime>
     </File>
     <File Include="bin/ru/Microsoft.Data.Edm.resources.dll">
       <publishTime>11/30/2014 08:52:06</publishTime>
@@ -184,19 +199,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/30/2014 08:52:26</publishTime>
     </File>
     <File Include="bin/Views/Report/RDLC/BankAdvice.rdlc">
-      <publishTime>11/04/2018 23:35:30</publishTime>
+      <publishTime>11/16/2018 19:09:25</publishTime>
     </File>
     <File Include="bin/Views/Report/RDLC/PaySlip.rdlc">
-      <publishTime>11/04/2018 23:35:38</publishTime>
+      <publishTime>11/16/2018 19:09:25</publishTime>
     </File>
     <File Include="bin/Views/Report/RDLC/PaySlipChildAllowance.rdlc">
-      <publishTime>11/30/2014 08:51:54</publishTime>
+      <publishTime>11/16/2018 19:09:25</publishTime>
     </File>
     <File Include="bin/Views/Report/RDLC/PaySlipChildDeduction.rdlc">
-      <publishTime>11/04/2018 23:35:33</publishTime>
+      <publishTime>11/16/2018 19:09:25</publishTime>
     </File>
     <File Include="bin/Views/Report/RDLC/SalaryChange.rdlc">
-      <publishTime>11/04/2018 23:35:27</publishTime>
+      <publishTime>11/16/2018 19:09:25</publishTime>
     </File>
     <File Include="bin/WebActivator.dll">
       <publishTime>11/30/2014 08:52:24</publishTime>
@@ -247,7 +262,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/30/2014 08:51:58</publishTime>
     </File>
     <File Include="Content/bootstrap3-editable/js/bootstrap-editable.js">
-      <publishTime>11/30/2014 08:51:58</publishTime>
+      <publishTime>11/13/2018 19:30:56</publishTime>
     </File>
     <File Include="Content/bootstrap3-editable/js/bootstrap-editable.min.js">
       <publishTime>11/30/2014 08:51:58</publishTime>
@@ -543,6 +558,15 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/glyphicons-halflings.png">
       <publishTime>11/30/2014 08:51:58</publishTime>
     </File>
+    <File Include="Content/jquery-ui.css">
+      <publishTime>11/16/2018 19:08:51</publishTime>
+    </File>
+    <File Include="Content/jquery-ui.structure.css">
+      <publishTime>11/16/2018 19:08:51</publishTime>
+    </File>
+    <File Include="Content/jquery-ui.theme.css">
+      <publishTime>11/16/2018 19:08:51</publishTime>
+    </File>
     <File Include="Content/jquery.fileupload-ui.css">
       <publishTime>11/30/2014 08:51:58</publishTime>
     </File>
@@ -759,11 +783,29 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Images/CompanyLogo/GpLOGO.jpg">
       <publishTime>11/30/2014 08:51:56</publishTime>
     </File>
+    <File Include="Images/CompanyLogo/gp_logo.jpg">
+      <publishTime>11/30/2014 08:51:56</publishTime>
+    </File>
+    <File Include="Images/CompanyLogo/payroll_logo.jpg">
+      <publishTime>11/04/2018 23:22:47</publishTime>
+    </File>
+    <File Include="Images/CompanyLogo/recom_logo.png">
+      <publishTime>11/15/2018 18:37:00</publishTime>
+    </File>
+    <File Include="Images/gpit_logo.jpg">
+      <publishTime>11/04/2018 23:22:47</publishTime>
+    </File>
     <File Include="Images/gpit_logo.png">
       <publishTime>11/22/2017 01:16:09</publishTime>
     </File>
+    <File Include="Images/gpit_logo1.png">
+      <publishTime>11/30/2014 08:51:56</publishTime>
+    </File>
     <File Include="Images/heroAccent.png">
       <publishTime>11/30/2014 08:51:56</publishTime>
+    </File>
+    <File Include="Images/login_logo.png">
+      <publishTime>11/22/2017 01:16:09</publishTime>
     </File>
     <File Include="Images/orderedList0.png">
       <publishTime>11/30/2014 08:51:56</publishTime>
@@ -799,13 +841,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/30/2014 08:51:56</publishTime>
     </File>
     <File Include="Mvc.sitemap">
-      <publishTime>11/30/2014 08:51:44</publishTime>
+      <publishTime>11/17/2018 14:33:03</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>11/30/2014 08:51:32</publishTime>
+      <publishTime>11/16/2018 19:30:29</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>11/04/2018 23:37:24</publishTime>
+      <publishTime>11/20/2018 18:36:29</publishTime>
     </File>
     <File Include="ReportDataSet/ReportDataSet.xsc">
       <publishTime>11/30/2014 08:51:32</publishTime>
@@ -987,6 +1029,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Scripts/jquery-ui-1.10.3.min.js">
       <publishTime>11/30/2014 08:51:46</publishTime>
     </File>
+    <File Include="Scripts/jquery-ui.js">
+      <publishTime>11/16/2018 19:30:29</publishTime>
+    </File>
     <File Include="Scripts/jquery.unobtrusive-ajax.js">
       <publishTime>11/30/2014 08:51:46</publishTime>
     </File>
@@ -1029,8 +1074,11 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="themes/cerulean/bootstrap.min.css">
       <publishTime>11/30/2014 08:51:32</publishTime>
     </File>
+    <File Include="themes/css/base-custom.css">
+      <publishTime>11/13/2018 19:08:16</publishTime>
+    </File>
     <File Include="themes/css/base.css">
-      <publishTime>11/30/2014 08:51:32</publishTime>
+      <publishTime>11/13/2018 18:31:56</publishTime>
     </File>
     <File Include="themes/css/bootstrap-responsive.min.css">
       <publishTime>11/30/2014 08:51:32</publishTime>
@@ -1276,7 +1324,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/30/2014 08:51:44</publishTime>
     </File>
     <File Include="themes/js/business_ltd_1.0.js">
-      <publishTime>11/30/2014 08:51:44</publishTime>
+      <publishTime>11/13/2018 18:36:58</publishTime>
     </File>
     <File Include="themes/js/jquery-1.8.3.min.js">
       <publishTime>11/30/2014 08:51:44</publishTime>
@@ -1429,313 +1477,316 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/30/2014 08:51:32</publishTime>
     </File>
     <File Include="Views/Allowance/AllowanceMain.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:15</publishTime>
     </File>
     <File Include="Views/Allowance/ChildrenAllowance.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:15</publishTime>
     </File>
     <File Include="Views/Allowance/ConfigureAllowance.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/18/2018 12:10:05</publishTime>
     </File>
     <File Include="Views/Allowance/Create.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:15</publishTime>
     </File>
     <File Include="Views/Allowance/Edit.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:15</publishTime>
     </File>
     <File Include="Views/Allowance/EditUploadedAllowance.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:15</publishTime>
     </File>
     <File Include="Views/Allowance/EmpAllowance.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:15</publishTime>
     </File>
     <File Include="Views/Allowance/Index.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:15</publishTime>
     </File>
     <File Include="Views/Allowance/IndividualAllowance.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:15</publishTime>
     </File>
     <File Include="Views/Allowance/IndvAllowance.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:15</publishTime>
     </File>
     <File Include="Views/Allowance/SubmitChildrenAllowance.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:15</publishTime>
     </File>
     <File Include="Views/Allowance/UploadAllowance.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:15</publishTime>
     </File>
     <File Include="Views/Allowance/_AllowanceUploadedData.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:15</publishTime>
     </File>
     <File Include="Views/Allowance/_AllowanceUploadForm.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:15</publishTime>
     </File>
     <File Include="Views/Allowance/_GetAllowanceDataSelection.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:15</publishTime>
     </File>
     <File Include="Views/Allowance/_UploadedAllowances.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:15</publishTime>
     </File>
     <File Include="Views/AllowanceName/Create.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:15</publishTime>
     </File>
     <File Include="Views/AllowanceName/Edit.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:16</publishTime>
     </File>
     <File Include="Views/AllowanceName/Index.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:16</publishTime>
     </File>
     <File Include="Views/Authentication/ChangePassword.cshtml">
-      <publishTime>11/30/2014 08:51:50</publishTime>
+      <publishTime>11/16/2018 19:09:16</publishTime>
     </File>
     <File Include="Views/Authentication/ForgotPassword.cshtml">
-      <publishTime>11/30/2014 08:51:50</publishTime>
+      <publishTime>11/16/2018 19:09:16</publishTime>
     </File>
     <File Include="Views/Authentication/Index.cshtml">
-      <publishTime>11/30/2014 08:51:50</publishTime>
+      <publishTime>11/16/2018 19:09:16</publishTime>
     </File>
     <File Include="Views/Authentication/LogOn.cshtml">
-      <publishTime>11/25/2017 00:16:26</publishTime>
+      <publishTime>11/16/2018 19:09:16</publishTime>
     </File>
     <File Include="Views/Authentication/Register.cshtml">
-      <publishTime>11/30/2014 08:51:50</publishTime>
+      <publishTime>11/16/2018 19:09:16</publishTime>
     </File>
     <File Include="Views/Authentication/Role.cshtml">
-      <publishTime>11/30/2014 08:51:50</publishTime>
+      <publishTime>11/16/2018 19:09:16</publishTime>
     </File>
     <File Include="Views/Authentication/RoleMenu.cshtml">
-      <publishTime>11/30/2014 08:51:50</publishTime>
+      <publishTime>11/16/2018 19:09:16</publishTime>
     </File>
     <File Include="Views/Authentication/UserRole.cshtml">
-      <publishTime>11/30/2014 08:51:50</publishTime>
+      <publishTime>11/16/2018 19:09:16</publishTime>
     </File>
     <File Include="Views/Bank/Create.cshtml">
-      <publishTime>11/30/2014 08:51:54</publishTime>
+      <publishTime>11/16/2018 19:09:16</publishTime>
     </File>
     <File Include="Views/Bank/Edit.cshtml">
-      <publishTime>11/30/2014 08:51:54</publishTime>
+      <publishTime>11/16/2018 19:09:16</publishTime>
     </File>
     <File Include="Views/Bank/Index.cshtml">
-      <publishTime>11/30/2014 08:51:54</publishTime>
+      <publishTime>11/16/2018 19:09:16</publishTime>
     </File>
     <File Include="Views/BankBranch/Create.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:16</publishTime>
     </File>
     <File Include="Views/BankBranch/Edit.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:16</publishTime>
     </File>
     <File Include="Views/BankBranch/Index.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:16</publishTime>
     </File>
     <File Include="Views/Bonus/BonusMain.cshtml">
-      <publishTime>11/30/2014 08:51:50</publishTime>
+      <publishTime>11/16/2018 19:09:16</publishTime>
     </File>
     <File Include="Views/Bonus/BonusProcess.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:16</publishTime>
     </File>
     <File Include="Views/Bonus/ConfigureBonus.cshtml">
-      <publishTime>11/30/2014 08:51:50</publishTime>
+      <publishTime>11/16/2018 19:09:16</publishTime>
     </File>
     <File Include="Views/Bonus/Create.cshtml">
-      <publishTime>11/30/2014 08:51:50</publishTime>
+      <publishTime>11/16/2018 19:09:16</publishTime>
     </File>
     <File Include="Views/Bonus/DisburseBonus.cshtml">
-      <publishTime>11/30/2014 08:51:50</publishTime>
+      <publishTime>11/16/2018 19:09:16</publishTime>
     </File>
     <File Include="Views/Bonus/Edit.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:16</publishTime>
     </File>
     <File Include="Views/Bonus/HoldBonus.cshtml">
-      <publishTime>11/30/2014 08:51:50</publishTime>
+      <publishTime>11/16/2018 19:09:16</publishTime>
     </File>
     <File Include="Views/Bonus/Index.cshtml">
-      <publishTime>11/30/2014 08:51:50</publishTime>
+      <publishTime>11/16/2018 19:09:16</publishTime>
     </File>
     <File Include="Views/Bonus/UndoBonusProcess.cshtml">
-      <publishTime>11/30/2014 08:51:50</publishTime>
+      <publishTime>11/16/2018 19:09:17</publishTime>
     </File>
     <File Include="Views/Bonus/UploadBonus.cshtml">
-      <publishTime>11/30/2014 08:51:50</publishTime>
+      <publishTime>11/16/2018 19:09:17</publishTime>
     </File>
     <File Include="Views/Bonus/_BonusUploadedData.cshtml">
-      <publishTime>11/30/2014 08:51:50</publishTime>
+      <publishTime>11/16/2018 19:09:17</publishTime>
     </File>
     <File Include="Views/Bonus/_BonusUploadForm.cshtml">
-      <publishTime>11/30/2014 08:51:50</publishTime>
+      <publishTime>11/16/2018 19:09:17</publishTime>
     </File>
     <File Include="Views/Bonus/_GetBonusDataSelection.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:17</publishTime>
     </File>
     <File Include="Views/Bonus/_UploadedBonuses.cshtml">
-      <publishTime>11/30/2014 08:51:50</publishTime>
+      <publishTime>11/16/2018 19:09:17</publishTime>
     </File>
     <File Include="Views/Company/Create.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:17</publishTime>
     </File>
     <File Include="Views/Company/Details.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:17</publishTime>
     </File>
     <File Include="Views/Company/Edit.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:17</publishTime>
     </File>
     <File Include="Views/Company/Index.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:17</publishTime>
     </File>
     <File Include="Views/DataSync/Index.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:17</publishTime>
     </File>
     <File Include="Views/Deduction/ConfigureDeduction.cshtml">
-      <publishTime>11/30/2014 08:51:54</publishTime>
+      <publishTime>11/16/2018 19:09:17</publishTime>
     </File>
     <File Include="Views/Deduction/Create.cshtml">
-      <publishTime>11/30/2014 08:51:54</publishTime>
+      <publishTime>11/16/2018 19:09:17</publishTime>
     </File>
     <File Include="Views/Deduction/CreateDeductionName.cshtml">
-      <publishTime>11/30/2014 08:51:54</publishTime>
+      <publishTime>11/16/2018 19:09:17</publishTime>
     </File>
     <File Include="Views/Deduction/DeductionMain.cshtml">
-      <publishTime>11/30/2014 08:51:54</publishTime>
+      <publishTime>11/16/2018 19:09:17</publishTime>
     </File>
     <File Include="Views/Deduction/DeductionNames.cshtml">
-      <publishTime>11/30/2014 08:51:54</publishTime>
+      <publishTime>11/16/2018 19:09:17</publishTime>
     </File>
     <File Include="Views/Deduction/Edit.cshtml">
-      <publishTime>11/30/2014 08:51:54</publishTime>
+      <publishTime>11/16/2018 19:09:17</publishTime>
     </File>
     <File Include="Views/Deduction/EditDeductionName.cshtml">
-      <publishTime>11/30/2014 08:51:54</publishTime>
+      <publishTime>11/16/2018 19:09:17</publishTime>
     </File>
     <File Include="Views/Deduction/EditUploadedDeduction.cshtml">
-      <publishTime>11/30/2014 08:51:54</publishTime>
+      <publishTime>11/16/2018 19:09:17</publishTime>
     </File>
     <File Include="Views/Deduction/EmpDedcution.cshtml">
-      <publishTime>11/30/2014 08:51:54</publishTime>
+      <publishTime>11/16/2018 19:09:17</publishTime>
     </File>
     <File Include="Views/Deduction/Index.cshtml">
-      <publishTime>11/30/2014 08:51:54</publishTime>
+      <publishTime>11/16/2018 19:09:17</publishTime>
     </File>
     <File Include="Views/Deduction/IndividualDeduction.cshtml">
-      <publishTime>11/30/2014 08:51:54</publishTime>
+      <publishTime>11/16/2018 19:09:17</publishTime>
     </File>
     <File Include="Views/Deduction/IndvDeduction.cshtml">
-      <publishTime>11/30/2014 08:51:54</publishTime>
+      <publishTime>11/16/2018 19:09:17</publishTime>
     </File>
     <File Include="Views/Deduction/UploadDeduction.cshtml">
-      <publishTime>11/30/2014 08:51:54</publishTime>
+      <publishTime>11/16/2018 19:09:17</publishTime>
     </File>
     <File Include="Views/Deduction/_DeductionUploadedData.cshtml">
-      <publishTime>11/30/2014 08:51:54</publishTime>
+      <publishTime>11/16/2018 19:09:18</publishTime>
     </File>
     <File Include="Views/Deduction/_DeductionUploadForm.cshtml">
-      <publishTime>11/30/2014 08:51:54</publishTime>
+      <publishTime>11/16/2018 19:09:18</publishTime>
     </File>
     <File Include="Views/Deduction/_GetDeductionDataSelection.cshtml">
-      <publishTime>11/30/2014 08:51:54</publishTime>
+      <publishTime>11/16/2018 19:09:18</publishTime>
     </File>
     <File Include="Views/Deduction/_UploadedDeductions.cshtml">
-      <publishTime>11/30/2014 08:51:54</publishTime>
+      <publishTime>11/16/2018 19:09:18</publishTime>
     </File>
     <File Include="Views/Departments/Create.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:18</publishTime>
     </File>
     <File Include="Views/Departments/Edit.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:18</publishTime>
     </File>
     <File Include="Views/Departments/Index.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:18</publishTime>
     </File>
     <File Include="Views/Designation/CreateDesignation.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:18</publishTime>
     </File>
     <File Include="Views/Designation/Edit.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:18</publishTime>
     </File>
     <File Include="Views/Designation/Index.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:18</publishTime>
     </File>
     <File Include="Views/Division/Create.cshtml">
-      <publishTime>11/30/2014 08:51:50</publishTime>
+      <publishTime>11/16/2018 19:09:18</publishTime>
     </File>
     <File Include="Views/Division/Edit.cshtml">
-      <publishTime>11/30/2014 08:51:50</publishTime>
+      <publishTime>11/16/2018 19:09:18</publishTime>
     </File>
     <File Include="Views/Division/Index.cshtml">
-      <publishTime>11/30/2014 08:51:50</publishTime>
+      <publishTime>11/16/2018 19:09:18</publishTime>
     </File>
     <File Include="Views/Employee/AddEmpDetails.cshtml">
-      <publishTime>11/30/2014 08:51:50</publishTime>
+      <publishTime>11/16/2018 19:09:18</publishTime>
     </File>
     <File Include="Views/Employee/AddSalaryReview.cshtml">
-      <publishTime>11/30/2014 08:51:50</publishTime>
+      <publishTime>11/16/2018 19:09:18</publishTime>
     </File>
     <File Include="Views/Employee/Create.cshtml">
-      <publishTime>11/30/2014 08:51:50</publishTime>
+      <publishTime>11/16/2018 19:09:19</publishTime>
     </File>
     <File Include="Views/Employee/CreateEmpDetails.cshtml">
-      <publishTime>11/30/2014 08:51:50</publishTime>
+      <publishTime>11/16/2018 19:09:19</publishTime>
     </File>
     <File Include="Views/Employee/Details.cshtml">
-      <publishTime>11/30/2014 08:51:50</publishTime>
+      <publishTime>11/16/2018 19:09:19</publishTime>
     </File>
     <File Include="Views/Employee/Edit.cshtml">
-      <publishTime>11/30/2014 08:51:50</publishTime>
+      <publishTime>11/16/2018 19:09:19</publishTime>
     </File>
     <File Include="Views/Employee/EditEmpDetails.cshtml">
-      <publishTime>11/30/2014 08:51:50</publishTime>
+      <publishTime>11/16/2018 19:09:19</publishTime>
     </File>
     <File Include="Views/Employee/EditSalaryReview.cshtml">
-      <publishTime>11/30/2014 08:51:50</publishTime>
+      <publishTime>11/16/2018 19:09:19</publishTime>
     </File>
     <File Include="Views/Employee/EmpBankInfo.cshtml">
-      <publishTime>11/30/2014 08:51:50</publishTime>
+      <publishTime>11/16/2018 19:09:19</publishTime>
     </File>
     <File Include="Views/Employee/EmpConfirmation.cshtml">
-      <publishTime>11/30/2014 08:51:50</publishTime>
+      <publishTime>11/16/2018 19:09:19</publishTime>
+    </File>
+    <File Include="Views/Employee/EmpImport.cshtml">
+      <publishTime>11/16/2018 19:46:20</publishTime>
     </File>
     <File Include="Views/Employee/EmployeeDiscontinue.cshtml">
-      <publishTime>11/30/2014 08:51:50</publishTime>
+      <publishTime>11/16/2018 19:09:19</publishTime>
     </File>
     <File Include="Views/Employee/Index.cshtml">
-      <publishTime>11/30/2014 08:51:50</publishTime>
+      <publishTime>11/17/2018 13:46:37</publishTime>
     </File>
     <File Include="Views/Employee/SearchEmployee.cshtml">
-      <publishTime>11/30/2014 08:51:50</publishTime>
+      <publishTime>11/16/2018 19:09:19</publishTime>
     </File>
     <File Include="Views/Employee/UndoEmployeeDiscontinue.cshtml">
-      <publishTime>11/30/2014 08:51:50</publishTime>
+      <publishTime>11/16/2018 19:09:20</publishTime>
     </File>
     <File Include="Views/Employee/_EmpInfoForSalaryReview.cshtml">
-      <publishTime>11/30/2014 08:51:50</publishTime>
+      <publishTime>11/16/2018 19:09:20</publishTime>
     </File>
     <File Include="Views/Employee/_SalaryReviewList.cshtml">
-      <publishTime>11/30/2014 08:51:50</publishTime>
+      <publishTime>11/16/2018 19:09:20</publishTime>
     </File>
     <File Include="Views/FiscalYr/Create.cshtml">
-      <publishTime>11/30/2014 08:51:54</publishTime>
+      <publishTime>11/16/2018 19:09:20</publishTime>
     </File>
     <File Include="Views/FiscalYr/Edit.cshtml">
-      <publishTime>11/30/2014 08:51:54</publishTime>
+      <publishTime>11/16/2018 19:09:20</publishTime>
     </File>
     <File Include="Views/FiscalYr/Index.cshtml">
-      <publishTime>11/30/2014 08:51:54</publishTime>
+      <publishTime>11/16/2018 19:09:20</publishTime>
     </File>
     <File Include="Views/FreeCar/Create.cshtml">
-      <publishTime>11/30/2014 08:51:54</publishTime>
+      <publishTime>11/16/2018 19:09:20</publishTime>
     </File>
     <File Include="Views/FreeCar/Edit.cshtml">
-      <publishTime>11/30/2014 08:51:54</publishTime>
+      <publishTime>11/16/2018 19:09:20</publishTime>
     </File>
     <File Include="Views/FreeCar/Index.cshtml">
-      <publishTime>11/30/2014 08:51:54</publishTime>
+      <publishTime>11/16/2018 19:09:20</publishTime>
     </File>
     <File Include="Views/Grades/Create.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:20</publishTime>
     </File>
     <File Include="Views/Grades/Edit.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:20</publishTime>
     </File>
     <File Include="Views/Grades/Index.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:21</publishTime>
     </File>
     <File Include="Views/Home/About.cshtml">
       <publishTime>11/30/2014 08:51:52</publishTime>
@@ -1744,208 +1795,223 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/30/2014 08:51:52</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:21</publishTime>
     </File>
     <File Include="Views/IncomeTax/Edit.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:21</publishTime>
     </File>
     <File Include="Views/IncomeTax/IncomeTaxParameter.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:21</publishTime>
     </File>
     <File Include="Views/IncomeTax/IncomeTaxParameterDetail.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:22</publishTime>
     </File>
     <File Include="Views/IncomeTax/Index.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:22</publishTime>
     </File>
     <File Include="Views/IncomeTax/UploadTaxAdjustment.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:22</publishTime>
     </File>
     <File Include="Views/IncomeTax/UploadTaxChallan.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:22</publishTime>
     </File>
     <File Include="Views/IncomeTax/UploadTaxRefund.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:22</publishTime>
     </File>
     <File Include="Views/IncomeTax/_GetTaxAdjustmentDataSelection.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:22</publishTime>
     </File>
     <File Include="Views/IncomeTax/_GetTaxChallanDataSelection.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:22</publishTime>
     </File>
     <File Include="Views/IncomeTax/_GetTaxRefundDataSelection.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:23</publishTime>
     </File>
     <File Include="Views/IncomeTax/_SearchTaxParameter.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:23</publishTime>
     </File>
     <File Include="Views/IncomeTax/_TaxAdjustmentUploadedData.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:24</publishTime>
     </File>
     <File Include="Views/IncomeTax/_TaxAdjustmentUploadForm.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:23</publishTime>
     </File>
     <File Include="Views/IncomeTax/_TaxChallanUploadedData.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:24</publishTime>
     </File>
     <File Include="Views/IncomeTax/_TaxChallanUploadForm.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:24</publishTime>
     </File>
     <File Include="Views/IncomeTax/_TaxParameterResult.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:24</publishTime>
     </File>
     <File Include="Views/IncomeTax/_TaxRefundUploadedData.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:24</publishTime>
     </File>
     <File Include="Views/IncomeTax/_TaxRefundUploadForm.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:24</publishTime>
     </File>
     <File Include="Views/IncomeTax/_UploadedTaxAdjustment.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:24</publishTime>
     </File>
     <File Include="Views/IncomeTax/_UploadedTaxChallan.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:24</publishTime>
     </File>
     <File Include="Views/IncomeTax/_UploadTaxRefund.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:24</publishTime>
     </File>
     <File Include="Views/LeaveWithoutPay/AssignEmployeeLWP.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:24</publishTime>
     </File>
     <File Include="Views/LeaveWithoutPay/Create.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:24</publishTime>
     </File>
     <File Include="Views/LeaveWithoutPay/Edit.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:24</publishTime>
     </File>
     <File Include="Views/LeaveWithoutPay/EmployeeLWP.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:24</publishTime>
     </File>
     <File Include="Views/LeaveWithoutPay/Index.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:24</publishTime>
     </File>
     <File Include="Views/LeaveWithoutPay/ModifyEmployeeLWP.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:24</publishTime>
     </File>
     <File Include="Views/Overtime/Index.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:24</publishTime>
     </File>
     <File Include="Views/Overtime/UploadTimeCard.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:24</publishTime>
     </File>
     <File Include="Views/Overtime/_OvertimeConfig.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:25</publishTime>
     </File>
     <File Include="Views/Overtime/_TimeCardList.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:25</publishTime>
     </File>
     <File Include="Views/Overtime/_UploadResult.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:25</publishTime>
     </File>
     <File Include="Views/Report/BankAdvice.cshtml">
-      <publishTime>11/30/2014 08:51:54</publishTime>
+      <publishTime>11/16/2018 19:09:25</publishTime>
     </File>
     <File Include="Views/Report/PaySlip.cshtml">
-      <publishTime>10/29/2018 22:12:38</publishTime>
+      <publishTime>11/18/2018 12:45:37</publishTime>
     </File>
     <File Include="Views/Report/SalaryChange.cshtml">
-      <publishTime>11/30/2014 08:51:54</publishTime>
+      <publishTime>11/16/2018 19:09:25</publishTime>
     </File>
     <File Include="Views/Report/SalarySheet.cshtml">
-      <publishTime>11/30/2014 08:51:54</publishTime>
+      <publishTime>11/16/2018 19:09:25</publishTime>
     </File>
     <File Include="Views/Report/_PaySlipAllowance.cshtml">
-      <publishTime>10/29/2018 22:17:03</publishTime>
+      <publishTime>11/16/2018 19:09:25</publishTime>
     </File>
     <File Include="Views/Report/_PaySlipDeduction.cshtml">
-      <publishTime>11/30/2014 08:51:54</publishTime>
+      <publishTime>11/16/2018 19:09:25</publishTime>
     </File>
     <File Include="Views/Salary/DisburseSalary.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:25</publishTime>
     </File>
     <File Include="Views/Salary/Index.cshtml">
-      <publishTime>11/04/2018 22:28:25</publishTime>
+      <publishTime>11/18/2018 12:14:48</publishTime>
+    </File>
+    <File Include="Views/Salary/PaySlip.cshtml">
+      <publishTime>11/18/2018 21:15:54</publishTime>
+    </File>
+    <File Include="Views/Salary/SalarySheet.cshtml">
+      <publishTime>11/18/2018 12:31:10</publishTime>
     </File>
     <File Include="Views/Salary/UndoSalaryProcess.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/18/2018 20:35:27</publishTime>
+    </File>
+    <File Include="Views/Salary/_PaySlipAllowance.cshtml">
+      <publishTime>11/18/2018 12:36:08</publishTime>
+    </File>
+    <File Include="Views/Salary/_PaySlipDeduction.cshtml">
+      <publishTime>11/18/2018 12:36:14</publishTime>
     </File>
     <File Include="Views/Settlement/Index.cshtml">
-      <publishTime>11/30/2014 08:51:50</publishTime>
+      <publishTime>11/16/2018 19:09:25</publishTime>
     </File>
     <File Include="Views/Setup/CreateBank.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:25</publishTime>
     </File>
     <File Include="Views/Setup/CreateDepartment.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:25</publishTime>
     </File>
     <File Include="Views/Setup/CreateDivision.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:26</publishTime>
     </File>
     <File Include="Views/Setup/CreateEmployee.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:26</publishTime>
     </File>
     <File Include="Views/Setup/Index.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:26</publishTime>
     </File>
     <File Include="Views/Setup/_EditBank.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:26</publishTime>
     </File>
     <File Include="Views/Shared/DisplayTemplates/CanonicalHelperModel.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:26</publishTime>
     </File>
     <File Include="Views/Shared/DisplayTemplates/MenuHelperModel.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:26</publishTime>
     </File>
     <File Include="Views/Shared/DisplayTemplates/MetaRobotsHelperModel.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:26</publishTime>
     </File>
     <File Include="Views/Shared/DisplayTemplates/SiteMapHelperModel.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:26</publishTime>
     </File>
     <File Include="Views/Shared/DisplayTemplates/SiteMapNodeModel.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:26</publishTime>
     </File>
     <File Include="Views/Shared/DisplayTemplates/SiteMapNodeModelList.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:26</publishTime>
     </File>
     <File Include="Views/Shared/DisplayTemplates/SiteMapPathHelperModel.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:26</publishTime>
     </File>
     <File Include="Views/Shared/DisplayTemplates/SiteMapTitleHelperModel.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:26</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:26</publishTime>
     </File>
     <File Include="Views/Shared/_EditBank.cshtml">
-      <publishTime>11/30/2014 08:51:54</publishTime>
+      <publishTime>11/16/2018 19:09:26</publishTime>
     </File>
     <File Include="Views/Shared/_EmployeeInfoMinView.cshtml">
-      <publishTime>11/30/2014 08:51:52</publishTime>
+      <publishTime>11/16/2018 19:09:26</publishTime>
     </File>
     <File Include="Views/Shared/_InnerMenu.cshtml">
-      <publishTime>11/30/2014 08:51:54</publishTime>
+      <publishTime>11/16/2018 19:09:26</publishTime>
     </File>
     <File Include="Views/Shared/_LandingLayout.cshtml">
-      <publishTime>11/25/2017 00:25:56</publishTime>
+      <publishTime>11/16/2018 19:09:26</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>11/25/2017 00:08:58</publishTime>
+      <publishTime>11/16/2018 19:09:26</publishTime>
     </File>
     <File Include="Views/Shared/_LayoutDetailsPage.cshtml">
-      <publishTime>11/25/2017 00:27:10</publishTime>
+      <publishTime>11/16/2018 19:09:26</publishTime>
     </File>
     <File Include="Views/Shared/_LoginLayout.cshtml">
-      <publishTime>11/30/2014 08:51:54</publishTime>
+      <publishTime>11/16/2018 19:09:26</publishTime>
+    </File>
+    <File Include="Views/Shared/_Menu.cshtml">
+      <publishTime>11/16/2018 19:09:26</publishTime>
     </File>
     <File Include="Views/Web.config">
-      <publishTime>11/30/2014 08:51:50</publishTime>
+      <publishTime>11/16/2018 19:09:15</publishTime>
     </File>
     <File Include="Views/_ViewStart.cshtml">
-      <publishTime>11/30/2014 08:51:50</publishTime>
+      <publishTime>11/16/2018 19:09:15</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>11/04/2018 23:27:44</publishTime>
+      <publishTime>11/17/2018 15:26:38</publishTime>
     </File>
   </ItemGroup>
 </Project>

@@ -746,10 +746,6 @@ namespace PayrollWeb.Service
 
             foreach (var item in employeeList)
             {
-                if (item.id == 61455)
-                { 
-                    
-                }
                 List<prl_salary_allowances> allowList = new List<prl_salary_allowances>();
                 List<EmployeeSalaryAllowance> salallList = new List<EmployeeSalaryAllowance>();
 
@@ -1138,16 +1134,17 @@ namespace PayrollWeb.Service
                         List<prl_income_tax_parameter> taxSlab = new List<prl_income_tax_parameter>();
                         taxSlab = dataContext.prl_income_tax_parameter.Where(objID => (objID.fiscal_year_id == pFiscalYear && objID.gender == item.gender)).ToList();
                         int maxNumberItem = taxSlab.Count;
-                        decimal lastSlabAmount = taxSlab[maxNumberItem - 1].slab_maximum_amount - taxSlab[maxNumberItem - 2].slab_maximum_amount;
-                        decimal lastSlabPercentage = taxSlab[maxNumberItem - 1].slab_percentage;
-                        decimal secondlastSlabAmount = taxSlab[maxNumberItem - 2].slab_maximum_amount - taxSlab[maxNumberItem - 3].slab_maximum_amount;
-                        decimal secondlastSlabPercentage = taxSlab[maxNumberItem - 2].slab_percentage;
-                        decimal thirdlastSlabAmount = taxSlab[maxNumberItem - 3].slab_maximum_amount - taxSlab[maxNumberItem - 4].slab_maximum_amount;
-                        decimal thidlastSlabPercentage = taxSlab[maxNumberItem - 3].slab_percentage;
-                        decimal forthlastSlabAmount = taxSlab[maxNumberItem - 4].slab_maximum_amount - taxSlab[maxNumberItem - 5].slab_maximum_amount;
-                        decimal forthlastSlabPercentage = taxSlab[maxNumberItem - 4].slab_percentage;
-                        decimal fifthlastSlabAmount = taxSlab[maxNumberItem - 5].slab_maximum_amount;
-                        decimal fifthlastSlabPercentage = taxSlab[maxNumberItem - 5].slab_percentage;
+
+                        decimal lastSlabAmount = (taxSlab[maxNumberItem - 1] != null ? taxSlab[maxNumberItem - 1].slab_maximum_amount : 0) - (taxSlab[maxNumberItem - 2] != null ? taxSlab[maxNumberItem - 2].slab_maximum_amount : 0);
+                        decimal lastSlabPercentage = (taxSlab[maxNumberItem - 1] != null ? taxSlab[maxNumberItem - 1].slab_percentage : 0);
+                        decimal secondlastSlabAmount = (taxSlab[maxNumberItem - 2] != null ? taxSlab[maxNumberItem - 2].slab_maximum_amount : 0) - (taxSlab[maxNumberItem - 3] != null ? taxSlab[maxNumberItem - 3].slab_maximum_amount : 0);
+                        decimal secondlastSlabPercentage = (taxSlab[maxNumberItem - 2] != null ? taxSlab[maxNumberItem - 2].slab_percentage : 0);
+                        decimal thirdlastSlabAmount = (taxSlab[maxNumberItem - 3] != null ? taxSlab[maxNumberItem - 3].slab_maximum_amount : 0) - (taxSlab[maxNumberItem - 4] != null ? taxSlab[maxNumberItem - 4].slab_maximum_amount : 0);
+                        decimal thidlastSlabPercentage = (taxSlab[maxNumberItem - 3] != null ? taxSlab[maxNumberItem - 3].slab_percentage : 0);
+                        decimal forthlastSlabAmount = (taxSlab[maxNumberItem - 4] != null ? taxSlab[maxNumberItem - 4].slab_maximum_amount : 0) - (taxSlab[maxNumberItem - 5] != null ? taxSlab[maxNumberItem - 5].slab_maximum_amount : 0);
+                        decimal forthlastSlabPercentage = (taxSlab[maxNumberItem - 4] != null ? taxSlab[maxNumberItem - 4].slab_percentage : 0);
+                        decimal fifthlastSlabAmount = (taxSlab[maxNumberItem - 5] != null ? taxSlab[maxNumberItem - 5].slab_maximum_amount : 0);
+                        decimal fifthlastSlabPercentage = (taxSlab[maxNumberItem - 5] != null ? taxSlab[maxNumberItem - 5].slab_percentage : 0);
 
                         decimal _TaxableIncome = taxableIncome;
                         decimal TaxPayableAmount = 0;
@@ -1498,10 +1495,16 @@ namespace PayrollWeb.Service
                         {
                             mySqlCommand.Parameters.Clear();
                             string taxprocessSlab = "";
+//                            taxprocessSlab = @"INSERT INTO prl_employee_tax_slab
+//                                                    (emp_id,tax_process_id,salary_process_id,fiscal_year_id,salary_date,salary_month,salary_year,current_rate,parameter,
+//                                                        taxable_income,tax_liability,created_by,created_date)
+//                                                    VALUES (?emp_id,?tax_process_id,?salary_process_id,?fiscal_year_id,?salary_date,?salary_month,?salary_year,?current_rate,?parameter,
+//                                                        ?taxable_income,?tax_liability,?created_by,?created_date);";
+
                             taxprocessSlab = @"INSERT INTO prl_employee_tax_slab
-                                                    (emp_id,tax_process_id,salary_process_id,fiscal_year_id,salary_date,salary_month,salary_year,current_rate,parameter,
+                                                    (emp_id,tax_process_id,fiscal_year_id,salary_date,salary_month,salary_year,current_rate,parameter,
                                                         taxable_income,tax_liability,created_by,created_date)
-                                                    VALUES (?emp_id,?tax_process_id,?salary_process_id,?fiscal_year_id,?salary_date,?salary_month,?salary_year,?current_rate,?parameter,
+                                                    VALUES (?emp_id,?tax_process_id,?fiscal_year_id,?salary_date,?salary_month,?salary_year,?current_rate,?parameter,
                                                         ?taxable_income,?tax_liability,?created_by,?created_date);";
 
                             mySqlCommand.Connection = mySqlConnection;
@@ -1509,7 +1512,7 @@ namespace PayrollWeb.Service
 
                             mySqlCommand.Parameters.AddWithValue("?emp_id", item.id);
                             mySqlCommand.Parameters.AddWithValue("?tax_process_id", taxProcessId);
-                            mySqlCommand.Parameters.AddWithValue("?salary_process_id", salaryDet.salary_process_id);
+                            //mySqlCommand.Parameters.AddWithValue("?salary_process_id", salaryDet.salary_process_id);
                             mySqlCommand.Parameters.AddWithValue("?fiscal_year_id", pFiscalYear);
                             mySqlCommand.Parameters.AddWithValue("?salary_date", salaryMonth);
                             mySqlCommand.Parameters.AddWithValue("?salary_month", salaryMonth.Month);

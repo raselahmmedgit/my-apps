@@ -140,7 +140,7 @@ Add Bank Information
 
     </script>
     <script type="text/javascript">
-        $('#confirmation_date').datepicker();
+        $('#confirmation_date').datepicker({ dateFormat: 'yy-mm-dd' });
 
         $('#btnSave').on('click', function () {
             return confirm('Are you sure you want to update account information?');

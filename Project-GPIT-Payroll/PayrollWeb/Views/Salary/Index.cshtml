@@ -67,7 +67,7 @@
         <div class="row-fluid"  style="margin: 10px;">
             <div class="span3">@Html.LabelFor(model=> model.SalaryPaymentDate)</div>
             <div class="span8">
-                @Html.TextBoxFor(model => model.SalaryPaymentDate)<br />
+                @Html.EditorFor(model => model.SalaryPaymentDate)<br />
                 @Html.ValidationMessageFor(model => model.SalaryPaymentDate)
             </div>
         </div>

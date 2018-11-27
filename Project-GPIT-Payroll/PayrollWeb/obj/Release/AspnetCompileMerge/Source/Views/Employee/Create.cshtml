@@ -9,7 +9,7 @@
 
 @section PageBanner
 {
-Create Employee
+    Create Employee
 }
 
 @using (Html.BeginForm("Create", "Employee", FormMethod.Post, new { @class = "form-inline" }))
@@ -17,7 +17,7 @@ Create Employee
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
-    
+
     <table style="border-collapse: separate; border-spacing: 3px;">
         <tr>
             <td>
@@ -176,7 +176,9 @@ Create Employee
 @section PageSpecificJs
 {
     <script type="text/javascript">
-        $('#joining_date,#dob').datepicker();
+        $('#joining_date').datepicker({ dateFormat: 'yy-mm-dd' });
+        $('#dob').datepicker({ dateFormat: 'yy-mm-dd' });
+        //$("#joining_date,#dob").datepicker("option", "dateFormat", "yy-mm-dd");
     </script>
 }
 

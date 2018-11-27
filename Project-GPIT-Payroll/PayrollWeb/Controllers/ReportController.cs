@@ -658,7 +658,7 @@ namespace PayrollWeb.Controllers
 
         [PayrollAuthorize]
         [HttpPost]
-        public ActionResult SalarySheet(ReportSalarySheet SS, FormCollection collection, string sButton)
+        public ActionResult SalarySheet(ReportSalarySheet reportSalarySheet, FormCollection collection, string sButton)
         {
             var empNumber = new List<string>();
             var empIds = new List<int>();
@@ -667,7 +667,7 @@ namespace PayrollWeb.Controllers
             {
                 EmpList = (from emp in dataContext.prl_employee
                            join spd in dataContext.prl_salary_process_detail on emp.id equals spd.emp_id
-                           where spd.salary_month.Year == SS.Year && spd.salary_month.Month == SS.Month
+                           where spd.salary_month.Year == reportSalarySheet.Year && spd.salary_month.Month == reportSalarySheet.Month
                            select new ReportSalarySheet
                            {
                                empNo = emp.emp_no,
@@ -679,15 +679,15 @@ namespace PayrollWeb.Controllers
             }
             else
             {
-                if (!string.IsNullOrWhiteSpace(SS.SelectedEmployees))
+                if (!string.IsNullOrWhiteSpace(reportSalarySheet.SelectedEmployees))
                 {
-                    empNumber = SS.SelectedEmployees.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries).ToList();
+                    empNumber = reportSalarySheet.SelectedEmployees.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries).ToList();
                     empIds = dataContext.prl_employee.AsEnumerable().Where(x => empNumber.Contains(x.emp_no))
                             .Select(x => x.id).ToList();
 
                     EmpList = (from emp in dataContext.prl_employee
                                join spd in dataContext.prl_salary_process_detail on emp.id equals spd.emp_id
-                               where empNumber.Contains(emp.emp_no) && spd.salary_month.Year == SS.Year && spd.salary_month.Month == SS.Month
+                               where empNumber.Contains(emp.emp_no) && spd.salary_month.Year == reportSalarySheet.Year && spd.salary_month.Month == reportSalarySheet.Month
                                select new ReportSalarySheet
                                {
                                    empNo = emp.emp_no,
@@ -714,7 +714,7 @@ namespace PayrollWeb.Controllers
                     return View("Index");
                 }
 
-                DateTime dt = new DateTime(SS.Year,SS.Month,1);
+                DateTime dt = new DateTime(reportSalarySheet.Year,reportSalarySheet.Month,1);
 
                 ReportDataSource rd = new ReportDataSource("DataSet1", EmpList);
                 lr.DataSources.Add(rd);
@@ -821,11 +821,11 @@ namespace PayrollWeb.Controllers
 
         [Authorize]
         [HttpPost]
-        public ActionResult SalaryChange(ReportModel rm, string sButton)
+        public ActionResult SalaryChange(ReportModel reportModel, string sButton)
         {
             var slrChange = (from slr in dataContext.prl_salary_review
                              join emp in dataContext.prl_employee on slr.emp_id equals emp.id
-                             where slr.created_date.Value.Month == rm.Month && slr.created_date.Value.Year == rm.Year
+                             where slr.created_date.Value.Month == reportModel.Month && slr.created_date.Value.Year == reportModel.Year
                              select new ReportSalaryChange
                              {
                                  eId= emp.id,
@@ -859,7 +859,7 @@ namespace PayrollWeb.Controllers
                     return View("Index");
                 }
 
-                DateTime dt = new DateTime(rm.Year, rm.Month, 1);
+                DateTime dt = new DateTime(reportModel.Year, reportModel.Month, 1);
 
                 ReportDataSource rd = new ReportDataSource("DataSet1", slrChange);
                 lr.DataSources.Add(rd);
@@ -919,7 +919,7 @@ namespace PayrollWeb.Controllers
             ViewBag.Years = DateUtility.GetYears();
             ViewBag.Months = DateUtility.GetMonths();
 
-            return View(rm);
+            return View(reportModel);
         }
 /*
         [PayrollAuthorize]

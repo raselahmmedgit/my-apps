@@ -58,17 +58,17 @@ namespace PayrollWeb.ViewModels
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> posting_date { get; set; }
-
+        
         [DisplayName("Contract From")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> contract_start_date { get; set; }
-
+        
         [DisplayName("Contract To")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> contract_end_date { get; set; }
-
+        
         public string created_by { get; set; }
         public Nullable<System.DateTime> created_date { get; set; }
         public string updated_by { get; set; }

@@ -103,3 +103,8 @@ D:\Home\Official\Project-GPIT-Payroll\Project-GPIT-Payroll\PayrollWeb\bin\Views\
 D:\Home\Official\Project-GPIT-Payroll\Project-GPIT-Payroll\PayrollWeb\bin\Views\Report\RDLC\PaySlipChildAllowance.rdlc
 D:\Home\Official\Project-GPIT-Payroll\Project-GPIT-Payroll\PayrollWeb\bin\Views\Report\RDLC\PaySlipChildDeduction.rdlc
 D:\Home\Official\Project-GPIT-Payroll\Project-GPIT-Payroll\PayrollWeb\bin\Views\Report\RDLC\SalaryChange.rdlc
+D:\Home\Official\Project-GPIT-Payroll\Project-GPIT-Payroll\PayrollWeb\bin\ICSharpCode.SharpZipLib.dll
+D:\Home\Official\Project-GPIT-Payroll\Project-GPIT-Payroll\PayrollWeb\bin\NPOI.dll
+D:\Home\Official\Project-GPIT-Payroll\Project-GPIT-Payroll\PayrollWeb\bin\NPOI.OOXML.dll
+D:\Home\Official\Project-GPIT-Payroll\Project-GPIT-Payroll\PayrollWeb\bin\NPOI.OpenXml4Net.dll
+D:\Home\Official\Project-GPIT-Payroll\Project-GPIT-Payroll\PayrollWeb\bin\NPOI.OpenXmlFormats.dll

@@ -7,7 +7,7 @@ namespace com.gpit.Model
         public int id { get; set; }
         public int emp_id { get; set; }
         public Nullable<int> tax_process_id { get; set; }
-        public Nullable<int> salary_process_id { get; set; }
+        //public Nullable<int> salary_process_id { get; set; }
         public Nullable<int> fiscal_year_id { get; set; }
         public Nullable<System.DateTime> salary_date { get; set; }
         public Nullable<int> salary_month { get; set; }

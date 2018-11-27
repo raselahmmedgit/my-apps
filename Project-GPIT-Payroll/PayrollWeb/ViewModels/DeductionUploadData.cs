@@ -40,8 +40,13 @@ namespace PayrollWeb.ViewModels
         [Required(ErrorMessage = "Amount can not empty")]
         [DataType(DataType.Currency)]
         public decimal amount { get; set; }
-       
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> effective_from { get; set; }
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> effective_to { get; set; }
         
         public virtual DeductionName prl_deduction_name { get; set; }

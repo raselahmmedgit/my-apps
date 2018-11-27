@@ -86,7 +86,7 @@
 {
     <script type="text/javascript" src="~/Scripts/bootstrap-datepicker.js"></script>
     <script type="text/javascript">
-        $('#festival_date').datepicker();
+        $('#festival_date').datepicker({ dateFormat: 'yy-mm-dd' });
 
         $('#bonus_name_id').change(function () {
             var ks = $('#bonus_name_id option:selected').val();

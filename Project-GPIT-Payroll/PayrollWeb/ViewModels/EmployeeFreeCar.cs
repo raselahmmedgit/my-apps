@@ -26,7 +26,7 @@ namespace PayrollWeb.ViewModels
         [DisplayName("Start Date")]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public System.DateTime start_date { get; set; }
-
+        
         [DisplayName("End Date")]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> end_date { get; set; }

@@ -25,8 +25,8 @@ namespace PayrollWeb
                         "~/Scripts/bootstrap.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/payroll_themejs").Include(
-                        "~/themes/js/bootstrap-tooltip.js", 
-                        "~/themes/js/bootstrap-popover.js", 
+                        "~/themes/js/bootstrap-tooltip.js",
+                        "~/themes/js/bootstrap-popover.js",
                         "~/themes/js/business_ltd_1.0.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include("~/Scripts/modernizr-*"));

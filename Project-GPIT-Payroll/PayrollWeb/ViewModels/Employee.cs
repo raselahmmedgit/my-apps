@@ -65,20 +65,20 @@ namespace PayrollWeb.ViewModels
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public System.DateTime dob { get; set; }
-
+        
         [Required(ErrorMessage = "Join date can not be empty.")]
         [DisplayName("Join Date")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public System.DateTime joining_date { get; set; }
-
+        
         [DisplayName("TIN")]
         public string tin { get; set; }
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public System.DateTime confirmation_date { get; set; }
-
+        
         public bool is_confirmed { get; set; }
         public bool is_pf_member { get; set; }
         public bool is_gf_member { get; set; }

@@ -34,6 +34,7 @@ namespace PayrollWeb.ViewModels
         [Required(ErrorMessage = "Salary month year can not be null or empty")]
         [DisplayName("Employee ID")]
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> salary_month_year { get; set; }
 
         [Required(ErrorMessage = "Amount can not empty")]

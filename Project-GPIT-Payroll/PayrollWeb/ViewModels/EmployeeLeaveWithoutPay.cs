@@ -23,9 +23,13 @@ namespace PayrollWeb.ViewModels
         public Nullable<int> no_of_days { get; set; }
 
         [DisplayName("Start Date")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public System.DateTime strat_date { get; set; }
 
         [DisplayName("End Date")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> end_date { get; set; }
 
         public Employee prl_employee { get; set; }

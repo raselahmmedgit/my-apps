@@ -22,7 +22,7 @@ namespace com.gpit.DataContext.Mapping
             this.Property(t => t.id).HasColumnName("id");
             this.Property(t => t.emp_id).HasColumnName("emp_id");
             this.Property(t => t.tax_process_id).HasColumnName("tax_process_id");
-            this.Property(t => t.salary_process_id).HasColumnName("salary_process_id");
+            //this.Property(t => t.salary_process_id).HasColumnName("salary_process_id");
             this.Property(t => t.fiscal_year_id).HasColumnName("fiscal_year_id");
             this.Property(t => t.salary_date).HasColumnName("salary_date");
             this.Property(t => t.salary_month).HasColumnName("salary_month");

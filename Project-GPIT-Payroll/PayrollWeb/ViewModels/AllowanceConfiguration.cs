@@ -48,11 +48,13 @@ namespace PayrollWeb.ViewModels
         public bool depends_on_working_hour { get; set; }
 
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Required(ErrorMessage = "Can not be null or empty.")]
         [DisplayName("Activation Date")]
         public Nullable<System.DateTime> activation_date { get; set; }
 
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [DisplayName("De-Activation Date")]
         public Nullable<System.DateTime> deactivation_date { get; set; }
 

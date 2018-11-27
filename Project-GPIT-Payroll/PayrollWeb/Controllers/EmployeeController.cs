@@ -16,6 +16,8 @@ using PayrollWeb.ViewModels.Utility;
 using System.IO;
 using NPOI.HSSF.UserModel;
 using NPOI.SS.UserModel;
+using NPOI.POIFS.FileSystem;
+using NPOI.XSSF.UserModel;
 
 namespace PayrollWeb.Controllers
 {
@@ -86,7 +88,7 @@ namespace PayrollWeb.Controllers
             int pageIndex = 1;
             pageIndex = page.HasValue ? Convert.ToInt32(page) : 1;
 
-            var _employees = dataContext.prl_employee.Include("prl_employee_details").OrderBy(x => x.emp_no); 
+            var _employees = dataContext.prl_employee.Include("prl_employee_details").OrderBy(x => x.emp_no);
             var empList = Mapper.Map<List<Employee>>(_employees);
 
             var pglst = empList.ToPagedList(pageIndex, pageSize);
@@ -118,7 +120,6 @@ namespace PayrollWeb.Controllers
             ViewBag.Companies = lstCompany;
 
             _Emp.joining_date = DateTime.Now;
-            _Emp.dob = DateTime.Now;
             return View(_Emp);
         }
 
@@ -126,13 +127,14 @@ namespace PayrollWeb.Controllers
         [HttpPost]
         public ActionResult Create(Employee emp)
         {
+            
             if (ModelState.IsValid)
             {
                 Session["NewEmp"] = emp;
                 return RedirectToAction("CreateEmpDetails");
             }
 
-            
+
             var lstReligion = dataContext.prl_religion.ToList();
             ViewBag.Religions = lstReligion;
 
@@ -325,13 +327,13 @@ namespace PayrollWeb.Controllers
                     Session["NewEmpForEdit"] = UpdatingEmp;
                     return RedirectToAction("EditEmpDetails");
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     ModelState.AddModelError("", ex.InnerException != null ? ex.InnerException.Message : ex.Message);
                 }
             }
 
-            
+
             var lstReligion = dataContext.prl_religion.ToList();
             ViewBag.Religions = lstReligion;
 
@@ -575,7 +577,7 @@ namespace PayrollWeb.Controllers
                 empD.basic_salary = emP.basic_salary;
                 empD.posting_location_id = emP.posting_location_id;
                 empD.posting_date = emP.posting_date;
-                
+
             }
             else
             {
@@ -623,7 +625,7 @@ namespace PayrollWeb.Controllers
                         {
                             string empNo = collection["Emp_No"];
                             var emp = dataContext.prl_employee.SingleOrDefault(x => x.emp_no == empNo);
-                                
+
                             if (emp == null)
                             {
                                 return RedirectToAction("AddEmpDetails", new { msg = "Threre is no information for the selected employee" });
@@ -638,7 +640,7 @@ namespace PayrollWeb.Controllers
                 else
                 {
 
-                    var empDfromDb = dataContext.prl_employee_details.Where(p=>p.emp_id==empD.emp_id).OrderByDescending(x => x.id).First();
+                    var empDfromDb = dataContext.prl_employee_details.Where(p => p.emp_id == empD.emp_id).OrderByDescending(x => x.id).First();
                     if (empDfromDb.designation_id == empD.designation_id && empDfromDb.department_id == empD.department_id
                         && empDfromDb.division_id == empD.division_id && empDfromDb.emp_status == empD.emp_status
                         && empDfromDb.contract_start_date == empD.contract_start_date && empDfromDb.contract_end_date == empD.contract_end_date
@@ -673,7 +675,7 @@ namespace PayrollWeb.Controllers
                 ModelState.AddModelError("", ex.InnerException != null ? ex.InnerException.Message : ex.Message);
             }
 
-            
+
 
             var lstGrades = dataContext.prl_grade.ToList();
             ViewBag.Grades = lstGrades;
@@ -707,14 +709,14 @@ namespace PayrollWeb.Controllers
             {
                 return View();
             }
-            
+
         }
 
         [PayrollAuthorize]
         [HttpPost]
         public ActionResult EmpConfirmation(int? empid, FormCollection collection, Employee emp, string sButton)
         {
-            
+
             bool errorFound = false;
             var res = new OperationResult();
 
@@ -755,7 +757,7 @@ namespace PayrollWeb.Controllers
                 else if (sButton == "Save")
                 {
 
-                     if (emp.id == 0)
+                    if (emp.id == 0)
                     {
                         errorFound = true;
                         ModelState.AddModelError("", "No employee selected.");
@@ -826,7 +828,7 @@ namespace PayrollWeb.Controllers
         [HttpGet]
         public ActionResult EmpBankInfo(string empIdbankId)
         {
-            
+
             var _Emp = new Employee();
 
             if (empIdbankId != null)
@@ -852,7 +854,7 @@ namespace PayrollWeb.Controllers
             {
                 var _bankInfo = dataContext.prl_bank.Where(x => x.id == 0).ToList();
                 ViewBag.Banks = _bankInfo;
-                
+
                 var _banches = dataContext.prl_bank_branch.Where(x => x.bank_id == 0).ToList();
                 ViewBag.Branches = _banches;
 
@@ -874,7 +876,7 @@ namespace PayrollWeb.Controllers
             {
                 if (sButton == "Search")
                 {
-                    if (empid == null && string.IsNullOrEmpty( collection["Emp_No"]))
+                    if (empid == null && string.IsNullOrEmpty(collection["Emp_No"]))
                     {
                         errorFound = true;
                         ModelState.AddModelError("", "Please select an employee or put employee no.");
@@ -969,7 +971,7 @@ namespace PayrollWeb.Controllers
         [HttpGet]
         public ActionResult AddSalaryReview()
         {
-            
+
             var lstReview = dataContext.prl_salary_review.Where(x => x.id == 0).ToList();
             ViewBag.SalReview = Mapper.Map<List<SalaryReview>>(lstReview);
 
@@ -990,7 +992,7 @@ namespace PayrollWeb.Controllers
             {
                 if (sButton == "Search")
                 {
-                    if (empid == null && string.IsNullOrEmpty( collection["Emp_No"]))
+                    if (empid == null && string.IsNullOrEmpty(collection["Emp_No"]))
                     {
                         errorFound = true;
                         ModelState.AddModelError("", "Please select an employee or put employee no.");
@@ -1022,12 +1024,12 @@ namespace PayrollWeb.Controllers
                 }
                 else if (sButton == "Save")
                 {
-                    if (string.IsNullOrEmpty( collection["emp_id"]))
+                    if (string.IsNullOrEmpty(collection["emp_id"]))
                     {
                         errorFound = true;
                         ModelState.AddModelError("", "No employee selected.");
                     }
-                    
+
                     if (!errorFound)
                     {
                         _salaryReview.emp_id = Convert.ToInt32(collection["emp_id"]);
@@ -1077,7 +1079,7 @@ namespace PayrollWeb.Controllers
                 var lstReviewByEmp = dataContext.prl_salary_review.Where(x => x.emp_id == _empD.id).OrderByDescending(p => p.id);
                 ViewBag.SalReview = Mapper.Map<List<SalaryReview>>(lstReviewByEmp);
                 ViewBag.Employee = _empD;
-                
+
                 return View(_salaryReview);
             }
             var lstReview = dataContext.prl_salary_review.Where(x => x.id == 0).OrderByDescending(p => p.id);
@@ -1089,7 +1091,7 @@ namespace PayrollWeb.Controllers
         [HttpGet]
         public ActionResult EditSalaryReview(string empIdbankId)
         {
-            
+
 
             var lstReview = dataContext.prl_salary_review.Where(x => x.id == 0).ToList();
             ViewBag.SalReview = Mapper.Map<List<SalaryReview>>(lstReview);
@@ -1124,14 +1126,26 @@ namespace PayrollWeb.Controllers
                             var empD = dataContext.prl_employee.Include("prl_employee_details").SingleOrDefault(x => x.id == empid);
                             _empD = Mapper.Map<Employee>(empD);
 
-                            var Review = dataContext.prl_salary_review.Where(x => x.emp_id == _empD.id).OrderByDescending(p => p.id).First();
+                            var ReviewList = dataContext.prl_salary_review.Where(x => x.emp_id == _empD.id).ToList();
 
-                            _salaryReview.id = Review.id;
-                            _salaryReview.emp_id = Review.emp_id;
-                            _salaryReview.current_basic = Review.current_basic;
-                            _salaryReview.new_basic = Review.new_basic;
-                            _salaryReview.effective_from = Review.effective_from;
-                            _salaryReview.increment_reason = Review.increment_reason;
+                            if (ReviewList.Any())
+                            {
+                                var Review = ReviewList.OrderByDescending(p => p.id).First();
+
+                                _salaryReview.id = Review.id;
+                                _salaryReview.emp_id = Review.emp_id;
+                                _salaryReview.current_basic = Review.current_basic;
+                                _salaryReview.new_basic = Review.new_basic;
+                                _salaryReview.effective_from = Review.effective_from;
+                                _salaryReview.increment_reason = Review.increment_reason;
+                            }
+                            else {
+
+                                _salaryReview.emp_id = _empD.id;
+                                _salaryReview.current_basic = _empD.prl_employee_details.OrderByDescending(x => x.id).First().basic_salary;
+
+                            }
+                            
                         }
                         else
                         {
@@ -1144,14 +1158,26 @@ namespace PayrollWeb.Controllers
                             {
                                 _empD = Mapper.Map<Employee>(empD);
 
-                                var Review = dataContext.prl_salary_review.Where(x => x.emp_id == _empD.id).OrderByDescending(p => p.id).First();
+                                var ReviewList = dataContext.prl_salary_review.Where(x => x.emp_id == _empD.id).ToList();
 
-                                _salaryReview.id = Review.id;
-                                _salaryReview.emp_id = Review.emp_id;
-                                _salaryReview.current_basic = Review.current_basic;
-                                _salaryReview.new_basic = Review.new_basic;
-                                _salaryReview.effective_from = Review.effective_from;
-                                _salaryReview.increment_reason = Review.increment_reason;
+                                if (ReviewList.Any())
+                                {
+                                    var Review = dataContext.prl_salary_review.Where(x => x.emp_id == _empD.id).OrderByDescending(p => p.id).First();
+
+                                    _salaryReview.id = Review.id;
+                                    _salaryReview.emp_id = Review.emp_id;
+                                    _salaryReview.current_basic = Review.current_basic;
+                                    _salaryReview.new_basic = Review.new_basic;
+                                    _salaryReview.effective_from = Review.effective_from;
+                                    _salaryReview.increment_reason = Review.increment_reason;
+                                }
+                                else
+                                {
+                                    _salaryReview.emp_id = _empD.id;
+                                    _salaryReview.current_basic = _empD.prl_employee_details.OrderByDescending(x => x.id).First().basic_salary;
+
+                                }
+                                
                             }
                         }
 
@@ -1164,7 +1190,7 @@ namespace PayrollWeb.Controllers
                         errorFound = true;
                         ModelState.AddModelError("", "No employee selected.");
                     }
-                    
+
                     if (!errorFound)
                     {
                         _salaryReview.id = Convert.ToInt16(collection["id"]);
@@ -1215,15 +1241,15 @@ namespace PayrollWeb.Controllers
 
         public ActionResult EmployeeDiscontinue()
         {
-            
+
             return View();
         }
 
         [HttpPost]
-        public ActionResult EmployeeDiscontinue(int? empid,FormCollection collection, EmployeeDiscontinue empDisCon, string sButton)
+        public ActionResult EmployeeDiscontinue(int? empid, FormCollection collection, EmployeeDiscontinue empDisCon, string sButton)
         {
 
-            
+
             bool errorFound = false;
             var res = new OperationResult();
             var _emp = new Employee();
@@ -1283,7 +1309,7 @@ namespace PayrollWeb.Controllers
                 }
                 else
                 {
-                    if (empDisCon.emp_id==0)
+                    if (empDisCon.emp_id == 0)
                     {
                         //disconFlag = 0;
                         errorFound = true;
@@ -1362,7 +1388,7 @@ namespace PayrollWeb.Controllers
 
         public ActionResult UndoEmployeeDiscontinue()
         {
-           
+
             return View();
         }
 
@@ -1491,23 +1517,71 @@ namespace PayrollWeb.Controllers
             return View();
         }
 
-        #region MyRegion
+        #region Import
 
-        [HttpGet]
-        public ActionResult EmpImport()
+        [PayrollAuthorize]
+        public ActionResult EmpImport(int? empid, FormCollection collection, string sButton)
         {
-            return View();
+
+            if (Session["_EmpD"] != null)
+                Session["_EmpD"] = null;
+            if (Session["NewEmp"] != null)
+                Session["NewEmp"] = null;
+            if (Session["NewEmpForEdit"] != null)
+                Session["NewEmpForEdit"] = null;
+            if (Session["NewEmpDetailForEdit"] != null)
+                Session["NewEmpDetailForEdit"] = null;
+
+            var lists = new List<Employee>().ToPagedList(1, 1);
+
+            if (sButton == null)
+            {
+                var lstEmp = dataContext.prl_employee.Include("prl_employee_details").OrderBy(x => x.emp_no);
+                lists = Mapper.Map<List<Employee>>(lstEmp).ToPagedList(1, 25);
+            }
+            else
+            {
+
+                if (empid == null && string.IsNullOrEmpty(collection["Emp_No"]))
+                {
+                    //errorFound = true;
+                    ModelState.AddModelError("", "Please select an employee or put employee ID");
+                }
+                else
+                {
+                    if (empid != null)
+                    {
+                        var _emp = dataContext.prl_employee.Include("prl_employee_details").Where(x => x.id == empid);
+                        lists = Mapper.Map<List<Employee>>(_emp).ToPagedList(1, 1);
+                    }
+                    else
+                    {
+                        var _emp = dataContext.prl_employee.Include("prl_employee_details").AsEnumerable().Where(x => x.emp_no == collection["Emp_No"]);
+                        if (_emp.Count() > 0)
+                        {
+                            lists = Mapper.Map<List<Employee>>(_emp).ToPagedList(1, 1);
+                        }
+                        else
+                        {
+                            ModelState.AddModelError("", "Threre is no information for the given employee ID");
+                        }
+                    }
+                }
+            }
+            return View(lists);
         }
 
         [HttpPost]
-        //public ActionResult ImportFromXls(HttpPostedFileBase ImportExcel)
-        public ActionResult ImportFromXls(ImportFileViewModel model)
+        public ActionResult EmpImport(HttpPostedFileBase EmpImportFile)
+        //public ActionResult EmpImport(ImportFileViewModel model)
         {
+            string filefullpath = string.Empty;
+            var res = new OperationResult();
             try
             {
-                if (model.ImportFile != null)
+                if (EmpImportFile != null)
                 {
-                    var file = model.ImportFile;
+                    var file = EmpImportFile;
 
                     if (file != null && file.ContentLength > 0)
                     {
@@ -1520,78 +1594,321 @@ namespace PayrollWeb.Controllers
                         System.IO.File.WriteAllBytes(filePath, fileBytes);
 
                         //File Uploaded
-                        HSSFWorkbook hssfWorkbook;
+                        XSSFWorkbook xssfWorkbook;
 
-                        string filefullpath = filePath;
+                        filefullpath = filePath;
 
                         //StreamReader streamReader = new StreamReader(model.ImportFile.InputStream);
 
                         using (FileStream fileStream = new FileStream(filefullpath, FileMode.Open, FileAccess.Read))
                         {
-                            hssfWorkbook = new HSSFWorkbook(fileStream);
-                            //hssfWorkbook = new HSSFWorkbook();
+                            xssfWorkbook = new XSSFWorkbook(fileStream);
                         }
+                        var employeeList = new List<Employee>();
+                        var employeeDetailsList = new List<EmployeeDetails>();
 
                         var employeeXlsViewModelList = new List<EmployeeXlsViewModel>();
 
                         //the columns
                         var properties = new string[] {
-                            "emp_no",
-                            "name",
-                            "phone",
-                            "email"
+                            "EMPLOYEE_NUMBER",
+                            "EMPLOYEE_NAME",
+                            "FATHERS_NAME",
+                            "DESIGNATION",
+
+                            "DATE_OF_BIRTH",
+                            "DATE_OF_JOINING",
+                            "CONFIRMATION_DATE",
+                            "CATEGORY",
+
+                            "RELIGION",
+                            "MARITAL_STATUS",
+                            "GENDER",
+                            "TIN",
+
+                            "IS_FOREIGN_EXPATRIATE",
+                            "GRADE",
+                            "BASIC_SALARY",
+                            "SPECIAL_ALLOWANCE",
+
+                            "BASICSAL_GRADE_EFFECTIVE_DATE",
+                            "SALARY_CHANGE_TYPE",
+                            "DIVISION",
+                            "DEPARTMENT",
+
+                            "SECTION",
+                            "SUB_SECTION",
+                            "ZONE_CODE",
+                            "ZONE",
+
+                            "LOCATION",
+                            "ASSIGNMENT_CHANGE_DATE",
+                            "SALARY_BANK_CODE",
+                            "SALARY_BANK",
+
+                            "SALARY_BRANCH_CODE",
+                            "SALARY_BRANCH",
+                            "SALARY_ACCOUNT_NUMBER",
+                            "SALARY_ACCOUNT_EFFECT_DATE",
+
+                            "EMAIL_ADDRESS",
+                            "MOBILE_NUMBER",
+                            "COMPANY_NAME"
                         };
 
-                        ISheet sheet = hssfWorkbook.GetSheet("Employees");
+
+                        ISheet sheet = xssfWorkbook.GetSheetAt(0);
+
                         for (int row = 1; row <= sheet.LastRowNum; row++)
                         {
                             if (sheet.GetRow(row) != null) //null is when the row only contains empty cells 
                             {
 
-                                string emp_no = sheet.GetRow(row).GetCell(GetColumnIndex(properties, "emp_no")).StringCellValue;
-                                string name = sheet.GetRow(row).GetCell(GetColumnIndex(properties, "name")).StringCellValue;
-                                string phone = sheet.GetRow(row).GetCell(GetColumnIndex(properties, "phone")).StringCellValue;
-                                string email = sheet.GetRow(row).GetCell(GetColumnIndex(properties, "email")).StringCellValue;
+                                string EMPLOYEE_NUMBER = GetRowCellValue(sheet, row, properties, "EMPLOYEE_NUMBER", "NumericCellValue");
+                                string EMPLOYEE_NAME = GetRowCellValue(sheet, row, properties, "EMPLOYEE_NAME", "StringCellValue");
+                                string FATHERS_NAME = GetRowCellValue(sheet, row, properties, "FATHERS_NAME", "StringCellValue");
+                                string DESIGNATION = GetRowCellValue(sheet, row, properties, "DESIGNATION", "StringCellValue");
 
-                                var employeeXlsViewModel = new EmployeeXlsViewModel { emp_no = emp_no, name = name, phone = phone, email = email };
+                                string DATE_OF_BIRTH = GetRowCellValue(sheet, row, properties, "DATE_OF_BIRTH", "DateCellValue");
+                                string DATE_OF_JOINING = GetRowCellValue(sheet, row, properties, "DATE_OF_JOINING", "DateCellValue");
+                                string CONFIRMATION_DATE =GetRowCellValue(sheet, row, properties, "CONFIRMATION_DATE", "DateCellValue");
+                                string CATEGORY = GetRowCellValue(sheet, row, properties, "CATEGORY", "StringCellValue");
+
+                                string RELIGION = GetRowCellValue(sheet, row, properties, "RELIGION", "StringCellValue");
+                                string MARITAL_STATUS = GetRowCellValue(sheet, row, properties, "MARITAL_STATUS", "StringCellValue");
+                                string GENDER = GetRowCellValue(sheet, row, properties, "GENDER", "StringCellValue");
+                                string TIN = GetRowCellValue(sheet, row, properties, "TIN", "StringCellValue");
+
+                                string IS_FOREIGN_EXPATRIATE = GetRowCellValue(sheet, row, properties, "IS_FOREIGN_EXPATRIATE", "BooleanCellValue");
+                                string GRADE = GetRowCellValue(sheet, row, properties, "GRADE", "StringCellValue");
+                                string BASIC_SALARY = GetRowCellValue(sheet, row, properties, "BASIC_SALARY", "NumericCellValue");
+                                string SPECIAL_ALLOWANCE = GetRowCellValue(sheet, row, properties, "SPECIAL_ALLOWANCE", "StringCellValue");
+
+                                string BASICSAL_GRADE_EFFECTIVE_DATE = GetRowCellValue(sheet, row, properties, "BASICSAL_GRADE_EFFECTIVE_DATE", "DateCellValue");
+                                string SALARY_CHANGE_TYPE = GetRowCellValue(sheet, row, properties, "SALARY_CHANGE_TYPE", "StringCellValue");
+                                string DIVISION = GetRowCellValue(sheet, row, properties, "DIVISION", "StringCellValue");
+                                string DEPARTMENT = GetRowCellValue(sheet, row, properties, "DEPARTMENT", "StringCellValue");
+
+                                string SECTION = GetRowCellValue(sheet, row, properties, "SECTION", "StringCellValue");
+                                string SUB_SECTION = GetRowCellValue(sheet, row, properties, "SUB_SECTION", "StringCellValue");
+                                string ZONE_CODE = GetRowCellValue(sheet, row, properties, "ZONE_CODE", "StringCellValue");
+                                string ZONE = GetRowCellValue(sheet, row, properties, "ZONE", "StringCellValue");
+
+                                string LOCATION = GetRowCellValue(sheet, row, properties, "LOCATION", "StringCellValue");
+                                string ASSIGNMENT_CHANGE_DATE = GetRowCellValue(sheet, row, properties, "ASSIGNMENT_CHANGE_DATE", "DateCellValue");
+                                string SALARY_BANK_CODE = GetRowCellValue(sheet, row, properties, "SALARY_BANK_CODE", "StringCellValue");
+                                string SALARY_BANK = GetRowCellValue(sheet, row, properties, "SALARY_BANK", "StringCellValue");
+
+                                string SALARY_BRANCH_CODE = GetRowCellValue(sheet, row, properties, "SALARY_BRANCH_CODE", "StringCellValue");
+                                string SALARY_BRANCH = GetRowCellValue(sheet, row, properties, "SALARY_BRANCH", "StringCellValue");
+                                string SALARY_ACCOUNT_NUMBER = GetRowCellValue(sheet, row, properties, "SALARY_ACCOUNT_NUMBER", "StringCellValue");
+                                string SALARY_ACCOUNT_EFFECT_DATE = GetRowCellValue(sheet, row, properties, "SALARY_ACCOUNT_EFFECT_DATE", "DateCellValue");
+
+                                string EMAIL_ADDRESS = GetRowCellValue(sheet, row, properties, "EMAIL_ADDRESS", "StringCellValue");
+                                string MOBILE_NUMBER = GetRowCellValue(sheet, row, properties, "MOBILE_NUMBER", "NumericCellValue");
+                                string COMPANY_NAME = GetRowCellValue(sheet, row, properties, "COMPANY_NAME", "StringCellValue");
+
+                                var employeeXlsViewModel = new EmployeeXlsViewModel
+                                {
+                                    EMPLOYEE_NUMBER = EMPLOYEE_NUMBER.ToString(),
+                                    EMPLOYEE_NAME = EMPLOYEE_NAME,
+                                    FATHERS_NAME = FATHERS_NAME,
+                                    DESIGNATION = DESIGNATION,
+                                    DATE_OF_BIRTH = DATE_OF_BIRTH.ToString(),
+                                    DATE_OF_JOINING = DATE_OF_JOINING.ToString(),
+                                    CONFIRMATION_DATE = CONFIRMATION_DATE.ToString(),
+                                    CATEGORY = CATEGORY,
+                                    RELIGION = RELIGION,
+                                    MARITAL_STATUS = MARITAL_STATUS,
+                                    GENDER = GENDER == "M" ? "Male" : "Female",
+                                    TIN = TIN.ToString(),
+                                    IS_FOREIGN_EXPATRIATE = IS_FOREIGN_EXPATRIATE,
+                                    GRADE = GRADE,
+                                    BASIC_SALARY = BASIC_SALARY,
+                                    SPECIAL_ALLOWANCE = SPECIAL_ALLOWANCE,
+                                    BASICSAL_GRADE_EFFECTIVE_DATE = BASICSAL_GRADE_EFFECTIVE_DATE.ToString(),
+                                    SALARY_CHANGE_TYPE = SALARY_CHANGE_TYPE,
+                                    DIVISION = DIVISION,
+                                    DEPARTMENT = DEPARTMENT,
+                                    SECTION = SECTION,
+                                    SUB_SECTION = SUB_SECTION,
+                                    ZONE_CODE = ZONE_CODE,
+                                    ZONE = ZONE,
+                                    LOCATION = LOCATION,
+                                    ASSIGNMENT_CHANGE_DATE = ASSIGNMENT_CHANGE_DATE.ToString(),
+                                    SALARY_BANK_CODE = SALARY_BANK_CODE,
+                                    SALARY_BANK = SALARY_BANK,
+                                    SALARY_BRANCH_CODE = SALARY_BRANCH_CODE,
+                                    SALARY_BRANCH = SALARY_BRANCH,
+                                    SALARY_ACCOUNT_NUMBER = SALARY_ACCOUNT_NUMBER.ToString(),
+                                    SALARY_ACCOUNT_EFFECT_DATE = SALARY_ACCOUNT_EFFECT_DATE.ToString(),
+                                    EMAIL_ADDRESS = EMAIL_ADDRESS,
+                                    MOBILE_NUMBER = MOBILE_NUMBER.ToString(),
+                                    COMPANY_NAME = COMPANY_NAME
+                                };
 
                                 employeeXlsViewModelList.Add(employeeXlsViewModel);
 
                             }
                         }
 
-                        if (System.IO.File.Exists(filefullpath))
+                        #region Insert To Database
+
+                        int returnSaveChanges = 0;
+
+                        foreach (var employeeXlsViewModel in employeeXlsViewModelList)
                         {
-                            System.IO.File.Delete(filefullpath);
+
+                            #region Employee, EmployeeDetails
+
+                            var religion = dataContext.prl_religion.ToList().FirstOrDefault(item => item.name.ToLower() == employeeXlsViewModel.RELIGION.ToLower());
+                            var company = dataContext.prl_company.ToList().FirstOrDefault(item => item.name.ToLower() == employeeXlsViewModel.COMPANY_NAME.ToLower());
+
+                            Employee employee = new Employee()
+                            {
+                                emp_no = employeeXlsViewModel.EMPLOYEE_NUMBER.ToString(),
+                                name = employeeXlsViewModel.EMPLOYEE_NAME,
+                                religion_id = religion != null ? religion.id : 0,
+                                company_id = company != null ? company.id : 0,
+                                dob = Convert.ToDateTime(employeeXlsViewModel.DATE_OF_BIRTH),
+                                joining_date = Convert.ToDateTime(employeeXlsViewModel.DATE_OF_JOINING),
+                                gender = employeeXlsViewModel.GENDER,
+                                is_active = true
+                            };
+
+                            var _prl_employee = Mapper.Map<prl_employee>(employee);
+                            dataContext.prl_employee.Add(_prl_employee);
+                            returnSaveChanges = dataContext.SaveChanges();
+
+                            employeeList.Add(employee);
+
+                            var grade = dataContext.prl_grade.ToList().FirstOrDefault(item => item.grade.ToLower() == employeeXlsViewModel.GRADE.ToLower());
+                            var division = dataContext.prl_division.ToList().FirstOrDefault(item => item.name.ToLower() == employeeXlsViewModel.DIVISION.ToLower());
+                            var department = dataContext.prl_department.ToList().FirstOrDefault(item => item.name.ToLower() == employeeXlsViewModel.DEPARTMENT.ToLower());
+                            var designation = dataContext.prl_designation.ToList().FirstOrDefault(item => item.name.ToLower() == employeeXlsViewModel.DESIGNATION.ToLower());
+
+                            EmployeeDetails employeeDetails = new EmployeeDetails()
+                            {
+                                emp_id = _prl_employee.id,
+                                emp_status = employeeXlsViewModel.CATEGORY.ToString(),
+                                grade_id = grade != null ? grade.id : 0,
+                                division_id = division != null ? division.id : 0,
+                                department_id = department != null ? department.id : 0,
+                                basic_salary = Convert.ToDecimal(employeeXlsViewModel.BASIC_SALARY),
+                                designation_id = designation != null ? designation.id : 0,
+                                posting_location_id = 13 //dhaka
+                            };
+
+                            var _prl_employee_details = Mapper.Map<prl_employee_details>(employeeDetails);
+                            dataContext.prl_employee_details.Add(_prl_employee_details);
+
+                            returnSaveChanges = dataContext.SaveChanges();
+
+                            employeeDetailsList.Add(employeeDetails);
+
+                            #endregion
                         }
 
-                        return RedirectToAction("Index", "Employee");
-                        //return Content(Boolean.TrueString);
-                        //return Json(new { msg = "Employee data uploaded successfully.", status = MessageType.success.ToString() }, JsonRequestBehavior.AllowGet);
+                        //foreach (var employee in employeeList)
+                        //{
+                        //    var _prl_employee = Mapper.Map<prl_employee>(employee);
+                        //    dataContext.prl_employee.Add(_prl_employee);
+                        //}
+
+                        //foreach (var employeeDetails in employeeDetailsList)
+                        //{
+                        //    var _prl_employee_details = Mapper.Map<prl_employee_details>(employeeDetails);
+                        //    dataContext.prl_employee_details.Add(_prl_employee_details);
+                        //}
+
+                        //returnSaveChanges = dataContext.SaveChanges();
+
+                        #endregion
+
+                        if (returnSaveChanges > 0)
+                        {
+                            res.IsSuccessful = true;
+                            res.Message = "Employee data uploaded successfully.";
+                            TempData.Add("msg", res);
+                        }
+                        else{
+                            res.IsSuccessful = false;
+                            res.Message = "Employee data do not uploaded successfully.";
+                            TempData.Add("msg", res);
+                        }
+
+                        return RedirectToAction("EmpImport", "Employee");
+                        
                     }
                     else
                     {
-                        //return Content("Sorry! Could not found this file.");
-                        return RedirectToAction("Index", "Employee");
+                        res.IsSuccessful = false;
+                        res.Message = "Upload can not be empty.";
+                        TempData.Add("msg", res);
+
+                        return RedirectToAction("EmpImport", "Employee");
                     }
 
                 }
                 else
                 {
                     //Upload file Null Message
-                    return RedirectToAction("Index", "Employee");
-                    //return Content("Upload file could not found.");
-                    //return Json(new { msg = "Upload file could not found.", status = MessageType.success.ToString() }, JsonRequestBehavior.AllowGet);
+                    res.IsSuccessful = false;
+                    res.Message = "Upload can not be empty.";
+                    TempData.Add("msg", res);
+
+                    return RedirectToAction("EmpImport", "Employee");
                 }
 
             }
             catch (Exception ex)
             {
-                return RedirectToAction("Index", "Employee");
-                //return Content("Oop! Error.");
-                //return Json(new { msg = ExceptionHelper.ExceptionMessageFormat(ex, log: false), status = MessageType.error.ToString() }, JsonRequestBehavior.AllowGet);
+                res.IsSuccessful = false;
+                res.Message = ex.InnerException != null ? ex.InnerException.Message : ex.Message;
+                TempData.Add("msg", res);
+
+                return RedirectToAction("EmpImport", "Employee");
+            }
+            finally {
+
+                if (System.IO.File.Exists(filefullpath))
+                {
+                    System.IO.File.Delete(filefullpath);
+                }
             }
 
+        }
+
+        private string GetRowCellValue(ISheet sheet, int row, string[] properties, string propertyName, string propertyType)
+        {
+            string cellValue = string.Empty;
+
+            if (sheet.GetRow(row).GetCell(GetColumnIndex(properties, propertyName)) != null)
+            {
+                CellType cellType = sheet.GetRow(row).GetCell(GetColumnIndex(properties, propertyName)).CellType;
+                if (propertyType == "NumericCellValue")
+                {
+                    cellValue = Convert.ToString(sheet.GetRow(row).GetCell(GetColumnIndex(properties, propertyName)).NumericCellValue);
+                }
+                else if (propertyType == "BooleanCellValue")
+                {
+                    cellValue = Convert.ToString(sheet.GetRow(row).GetCell(GetColumnIndex(properties, propertyName)).BooleanCellValue);
+                }
+                else if (propertyType == "DateCellValue")
+                {
+                    cellValue = Convert.ToString(sheet.GetRow(row).GetCell(GetColumnIndex(properties, propertyName)).DateCellValue);
+                }
+                else if (propertyType == "StringCellValue")
+                {
+                    cellValue = sheet.GetRow(row).GetCell(GetColumnIndex(properties, propertyName)).StringCellValue;
+                }
+                else if (propertyType == "ErrorCellValue")
+                {
+                    cellValue = Convert.ToString(sheet.GetRow(row).GetCell(GetColumnIndex(properties, propertyName)).ErrorCellValue);
+                }
+            }
+
+            return cellValue;
         }
 
         protected virtual int GetColumnIndex(string[] properties, string columnName)

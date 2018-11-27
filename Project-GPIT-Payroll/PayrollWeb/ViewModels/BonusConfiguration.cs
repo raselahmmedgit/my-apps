@@ -54,13 +54,11 @@ namespace PayrollWeb.ViewModels
         [DisplayName("Basic of Days")]
         public Nullable<int> basic_of_days { get; set; }
 
-        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}",
-               ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [DisplayName("Effective From")]
         public Nullable<System.DateTime> effective_from { get; set; }
 
-        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}",
-               ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [DisplayName("Effective To")]
         public Nullable<System.DateTime> effective_to { get; set; }
     }

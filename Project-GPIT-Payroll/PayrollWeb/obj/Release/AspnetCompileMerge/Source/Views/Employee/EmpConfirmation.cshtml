@@ -144,7 +144,7 @@ Confirmation / Undo Comfirmation
 
     </script>
     <script type="text/javascript">
-        $('#confirmation_date').datepicker();
+        $('#confirmation_date').datepicker({ dateFormat: 'yy-mm-dd' });
 
         $('#btnSave').on('click', function () {
             var dat = $("#confirmation_date").val();

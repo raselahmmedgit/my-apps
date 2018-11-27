@@ -13,9 +13,6 @@
     Allowance Configuration
 }
 
-
-
-
 <br style="clear: both;"/>
     @{
         if (TempData.ContainsKey("msg"))
@@ -187,9 +184,8 @@
 
 @section PageSpecificJs
 {
-    <script type="text/javascript" src="~/Scripts/bootstrap-datepicker.js"></script>
     <script type="text/javascript">
-        $('#activation_date,#deactivation_date').datepicker();
+        $('#activation_date,#deactivation_date').datepicker({ dateFormat: 'yy-mm-dd' });
 
 
         $('#percent_amount').on("click", function() {

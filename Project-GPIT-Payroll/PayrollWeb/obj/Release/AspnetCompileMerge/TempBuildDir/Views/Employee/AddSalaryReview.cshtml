@@ -188,7 +188,7 @@
 
     </script>
     <script type="text/javascript">
-        $('#effective_from').datepicker();
+        $('#effective_from').datepicker({ dateFormat: 'yy-mm-dd' });
 
         $('#btnSave').on('click', function () {
             return confirm('Are you sure you want to save this confirmation info?');

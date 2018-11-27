@@ -1,0 +1,55 @@
+
+.brand-logo {
+    float: left;
+    width: 200px;
+    height: 45px;
+}
+
+.brand-logo img {
+    width: 180px;
+    height: 40px;
+}
+
+.user-info {
+    text-align: right;
+    font-size: 12px;
+    color: #d5d5d5;
+    margin-bottom: 5px;
+}
+
+/* ====================================================== */
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #e80c4d;
+    font-weight: bold;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #e80c4d;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #e80c4d;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+.img-logo {
+    height: 70px;
+    width: 140px;
+}
+
+

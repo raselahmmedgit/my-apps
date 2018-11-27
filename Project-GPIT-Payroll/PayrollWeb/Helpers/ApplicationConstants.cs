@@ -9,8 +9,9 @@ namespace PayrollWeb
     {
         public static class Application
         {
-            public const string Name = "Payroll System";
-            public const string ShortName = "Payroll System";
+            public const string Name = "recom - Payroll System";
+            public const string ShortName = "recom - Payroll System";
+            //public const string Logo = "/Images/CompanyLogo/recom_logo.png";
             public const string Logo = "/Images/CompanyLogo/payroll_logo.jpg";
         }
         public static class AreaNames

@@ -33,12 +33,15 @@ namespace PayrollWeb.ViewModels
         public string hold_reason { get; set; }
 
         [DisplayName("Hold Date")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> hold_from { get; set; }
 
         [DisplayName("Hold Date To")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> hold_to { get; set; }
 
         [DisplayName("UnHold Date")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> unhold_date { get; set; }
 
         [DisplayName("UnHold Reason")]

@@ -44,7 +44,12 @@ namespace PayrollWeb.ViewModels
         [DataType(DataType.Currency)]
         public decimal amount { get; set; }
 
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> effective_from { get; set; }
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> effective_to { get; set; }
                 
         public virtual BonusName prl_bonus_name { get; set; }

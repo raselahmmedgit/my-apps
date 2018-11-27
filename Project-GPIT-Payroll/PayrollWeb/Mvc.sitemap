@@ -22,6 +22,10 @@
     <mvcSiteMapNode title="Employee" action="Edit" controller="Employee" doNotShow="true">
       <mvcSiteMapNode title="Employee" controller="Employee" action="Edit" dynamicNodeProvider="PayrollWeb.Models.PayrollMenuProvider, PayrollWeb" ></mvcSiteMapNode>
     </mvcSiteMapNode>
+
+    <mvcSiteMapNode title="Employee" action="EmpImport" controller="Employee" doNotShow="true">
+      <mvcSiteMapNode title="Employee" controller="Employee" action="EmpImport" dynamicNodeProvider="PayrollWeb.Models.PayrollMenuProvider, PayrollWeb" ></mvcSiteMapNode>
+    </mvcSiteMapNode>
     
     <mvcSiteMapNode title="Allowance" action="AllowanceMain" controller="Allowance" doNotShow="true">
       <mvcSiteMapNode title="Allowance" controller="Allowance" action="Index" dynamicNodeProvider="PayrollWeb.Models.PayrollMenuProvider, PayrollWeb" ></mvcSiteMapNode>
