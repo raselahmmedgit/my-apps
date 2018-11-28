@@ -921,7 +921,8 @@ namespace PayrollWeb.Controllers
 
             return View(reportModel);
         }
-/*
+
+        /*
         [PayrollAuthorize]
         public ActionResult Bonus(string MnthAndYr)
         {
@@ -982,7 +983,8 @@ namespace PayrollWeb.Controllers
 
             return View(Rb);
         }*/
-/*
+        
+        /*
         [PayrollAuthorize]
         [HttpPost]
         public ActionResult Bonus(ReportBonus RB)

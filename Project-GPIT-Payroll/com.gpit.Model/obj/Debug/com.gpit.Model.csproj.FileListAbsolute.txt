@@ -6,3 +6,9 @@ D:\Home\Official\Project-GPIT-Payroll\Project-GPIT-Payroll\com.gpit.Model\bin\De
 D:\Home\Official\Project-GPIT-Payroll\Project-GPIT-Payroll\com.gpit.Model\bin\Debug\com.gpit.Model.pdb
 D:\Home\Official\Project-GPIT-Payroll\Project-GPIT-Payroll\com.gpit.Model\obj\Debug\com.gpit.Model.dll
 D:\Home\Official\Project-GPIT-Payroll\Project-GPIT-Payroll\com.gpit.Model\obj\Debug\com.gpit.Model.pdb
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\Project-GPIT-Payroll\com.gpit.Model\bin\Debug\com.gpit.Model.dll
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\Project-GPIT-Payroll\com.gpit.Model\bin\Debug\com.gpit.Model.pdb
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\Project-GPIT-Payroll\com.gpit.Model\obj\Debug\com.gpit.Model.csprojAssemblyReference.cache
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\Project-GPIT-Payroll\com.gpit.Model\obj\Debug\com.gpit.Model.csproj.CoreCompileInputs.cache
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\Project-GPIT-Payroll\com.gpit.Model\obj\Debug\com.gpit.Model.dll
+C:\Users\placovu_usr_04\Documents\GitHub\my-apps\Project-GPIT-Payroll\com.gpit.Model\obj\Debug\com.gpit.Model.pdb
